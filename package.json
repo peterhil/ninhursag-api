@@ -1,0 +1,27 @@
+{
+    "name": "skeleton"
+  , "description": "Skeleton is a Flask app template package with Twitter Bootstrap installed through npm."
+  , "version": "0.0.1-dev"
+  , "keywords": ["skeleton", "app-template"]
+  , "homepage": "http://composed.nu/"
+  , "author": "Peter Hillerström <peter.hillerstrom@gmail.com> (http://composed.nu/peterhil)"
+  , "scripts": {
+        "prestart": "source ./activate"
+      , "start": "python app.py"
+  }
+  , "private": true
+  , "dependencies": {
+      "underscore"        : ">=1.5.2"
+    , "jquery"            : ">=1.10.2"
+    , "twitter-bootstrap-3.0.0" : ">=3.0.0"
+  }
+  , "devDependencies": {
+      "coffee-script": ">=1.6.3"
+    , "cssmin": ">=0.4.1"
+    , "less": "==1.4.2"
+    , "uglify-js": ">=2.4.0"
+  }
+  , "optionalDependencies": {
+  }
+  , "engines": { "node": ">=0.9.1" }
+}

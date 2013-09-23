@@ -1,0 +1,13 @@
+Flask==0.10.1
+Flask-Assets==0.8
+Jinja2==2.7.1
+MarkupSafe==0.18
+Werkzeug==0.9.4
+cssmin==0.1.4
+distribute==0.6.24
+ipython==1.1.0
+itsdangerous==0.23
+nodeenv==0.7.0
+py==1.4.15
+webassets==0.8
+wsgiref==0.1.2

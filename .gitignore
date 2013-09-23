@@ -1,0 +1,6 @@
+*.pyc
+*.pyo
+venv/
+node_modules
+skeleton/static/.webassets-cache/
+skeleton/static/gen
