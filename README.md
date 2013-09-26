@@ -1,4 +1,4 @@
-#Skeleton - Flask app template
+#Skeleton is a Python Flask app template for quick UI prototyping
 
 Basic Flask application with Twitter Bootstrap and other Front end development utilities.
 
