@@ -7,7 +7,7 @@
   , "author": "Peter Hillerström <peter.hillerstrom@gmail.com> (http://composed.nu/peterhil)"
   , "scripts": {
         "prestart": "source ./activate"
-      , "start": "python app.py"
+      , "start": "python run.py"
   }
   , "private": true
   , "dependencies": {
