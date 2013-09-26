@@ -29,14 +29,14 @@ all_js = Bundle(
 assets.register('js_all', all_js)
 
 all_css = Bundle(
+    # Bundle(
+    #     'lib/bootstrap/less/bootstrap.less',
+    #     output='gen/bootstrap.css',
+    #     filters='less',
+    #     debug=False,
+    # ),
     Bundle(
-        'lib/bootstrap/less/bootstrap.less',
-        output='gen/bootstrap.css',
-        filters='less',
-        debug=False,
-    ),
-    Bundle(
-        'less/*.less',
+        'less/skeleton.less',
         output='gen/skeleton.css',
         filters='less',
         debug=False,
