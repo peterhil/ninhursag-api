@@ -23,8 +23,8 @@ To import YAML data, do `import YAML` on views.py and use like this:
 
 ##License
 
-Copyright (c) 2012 [Peter hillerström](https://github.com/peterhil)  
-All rights reserved.
+Copyright (c) 2013 [Peter hillerström](https://github.com/peterhil)  
+This software is licensed under the MIT License. See LICENSE for details.
 
 ##Credits
 
