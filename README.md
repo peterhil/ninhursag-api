@@ -1,6 +1,19 @@
 #Skeleton - Flask app template
 
-Basic Flask application with Twitter Bootstrap and other Front end development utilities
+Basic Flask application with Twitter Bootstrap and other Front end development utilities.
+
+This project template is intended to do quick UI prototyping. Flask enables Less and Coffeescript
+asset compilation through webassets and Twitter Bootstrap is included for fast frontend development.
+
+To import YAML data, do `import YAML` on views.py and use like this:
+
+    @app.route('/example')
+    @templated()
+    def example():
+        with file('skeleton/data/example.yml', 'r') as stream:
+            data = yaml.load(stream)
+        return dict(examplelist=data)
+
 
 ##Contact
 
