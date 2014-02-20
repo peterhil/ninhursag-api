@@ -1,49 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask import Flask
-from flask.ext.assets import Environment, Bundle
+from skeleton.frontend import create_app
+from werkzeug.contrib.fixers import ProxyFix
 
-app = Flask(__name__)
 
-assets = Environment(app)
-assets.debug = True
+app = create_app()
 
-all_js = Bundle(
-    Bundle(
-        'coffee/*.coffee',
-        filters='coffeescript',
-        output='gen/coffee.js',
-        debug=False
-    ),
-    Bundle(
-        'lib/jquery/jquery-1.10.2.js',
-        output='gen/jquery-all.js',
-    ),
-    'lib/underscore/underscore.js',
-    'lib/modernizr/modernizr.js',
-    'lib/bootstrap/js/modal.js',
-    filters='uglifyjs', #'rjsmin',
-    output='gen/skeleton.js',
-)
-assets.register('js_all', all_js)
+# http://www.onurguzel.com/how-to-run-flask-applications-with-nginx-using-gunicorn/
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
-all_css = Bundle(
-    # Bundle(
-    #     'lib/bootstrap/less/bootstrap.less',
-    #     output='gen/bootstrap.css',
-    #     filters='less',
-    #     debug=False,
-    # ),
-    Bundle(
-        'less/skeleton.less',
-        output='gen/skeleton.css',
-        filters='less',
-        debug=False,
-    ),
-    filters='cssmin',
-    output='gen/all.css',
-)
-assets.register('css_all', all_css)
 
-import skeleton.views
+if __name__ == '__main__':
+    app.run()

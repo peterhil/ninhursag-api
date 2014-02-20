@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export NODE_MODULES_PATH='./node_modules'
 export NODE_MODULES_BIN="$NODE_MODULES_PATH/.bin"
@@ -10,4 +10,3 @@ export COFFEE_BIN='coffee'
 export UGLIFYJS_BIN='uglifyjs'
 
 source ./venv/py27/bin/activate
-

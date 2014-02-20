@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}One{% endblock %}
+{% block head -%}
+  {{ super() }}
+{%- endblock %}
+{% block scripts -%}
+{{ super() }}
+{%- endblock %}
+{% block content -%}
+  <div class="row">
+    <h1>One</h1>
+
+    <div>
+	  Skeleton says {{ greeting }}!
+	</div>
+  </div>
+{% endblock %}
