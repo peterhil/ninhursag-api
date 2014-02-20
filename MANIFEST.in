@@ -1,0 +1,12 @@
+include LICENSE
+include Procfile
+include README.md
+include activate
+include *.py
+include *.txt
+
+recursive-include skeleton/static *
+recursive-include skeleton/templates *.html
+
+prune skeleton/static/gen
+prune __pycache__

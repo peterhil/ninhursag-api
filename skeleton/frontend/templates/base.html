@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head -%}
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% block title %}{% endblock %} &ndash; {{ APP_NAME }}</title>
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    {% assets "css_all" -%}
+    <link rel="stylesheet" type="text/css" media="all" href="{{ ASSET_URL }}" />
+    {%- endassets %}
+
+    <!-- Twitter Bootstrap HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    {% assets "js_ie" -%}
+    <script src="{{ ASSET_URL }}"></script>
+    {% endassets -%}
+    <![endif]-->
+    {%- endblock %}
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/static/img/logo.png" alt="Logo"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/one">One</a></li>
+            <li><a href="/#two">Two</a></li>
+            <li><a href="/#three">Three</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="notifications" class="container"></div>
+    <div id="content" class="container">
+      {% block content %}{% endblock %}
+    </div>
+    {%- block scripts %}
+      {%- assets "js_vendor" %}
+      <script src="{{ ASSET_URL }}"></script>
+      {%- endassets -%}
+      {%- assets "js_main" %}
+      <script src="{{ ASSET_URL }}"></script>
+      {%- endassets -%}
+    {%- endblock %}
+  </body>
+</html>
