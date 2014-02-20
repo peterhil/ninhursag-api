@@ -4,6 +4,7 @@ Jinja2==2.7.1
 MarkupSafe==0.18
 Werkzeug==0.9.4
 cssmin==0.1.4
+gunicorn==18.0
 nodeenv==0.7.0
 py==1.4.15
 webassets==0.8
