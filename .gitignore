@@ -35,9 +35,11 @@ nosetests.xml
 .pydevproject
 
 # Other
+.DS_Store
 venv/
 node_modules
-**/.webassets-cache/
+bower_components
+.webassets-cache
 **/static/gen
 instance/
 *.patch
