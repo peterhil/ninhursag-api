@@ -37,7 +37,7 @@ nosetests.xml
 # Other
 venv/
 node_modules
-skeleton/static/.webassets-cache/
-skeleton/static/gen
+**/.webassets-cache/
+**/static/gen
 instance/
 *.patch
