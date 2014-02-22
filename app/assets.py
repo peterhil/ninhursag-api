@@ -12,7 +12,7 @@ css_application = Bundle(
 )
 
 css_all = Bundle(
-    # 'vendor/some/library.css',
+    'vendor/semantic/build/packaged/css/semantic.css',
     css_application,
     filters='cssmin',
     output='gen/app.min.css'
@@ -23,14 +23,15 @@ js_vendor = Bundle(
     'vendor/jquery/dist/jquery.js',
     'vendor/lodash/dist/lodash.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
-    'vendor/twitter-bootstrap-3.0.0/dist/js/bootstrap.js',
+    'vendor/semantic/build/packaged/javascript/semantic.js',
     filters='uglifyjs',
     output='gen/vendor.min.js'
 )
 
 js_ie = Bundle(
-    'vendor/twitter-bootstrap-3.0.0/assets/js/html5shiv.js',
-    'vendor/twitter-bootstrap-3.0.0/assets/js/respond.min.js',
+    # Twitter Bootstrap HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    # 'vendor/twitter-bootstrap-3.0.0/assets/js/html5shiv.js',
+    # 'vendor/twitter-bootstrap-3.0.0/assets/js/respond.min.js',
     filters='uglifyjs',
     output='gen/ie.min.js'
 )
@@ -63,7 +64,7 @@ def init_app(app):
     webassets = Environment(app)
     webassets.register('css_all', css_all)
     webassets.register('js_vendor', js_vendor)
-    webassets.register('js_ie', js_ie)
+    # webassets.register('js_ie', js_ie)
     webassets.register('js_dust', js_dust)
     webassets.register('js_main', js_main)
     webassets.manifest = 'cache' if not app.debug else False
