@@ -12,11 +12,11 @@ JS_LOG_LEVEL = 3  # log (1) < debug (2) < info (3) < warn (4) < error (5)
 APP_NAME = 'Skeleton'
 
 # Servers and URLs
-SERVER_NAME = 'skeleton.dev'
+SERVER_NAME = 'localhost:5000'
 
 # Authentication etc
 SECRET_KEY = 'some-secret-key'
 
 # API
-API_SERVER = 'skeleton.dev'
+API_SERVER = 'localhost:5000'
 API_TOKEN = 'some-api-token'
