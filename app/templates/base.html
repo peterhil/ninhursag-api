@@ -15,7 +15,6 @@
     <link rel="stylesheet" type="text/css" media="all" href="{{ ASSET_URL }}" />
     {%- endassets %}
 
-    <!-- Twitter Bootstrap HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     {% assets "js_ie" -%}
     <script src="{{ ASSET_URL }}"></script>
@@ -23,27 +22,18 @@
     <![endif]-->
     {%- endblock %}
   </head>
-  <body ng-app="app" role="document">
-    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">
-            {{ config.APP_NAME }}
+  <body>
+    <div class="ui transparent inverted main menu">
+        <a class="item home" href="/">
+          <i class="icon home"></i>
+        </a>
+        <div class="right menu">
+          <a class="icon item" data-content="One" href="/one">One</a>
+          <a class="icon item" data-content="Two" href="/two">Two</a>
+          <a class="icon item" data-content="Github" href="https://github.com/peterhil/skeleton">
+             <i class="icon github"></i> Github
           </a>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/one">One</a></li>
-            <li><a href="/two">Two</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
     </div>
     <div growl="true" id="notifications" class="container in-page">
     </div>

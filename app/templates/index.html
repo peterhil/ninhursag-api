@@ -4,15 +4,11 @@
   {{ super() }}
 {% endblock %}
 {% block content %}
-  <div class="row">
-    <div class="col-md-12">
-      <h1>{{ config.APP_NAME }}</h1>
-
-      <img src="/static/img/logo.png" alt="{{ config.APP_NAME }}">
-
-      <div class="listing" ng-view="" ng-controller="ListingCtrl">
-        <p>No items yet.</p>
-      </div>
+  <div>
+	<h1>{{ config.APP_NAME }}</h1>
+    <img class="logo" src="/static/img/logo.png" alt="Logo">
+    <div class="listing" ng-view="" ng-controller="ListingCtrl">
+      <p>No items yet.</p>
     </div>
   </div>
 {% endblock %}

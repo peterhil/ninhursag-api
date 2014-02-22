@@ -29,6 +29,7 @@
         "json3": "^3.3.0",
         "lodash": "~2.4.1",
         "modernizr": "git+https://github.com/Modernizr/Modernizr#master",
+        "semantic" : "git+https://github.com/Semantic-Org/Semantic-UI#0.13.0",
         "angular-growl-v2": "~0.7.2"
     },
     "devDependencies": {

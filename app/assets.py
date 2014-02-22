@@ -13,6 +13,7 @@ css_application = Bundle(
 
 css_all = Bundle(
     'vendor/angular-growl-v2/build/angular-growl.css',
+    'vendor/semantic/build/packaged/css/semantic.css',
     css_application,
     filters='cssmin',
     output='gen/app.min.css'
@@ -33,6 +34,7 @@ js_vendor = Bundle(
     'vendor/bootstrap/dist/js/bootstrap.js',
     'vendor/lodash/dist/lodash.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
+    'vendor/semantic/build/packaged/javascript/semantic.js',
     filters='uglifyjs',
     output='gen/vendor.min.js'
 )
