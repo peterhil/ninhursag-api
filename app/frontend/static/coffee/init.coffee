@@ -14,7 +14,7 @@ loadApp = ->
         async: false  # Synchronous loading is much faster
     })
     .done (config) =>
-        app = new App(config.app_name or 'skeleton', config)
+        app = new App(config.app_name, config)
         debug.log "Config loaded in", timer.seconds(), 'seconds.'
     .fail (xhr) ->
         debug.error 'Error loading config: ' + xhr.status + ' ' + xhr.statusText

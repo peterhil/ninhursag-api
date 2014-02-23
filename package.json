@@ -2,11 +2,11 @@
     "name": "skeleton",
     "description": "Skeleton.",
     "version": "0.0.0",
-    "keywords": ["skeleton"],
-    "homepage": "",
+    "keywords": ["python", "flask", "app template"],
+    "homepage": "https://github.com/peterhil/skeleton",
     "author": "Peter Hillerström <peter.hillerstrom@gmail.com>",
     "scripts": {
-        "prestart": "cd skeleton/frontend/static/vendor/modernizr && ./bin/modernizr >/dev/null && cd -",
+        "prestart": "cd app/frontend/static/vendor/modernizr && ./bin/modernizr >/dev/null && cd -",
         "start": "source ./activate && python run.py"
     },
     "private": true,

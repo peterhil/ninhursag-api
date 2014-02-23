@@ -5,7 +5,7 @@ from pprint import pprint
 
 from flask import *
 
-import skeleton
+import app
 from app.frontend import create_app
 application = create_app()
 

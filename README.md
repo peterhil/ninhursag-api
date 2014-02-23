@@ -7,7 +7,7 @@ It is a simple [Flask](http://flask.pocoo.org/) application with [Twitter Bootst
 
 ### 1. Checkout this repository from git
 
-    git clone https://github.com/peterhil/skeleton
+    git clone https://github.com/peterhil/skeleton skeleton-git
 
 ### 2. Make sure a Python version greater than or equal to 2.6 is installed
 
@@ -54,7 +54,7 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
     virtualenv -p python2.7 --no-site-packages venv/py27
     source ./venv/py27/bin/activate
 
-    # Install the Python package skeleton with pip
+    # Install the application's Python package and dependencies with pip
     pip install .
 
     # Alternatively install using standard python installation
@@ -68,7 +68,7 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
 
     cd skeleton-git
     npm install
-    cd skeleton/frontend/static/vendor/modernizr && ./bin/modernizr >/dev/null && cd -
+    cd app/frontend/static/vendor/modernizr && ./bin/modernizr >/dev/null && cd -
 
 ### 5. Start the app
 
@@ -82,7 +82,7 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
 
 ## Configuration
 
-The application’s default settings can be found on `skeleton/settings.py`.
+The application’s default settings can be found on `app/settings.py`.
 
 These can be overridden by copying the defaut settings file to `instance/settings.cfg`. Edit that file to suit your needs, and drop unmodified values to prevent shadowing the default settings.
 
@@ -90,7 +90,7 @@ At minimum you should set `SECRET_KEY` to some unguessable and randomish value. 
 
 For a more fine detailed configuration, see the [list of built-in settings](http://flask.pocoo.org/docs/config/#builtin-configuration-values) on [Flask documentation](http://flask.pocoo.org/docs/).
 
-Some of these settings are exported to front end from the route `/config.json` at `skeleton/frontend/views.py` and are available from Javascript at `app.config` with the keys lower cased.
+Some of these settings are exported to front end from the route `/config.json` at `app/frontend/views.py` and are available from Javascript at `app.config` with the keys lower cased.
 
 
 ## Nginx as a reverse proxy
@@ -104,16 +104,6 @@ When doing development, link a Python egg to sources instead of installing a pac
 
     python setup.py develop
 
-To import YAML data, do `import YAML` on views.py and use like this:
-
-    @app.route('/example')
-    @templated()
-    def example():
-        with file('skeleton/data/example.yml', 'r') as stream:
-            data = yaml.load(stream)
-        return dict(examplelist=data)
-
-
 ### Using YAML for fixtures
 
 To import YAML data, do `import YAML` on views.py and use like this:
@@ -121,7 +111,7 @@ To import YAML data, do `import YAML` on views.py and use like this:
     @app.route('/example')
     @templated()
     def example():
-        with file('skeleton/data/example.yml', 'r') as stream:
+        with file('app/data/example.yml', 'r') as stream:
             data = yaml.load(stream)
         return dict(examplelist=data)
 
@@ -140,7 +130,7 @@ This software is licensed under the MIT License. See LICENSE for details.
 
 ## Credits
 
-Skeleton uses the following libraries:
+Following libraries are used:
 
 - ### [Twitter Bootstrap](https://github.com/twbs/bootstrap)
 
