@@ -76,7 +76,7 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
 
     cd skeleton-git
     source ./activate  # <-- Adds some node components into the path and activates the virtualenv
-    python app.py
+    python run.py
     open http://localhost:5000/  # or: open http://skeleton.dev/ if using nginx and have set hosts
 
 

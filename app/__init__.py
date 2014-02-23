@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from skeleton.frontend import create_app
+from app.frontend import create_app
 from werkzeug.contrib.fixers import ProxyFix
 
 
