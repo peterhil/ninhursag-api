@@ -23,28 +23,30 @@
     <![endif]-->
     {%- endblock %}
   </head>
-  <body>
-    <div class="navbar navbar-default navbar-fixed-top">
+  <body role="document">
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img src="/static/img/logo.png" alt="Logo"></a>
+          <a class="navbar-brand" href="/">
+            {{ config.APP_NAME }}
+          </a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/one">One</a></li>
-            <li><a href="/#two">Two</a></li>
-            <li><a href="/#three">Three</a></li>
+            <li><a href="/two">Two</a></li>
           </ul>
-        </div>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
     <div id="notifications" class="container"></div>
-    <div id="content" class="container">
+    <div id="content" class="container" role="main">
       {% block content %}{% endblock %}
     </div>
     {%- block scripts %}
