@@ -13,7 +13,7 @@ from setuptools import setup, Command
 
 PACKAGE_NAME = 'skeleton'
 PACKAGE_VERSION = '0.0.0'
-PACKAGES = [PACKAGE_NAME]
+PACKAGES = ['app']
 INSTALL_REQS = [str(ir.req) for ir in parse_requirements('pip-stable-requirements.txt')]
 
 with open('README.md', 'r') as readme:
@@ -29,7 +29,7 @@ class PyTest(Command):
     def run(self):
         import sys
         import subprocess
-        errno = subprocess.call([sys.executable, 'runtests.py', '-v', PACKAGE_NAME + '/test'])
+        errno = subprocess.call([sys.executable, 'runtests.py', '-v', 'app/test'])
         raise SystemExit(errno)
 
 

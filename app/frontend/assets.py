@@ -8,14 +8,14 @@ css_application = Bundle(
     'less/main.less',
     filters='less',
     debug=False,
-    output='gen/main.css'
+    output='gen/app.css'
 )
 
 css_all = Bundle(
     # 'vendor/some/library.css',
     css_application,
     filters='cssmin',
-    output='gen/main.min.css'
+    output='gen/app.min.css'
 )
 
 js_vendor = Bundle(
@@ -45,10 +45,10 @@ js_main = Bundle(
         'coffee/service/api-service.coffee',
         'coffee/listing.coffee',
         filters='coffeescript',
-        output='gen/skeleton.js'
+        output='gen/app.js'
     ),
     filters='uglifyjs',
-    output='gen/skeleton.min.js'
+    output='gen/app.min.js'
 )
 
 

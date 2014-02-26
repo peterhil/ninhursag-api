@@ -12,7 +12,6 @@ Then create symbolic link for each vhost with:
 
     cd /etc/nginx/sites-enabled/
     ln -s ../sites-available/skeleton.conf
-    
 
 Example vhost config for skeleton.  
 File `/etc/nginx/sites-available/skeleton.conf`:

@@ -10,10 +10,10 @@ from . import route
 from ..deco import templated
 
 
-skeleton = Blueprint('skeleton', __name__)
+app = Blueprint('app', __name__)
 
 
-@route(skeleton, '/config.json')
+@route(app, '/config.json')
 def config():
     """
     Expose some of the application config into the front end.
@@ -37,35 +37,35 @@ def config():
 
 # See http://flask-restful.readthedocs.org/en/latest/ or https://github.com/ametaireau/flask-rest/
 # on how to properly implement an REST API with Flask
-@route(skeleton, '/api/<entity>')
+@route(app, '/api/<entity>')
 def api(entity):
     return jsonify({entity: [
         {'url': '/one'},
         {'url': '/two'},
     ]})
 
-@route(skeleton, '/favicon.ico')
+@route(app, '/favicon.ico')
 def favicon():
     return send_from_directory(
-        os.path.join(skeleton.root_path, 'static'),
+        os.path.join(app.root_path, 'static'),
         'favicon.ico', mimetype='image/vnd.microsoft.icon'
     )
 
-@route(skeleton, '/')
+@route(app, '/')
 def index():
     """Returns the index."""
     return render_template('index.html')
 
-@route(skeleton, '/one')
+@route(app, '/one')
 @templated('/one.html')
 def one():
     return dict(greeting='hello')
 
-@route(skeleton, '/one/<greeting>')
-def one_with_(greeting='hello'):
+@route(app, '/one/<greeting>')
+def one_with_greeting(greeting='hello'):
     return render_template('/one.html', greeting=greeting)
 
-@route(skeleton, '/two')
+@route(app, '/two')
 @templated('/two.html')
 def two():
     return dict()

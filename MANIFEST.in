@@ -5,8 +5,8 @@ include activate
 include *.py
 include *.txt
 
-recursive-include skeleton/static *
-recursive-include skeleton/templates *.html
+recursive-include **/static *
+recursive-include **/templates *.html
 
-prune skeleton/static/gen
+prune **/static/gen
 prune __pycache__
