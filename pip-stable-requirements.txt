@@ -2,6 +2,7 @@ Flask==0.10.1
 Flask-Assets==0.8
 Jinja2==2.7.1
 MarkupSafe==0.18
+Unidecode==0.04.14
 Werkzeug==0.9.4
 cssmin==0.1.4
 gunicorn==18.0

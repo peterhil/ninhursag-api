@@ -29,13 +29,13 @@
 
 from flask import Flask
 from os import environ
-from .helpers import register_blueprints
+from .helpers import project_name, register_blueprints, slugify
 
 
 def environment():
-    from app.settings import project_name
-    default = 'dev'
-    return environ.get('_'.join([project_name.upper(), 'ENV']), default).lower()
+    default_env = 'dev'
+    env_variable = '_'.join([slugify(project_name, '_').upper(), 'ENV'])
+    return environ.get(env_variable, default_env).lower()
 
 
 def create_app(package_name, package_path, settings_override=None):
