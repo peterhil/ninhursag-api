@@ -1,0 +1,6 @@
+# Pip requirements for dev and testing
+
+-r stable.pip
+
+Flask-Testing>=0.4.1
+pytest>=2.3.4
