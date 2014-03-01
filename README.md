@@ -84,7 +84,7 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
 
 The application’s default settings can be found on `app/settings.py`.
 
-These can be overridden by copying the defaut settings file to `instance/settings.cfg`. Edit that file to suit your needs, and drop unmodified values to prevent shadowing the default settings.
+These can be overridden by copying the defaut settings file to `instance/settings.py`. Edit that file to suit your needs, and drop unmodified values to prevent shadowing the default settings.
 
 At minimum you should set `SECRET_KEY` to some unguessable and randomish value. You might also want to set `SERVER_NAME` to match your development server address (possibly with a port number).
 
