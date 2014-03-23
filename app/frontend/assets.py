@@ -19,6 +19,7 @@ css_all = Bundle(
 )
 
 js_vendor = Bundle(
+    'vendor/dustjs-linkedin/dist/dust-full.js',
     'vendor/jquery/dist/jquery.js',
     'vendor/lodash/dist/lodash.js',
     'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
@@ -32,6 +33,12 @@ js_ie = Bundle(
     'vendor/twitter-bootstrap-3.0.0/assets/js/respond.min.js',
     filters='uglifyjs',
     output='gen/ie.min.js'
+)
+
+js_dust = Bundle(
+    'dust/',
+    filters='dustjs',
+    output='gen/templates.js',
 )
 
 js_main = Bundle(
@@ -57,6 +64,7 @@ def init_app(app):
     webassets.register('css_all', css_all)
     webassets.register('js_vendor', js_vendor)
     webassets.register('js_ie', js_ie)
+    webassets.register('js_dust', js_dust)
     webassets.register('js_main', js_main)
     webassets.manifest = 'cache' if not app.debug else False
     webassets.cache = not app.debug

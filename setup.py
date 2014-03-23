@@ -14,7 +14,8 @@ from setuptools import setup, Command
 PACKAGE_NAME = 'skeleton'
 PACKAGE_VERSION = '0.1.0'
 PACKAGES = ['app']
-INSTALL_REQS = [str(ir.req) for ir in parse_requirements('pip-stable-requirements.txt')]
+INSTALL_REQS = [str(ir.req) for ir in parse_requirements('requirements/stable.pip')]
+TEST_REQS = [str(ir.req) for ir in parse_requirements('requirements/dev.pip')]
 
 with open('README.md', 'r') as readme:
     README_TEXT = readme.read()
@@ -29,7 +30,10 @@ class PyTest(Command):
     def run(self):
         import sys
         import subprocess
-        errno = subprocess.call([sys.executable, 'runtests.py', '-v', 'app/test'])
+        opts = []
+        if '-v' in sys.argv:
+            opts.append('-v')
+        errno = subprocess.call([sys.executable, '-m', 'py.test', 'test'] + opts)
         raise SystemExit(errno)
 
 
@@ -46,9 +50,9 @@ setup(
     requires=[
     ],
     install_requires=INSTALL_REQS,
-    tests_require=[
-        'pytest>=2.3.4',
-    ],
+    tests_require=TEST_REQS,
+    extras_require={'test': TEST_REQS},
+    entry_points={'app': '.test = test'},
     scripts=[],
     classifiers = [
             'Intended Audience :: Developers',
