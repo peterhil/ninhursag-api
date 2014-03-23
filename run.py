@@ -2,14 +2,30 @@
 # -*- coding: utf-8 -*-
 
 import os
+from app.helpers import project_name
 from app.frontend import create_app
+from app.helpers import slugify
 
 
 application = create_app()
 
 
 if __name__ == '__main__':
-    # TODO: Move host and port to settings
-    # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get('PORT', 5000))
-    application.run(host='127.0.0.1', port=port)
+    from app.factory import environment
+
+    app_name = application.config['APP_NAME']
+    server = application.config['SERVER_NAME'].split(':')
+    assert 1 <= len(server) <= 2, "SERVER_NAME in settings should be like 'example.com' or 'localhost:5000', not: {}".format(server)
+
+    host = server[0]
+    port = int(server[1]) if len(server) == 2 else 5000
+    env = environment()
+
+    print(u"INFO Starting '{app}' ({env_var_prefix}) on {host}:{port} using environment '{env}'".format(**dict(
+        app=app_name,
+        env_var_prefix=slugify(project_name, '_').upper(),
+        host=host,
+        port=port,
+        env=env,
+    )))
+    application.run(host=host, port=port)

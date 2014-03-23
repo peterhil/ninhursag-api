@@ -12,7 +12,7 @@ from pip.req import parse_requirements
 from setuptools import setup, Command
 
 PACKAGE_NAME = 'skeleton'
-PACKAGE_VERSION = '0.0.0'
+PACKAGE_VERSION = '0.1.0'
 PACKAGES = ['app']
 INSTALL_REQS = [str(ir.req) for ir in parse_requirements('pip-stable-requirements.txt')]
 

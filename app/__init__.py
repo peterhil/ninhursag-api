@@ -7,6 +7,7 @@ from werkzeug.contrib.fixers import ProxyFix
 
 app = create_app()
 
+
 # http://www.onurguzel.com/how-to-run-flask-applications-with-nginx-using-gunicorn/
 app.wsgi_app = ProxyFix(app.wsgi_app)
 
