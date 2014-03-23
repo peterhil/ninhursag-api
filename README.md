@@ -48,7 +48,7 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
     sudo npm install -g less
     sudo npm install -g grunt-cli
 
-### 3. Install Python into [virtualenv](http://www.virtualenv.org/en/latest/virtualenv.html) and install Python dependencies with [pip](http://www.pip-installer.org/en/latest/)
+### 4. Install Python into [virtualenv](http://www.virtualenv.org/en/latest/virtualenv.html) and install Python dependencies with [pip](http://www.pip-installer.org/en/latest/)
 
     cd skeleton-git
     virtualenv -p python2.7 --no-site-packages venv/py27
@@ -64,13 +64,22 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
 
     deactivate
 
-### 4. Install the node components
+### 5. Install the node components
 
     cd skeleton-git
     npm install
     cd app/frontend/static/vendor/modernizr && ./bin/modernizr >/dev/null && cd -
 
-### 5. Start the app
+### 6. Install Dust for front end templates
+
+See [instructions on how to install DustJS](http://elsdoerfer.name/docs/webassets/builtin_filters.html#dustjs) and the reasons for doing it this way.
+
+Dusty asset filter DustJS uses the dusty compiler, which is a separate project from the DustJS implementation. To install dusty together with LinkedIn’s version of dustjs (the original does not support NodeJS > 0.4):
+
+    rm -rf node_modules/dusty/node_modules/dust
+    git clone https://github.com/linkedin/dustjs node_modules/dust
+
+### 7. Start the app
 
 *Note!* These steps should also work with just `npm start`.
 
