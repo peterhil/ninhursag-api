@@ -1,25 +1,25 @@
 class Listing
     constructor: (container) ->
         @data = []
-        @container = $(container).text('Loading...')
+        @elem = $(container).text('Loading...')
         @url = app.apiUrl() + '/api/items'
         app.ajax(@url)
             .done (data) =>
-                @container.text 'Parsing data...'
+                @elem.text 'Parsing data...'
                 @show data
 
     show: (data) =>
-        @container.text ''
+        @elem.text ''
         if not data? or data.length == 0
-            @container.text('No items yet.')
+            @elem.text('No items yet.')
             @data = []
             return false
 
-        debug.debug(data)
-        _(data['items']).forEach (item) =>
-            $item = $('<div class="item"/>')
-                .append('<p><a href="' + item.url + '">' + item.url + '</a></p>')
-            @container.append $item
+        dust.render 'listing', data, (err, out) =>
+            unless err
+                @elem.html(out)
+            else
+                debug.error "Error:", err
 
 
 if $('.listing').length > 0
