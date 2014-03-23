@@ -1,0 +1,7 @@
+{#items}
+<div class="item">
+    <p><a href="{url}">{url}</a></p>
+</div>
+{:else}
+No items yet.
+{/items}

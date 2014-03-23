@@ -9,4 +9,8 @@ export LESS_BIN='lessc'
 export COFFEE_BIN='coffee'
 export UGLIFYJS_BIN='uglifyjs'
 
+# These are for dusty
+export NODE_PATH='node'
+export DUSTY_PATH="$NODE_MODULES_BIN/dusty"
+
 source ./venv/py27/bin/activate
