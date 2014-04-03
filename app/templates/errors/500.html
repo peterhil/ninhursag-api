@@ -1,8 +1,17 @@
-<html>
-  <head>
-    <title>500 Internal Server Error</title>
-  </head>
-  <body>
-    <h1>500 Internal Server Error</h1>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block title %}500 Server error{% endblock %}
+{% block head -%}
+	{{ super() }}
+{%- endblock %}
+{% block scripts -%}
+{%- endblock %}
+{% block content -%}
+    <div class="row">
+        <h1>Server error</h1>
+
+        <p>
+           Something went wrong while handling the request.<br>
+           Either the server is overloaded or there is an error in the application.
+        </p>
+    </div>
+{% endblock %}

@@ -16,15 +16,16 @@ def create_app(settings_override=None):
     assets.init_app(app)
 
     # Register custom error handlers
-    if not app.debug:
-        for e in [500, 404]:
-            app.errorhandler(e)(handle_error)
+    for code in [404, 500]:
+        app.errorhandler(code)(get_error_handler(code))
 
     return app
 
 
-def handle_error(e):
-    return render_template('errors/%s.html' % e.code), e.code
+def get_error_handler(code):
+    def handle_error(e):
+        return render_template('errors/%s.html' % code), code
+    return handle_error
 
 
 if __name__ == '__main__':
