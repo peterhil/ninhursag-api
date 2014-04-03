@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import os
-from app.helpers import project_name
-from app.frontend import create_app
-from app.helpers import slugify
+from app import create_app
+from app.helpers import project_name, slugify
 
 
 application = create_app()
