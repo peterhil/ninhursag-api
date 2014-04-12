@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 
 from flask import render_template
+from flask_flatpages import FlatPages
 from werkzeug.contrib.fixers import ProxyFix
 
 from . import factory
 from . import assets
+from .extensions import flatpages
 
 
 def create_app(settings_override=None):
@@ -14,6 +16,10 @@ def create_app(settings_override=None):
 
     # Init assets
     assets.init_app(app)
+
+    # Flat pages
+    flatpages.init_app(app)
+    app.pages = flatpages
 
     # Register custom error handlers
     for code in [404, 500]:
