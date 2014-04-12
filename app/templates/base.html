@@ -23,20 +23,10 @@
     {%- endblock %}
   </head>
   <body>
-    <div class="ui transparent inverted main menu">
-        <a class="item home" href="/">
-          <i class="icon home"></i>
-        </a>
-        <div class="right menu">
-          <a class="icon item" data-content="One" href="/one">One</a>
-          <a class="icon item" data-content="Two" href="/two">Two</a>
-          <a class="icon item" data-content="Github" href="https://github.com/peterhil/skeleton">
-             <i class="icon github"></i> Github
-          </a>
-        </div>
-    </div>
-    <div growl="true" id="notifications" class="container in-page">
-    </div>
+    {% block navigation %}
+      {% include "_menu.html" %}
+    {% endblock %}
+    <div growl="true" id="notifications" class="container in-page"></div>
     <div id="content" class="container" role="main">
       {% block content %}{% endblock %}
     </div>
