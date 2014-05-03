@@ -1,5 +1,7 @@
 'use strict'
 
+$(document).foundation()
+
 angular
   .module('app', [
     'ngAnimate',
