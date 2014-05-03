@@ -11,9 +11,16 @@ css_application = Bundle(
     output='gen/app.css'
 )
 
+css_foundation = Bundle(
+    'vendor/zurb-foundation/dist/assets/scss/normalize.scss',
+    'vendor/zurb-foundation/dist/assets/scss/foundation.scss',
+    filters='scss',
+    output='gen/foundation.css'
+)
+
 css_all = Bundle(
     'vendor/angular-growl-v2/build/angular-growl.css',
-    'vendor/semantic/build/packaged/css/semantic.css',
+    css_foundation,
     css_application,
     filters='cssmin',
     output='gen/app.min.css'
@@ -34,7 +41,7 @@ js_vendor = Bundle(
     'vendor/bootstrap/dist/js/bootstrap.js',
     'vendor/lodash/dist/lodash.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
-    'vendor/semantic/build/packaged/javascript/semantic.js',
+    'vendor/zurb-foundation/dist/assets/js/foundation.js',
     filters='uglifyjs',
     output='gen/vendor.min.js'
 )
