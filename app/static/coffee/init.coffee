@@ -20,3 +20,4 @@ loadApp = ->
         debug.error 'Error loading config: ' + xhr.status + ' ' + xhr.statusText
 
 loadApp()
+$(document).foundation()
