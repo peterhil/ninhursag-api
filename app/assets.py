@@ -30,8 +30,8 @@ js_vendor = Bundle(
     'vendor/jquery/dist/jquery.js',
     'vendor/lodash/dist/lodash.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
-    'vendor/zurb-foundation/dist/assets/js/foundation.js',
-    'vendor/zurb-foundation/dist/assets/js/foundation.topbar.js',
+    'vendor/zurb-foundation/dist/assets/js/foundation/foundation.js',
+    'vendor/zurb-foundation/dist/assets/js/foundation/foundation.topbar.js',
     filters='uglifyjs',
     output='gen/vendor.min.js'
 )
