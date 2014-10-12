@@ -6,7 +6,7 @@
 # https://github.com/mbr/flask-appconfig
 
 
-project_name = u'Skeleton'
+project_name = u'Ninhursag'
 
 
 class Default(object):
