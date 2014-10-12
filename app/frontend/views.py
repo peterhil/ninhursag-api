@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import os
@@ -22,14 +22,16 @@ def config():
     http://flask.pocoo.org/docs/config/#configuring-from-files
     """
     exposed_config = [
+        'API_SERVER',
+        'API_URL',
         'APP_NAME',
         'ASSETS_DEBUG',
         'DEBUG',
+        'DUST_LOG_LEVEL',
+        'JS_LOG_LEVEL',
         'PREFERRED_URL_SCHEME',
         'SERVER_NAME',
         'TESTING',
-        'API_URL',
-        'API_SERVER',
     ]
     return jsonify(dict([
         (k.lower(), v) for k, v in current_app.config.iteritems() if k in exposed_config
@@ -47,7 +49,7 @@ def api(entity):
 @route(bp, '/favicon.ico')
 def favicon():
     return send_from_directory(
-        os.path.join(app.root_path, 'static'),
+        os.path.join(bp.root_path, 'static'),
         'favicon.ico', mimetype='image/vnd.microsoft.icon'
     )
 
