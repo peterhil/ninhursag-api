@@ -29,7 +29,7 @@
         "json3": "^3.3.0",
         "lodash": "~2.4.1",
         "modernizr": "git+https://github.com/Modernizr/Modernizr#master",
-        "zurb-foundation" : "git+https://github.com/zurb/foundation.git#v5.2.2",
+        "zurb-foundation" : "git+https://github.com/zurb/foundation.git#v5.4.6",
         "angular-growl-v2": "~0.7.2"
     },
     "devDependencies": {
