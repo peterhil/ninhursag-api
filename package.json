@@ -13,7 +13,7 @@
     "dependencies": {
         "dustjs-linkedin": "~2.3.4",
         "dusty": "~0.1.1",
-        "zurb-foundation" : "git+https://github.com/zurb/foundation.git#v5.2.2",
+        "zurb-foundation" : "git+https://github.com/zurb/foundation.git#v5.4.6",
         "jquery": "~2.1.0",
         "lodash": "~2.4.1",
         "modernizr": "git+https://github.com/Modernizr/Modernizr#master"
