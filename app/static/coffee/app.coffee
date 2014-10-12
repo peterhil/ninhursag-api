@@ -3,8 +3,11 @@ class App
         @start = new Date(Date.now())
         if @config.debug
             debug.setLevel(@config.js_log_level)
+            dust.isDebug = @config.debug
+            dust.debugLevel = @config.dust_log_level
         else
-            debug.setLevel(0)  # Logging off
+            debug.setLevel(0)
+            dust.debugLevel = 'NONE'
         debug.info "App started at", @start
 
     apiUrl: ->

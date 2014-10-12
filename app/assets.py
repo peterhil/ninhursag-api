@@ -22,7 +22,7 @@ js_vendor = Bundle(
     'vendor/dustjs-linkedin/dist/dust-full.js',
     'vendor/jquery/dist/jquery.js',
     'vendor/lodash/dist/lodash.js',
-    'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
+    # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
     'vendor/twitter-bootstrap-3.0.0/dist/js/bootstrap.js',
     filters='uglifyjs',
     output='gen/vendor.min.js'

@@ -68,7 +68,7 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
 
     cd skeleton-git
     npm install
-    cd app/frontend/static/vendor/modernizr && ./bin/modernizr >/dev/null && cd -
+    cd app/static/vendor/modernizr && ./bin/modernizr >/dev/null && cd -
 
 ### 6. Install Dust for front end templates
 
