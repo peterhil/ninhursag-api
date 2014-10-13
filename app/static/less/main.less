@@ -2,15 +2,38 @@
 // Styles
 // --------------------------------------------------
 
+@import "ninhursag.less";
+
+
 body {
+    font-family:
+    Quattrocento,
+    Lora,
+    Georgia,
+    // Kameron,
+    serif;
+
+    // font-family:
+    // "Helvetica Neue",
+    // Helvetica,
+    // Arial,
+    // sans-serif;
+
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
 }
 
-#content {
-    padding: 10px;
-}
-
-h1 {
+h1, h2, h3, h4, h5, h6,
+.top-bar-section ul li > a {
+    font-family: Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    // font-family: Quattrocento,
+    // Kameron, 
+    // Lora, 
+    // Georgia, serif;
     font-weight: 500;
+}
+
+h1, h2, h3 {
 }
 
 img {
@@ -18,4 +41,8 @@ img {
     height: auto;
     max-width: 100%;
     max-height: 100%;
+}
+
+#content {
+    padding: 10px;
 }
