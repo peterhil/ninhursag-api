@@ -60,6 +60,7 @@ js_main = Bundle(
         'coffee/singleton.coffee',
         'coffee/service/api-service.coffee',
         'coffee/listing.coffee',
+        'coffee/production-chart.coffee',
         filters='coffeescript',
         output='gen/app.js'
     ),

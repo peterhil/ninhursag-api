@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}{{ mineral | capitalize }} &ndash; world production{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ mineral | capitalize }}</h1>
+
+  <p class="description">Bauxite is an aluminium ore and is the main source of aluminium.</p>
+
+  <div class="row">
+    <div class="mineral">
+      <img class="mineral" src="http://upload.wikimedia.org/wikipedia/commons/0/04/BauxiteUSGOV.jpg" />
+      <br />
+      <caption>Bauxite with an U.S. penny</caption>
+    </div>
+    <div class="mineral">
+      <img class="mineral" src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Aluminium-4.jpg/480px-Aluminium-4.jpg" />
+      <br />
+      <caption>Aluminium</caption>
+    </div>
+  </div>
+
+  <div id="paired-line-chart"></div>
+
+  <ul>
+    <h3>Data sources and references</h3>
+    <li><a href="http://minerals.usgs.gov/ds/2005/140/index.html#bauxite">U.S. Geological Survey Data Series 140</a></li>
+    <li><a href="http://minerals.usgs.gov/ds/2005/140/ds140-bauxi.xlsx">Bauxite XLS</a></li>
+    <li><a href="http://minerals.usgs.gov/minerals/pubs/commodity/bauxite/mcs-2011-bauxi.pdf">Commodity Statistics and Information – Bauxite</a></li>
+  </ul>
+  <ul>
+    <h4>Other info</h4>
+    <li><a href="http://en.wikipedia.org/wiki/Bauxite">Wikipedia article</a></li>
+    <li><a href="http://en.wikipedia.org/wiki/Bauxite#Production_trends">Bauxite production trends at Wikipedia</a></li>
+  </ul>
+  <ul>
+    <li><a href="http://en.wikipedia.org/wiki/Logistic_function">Logistic function</a></li>
+  </ul>
+  <ul>
+    <li><a href="index">« Back to index</a>
+  </ul>
+{% endblock %}
+
+{%- block scripts %}
+  <script src="http://d3js.org/d3.v2.min.js" charset="utf-8"></script>
+  {{ super() }}
+{%- endblock %}
