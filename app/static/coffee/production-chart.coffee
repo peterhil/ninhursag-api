@@ -59,6 +59,8 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
     .append("svg:svg")
       .attr("width", w + p * 2)
       .attr("height", h + p * 2)
+      .attr("viewBox", "0 0 " + (w + p * 2) + " " + (h + p * 2))
+      .attr("preserveAspectRatio", "xMidYMid meet")
     .append("svg:g")
 
   rules = vis.selectAll("g.rule")
