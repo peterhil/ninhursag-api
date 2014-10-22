@@ -60,7 +60,6 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
       .attr("width", w + p * 2)
       .attr("height", h + p * 2)
     .append("svg:g")
-      .attr("transform", "translate(" + p + "," + p + ")")
 
   rules = vis.selectAll("g.rule")
     .data(x.ticks(15))
