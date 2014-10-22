@@ -69,77 +69,67 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
       .attr("class", "rule")
 
   # Draw grid lines
-  rules.append("svg:line").attr("x1", x).attr("x2", x).attr("y1", 0).attr "y2", h - 1
-  rules.append("svg:line").attr("class", (d) ->
-    (if d then null else "axis")
-  ).data(y.ticks(10)).attr("y1", y).attr("y2", y).attr("x1", 0).attr "x2", w - 10
+  rules.append("svg:line")
+    .attr("x1", x)
+    .attr("x2", x)
+    .attr("y1", 0)
+    .attr("y2", h - 1)
+  rules.append("svg:line")
+    .attr("class", (d) -> (if d then null else "axis"))
+    .data(y.ticks(10))
+    .attr("y1", y)
+    .attr("y2", y)
+    .attr("x1", 0)
+    .attr("x2", w - 10)
 
   # Place axis tick labels
-  rules.append("svg:text").attr("x", x).attr("y", h + 15).attr("dy", ".71em").attr("text-anchor", "middle").text(x.tickFormat(10)).text String
-  rules.append("svg:text").data(y.ticks(12)).attr("y", y).attr("x", "8em").attr("dx", "-.35em").attr("dy", ".35em").attr("text-anchor", "end").text y.tickFormat(5)
+  rules.append("svg:text")
+    .attr("x", x)
+    .attr("y", h + 15)
+    .attr("dy", ".71em")
+    .attr("text-anchor", "middle")
+    .text(x.tickFormat(10))
+    .text(String)
+  rules.append("svg:text")
+    .data(y.ticks(12))
+    .attr("y", y)
+    .attr("x", "8em")
+    .attr("dx", "-.35em")
+    .attr("dy", ".35em")
+    .attr("text-anchor", "end")
+    .text(y.tickFormat(5))
 
-  # Series III
-  vis.append("svg:path").attr("class", "line").attr("fill", "none").attr("stroke", color4).attr("stroke-width", 2).attr "d", d3.svg.line().x((d) ->
-    x d.x
-  ).y((d) ->
-    y d.res
-  )
-  vis.select("circle.line").data(val_array1).enter().append("svg:circle").attr("class", "line").attr("fill", color4).attr("cx", (d) ->
-    x d.x
-  ).attr("cy", (d) ->
-    y d.res
-  ).attr "r", 1
+  seriesChart = (vis, column, color = '#000') ->
+    vis.append("svg:path")
+      .attr("class", "line")
+      .attr("fill", "none")
+      .attr("stroke", color)
+      .attr("stroke-width", 2)
+      .attr("d", d3.svg.line()
+        .x((d) -> x d.x)
+        .y((d) -> y d[column]))
 
-  # Series III
-  vis.append("svg:path").attr("class", "line").attr("fill", "none").attr("stroke", color3).attr("stroke-width", 2).attr "d", d3.svg.line().x((d) ->
-    x d.x
-  ).y((d) ->
-    y d.zlog
-  )
-  vis.select("circle.line").data(val_array1).enter().append("svg:circle").attr("class", "line").attr("fill", color3).attr("cx", (d) ->
-    x d.x
-  ).attr("cy", (d) ->
-    y d.zlog
-  ).attr "r", 1
-
-  # Series II
-  vis.append("svg:path").attr("class", "line").attr("fill", "none").attr("stroke", color1).attr("stroke-width", 2).attr "d", d3.svg.line().x((d) ->
-    x d.x
-  ).y((d) ->
-    y d.z
-  )
-  vis.select("circle.line").data(val_array1).enter().append("svg:circle").attr("class", "line").attr("fill", color1).attr("cx", (d) ->
-    x d.x
-  ).attr("cy", (d) ->
-    y d.z
-  ).attr "r", 1
-
-  # Series I
-  vis.append("svg:path").attr("class", "line").attr("fill", "none").attr("stroke", color2).attr("stroke-width", 2).attr "d", d3.svg.line().x((d) ->
-    x d.x
-  ).y((d) ->
-    y d.y
-  )
-  vis.selectAll("circle.line").data(val_array1).enter().append("svg:circle").attr("class", "line").attr("fill", color2).attr("cx", (d) ->
-    x d.x
-  ).attr("cy", (d) ->
-    y d.y
-  ).attr "r", 1
+  seriesChart(vis, 'res', color4)  # Reserves
+  seriesChart(vis, 'zlog', color3) # Log estimate
+  seriesChart(vis, 'z', color1)    # Estimate
+  seriesChart(vis, 'y', color2)    # World production
 
   # -----------------------------
   # Add Title then Legend
   # -----------------------------
   lxb = 186
-  vis.append("svg:text").attr("x", lxb - 20).attr("y", 28).attr("font-weight", "bold").text "Global bauxite production 1900-2010 (Metric tons gross weight)"
-  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 150).attr("fill", color4).attr("stroke", color4).attr("height", 2).attr "width", 40
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 155).text "Reserves (USGS 2011 estimate: 28,000,000,000 tons), 100 x tons"
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 185).text "Reserve base (2010): 38,000,000,000 tons – estimate"
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 215).text "World resources (2010): 55,000,000,000 – 75,000,000,000 tons – estimate"
-  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 90).attr("fill", color1).attr("stroke", color1).attr("height", 2).attr "width", 40
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 95).text "Estimated (logistic function fit)"
-  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 120).attr("fill", color3).attr("stroke", color3).attr("height", 2).attr "width", 40
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 125).text "Estimated on log scale (logistic function fit)"
-  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 60).attr("fill", color2).attr("stroke", color2).attr("height", 2).attr "width", 40
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 65).text "World production"
+  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 125).attr("fill", color4).attr("stroke", color4).attr("height", 2).attr "width", 40
+  vis.append("svg:text").attr("x", lxb + 30).attr("y", 130).text "Reserves (USGS 2011 estimate: 28,000,000,000 tons), 100 x tons"
+  vis.append("svg:text").attr("x", lxb + 30).attr("y", 160).text "Reserve base (2010): 38,000,000,000 tons – estimate"
+  vis.append("svg:text").attr("x", lxb + 30).attr("y", 190).text "World resources (2010): 55,000,000,000 – 75,000,000,000 tons – estimate"
+
+  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 65).attr("fill", color1).attr("stroke", color1).attr("height", 2).attr "width", 40
+  vis.append("svg:text").attr("x", lxb + 30).attr("y", 70).text "Estimated (logistic function fit)"
+
+  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 95).attr("fill", color3).attr("stroke", color3).attr("height", 2).attr "width", 40
+  vis.append("svg:text").attr("x", lxb + 30).attr("y", 100).text "Estimated on log scale (logistic function fit)"
+
+  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 40).attr("fill", color2).attr("stroke", color2).attr("height", 2).attr "width", 40
+  vis.append("svg:text").attr("x", lxb + 30).attr("y", 45).text "World production"
 
   return
