@@ -37,14 +37,6 @@ def config():
         (k.lower(), v) for k, v in current_app.config.iteritems() if k in exposed_config
     ]))
 
-# See http://flask-restful.readthedocs.org/en/latest/ or https://github.com/ametaireau/flask-rest/
-# on how to properly implement an REST API with Flask
-@route(bp, '/api/<entity>')
-def api(entity):
-    return jsonify({entity: [
-        {'url': '/one'},
-        {'url': '/two'},
-    ]})
 
 @route(bp, '/favicon.ico')
 def favicon():
