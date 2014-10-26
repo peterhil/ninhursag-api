@@ -2,7 +2,7 @@ class Listing
     constructor: (container) ->
         @data = []
         @elem = $(container).text('Loading...')
-        @url = app.apiUrl() + '/api/items'
+        @url = app.apiUrl() + '/api/v1/items'
         app.ajax(@url)
             .done (data) =>
                 @elem.text 'Parsing data...'
