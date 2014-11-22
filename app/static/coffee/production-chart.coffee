@@ -119,19 +119,38 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
   # -----------------------------
   # Add Title then Legend
   # -----------------------------
-  lxb = 186
-  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 125).attr("fill", color4).attr("stroke", color4).attr("height", 2).attr "width", 40
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 130).text "Reserves (USGS 2011 estimate: 28,000,000,000 tons), #{1 / reserve_scale} x tons"
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 160).text "Reserve base (2010): 38,000,000,000 tons – estimate"
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 190).text "World resources (2010): 55,000,000,000 – 75,000,000,000 tons – estimate"
+  legendMarker = (legend, index, text, color, lineHeight = 28, markerWidth = 40) ->
+    y = index * lineHeight
+    if color
+      legend.append("svg:rect")
+        .attr("x", 0)
+        .attr("y", y)
+        .attr("fill", color)
+        .attr("stroke", color)
+        .attr("height", 2)
+        .attr("width", markerWidth)
+    legend.append("svg:text")
+      .attr("x", markerWidth + 10)
+      .attr("y", y + 5)
+      .text(text)
 
-  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 65).attr("fill", color1).attr("stroke", color1).attr("height", 2).attr "width", 40
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 70).text "Estimated (logistic function fit)"
+  legendData = [
+    ["World production", color2],
+    ["Estimated (logistic function fit)", color1],
+    ["Estimated on log scale (logistic function fit)", color3],
+    ["Reserves (USGS 2011 estimate: 28,000,000,000 tons), #{1 / reserve_scale} x tons", color4],
+    ["Reserve base (2010): 38,000,000,000 tons – estimate"],
+    ["World resources (2010): 55,000,000,000–75,000,000,000 tons – estimate"],
+  ]
 
-  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 95).attr("fill", color3).attr("stroke", color3).attr("height", 2).attr "width", 40
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 100).text "Estimated on log scale (logistic function fit)"
+  legend = (vis, x, y, data) ->
+    group = vis.append("svg:g")
+      .attr('class', 'legend')
+      .attr('transform', "translate(#{x}, #{y})")
+    _.map data, (item, index) ->
+      legendMarker group, index, item[0], item[1]
+    group
 
-  vis.append("svg:rect").attr("x", lxb - 20).attr("y", 40).attr("fill", color2).attr("stroke", color2).attr("height", 2).attr "width", 40
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 45).text "World production"
+  legend vis, 166, 40, legendData
 
   return
