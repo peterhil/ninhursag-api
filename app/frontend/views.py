@@ -49,6 +49,17 @@ def data(filename):
         filename, mimetype='text/csv'
         )
 
+@route(bp, '/data/<filename>')
+def data(filename):
+    data_dir = os.path.join(current_app.root_path, 'static/data')
+    print("Data asked for %s from directory %s" % (filename, data_dir))
+    if os.path.splitext(filename)[1][1:].strip().lower() != 'csv':
+        return False  # TODO return 404 error
+    return send_from_directory(
+        data_dir,
+        filename, mimetype='text/csv'
+        )
+
 @route(bp, '/favicon.ico')
 def favicon():
     return send_from_directory(
