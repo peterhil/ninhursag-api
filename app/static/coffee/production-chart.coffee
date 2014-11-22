@@ -77,7 +77,6 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
     .attr("y1", 0)
     .attr("y2", h - 1)
   rules.append("svg:line")
-    .attr("class", (d) -> (if d then null else "axis"))
     .data(y.ticks(10))
     .attr("y1", y)
     .attr("y2", y)
