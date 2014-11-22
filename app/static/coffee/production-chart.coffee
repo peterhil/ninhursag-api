@@ -3,6 +3,7 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
   # Read CSV file: first row =>  labels
   maxval = 0
   sampsize = 0
+  reserve_scale = 0.01
 
   label_array = new Array()
   val_array1 = new Array()
@@ -17,14 +18,14 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
       y: parseFloat(data1[i]["World production"]) or 0
       z: parseFloat(data1[i]["Estimated"]) or 0
       zlog: parseFloat(data1[i]["Log. Estimated"]) or 0
-      res: parseFloat(data1[i]["Reserves"]) / 100 or 0
+      res: parseFloat(data1[i]["Reserves"]) * reserve_scale or 0
 
     maxval = Math.max(
       maxval,
       parseFloat(data1[i]["World production"]) or 0,
       parseFloat(data1[i]["Estimated"]) or 0,
       parseFloat(data1[i]["Log. Estimated"]) or 0,
-      parseFloat(data1[i]["Reserves"]) / 100 or 0
+      parseFloat(data1[i]["Reserves"]) * reserve_scale or 0
     )
     i++
 
@@ -120,7 +121,7 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
   # -----------------------------
   lxb = 186
   vis.append("svg:rect").attr("x", lxb - 20).attr("y", 125).attr("fill", color4).attr("stroke", color4).attr("height", 2).attr "width", 40
-  vis.append("svg:text").attr("x", lxb + 30).attr("y", 130).text "Reserves (USGS 2011 estimate: 28,000,000,000 tons), 100 x tons"
+  vis.append("svg:text").attr("x", lxb + 30).attr("y", 130).text "Reserves (USGS 2011 estimate: 28,000,000,000 tons), #{1 / reserve_scale} x tons"
   vis.append("svg:text").attr("x", lxb + 30).attr("y", 160).text "Reserve base (2010): 38,000,000,000 tons – estimate"
   vis.append("svg:text").attr("x", lxb + 30).attr("y", 190).text "World resources (2010): 55,000,000,000 – 75,000,000,000 tons – estimate"
 
