@@ -1,7 +1,6 @@
 d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
 
   # Read CSV file: first row =>  labels
-  maxval = 0
   reserve_scale = 0.01
 
   labels = new Array()
@@ -16,15 +15,9 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
       z: parseFloat(data[i]["Estimated"]) or 0
       zlog: parseFloat(data[i]["Log. Estimated"]) or 0
       res: parseFloat(data[i]["Reserves"]) * reserve_scale or 0
-
-    maxval = Math.max(
-      maxval,
-      parseFloat(data[i]["World production"]) or 0,
-      parseFloat(data[i]["Estimated"]) or 0,
-      parseFloat(data[i]["Log. Estimated"]) or 0,
-      parseFloat(data[i]["Reserves"]) * reserve_scale or 0
-    )
     i++
+
+  maxval = _.max(_.map(values, _.compose(_.max, _.values)))
 
   maxval = (1 + Math.floor(maxval / 10)) * 10
   maxval = Math.pow(2, Math.ceil(Math.log(maxval) / Math.log(2)))
