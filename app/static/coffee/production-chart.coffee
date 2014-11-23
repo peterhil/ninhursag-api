@@ -37,68 +37,74 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
   vis = d3.select("#paired-line-chart")
     .data([values])
     .append("svg:svg")
-      .attr("width", w + p * 2)
-      .attr("height", h + p * 2)
-      .attr("viewBox", "0 0 " + (w + p * 2) + " " + (h + p * 2))
-      .attr("preserveAspectRatio", "xMidYMid meet")
+      .attr
+        "width": w + p * 2
+        "height": h + p * 2
+        "viewBox": "0 0 " + (w + p * 2) + " " + (h + p * 2)
+        "preserveAspectRatio": "xMidYMid meet"
 
-  grid = vis.append("svg:g").attr('class', 'grid')
-  xaxis = grid.append("svg:g").attr('class', 'x-axis')
-  yaxis = grid.append("svg:g").attr('class', 'y-axis')
+  grid = vis.append("svg:g").attr 'class', 'grid'
+  xaxis = grid.append("svg:g").attr 'class', 'x-axis'
+  yaxis = grid.append("svg:g").attr 'class', 'y-axis'
 
   xaxis.append("svg:g").attr('class', 'lines')
     .selectAll('line')
     .data(x.ticks(15))
     .enter()
       .append("svg:line")
-        .attr("x1", x)
-        .attr("x2", x)
-        .attr("y1", 0)
-        .attr("y2", h)
+        .attr
+          "x1": x
+          "x2": x
+          "y1": 0
+          "y2": h
 
   yaxis.append("svg:g").attr('class', 'lines')
     .selectAll('line')
     .data(y.ticks(10))
     .enter()
       .append("svg:line")
-        .attr("x1", 0)
-        .attr("x2", w)
-        .attr("y1", y)
-        .attr("y2", y)
+        .attr
+          "x1": 0
+          "x2": w
+          "y1": y
+          "y2": y
 
   xaxis.append("svg:g").attr('class', 'labels')
     .selectAll('text')
     .data(x.ticks(15))
     .enter()
       .append("svg:text")
-        .attr("x", x)
-        .attr("y", h + 15)
-        .attr("dy", ".71em")
-        .attr("text-anchor", "middle")
         .text(x.tickFormat(10))
         .text(String)
+        .attr
+          "x": x
+          "y": h + 15
+          "dy": ".71em"
+          "text-anchor": "middle"
 
   yaxis.append("svg:g").attr('class', 'labels')
     .selectAll('text')
     .data(y.ticks(10))
     .enter()
       .append("svg:text")
-        .attr("x", "8em")
-        .attr("y", y)
-        .attr("dx", "-.35em")
-        .attr("dy", ".35em")
-        .attr("text-anchor", "end")
         .text(y.tickFormat(5))
+        .attr
+          "x": "8em"
+          "y": y
+          "dx": "-.35em"
+          "dy": ".35em"
+          "text-anchor": "end"
 
   seriesChart = (vis, column, color = '#000') ->
     vis.append("svg:path")
-      .attr("class", "line")
-      .attr("fill", "none")
-      .attr("stroke", color)
-      .attr("stroke-width", 2)
-      .attr("d", d3.svg.line()
-        .x((d) -> x d.x)
-        .y((d) -> y d[column]))
+      .attr
+        "class": "line"
+        "fill": "none"
+        "stroke": color
+        "stroke-width": 2
+        "d": d3.svg.line()
+          .x((d) -> x d.x)
+          .y((d) -> y d[column])
 
   seriesChart(vis, 'res', color4)  # Reserves
   seriesChart(vis, 'zlog', color3) # Log estimate
@@ -112,16 +118,18 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
     y = index * lineHeight
     if color
       legend.append("svg:rect")
-        .attr("x", 0)
-        .attr("y", y)
-        .attr("fill", color)
-        .attr("stroke", color)
-        .attr("height", 2)
-        .attr("width", markerWidth)
+        .attr
+          "x": 0
+          "y": y
+          "fill": color
+          "stroke": color
+          "height": 2
+          "width": markerWidth
     legend.append("svg:text")
-      .attr("x", markerWidth + 10)
-      .attr("y", y + 5)
       .text(text)
+      .attr
+        "x": markerWidth + 10
+        "y": y + 5
 
   legendData = [
     ["World production", color2],
