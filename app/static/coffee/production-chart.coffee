@@ -14,7 +14,7 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
   maxval = Math.pow(2, Math.ceil(Math.log(maxval) / Math.log(2)))
 
   color1 = "#ffaa00"
-  color2 = "#770033"
+  color2 = "#222222"
   color3 = "#ff0055"
   color4 = "#0088ff"
 
