@@ -8,7 +8,7 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
     zlog: parseFloat(row["Log. Estimated"]) or 0
     res: parseFloat(row["Reserves"]) * reserve_scale or 0
 
-  maxval = _.max(_.map(values, _.compose(_.max, _.values)))
+  maxval = _.max(_.map(values, _.compose(_.max, _.values, (row) -> _.pick(row, ['y', 'z', 'zlog', 'res']))))
 
   maxval = (1 + Math.floor(maxval / 10)) * 10
   maxval = Math.pow(2, Math.ceil(Math.log(maxval) / Math.log(2)))
