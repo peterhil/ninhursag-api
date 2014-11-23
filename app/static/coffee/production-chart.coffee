@@ -2,16 +2,13 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
 
   # Read CSV file: first row =>  labels
   maxval = 0
-  sampsize = 0
   reserve_scale = 0.01
 
   labels = new Array()
   values = new Array()
 
-  sampsize = data.length
-
   i = 0
-  while i <= sampsize - 1
+  while i <= data.length - 1
     labels[i] = parseInt(data[i]["Year"])
     values[i] =
       x: labels[i]
@@ -42,7 +39,7 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
   p = 30
   x = d3.scale.linear().domain([
     labels[0]
-    labels[sampsize - 1]
+    labels[data.length - 1]
   ]).range([
     0
     w
