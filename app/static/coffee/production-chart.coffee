@@ -1,26 +1,17 @@
 d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
-
-  # Read CSV file: first row =>  labels
   reserve_scale = 0.01
 
-  values = new Array()
-
-  i = 0
-  while i <= data.length - 1
-    values[i] =
-      x: parseInt(data[i]["Year"])
-      y: parseFloat(data[i]["World production"]) or 0
-      z: parseFloat(data[i]["Estimated"]) or 0
-      zlog: parseFloat(data[i]["Log. Estimated"]) or 0
-      res: parseFloat(data[i]["Reserves"]) * reserve_scale or 0
-    i++
+  values = _.map data, (row) ->
+    x: parseInt row["Year"]
+    y: parseFloat(row["World production"]) or 0
+    z: parseFloat(row["Estimated"]) or 0
+    zlog: parseFloat(row["Log. Estimated"]) or 0
+    res: parseFloat(row["Reserves"]) * reserve_scale or 0
 
   maxval = _.max(_.map(values, _.compose(_.max, _.values)))
 
   maxval = (1 + Math.floor(maxval / 10)) * 10
   maxval = Math.pow(2, Math.ceil(Math.log(maxval) / Math.log(2)))
-
-  window.data = values
 
   color1 = "#ffaa00"
   color2 = "#770033"
