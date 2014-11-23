@@ -30,20 +30,18 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
   w = 900
   h = 600
   p = 30
-  x = d3.scale.linear().domain([
-    values[0].x
-    values[data.length - 1].x
-  ]).range([
-    0
-    w
-  ])
-  y = d3.scale.linear().domain([
-    0
-    maxval
-  ]).range([
-    h
-    0
-  ])
+  x = d3.scale.linear()
+    .domain([
+      values[0].x
+      values[data.length - 1].x
+    ])
+    .range([0, w])
+  y = d3.scale.linear()
+    .domain([
+      0
+      maxval
+    ])
+    .range([h, 0])
 
   vis = d3.select("#paired-line-chart")
     .data([values])
