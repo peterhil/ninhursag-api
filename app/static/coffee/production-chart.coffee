@@ -1,31 +1,31 @@
-d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
+d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
 
   # Read CSV file: first row =>  labels
   maxval = 0
   sampsize = 0
   reserve_scale = 0.01
 
-  label_array = new Array()
-  val_array1 = new Array()
+  labels = new Array()
+  values = new Array()
 
-  sampsize = data1.length
+  sampsize = data.length
 
   i = 0
   while i <= sampsize - 1
-    label_array[i] = parseInt(data1[i]["Year"])
-    val_array1[i] =
-      x: label_array[i]
-      y: parseFloat(data1[i]["World production"]) or 0
-      z: parseFloat(data1[i]["Estimated"]) or 0
-      zlog: parseFloat(data1[i]["Log. Estimated"]) or 0
-      res: parseFloat(data1[i]["Reserves"]) * reserve_scale or 0
+    labels[i] = parseInt(data[i]["Year"])
+    values[i] =
+      x: labels[i]
+      y: parseFloat(data[i]["World production"]) or 0
+      z: parseFloat(data[i]["Estimated"]) or 0
+      zlog: parseFloat(data[i]["Log. Estimated"]) or 0
+      res: parseFloat(data[i]["Reserves"]) * reserve_scale or 0
 
     maxval = Math.max(
       maxval,
-      parseFloat(data1[i]["World production"]) or 0,
-      parseFloat(data1[i]["Estimated"]) or 0,
-      parseFloat(data1[i]["Log. Estimated"]) or 0,
-      parseFloat(data1[i]["Reserves"]) * reserve_scale or 0
+      parseFloat(data[i]["World production"]) or 0,
+      parseFloat(data[i]["Estimated"]) or 0,
+      parseFloat(data[i]["Log. Estimated"]) or 0,
+      parseFloat(data[i]["Reserves"]) * reserve_scale or 0
     )
     i++
 
@@ -41,8 +41,8 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
   h = 600
   p = 30
   x = d3.scale.linear().domain([
-    label_array[0]
-    label_array[sampsize - 1]
+    labels[0]
+    labels[sampsize - 1]
   ]).range([
     0
     w
@@ -56,7 +56,7 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
   ])
 
   vis = d3.select("#paired-line-chart")
-    .data([val_array1])
+    .data([values])
     .append("svg:svg")
       .attr("width", w + p * 2)
       .attr("height", h + p * 2)
