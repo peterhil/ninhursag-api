@@ -11,7 +11,7 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
   sampsize = data1.length
 
   i = 0
-  while i < sampsize - 100
+  while i <= sampsize - 1
     label_array[i] = parseInt(data1[i]["Year"])
     val_array1[i] =
       x: label_array[i]
@@ -42,7 +42,7 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
   p = 30
   x = d3.scale.linear().domain([
     label_array[0]
-    label_array[sampsize - 120]
+    label_array[sampsize - 1]
   ]).range([
     0
     w
