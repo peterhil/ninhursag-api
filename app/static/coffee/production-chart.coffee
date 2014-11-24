@@ -113,9 +113,6 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
   seriesChart(chart, 'z', color1)    # Estimate
   seriesChart(chart, 'y', color2)    # World production
 
-  # -----------------------------
-  # Add Title then Legend
-  # -----------------------------
   legendMarker = (legend, index, text, color, lineHeight = 28, markerWidth = 40) ->
     y = index * lineHeight
     if color
