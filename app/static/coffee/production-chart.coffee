@@ -106,10 +106,12 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
           .x((d) -> x d.x)
           .y((d) -> y d[column])
 
-  seriesChart(vis, 'res', color4)  # Reserves
-  seriesChart(vis, 'zlog', color3) # Log estimate
-  seriesChart(vis, 'z', color1)    # Estimate
-  seriesChart(vis, 'y', color2)    # World production
+  chart = vis.append("svg:g").attr 'class', 'chart'
+
+  seriesChart(chart, 'res', color4)  # Reserves
+  seriesChart(chart, 'zlog', color3) # Log estimate
+  seriesChart(chart, 'z', color1)    # Estimate
+  seriesChart(chart, 'y', color2)    # World production
 
   # -----------------------------
   # Add Title then Legend
