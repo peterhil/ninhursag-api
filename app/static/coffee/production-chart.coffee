@@ -148,5 +148,3 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
     group
 
   legend vis, 166, 40, legendData
-
-  return
