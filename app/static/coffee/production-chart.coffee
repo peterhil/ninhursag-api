@@ -1,5 +1,5 @@
 d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
-  reserve_scale = 0.01
+  reserve_scale = 0.1
 
   values = _.map data, (row) ->
     x: parseInt row["Year"]
