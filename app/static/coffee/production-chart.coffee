@@ -1,148 +1,134 @@
-d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
+d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
+  reserve_scale = 0.1
 
-  # Read CSV file: first row =>  labels
-  maxval = 0
-  sampsize = 0
-  reserve_scale = 0.01
+  values = _.map data, (row) ->
+    x: parseInt row["Year"]
+    y: parseFloat(row["World production"]) or 0
+    z: parseFloat(row["Estimated"]) or 0
+    zlog: parseFloat(row["Log. Estimated"]) or 0
+    res: parseFloat(row["Reserves"]) * reserve_scale or 0
 
-  label_array = new Array()
-  val_array1 = new Array()
-
-  sampsize = data1.length
-
-  i = 0
-  while i < sampsize - 100
-    label_array[i] = parseInt(data1[i]["Year"])
-    val_array1[i] =
-      x: label_array[i]
-      y: parseFloat(data1[i]["World production"]) or 0
-      z: parseFloat(data1[i]["Estimated"]) or 0
-      zlog: parseFloat(data1[i]["Log. Estimated"]) or 0
-      res: parseFloat(data1[i]["Reserves"]) * reserve_scale or 0
-
-    maxval = Math.max(
-      maxval,
-      parseFloat(data1[i]["World production"]) or 0,
-      parseFloat(data1[i]["Estimated"]) or 0,
-      parseFloat(data1[i]["Log. Estimated"]) or 0,
-      parseFloat(data1[i]["Reserves"]) * reserve_scale or 0
-    )
-    i++
+  maxval = _.max(_.map(values, _.compose(_.max, _.values, (row) -> _.pick(row, ['y', 'z', 'zlog', 'res']))))
 
   maxval = (1 + Math.floor(maxval / 10)) * 10
   maxval = Math.pow(2, Math.ceil(Math.log(maxval) / Math.log(2)))
 
   color1 = "#ffaa00"
-  color2 = "#770033"
+  color2 = "#222222"
   color3 = "#ff0055"
   color4 = "#0088ff"
 
   w = 900
   h = 600
   p = 30
-  x = d3.scale.linear().domain([
-    label_array[0]
-    label_array[sampsize - 120]
-  ]).range([
-    0
-    w
-  ])
-  y = d3.scale.linear().domain([
-    0
-    maxval
-  ]).range([
-    h
-    0
-  ])
+  x = d3.scale.linear()
+    .domain([
+      values[0].x
+      values[data.length - 1].x
+    ])
+    .range([0, w])
+  y = d3.scale.linear()
+    .domain([
+      0
+      maxval
+    ])
+    .range([h, 0])
 
   vis = d3.select("#paired-line-chart")
-    .data([val_array1])
+    .data([values])
     .append("svg:svg")
-      .attr("width", w + p * 2)
-      .attr("height", h + p * 2)
-      .attr("viewBox", "0 0 " + (w + p * 2) + " " + (h + p * 2))
-      .attr("preserveAspectRatio", "xMidYMid meet")
+      .attr
+        "width": w + p * 2
+        "height": h + p * 2
+        "viewBox": "0 0 " + (w + p * 2) + " " + (h + p * 2)
+        "preserveAspectRatio": "xMidYMid meet"
 
-  grid = vis.append("svg:g").attr('class', 'grid')
-  xaxis = grid.append("svg:g").attr('class', 'x-axis')
-  yaxis = grid.append("svg:g").attr('class', 'y-axis')
+  grid = vis.append("svg:g").attr 'class', 'grid'
+  xaxis = grid.append("svg:g").attr 'class', 'x-axis'
+  yaxis = grid.append("svg:g").attr 'class', 'y-axis'
 
   xaxis.append("svg:g").attr('class', 'lines')
     .selectAll('line')
     .data(x.ticks(15))
     .enter()
       .append("svg:line")
-        .attr("x1", x)
-        .attr("x2", x)
-        .attr("y1", 0)
-        .attr("y2", h)
+        .attr
+          "x1": x
+          "x2": x
+          "y1": 0
+          "y2": h
 
   yaxis.append("svg:g").attr('class', 'lines')
     .selectAll('line')
     .data(y.ticks(10))
     .enter()
       .append("svg:line")
-        .attr("x1", 0)
-        .attr("x2", w)
-        .attr("y1", y)
-        .attr("y2", y)
+        .attr
+          "x1": 0
+          "x2": w
+          "y1": y
+          "y2": y
 
   xaxis.append("svg:g").attr('class', 'labels')
     .selectAll('text')
     .data(x.ticks(15))
     .enter()
       .append("svg:text")
-        .attr("x", x)
-        .attr("y", h + 15)
-        .attr("dy", ".71em")
-        .attr("text-anchor", "middle")
         .text(x.tickFormat(10))
         .text(String)
+        .attr
+          "x": x
+          "y": h + 15
+          "dy": ".71em"
+          "text-anchor": "middle"
 
   yaxis.append("svg:g").attr('class', 'labels')
     .selectAll('text')
     .data(y.ticks(10))
     .enter()
       .append("svg:text")
-        .attr("x", "8em")
-        .attr("y", y)
-        .attr("dx", "-.35em")
-        .attr("dy", ".35em")
-        .attr("text-anchor", "end")
         .text(y.tickFormat(5))
+        .attr
+          "x": "8em"
+          "y": y
+          "dx": "-.35em"
+          "dy": ".35em"
+          "text-anchor": "end"
 
   seriesChart = (vis, column, color = '#000') ->
     vis.append("svg:path")
-      .attr("class", "line")
-      .attr("fill", "none")
-      .attr("stroke", color)
-      .attr("stroke-width", 2)
-      .attr("d", d3.svg.line()
-        .x((d) -> x d.x)
-        .y((d) -> y d[column]))
+      .attr
+        "class": "line"
+        "fill": "none"
+        "stroke": color
+        "stroke-width": 2
+        "d": d3.svg.line()
+          .x((d) -> x d.x)
+          .y((d) -> y d[column])
 
-  seriesChart(vis, 'res', color4)  # Reserves
-  seriesChart(vis, 'zlog', color3) # Log estimate
-  seriesChart(vis, 'z', color1)    # Estimate
-  seriesChart(vis, 'y', color2)    # World production
+  chart = vis.append("svg:g").attr 'class', 'chart'
 
-  # -----------------------------
-  # Add Title then Legend
-  # -----------------------------
+  seriesChart(chart, 'res', color4)  # Reserves
+  seriesChart(chart, 'zlog', color3) # Log estimate
+  seriesChart(chart, 'z', color1)    # Estimate
+  seriesChart(chart, 'y', color2)    # World production
+
   legendMarker = (legend, index, text, color, lineHeight = 28, markerWidth = 40) ->
     y = index * lineHeight
     if color
       legend.append("svg:rect")
-        .attr("x", 0)
-        .attr("y", y)
-        .attr("fill", color)
-        .attr("stroke", color)
-        .attr("height", 2)
-        .attr("width", markerWidth)
+        .attr
+          "x": 0
+          "y": y
+          "fill": color
+          "stroke": color
+          "height": 2
+          "width": markerWidth
     legend.append("svg:text")
-      .attr("x", markerWidth + 10)
-      .attr("y", y + 5)
       .text(text)
+      .attr
+        "x": markerWidth + 10
+        "y": y + 5
 
   legendData = [
     ["World production", color2],
@@ -162,5 +148,3 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data1) ->
     group
 
   legend vis, 166, 40, legendData
-
-  return
