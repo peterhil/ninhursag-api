@@ -19,11 +19,20 @@ css_all = Bundle(
 )
 
 js_vendor = Bundle(
-    'vendor/dustjs-linkedin/dist/dust-full.js',
     'vendor/jquery/dist/jquery.js',
+    'vendor/angular/angular.js',
+    'vendor/angular-animate/angular-animate.js',
+    'vendor/angular-aria/angular-aria.js',
+    'vendor/angular-cookies/angular-cookies.js',
+    'vendor/angular-messages/angular-messages.js',
+    'vendor/angular-resource/angular-resource.js',
+    'vendor/angular-route/angular-route.js',
+    'vendor/angular-sanitize/angular-sanitize.js',
+    'vendor/angular-touch/angular-touch.js',
+    'vendor/bootstrap/dist/js/bootstrap.js',
+    'vendor/dustjs-linkedin/dist/dust-full.js',
     'vendor/lodash/dist/lodash.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
-    'vendor/bootstrap/dist/js/bootstrap.js',
     filters='uglifyjs',
     output='gen/vendor.min.js'
 )
