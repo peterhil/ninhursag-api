@@ -1,0 +1,32 @@
+{
+    "name": "skeleton",
+    "version": "0.0.0",
+    "homepage": "https://github.com/peterhil/skeleton",
+    "authors": [
+        "Peter Hillerström <peter.hillerstrom@gmail.com>"
+    ],
+    "description": "Skeleton.",
+    "keywords": [
+        "python",
+        "flask",
+        "app template"
+    ],
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "bootstrap" : ">=3.0.0",
+        "dustjs-linkedin": "~2.3.4",
+        "jquery": "~2.1.0",
+        "lodash": "~2.4.1",
+        "modernizr": "git+https://github.com/Modernizr/Modernizr#master"
+    },
+    "devDependencies": {
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}

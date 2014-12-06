@@ -23,14 +23,14 @@ js_vendor = Bundle(
     'vendor/jquery/dist/jquery.js',
     'vendor/lodash/dist/lodash.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
-    'vendor/twitter-bootstrap-3.0.0/dist/js/bootstrap.js',
+    'vendor/bootstrap/dist/js/bootstrap.js',
     filters='uglifyjs',
     output='gen/vendor.min.js'
 )
 
 js_ie = Bundle(
-    'vendor/twitter-bootstrap-3.0.0/assets/js/html5shiv.js',
-    'vendor/twitter-bootstrap-3.0.0/assets/js/respond.min.js',
+    'vendor/bootstrap/assets/js/html5shiv.js',
+    'vendor/bootstrap/assets/js/respond.min.js',
     filters='uglifyjs',
     output='gen/ie.min.js'
 )
