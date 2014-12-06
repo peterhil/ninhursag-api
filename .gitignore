@@ -43,3 +43,4 @@ bower_components
 **/static/gen
 instance/
 *.patch
+app/static/vendor
