@@ -9,3 +9,15 @@
 
 // Custom theme
 @import "bootstrap/theme.less";
+
+#notifications {
+    .growl {
+        z-index: 3000;
+        top: 70px;
+    }
+    &.in-page .growl {
+        position: static;
+        width: 100%;
+        float: none;
+    }
+}

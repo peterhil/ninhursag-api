@@ -12,7 +12,7 @@ css_application = Bundle(
 )
 
 css_all = Bundle(
-    # 'vendor/some/library.css',
+    'vendor/angular-growl/build/angular-growl.min.css',
     css_application,
     filters='cssmin',
     output='gen/app.min.css'
@@ -29,6 +29,7 @@ js_vendor = Bundle(
     'vendor/angular-route/angular-route.js',
     'vendor/angular-sanitize/angular-sanitize.js',
     'vendor/angular-touch/angular-touch.js',
+    'vendor/angular-growl/build/angular-growl.js',
     'vendor/bootstrap/dist/js/bootstrap.js',
     'vendor/lodash/dist/lodash.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this

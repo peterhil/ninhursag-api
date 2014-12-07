@@ -9,14 +9,24 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angular-growl',
   ])
-  .config ['$routeProvider', '$logProvider', ($routeProvider, $logProvider) ->
-    $logProvider.debugEnabled false
-    $routeProvider
-      .when '/',
-        templateUrl: 'static/views/listing.html'
-        controller: 'ListingCtrl'
-      .otherwise
-        redirectTo: '/'
+  .config [
+    '$routeProvider',
+    '$logProvider',
+    'growlProvider',
+    (
+      $routeProvider,
+      $logProvider,
+      growlProvider,
+    ) ->
+      $logProvider.debugEnabled false
+      $routeProvider
+        .when '/',
+          templateUrl: 'static/views/listing.html'
+          controller: 'ListingCtrl'
+        .otherwise
+          redirectTo: '/'
+      growlProvider.globalTimeToLive(5000);
   ]
