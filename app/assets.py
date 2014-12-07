@@ -37,8 +37,7 @@ js_vendor = Bundle(
 )
 
 js_ie = Bundle(
-    'vendor/bootstrap/assets/js/html5shiv.js',
-    'vendor/bootstrap/assets/js/respond.min.js',
+    'vendor/es5-shim/es5-shim.js',
     filters='uglifyjs',
     output='gen/ie.min.js'
 )
