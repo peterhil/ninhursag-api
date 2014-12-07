@@ -59,7 +59,6 @@ js_main = Bundle(
         'coffee/ajax.coffee',
         'coffee/singleton.coffee',
         'coffee/service/api-service.coffee',
-        'coffee/listing.coffee',
         'scripts/app.coffee',
         'scripts/controllers/listing.coffee',
         filters='coffeescript',
