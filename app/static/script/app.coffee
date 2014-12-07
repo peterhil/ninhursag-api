@@ -24,7 +24,7 @@ angular
       $logProvider.debugEnabled false
       $routeProvider
         .when '/',
-          templateUrl: 'static/views/listing.html'
+          templateUrl: 'static/view/listing.html'
           controller: 'ListingCtrl'
         .otherwise
           redirectTo: '/'
