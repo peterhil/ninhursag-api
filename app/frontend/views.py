@@ -27,7 +27,6 @@ def config():
         'APP_NAME',
         'ASSETS_DEBUG',
         'DEBUG',
-        'DUST_LOG_LEVEL',
         'JS_LOG_LEVEL',
         'PREFERRED_URL_SCHEME',
         'SERVER_NAME',

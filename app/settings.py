@@ -15,7 +15,6 @@ class Default(object):
     DEBUG = False
     TESTING = False
     JS_LOG_LEVEL = 3  # log (1) < debug (2) < info (3) < warn (4) < error (5)
-    DUST_LOG_LEVEL = 'INFO'
 
     # Servers and URLs
     SERVER_NAME = 'localhost:5000'
@@ -39,7 +38,6 @@ class Dev(Default):
 
     DEBUG = True
     JS_LOG_LEVEL = 1
-    DUST_LOG_LEVEL = 'DEBUG'
 
 
 class Testing(Default):
