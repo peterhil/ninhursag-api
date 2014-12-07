@@ -12,8 +12,8 @@ css_application = Bundle(
 )
 
 css_foundation = Bundle(
-    'vendor/zurb-foundation/dist/assets/scss/normalize.scss',
-    'vendor/zurb-foundation/dist/assets/scss/foundation.scss',
+    'vendor/foundation/scss/normalize.scss',
+    'vendor/foundation/scss/foundation.scss',
     filters='scss',
     output='gen/foundation.css'
 )
@@ -41,8 +41,8 @@ js_vendor = Bundle(
     'vendor/bootstrap/dist/js/bootstrap.js',
     'vendor/lodash/dist/lodash.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
-    'vendor/zurb-foundation/dist/assets/js/foundation/foundation.js',
-    'vendor/zurb-foundation/dist/assets/js/foundation/foundation.topbar.js',
+    'vendor/foundation/js/foundation/foundation.js',
+    'vendor/foundation/js/foundation/foundation.topbar.js',
     filters='uglifyjs',
     output='gen/vendor.min.js'
 )
