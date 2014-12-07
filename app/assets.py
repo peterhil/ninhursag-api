@@ -45,9 +45,9 @@ js_ie = Bundle(
 
 js_main = Bundle(
     Bundle(
-        'scripts/app.coffee',
-        'scripts/service/config.coffee',
-        'scripts/controllers/listing.coffee',
+        'script/app.coffee',
+        'script/service/config.coffee',
+        'script/controller/listing.coffee',
         filters='coffeescript',
         output='gen/app.js'
     ),
