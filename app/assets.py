@@ -50,6 +50,7 @@ js_main = Bundle(
         'coffee/init.coffee',  # Must be loaded after app.coffee but before anything else.
         'coffee/notify.coffee',
         'scripts/app.coffee',
+        'scripts/service/config.coffee',
         'scripts/controllers/listing.coffee',
         filters='coffeescript',
         output='gen/app.js'
