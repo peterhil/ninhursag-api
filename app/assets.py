@@ -5,7 +5,7 @@ from flask.ext.assets import Environment, Bundle
 
 
 css_application = Bundle(
-    'less/main.less',
+    'style/main.less',
     filters='less',
     debug=False,
     output='gen/app.css'
