@@ -15,8 +15,8 @@ loadApp = ->
     })
     .done (config) =>
         app = new App(config.app_name, config)
-        debug.log "Config loaded in", timer.seconds(), 'seconds.'
+        console.log "Config loaded in", timer.seconds(), 'seconds.'
     .fail (xhr) ->
-        debug.error 'Error loading config: ' + xhr.status + ' ' + xhr.statusText
+        console.error 'Error loading config: ' + xhr.status + ' ' + xhr.statusText
 
 loadApp()

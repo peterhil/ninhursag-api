@@ -11,7 +11,8 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config ['$routeProvider', ($routeProvider) ->
+  .config ['$routeProvider', '$logProvider', ($routeProvider, $logProvider) ->
+    $logProvider.debugEnabled false
     $routeProvider
       .when '/',
         templateUrl: 'static/views/listing.html'

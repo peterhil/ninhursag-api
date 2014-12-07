@@ -1,11 +1,7 @@
 class App
     constructor: (@name, @config) ->
         @start = new Date(Date.now())
-        if @config.debug
-            debug.setLevel(@config.js_log_level)
-        else
-            debug.setLevel(0)
-        debug.info "App started at", @start
+        console.info "App started at", @start
 
     apiUrl: ->
         if @config? then @config.preferred_url_scheme + '://' + @config.api_server else ''

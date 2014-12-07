@@ -14,7 +14,6 @@ class Default(object):
 
     DEBUG = False
     TESTING = False
-    JS_LOG_LEVEL = 3  # log (1) < debug (2) < info (3) < warn (4) < error (5)
 
     # Servers and URLs
     SERVER_NAME = 'localhost:5000'
@@ -37,7 +36,6 @@ class Dev(Default):
     APP_NAME = project_name + ' dev'
 
     DEBUG = True
-    JS_LOG_LEVEL = 1
 
 
 class Testing(Default):

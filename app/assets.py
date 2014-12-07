@@ -43,7 +43,6 @@ js_ie = Bundle(
 )
 
 js_main = Bundle(
-    'libs/ba-debug.js',
     Bundle(
         'coffee/app.coffee',
         'coffee/init.coffee',  # Must be loaded after app.coffee but before anything else.
