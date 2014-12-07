@@ -14,10 +14,12 @@ angular
   ])
   .config [
     '$routeProvider',
+    '$httpProvider',
     '$logProvider',
     'growlProvider',
     (
       $routeProvider,
+      $httpProvider,
       $logProvider,
       growlProvider,
     ) ->
@@ -28,5 +30,13 @@ angular
           controller: 'ListingCtrl'
         .otherwise
           redirectTo: '/'
-      growlProvider.globalTimeToLive(5000);
+      growlProvider.globalPosition 'top-center'
+      growlProvider.globalInlineMessages true
+      growlProvider.globalTimeToLive
+        success: 4000
+        info: 4000
+        warning: 8000
+      growlProvider.globalDisableCountDown true
+      growlProvider.globalDisableIcons true
+      $httpProvider.interceptors.push(growlProvider.serverMessagesInterceptor)
   ]

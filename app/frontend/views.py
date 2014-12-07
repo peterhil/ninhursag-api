@@ -27,7 +27,7 @@ def config():
         'APP_NAME',
         'ASSETS_DEBUG',
         'DEBUG',
-        'JS_LOG_LEVEL',
+        'MESSAGES',
         'PREFERRED_URL_SCHEME',
         'SERVER_NAME',
         'TESTING',

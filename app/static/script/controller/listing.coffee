@@ -1,16 +1,16 @@
 'use strict'
 
 angular.module('app')
-  .controller 'ListingCtrl', ['$scope', '$http', 'growl', ($scope, $http, growl) ->
+  .controller 'ListingCtrl', ['$scope', '$http', 'growl', 'config', ($scope, $http, growl, config) ->
     $scope.loaded = false
 
     $http.get('/api/v1/items')
       .success (response) ->
         $scope.loaded = true
-        growl.addInfoMessage("Items loaded.")
+        growl.info("<strong>Success</strong> Items loaded.")
         $scope.things = response.items
       .error (response) ->
         $scope.loaded = true
-        growl.addErrorMessage("Failed loading items!")
+        growl.error("Failed loading items!")
         $scope.error = true
   ]
