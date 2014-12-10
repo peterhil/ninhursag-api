@@ -1,0 +1,46 @@
+{
+    "name": "skeleton",
+    "version": "0.0.0",
+    "homepage": "https://github.com/peterhil/skeleton",
+    "authors": [
+        "Peter Hillerström <peter.hillerstrom@gmail.com>"
+    ],
+    "description": "Skeleton.",
+    "keywords": [
+        "python",
+        "flask",
+        "app template"
+    ],
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "angular": "^1.3.0",
+        "angular-animate": "^1.3.0",
+        "angular-aria": "^1.3.0",
+        "angular-cookies": "^1.3.0",
+        "angular-messages": "^1.3.0",
+        "angular-resource": "^1.3.0",
+        "angular-route": "^1.3.0",
+        "angular-sanitize": "^1.3.0",
+        "angular-touch": "^1.3.0",
+        "bootstrap": ">=3.0.0",
+        "es5-shim": "^4.0.0",
+        "jquery": "~2.1.0",
+        "json3": "^3.3.0",
+        "lodash": "~2.4.1",
+        "modernizr": ">= 2.7.2",
+        "foundation" : "^5.4.6",
+        "angular-growl-v2": "~0.7.2"
+    },
+    "devDependencies": {
+        "angular-mocks": "~1.3.0",
+        "angular-scenario": "~1.3.0"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}

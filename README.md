@@ -45,6 +45,7 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
     sudo easy_install pip
     sudo pip install virtualenv
     sudo port install node  # <-- replace port with the command for your package manager
+    sudo npm install -g bower
     sudo npm install -g less
     sudo npm install -g grunt-cli
 
@@ -68,6 +69,7 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
 
     cd skeleton-git
     npm install
+    bower install
 
 Build modernizr:
 
@@ -83,16 +85,7 @@ Build zurb-foundation:
     grunt build
     cd -
 
-### 6. Install Dust for front end templates
-
-See [instructions on how to install DustJS](http://elsdoerfer.name/docs/webassets/builtin_filters.html#dustjs) and the reasons for doing it this way.
-
-Dusty asset filter DustJS uses the dusty compiler, which is a separate project from the DustJS implementation. To install dusty together with LinkedIn’s version of dustjs (the original does not support NodeJS > 0.4):
-
-    rm -rf node_modules/dusty/node_modules/dust
-    git clone https://github.com/linkedin/dustjs node_modules/dust
-
-### 7. Start the app
+### 6. Start the app
 
 *Note!* These steps should also work with just `npm start`.
 

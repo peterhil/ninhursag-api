@@ -1,0 +1,37 @@
+//
+// Styles
+// --------------------------------------------------
+
+body {
+}
+
+#content {
+    padding: 10px;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#notifications {
+    .growl {
+        z-index: 3000;
+        top: 70px;
+    }
+    &.in-page .growl {
+        position: static;
+        width: 100%;
+        float: none;
+    }
+
+    .growl-container > .growl-item {
+        background-position: center;
+    }
+}

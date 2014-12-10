@@ -27,8 +27,7 @@ def config():
         'APP_NAME',
         'ASSETS_DEBUG',
         'DEBUG',
-        'DUST_LOG_LEVEL',
-        'JS_LOG_LEVEL',
+        'MESSAGES',
         'PREFERRED_URL_SCHEME',
         'SERVER_NAME',
         'TESTING',
@@ -41,7 +40,7 @@ def config():
 @route(bp, '/favicon.ico')
 def favicon():
     return send_from_directory(
-        os.path.join(current_app.root_path, 'static'),
+        os.path.join(current_app.root_path, 'static/img/icon'),
         'favicon.ico', mimetype='image/vnd.microsoft.icon'
         )
 
