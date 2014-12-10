@@ -2,7 +2,6 @@
 // Styles
 // --------------------------------------------------
 
-
 // Typography
 
 body {
@@ -20,6 +19,26 @@ body {
 
     font-weight: normal;
     text-rendering: optimizeLegibility;
+}
+
+#notifications {
+    .growl {
+        z-index: 3000;
+        top: 70px;
+    }
+    &.in-page .growl {
+        position: static;
+        width: 100%;
+        float: none;
+    }
+
+    .growl-container > .growl-item {
+        background-position: center;
+    }
+}
+
+#content {
+    padding: 10px;
 }
 
 h1, h2, h3, h4, h5, h6,

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Article{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <div>
+	{% for article in articles %}
+	  {{ article }}
+	{% else %}
+	  <div class="listing">
+		<p>No articles yet.</p>
+	  </div>
+	{% endfor %}
+  </div>
+{% endblock %}

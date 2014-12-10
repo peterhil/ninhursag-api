@@ -7,8 +7,8 @@
   <div>
 	<h1>{{ config.APP_NAME }}</h1>
     <img class="logo" src="/static/img/logo.png" alt="Logo">
-    <div class="listing">
-		<p>No items yet.</p>
+    <div class="listing" ng-view="" ng-controller="ListingCtrl">
+      <p>No items yet.</p>
     </div>
   </div>
 {% endblock %}
