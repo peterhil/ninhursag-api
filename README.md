@@ -69,28 +69,9 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
 
     cd skeleton-git
     npm install
-<<<<<<< HEAD
     bower install
 
 Build modernizr:
-=======
-
-Build modernizr:
-
-    cd app/static/vendor/modernizr && ./bin/modernizr >/dev/null && cd -
-
-Build zurb-foundation:
-
-    cd app/static/vendor/zurb-foundation
-    # open README.md
-    npm install
-    bower install
-    bundle install
-    grunt build
-    cd -
-
-### 6. Install Dust for front end templates
->>>>>>> 4ed1b709fcbc6a25399f9a895ce9403b919705e2
 
     cd app/static/vendor/modernizr && ./bin/modernizr >/dev/null && cd -
 
