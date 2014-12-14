@@ -85,7 +85,7 @@ figure {
         font-size: 1.2rem;
         line-height: 1.75rem;
     }
-    svg  {
+    svg {
         width: 100%;
         height: 100%;
         min-width: 512px;
@@ -96,13 +96,15 @@ figure {
         // -moz-box-shadow: 0px 10px 18px 1px rgba(34,34,34,0.46);
         // box-shadow: 0px 10px 18px 1px rgba(34,34,34,0.46);
 
+        &.ng-chart {
+            padding: 30px 60px 60px 160px;
+        }
         .grid line {
             stroke: #eee;
         }
         .chart .line,
         .legend .line {
             fill: none;
-            stroke: #000;
             stroke-width: 2px;
 
             &.series-0 {

@@ -2,11 +2,60 @@
     <figcaption data-ng-if="caption">
         {{caption}}
     </figcaption>
-    <svg data-ng-attr-width="{{width}}"
+    <svg class="ng-chart"
+         data-ng-attr-width="{{width}}"
          data-ng-attr-height="{{height}}"
          data-ng-attr-viewBox="{{viewBox}}"
          data-ng-attr-preserveAspectRatio="{{preserveAspectRatio}}"
          >
+        <g class="grid">
+            <g class="x-axis">
+                <g class="lines">
+                    <line data-ng-repeat="v in xticks(25)"
+                          data-ng-attr-x1="{{x(v)}}"
+                          data-ng-attr-x2="{{x(v)}}"
+                          y1="0"
+                          data-ng-attr-y2="{{height}}"
+                          >
+                    </line>
+                </g>
+                <g class="labels">
+                    <text data-ng-repeat="v in xticks(13)"
+                          data-ng-attr-x="{{x(v)}}"
+                          data-ng-attr-y="{{height}}"
+                          dy="1.25em"
+                          text-anchor="middle"
+                          >
+                        {{v}}
+                    </text>
+                </g>
+            </g>
+            <g class="x-axis">
+                <g class="lines">
+                    <line data-ng-repeat="v in yticks(40)"
+                          data-ng-attr-y1="{{y(v)}}"
+                          data-ng-attr-y2="{{y(v)}}"
+                          x1="0"
+                          data-ng-attr-x2="{{width}}"
+                          >
+                    </line>
+                </g>
+                <g class="labels">
+                    <text data-ng-repeat="v in yticks(20)"
+                          data-ng-attr-y="{{y(v)}}"
+                          data-ng-attr-x="0"
+                          dx="-1.25em"
+                          dy="0.25em"
+                          text-anchor="end"
+                          >
+                        {{v}}
+                    </text>
+                </g>
+            </g>
+        </g>
+        <g class="chart" data-ng-if="loaded" data-ng-repeat="serie in series">
+            <path class="line series-{{$index}}" data-ng-attr-d="{{line(serie)}}">{{serie}}</path>
+        </g>
         <g class="legend" data-ng-if="legend" transform="translate(166, 40)">
             <g data-ng-repeat="serie in series">
                 <line class="line series-{{$index}}" x1="0" x2="30" data-ng-attr-y1="{{$index * 1.5 - 0.35}}em" data-ng-attr-y2="{{$index * 1.5 - 0.35}}em"></line>
@@ -14,9 +63,6 @@
                     {{serie}}
                 </text>
             </g>
-        </g>
-        <g class="chart" data-ng-if="loaded" data-ng-repeat="serie in series">
-            <path class="line series-{{$index}}" data-ng-attr-d="{{line(serie)}}">{{serie}}</path>
         </g>
     </svg>
 </figure>

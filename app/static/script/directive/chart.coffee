@@ -54,6 +54,12 @@ angular.module('app')
             .x((d, i) -> x(d[scope.index]))
             .y((d, i) -> y(parseFloat(d[column]) or 0))
 
+        # Grid and axes
+        scope.x = (d) -> x(d)
+        scope.y = (d) -> y(d)
+        scope.xticks = (n) -> x.ticks(n)
+        scope.yticks = (n) -> y.ticks(n)
+
         scope.line = (column) ->
           line(column)(scope.data)
 
