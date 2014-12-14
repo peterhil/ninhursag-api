@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="/favicon.ico">
     {% assets "css_all" -%}
-    <link href="http://fonts.googleapis.com/css?family=Kameron|Lora|Quattrocento&amp;v2" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Kameron%7CLora%7CQuattrocento&amp;v2" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" media="all" href="{{ ASSET_URL }}" />
     {%- endassets %}
 
@@ -23,11 +23,11 @@
     <![endif]-->
     {%- endblock %}
   </head>
-  <body ng-app="app">
+  <body data-ng-app="app">
     {% block navigation %}
       {% include "_menu.html" %}
     {% endblock %}
-    <div growl="true" id="notifications" class="container in-page"></div>
+    <div data-growl="true" id="notifications" class="container in-page"></div>
     <div id="content" class="container" role="main">
       {% block content %}{% endblock %}
     </div>
