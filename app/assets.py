@@ -39,6 +39,7 @@ js_vendor = Bundle(
     'vendor/angular-touch/angular-touch.js',
     'vendor/angular-growl-v2/build/angular-growl.js',
     'vendor/lodash/dist/lodash.js',
+    'vendor/Papa-Parse/papaparse.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
     'vendor/foundation/js/foundation/foundation.js',
     'vendor/foundation/js/foundation/foundation.topbar.js',
