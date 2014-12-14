@@ -2,19 +2,21 @@
 
 angular.module('app')
   .directive 'chart', ['$http', '$log', ($http, $log) ->
-    restrict: 'E'
+    restrict: 'AE'
     replace: true
-    # scope:
-    #   data: '='
+    scope:
+      caption: '@'
+      series: '='
+      width: '=width'
+      height: '=height'
+      preserveAspectRatio: '@preserveAspectRatio'
+      viewBox: '@viewBox'
     templateUrl: '/static/template/chart.html'
     link: (scope, element, attrs) ->
-      width = attrs.width or 400
-      height = attrs.height or 300
-      scope.graph =
-        width: width
-        height: height
-        viewBox: "0 0 #{width} #{height}"
-        preserveAspectRatio: scope.preserveAspectRatio
+      scope.width ||= 400
+      scope.height ||= 300
+      scope.viewBox ||= "0 0 #{scope.width} #{scope.height}"
+      scope.preserveAspectRatio ||= "xMidYMid meet"
 
       $http.get(attrs.src)
         .success (csv) ->

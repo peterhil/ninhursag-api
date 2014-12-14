@@ -14,14 +14,17 @@
 
       <p class="description">Bauxite is an aluminium ore and is the main source of aluminium.</p>
 
-      <figure ng-controller="MineralCtrl">
-        <figcaption>
-          Global bauxite production 1900&ndash;2010 (Metric tons gross weight)
-        </figcaption>
-        <chart src="/data/ds140-bauxi-clean.csv" width="960" height="660"
-               preserveAspectRatio="xMidYMid meet"
-               data="[3, 4, 5]"></chart>
-      </figure>
+      <div data-ng-controller="MineralCtrl">
+        <figure data-chart="true"
+                data-src="/data/ds140-bauxi-clean.csv"
+                data-width="960"
+                data-height="660"
+                data-caption="Global bauxite production 1900&ndash;2010 (Metric tons gross weight)"
+                data-index="Year"
+                data-series='["World production", "Estimated", "Log. Estimated", "Reserves"]'
+                >
+        </figure>
+      </div>
 
     </div>
     <aside class="small-12 large-3 columns">
