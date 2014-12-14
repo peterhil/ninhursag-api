@@ -7,10 +7,16 @@
          data-ng-attr-viewBox="{{viewBox}}"
          data-ng-attr-preserveAspectRatio="{{preserveAspectRatio}}"
          >
-        <g>
-            <text dx="0" data-ng-attr-dy="{{$index * 1.5}}em" data-ng-repeat="serie in series">
-                {{serie}}
-            </text>
+        <g class="legend" data-ng-if="legend" transform="translate(166, 40)">
+            <g data-ng-repeat="serie in series">
+                <line class="line series-{{$index}}" x1="0" x2="30" data-ng-attr-y1="{{$index * 1.5 - 0.35}}em" data-ng-attr-y2="{{$index * 1.5 - 0.35}}em"></line>
+                <text dx="40" data-ng-attr-dy="{{$index * 1.5}}em">
+                    {{serie}}
+                </text>
+            </g>
+        </g>
+        <g class="chart" data-ng-if="loaded" data-ng-repeat="serie in series">
+            <path class="line series-{{$index}}" data-ng-attr-d="{{line(serie)}}">{{serie}}</path>
         </g>
     </svg>
 </figure>

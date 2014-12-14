@@ -20,8 +20,9 @@
                 data-width="960"
                 data-height="660"
                 data-caption="Global bauxite production 1900&ndash;2010 (Metric tons gross weight)"
+                data-legend="true"
                 data-index="Year"
-                data-series='["World production", "Estimated", "Log. Estimated", "Reserves"]'
+                data-series='["World production", "Estimated", "Log. Estimated", "Reserves", "Production", "Apparent consumption"]'
                 >
         </figure>
       </div>
@@ -69,6 +70,6 @@
 {% endblock %}
 
 {%- block scripts %}
-  {# <script src="http://d3js.org/d3.v2.min.js" charset="utf-8"></script> #}
+  <script src="http://d3js.org/d3.v2.min.js" charset="utf-8"></script>
   {{ super() }}
 {%- endblock %}
