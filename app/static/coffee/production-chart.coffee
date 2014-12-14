@@ -1,4 +1,4 @@
-d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
+productionChart = (data) ->
   reserve_scale = 0.1
 
   values = _.map data, (row) ->
@@ -148,3 +148,6 @@ d3.csv "/data/ds140-bauxi-clean.csv", (data) ->
     group
 
   legend vis, 166, 40, legendData
+
+unless $('#paired-line-chart').length == 0
+  d3.csv "/data/ds140-bauxi-clean.csv", productionChart
