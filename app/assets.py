@@ -12,9 +12,9 @@ css_application = Bundle(
 )
 
 css_foundation = Bundle(
-    'vendor/foundation/scss/normalize.scss',
-    'vendor/foundation/scss/foundation.scss',
-    filters='scss',
+    'vendor/foundation/css/normalize.css',
+    'vendor/foundation/css/foundation.css',
+    # filters='scss',
     output='gen/foundation.css'
 )
 
