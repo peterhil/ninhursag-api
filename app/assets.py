@@ -38,7 +38,6 @@ js_vendor = Bundle(
     'vendor/angular-sanitize/angular-sanitize.js',
     'vendor/angular-touch/angular-touch.js',
     'vendor/angular-growl-v2/build/angular-growl.js',
-    'vendor/bootstrap/dist/js/bootstrap.js',
     'vendor/lodash/dist/lodash.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
     'vendor/foundation/js/foundation/foundation.js',
