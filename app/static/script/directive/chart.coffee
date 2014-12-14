@@ -6,7 +6,7 @@ angular.module('app')
     replace: true
     # scope:
     #   data: '='
-    template: '<svg ng-attr-viewBox="{{graph.viewBox}}"></svg>'
+    templateUrl: '/static/template/chart.html'
     link: (scope, element, attrs) ->
       width = attrs.width or 400
       height = attrs.height or 300

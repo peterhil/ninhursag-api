@@ -1,0 +1,16 @@
+<figure>
+    <figcaption data-ng-if="caption">
+        {{caption}}
+    </figcaption>
+    <svg data-ng-attr-width="{{width}}"
+         data-ng-attr-height="{{height}}"
+         data-ng-attr-viewBox="{{viewBox}}"
+         data-ng-attr-preserveAspectRatio="{{preserveAspectRatio}}"
+         >
+        <g>
+            <text dx="0" data-ng-attr-dy="{{$index * 1.5}}em" data-ng-repeat="serie in series">
+                {{serie}}
+            </text>
+        </g>
+    </svg>
+</figure>
