@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}{{ mineral | capitalize }} &ndash; world production{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="small-12 large-9 columns">
+
+      <h1>{{ mineral | capitalize }}</h1>
+
+      <p class="description">Bauxite is an aluminium ore and is the main source of aluminium.</p>
+
+      <figure ng-controller="MineralCtrl">
+        <figcaption>
+          Global bauxite production 1900&ndash;2010 (Metric tons gross weight)
+        </figcaption>
+        <chart src="/data/ds140-bauxi-clean.csv" width="960" height="660"
+               preserveAspectRatio="xMidYMid meet"
+               data="[3, 4, 5]"></chart>
+      </figure>
+
+    </div>
+    <aside class="small-12 large-3 columns">
+
+      <figure>
+        <img class="mineral" src="http://upload.wikimedia.org/wikipedia/commons/0/04/BauxiteUSGOV.jpg" />
+        <figcaption>
+          Bauxite with an U.S. penny
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img class="mineral" src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Aluminium-4.jpg/480px-Aluminium-4.jpg" />
+        <figcaption>
+          Aluminium
+        </figcaption>
+      </figure>
+
+      <div>
+        <h3>Data sources and references</h3>
+        <ul>
+          <li><a href="http://minerals.usgs.gov/ds/2005/140/index.html#bauxite">U.S. Geological Survey Data Series 140</a></li>
+          <li><a href="http://minerals.usgs.gov/ds/2005/140/ds140-bauxi.xlsx">Bauxite XLS</a></li>
+          <li><a href="http://minerals.usgs.gov/minerals/pubs/commodity/bauxite/mcs-2011-bauxi.pdf">Commodity Statistics and Information – Bauxite</a></li>
+        </ul>
+
+        <h4>Other info</h4>
+        <ul>
+          <li><a href="http://en.wikipedia.org/wiki/Bauxite">Wikipedia article</a></li>
+          <li><a href="http://en.wikipedia.org/wiki/Bauxite#Production_trends">Bauxite production trends at Wikipedia</a></li>
+        </ul>
+        <ul>
+          <li><a href="http://en.wikipedia.org/wiki/Logistic_function">Logistic function</a></li>
+        </ul>
+
+        <a href="index" class="button">« Back to index</a>
+      </div>
+
+    </aside>
+  </div>
+
+{% endblock %}
+
+{%- block scripts %}
+  {# <script src="http://d3js.org/d3.v2.min.js" charset="utf-8"></script> #}
+  {{ super() }}
+{%- endblock %}

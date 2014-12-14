@@ -77,3 +77,7 @@ def two():
 @route(bp, '/mineral/<mineral>')
 def mineral(mineral='Aluminium'):
     return render_template('/mineral.html', mineral=mineral)
+
+@route(bp, '/ng-mineral/<mineral>')
+def ng_mineral(mineral='Aluminium'):
+    return render_template('/ng-mineral.html', mineral=mineral)

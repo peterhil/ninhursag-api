@@ -59,6 +59,8 @@ js_main = Bundle(
         'script/app.coffee',
         'script/service/config.coffee',
         'script/controller/listing.coffee',
+        'script/controller/mineral-ctrl.coffee',
+        'script/directive/chart.coffee',
         filters='coffeescript',
         output='gen/app.js'
     ),
