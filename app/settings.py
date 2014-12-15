@@ -37,6 +37,8 @@ class Dev(Default):
 
     DEBUG = True
 
+    SERVER_NAME = '0.0.0.0:5000'
+    API_SERVER = '0.0.0.0:5000'
 
 class Testing(Default):
     TESTING = True
