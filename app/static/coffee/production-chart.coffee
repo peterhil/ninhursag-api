@@ -113,13 +113,34 @@ productionChart = (data) ->
   seriesChart(chart, 'z', color1)    # Estimate
   seriesChart(chart, 'y', color2)    # World production
 
+  request_data = JSON.stringify
+      'years': _.map(values, (row) -> row['x'])
+      'data': _.map(values, (row) -> row['y'])
+
+  $.ajax(
+    type: 'POST'
+    url: ['/', '0.0.0.0:5000', 'api/v1', 'analyse'].join '/'
+    data: request_data
+    headers: {"Accept": "application/json", "Content-Type": "application/json"}
+    dataType: 'json'
+    success: (response) ->
+      vis.append("svg:path")
+        .attr
+          "class": "line"
+          "fill": "none"
+          "stroke": "#ff00ff"
+          "stroke-width": 2
+          "d": d3.svg.line()
+            .x((d, i) -> x(parseInt(response['years'][i])))
+            .y((d, i) -> y(parseFloat(response['data'][i])))
+  )
+
   legendMarker = (legend, index, text, color, lineHeight = 28, markerWidth = 40) ->
-    y = index * lineHeight
     if color
       legend.append("svg:rect")
         .attr
           "x": 0
-          "y": y
+          "y": index * lineHeight
           "fill": color
           "stroke": color
           "height": 2
@@ -128,7 +149,7 @@ productionChart = (data) ->
       .text(text)
       .attr
         "x": markerWidth + 10
-        "y": y + 5
+        "y": index * lineHeight + 5
 
   legendData = [
     ["World production", color2],
