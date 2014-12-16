@@ -55,13 +55,21 @@ def logistic(x, a, b, c):
 def log_logistic(x, a, b, c):
     return a*c/(a*np.exp(-b*np.log(x)) + c)
 
-def estimate(func, data, yrs, until, name="Data", log=False):
-    yrs = np.array(yrs, dtype="int")
+def sanitize(data, years):
+    data = np.array(data, dtype=np.float64)
+    data = np.ma.masked_invalid(data)  # Remove NaNs and Infs
+    data = np.trim_zeros(data, 'fb')  # Trim zeros from both ends
+    years = np.array(years, dtype="int")[np.logical_not(data.mask)]
+    data = data.compressed()
+    return data, years
 
-    (start, end) = (np.min(yrs), np.max(yrs))
-    x = yrs - start
+def estimate(func, data, years, until, name="Data", log=False):
+    data, years = sanitize(data, years)
+
+    (start, end) = (np.min(years), np.max(years))
+    x = years - start
     e_x = np.arange(until - start + 1)
-    e_yrs = e_x + start
+    e_years = e_x + start
 
     if log: data = np.log(data)
     popt, pcov = curve_fit(func, x, data)
@@ -72,4 +80,4 @@ def estimate(func, data, yrs, until, name="Data", log=False):
 
     # deriv = normalize(np.ediff1d(estd))*np.max(estd)/2
 
-    return (e_yrs, estd)
+    return (e_years, estd)

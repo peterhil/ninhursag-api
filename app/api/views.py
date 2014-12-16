@@ -60,8 +60,7 @@ class Analyse(restful.Resource):
             restful.abort(400, errors=["Request is not valid JSON."])
         except KeyError, e:
             restful.abort(400, errors=["Expected to find property '{}' on the request data.".format(e.message)])
-        yrs = 110
-        result = estimate(logistic, data[:110], years[:110], np.amax(years[:110]), log=True)
+        result = estimate(logistic, data, years, np.amax(years), log=True)
         e_years, e_data = result
         return {'years': as_json(e_years), 'data': as_json(e_data.astype(np.float32))}, 200
 
