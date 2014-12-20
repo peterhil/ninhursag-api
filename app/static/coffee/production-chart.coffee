@@ -119,7 +119,7 @@ productionChart = (data) ->
 
   $.ajax(
     type: 'POST'
-    url: ['/', '0.0.0.0:5000', 'api/v1', 'analyse'].join '/'
+    url: ['/', '0.0.0.0:5000', 'api/v1', 'estimate'].join '/'
     data: request_data
     headers: {"Accept": "application/json", "Content-Type": "application/json"}
     dataType: 'json'

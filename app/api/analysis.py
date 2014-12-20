@@ -3,7 +3,8 @@
 
 import logging
 import numpy as np
-# import matplotlib.pyplot as plt
+import scipy
+import scipy.stats as stats
 
 from scipy.optimize import curve_fit
 
@@ -54,6 +55,20 @@ def logistic(x, a, b, c):
 
 def log_logistic(x, a, b, c):
     return a*c/(a*np.exp(-b*np.log(x)) + c)
+
+def wrap_scipy(func):
+    def wrapped(data, a, b, c, d):
+        return func(data, a, b) * c + d
+    return wrapped
+
+def scipy_functions(self, kind='pdf'):
+    if kind not in ['cdf', 'pdf']:
+        return dict()
+    return dict(
+        map(lambda f: (f[0], wrap_scipy(f[1])),
+            filter(lambda x: x[1] is not None,
+                   [(f, getattr(getattr(stats, f, None), kind, None)) for f in dir(stats)]
+                   )))
 
 def sanitize(data, years):
     data = np.array(data, dtype=np.float64)
