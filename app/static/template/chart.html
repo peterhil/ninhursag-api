@@ -46,7 +46,7 @@
                     <text data-ng-repeat="v in yticks(20)"
                           data-ng-attr-y="{{y(v)}}"
                           data-ng-attr-x="0"
-                          dx="-1.25em"
+                          dx="6.75em"
                           dy="0.25em"
                           text-anchor="end"
                           >
@@ -59,7 +59,7 @@
             <path class="line series-{{$index}}" data-ng-attr-d="{{line(serie)}}"
                   data-ng-repeat="serie in series">{{serie}}</path>
         </g>
-        <g class="legend" data-ng-if="legend" transform="translate(166, 40)">
+        <g class="legend" data-ng-if="legend" transform="translate(160, 30)">
             <g data-ng-repeat="serie in series">
                 <line class="line series-{{$index}}" x1="0" x2="30" data-ng-attr-y1="{{$index * 1.5 - 0.35}}em" data-ng-attr-y2="{{$index * 1.5 - 0.35}}em"></line>
                 <text dx="40" data-ng-attr-dy="{{$index * 1.5}}em">
