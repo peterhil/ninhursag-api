@@ -2,6 +2,7 @@
     <figcaption data-ng-if="caption">
         {{caption}}
     </figcaption>
+    <div data-us-spinner class="chart-spinner" data-ng-if="!loaded"></div>
     <svg class="ng-chart"
          data-ng-if="loaded"
          data-ng-attr-width="{{width}}"

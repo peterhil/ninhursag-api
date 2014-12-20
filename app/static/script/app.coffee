@@ -13,6 +13,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'angular-growl',
+    'angularSpinner',
   ])
   .config [
     '$routeProvider',
