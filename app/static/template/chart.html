@@ -2,9 +2,9 @@
     <figcaption data-ng-if="caption">
         {{caption}}
     </figcaption>
-    <div data-us-spinner class="chart-spinner" data-ng-if="!loaded"></div>
+    <div data-us-spinner class="chart-spinner" data-ng-if="loading"></div>
     <svg class="ng-chart"
-         data-ng-if="loaded"
+         data-ng-if="!loading"
          data-ng-attr-width="{{width}}"
          data-ng-attr-height="{{height}}"
          data-ng-attr-viewBox="{{viewBox}}"

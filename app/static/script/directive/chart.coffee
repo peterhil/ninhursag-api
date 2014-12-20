@@ -19,7 +19,7 @@ angular.module('app')
       scope.height ||= 300
       scope.viewBox ||= "0 0 #{scope.width} #{scope.height}"
       scope.preserveAspectRatio ||= "xMidYMid meet"
-      scope.loaded = false
+      scope.loading = true
 
       cleanup = (data) ->
         _.filter(data, (row) -> parseInt(row[scope.index]))
@@ -31,7 +31,7 @@ angular.module('app')
             dynamicTyping: true
           scope.data = cleanup(result.data)
           # window.data = scope.data
-          scope.loaded = true
+          scope.loading = false
 
       scope.render = (data) ->
         return unless data
