@@ -33,8 +33,9 @@ angular.module('app')
           # window.data = scope.data
           scope.loaded = true
 
-      scope.$watch 'loaded', (value, old) ->
-        return unless value == true
+      scope.render = (data) ->
+        return unless data
+        $log.debug "Data changed:", data
 
         # Workaround jQuery bug with camel cased attributes
         svg = element.find('svg')[0]
@@ -46,8 +47,8 @@ angular.module('app')
         x = d3.scale.linear().range([0, scope.width])
         y = d3.scale.linear().range([scope.height, 0])
 
-        x.domain(d3.extent(scope.data, (d) -> parseInt(d[scope.index])))
-        y.domain([0, d3.max(scope.data, (d) -> _.max(_.pick(d, _.filter(scope.series, (d) -> d not in ['Reserves']))))])
+        x.domain(d3.extent(data, (d) -> parseInt(d[scope.index])))
+        y.domain([0, d3.max(data, (d) -> _.max(_.pick(d, _.filter(scope.series, (d) -> d not in ['Reserves']))))])
 
         line = (column) ->
           d3.svg.line()
@@ -61,6 +62,12 @@ angular.module('app')
         scope.yticks = (n) -> y.ticks(n)
 
         scope.line = (column) ->
-          line(column)(scope.data)
+          line(column)(data)
 
+      scope.test = ->
+        $log.info "Test"
+        scope.data = scope.data.slice(0, 200)
+
+      scope.$watchCollection 'data', (data, old) ->
+        scope.render(data)
   ]
