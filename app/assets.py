@@ -28,6 +28,7 @@ css_all = Bundle(
 
 js_vendor = Bundle(
     'vendor/jquery/dist/jquery.js',
+    'vendor/spin.js/spin.js',
     'vendor/angular/angular.js',
     'vendor/angular-animate/angular-animate.js',
     'vendor/angular-aria/angular-aria.js',
@@ -38,6 +39,7 @@ js_vendor = Bundle(
     'vendor/angular-sanitize/angular-sanitize.js',
     'vendor/angular-touch/angular-touch.js',
     'vendor/angular-growl-v2/build/angular-growl.js',
+    'vendor/angular-spinner/angular-spinner.js',
     'vendor/lodash/dist/lodash.js',
     'vendor/Papa-Parse/papaparse.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this

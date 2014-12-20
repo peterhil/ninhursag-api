@@ -85,17 +85,20 @@ figure {
         font-size: 1.2rem;
         line-height: 1.75rem;
     }
-    svg {
+    svg, .chart-spinner {
+        position: relative;
         width: 100%;
         height: 100%;
         min-width: 512px;
+        min-height: 100px;
         padding: 0 40px;
         border: 2px solid #333;
         // outline: 6px double #333;
         // -webkit-box-shadow: 0px 10px 18px 1px rgba(34,34,34,0.46);
         // -moz-box-shadow: 0px 10px 18px 1px rgba(34,34,34,0.46);
         // box-shadow: 0px 10px 18px 1px rgba(34,34,34,0.46);
-
+    }
+    svg {
         &.ng-chart {
             padding: 30px 60px 60px 160px;
         }
