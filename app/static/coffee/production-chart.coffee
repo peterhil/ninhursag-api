@@ -133,6 +133,9 @@ productionChart = (data) ->
           "d": d3.svg.line()
             .x((d, i) -> x(parseInt(response['years'][i])))
             .y((d, i) -> y(parseFloat(response['data'][i])))
+    error: (response) ->
+      msgs = response.responseJSON.errors.join('<br>')
+      $('#notifications').append($('<div data-alert class="alert-box alert">' + msgs + '<a href="#" class="close">&times;</a></div>'))
   )
 
   legendMarker = (legend, index, text, color, lineHeight = 28, markerWidth = 40) ->
