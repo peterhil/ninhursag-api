@@ -8,11 +8,13 @@ from flask import current_app, request, Blueprint
 from flask import jsonify, url_for, send_from_directory
 from flask.ext import restful
 
-from analysis import estimate, linear, logistic, log_logistic
+from analysis import estimate
 from app.helpers import route
 
+import analysis
 import json
 import numpy as np
+import scipy.stats as stats
 
 
 API_VERSION = 1
@@ -47,9 +49,12 @@ class Items(restful.Resource):
                 ]
             }
 
-class Analyse(restful.Resource):
+class Estimate(restful.Resource):
     def get(self):
-        return list(linear(np.arange(0, 10), 0.5, 2))
+        return {
+            'cdf': sorted(analysis.scipy_functions('cdf').keys()),
+            'pdf': sorted(analysis.scipy_functions('pdf').keys()),
+            }
 
     def post(self):
         try:
@@ -60,12 +65,15 @@ class Analyse(restful.Resource):
             restful.abort(400, errors=["Request is not valid JSON."])
         except KeyError, e:
             restful.abort(400, errors=["Expected to find property '{}' on the request data.".format(e.message)])
-        result = estimate(logistic, data, years, np.amax(years), log=True)
+
+        # result = estimate(analysis.logistic, data, years, np.amax(years), log=False)
+        result = estimate(analysis.wrap_scipy(stats.dgamma.cdf), data, years, np.amax(years), log=False)
+
         e_years, e_data = result
         return {'years': as_json(e_years), 'data': as_json(e_data.astype(np.float32))}, 200
 
 
-rest.add_resource(Analyse, '/analyse')
+rest.add_resource(Estimate, '/estimate')
 rest.add_resource(ApiIndex, '/')
 rest.add_resource(HelloWorld, '/hello')
 rest.add_resource(Items, '/items')
