@@ -66,8 +66,11 @@ class Estimate(restful.Resource):
         except KeyError, e:
             restful.abort(400, errors=["Expected to find property '{}' on the request data.".format(e.message)])
 
-        # result = estimate(analysis.logistic, data, years, np.amax(years), log=False)
-        result = estimate(analysis.wrap_scipy(stats.dgamma.cdf), data, years, np.amax(years), log=False)
+        try:
+            # result = estimate(analysis.logistic, data, years, np.amax(years), log=False)
+            result = estimate(analysis.wrap_scipy(stats.dgamma.cdf), data, years, np.amax(years), log=False)
+        except Exception, e:
+            restful.abort(400, errors=[e.message])
 
         e_years, e_data = result
         return {'years': as_json(e_years), 'data': as_json(e_data.astype(np.float32))}, 200
