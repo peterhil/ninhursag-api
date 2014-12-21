@@ -29,13 +29,13 @@ angular.module('app')
           result = Papa.parse csv,
             header: true
             dynamicTyping: true
-          scope.data = cleanup(result.data)
-          # window.data = scope.data
+          scope.data = _.indexBy cleanup(result.data), scope.index
           scope.loading = false
 
       scope.render = (data) ->
         return unless data
-        $log.debug "Data changed:", data
+        data = _.map(data)
+        $log.info "Data changed:", data
 
         # Workaround jQuery bug with camel cased attributes
         svg = element.find('svg')[0]
@@ -65,9 +65,26 @@ angular.module('app')
           line(column)(data)
 
       scope.test = ->
-        $log.info "Test"
-        scope.data = scope.data.slice(0, 200)
+        request_data = JSON.stringify
+          'years': _.map(scope.data, (row) -> parseInt(row[scope.index]))
+          'data': _.map(scope.data, (row) -> parseFloat(row['World production']))
+
+        $.ajax
+          type: 'POST'
+          url: ['/', '0.0.0.0:5000', 'api/v1', 'estimate'].join '/'
+          data: request_data
+          headers: {"Accept": "application/json", "Content-Type": "application/json"}
+          dataType: 'json'
+          success: (response) ->
+            estimate = _.indexBy(_.map(
+              _.zipObject(response['years'], response['data']),
+              (v, k) ->
+                'Year': parseInt(k)
+                'Scipy Estimated': parseFloat(v)
+              ), 'Year')
+            scope.data = _.merge scope.data, estimate
 
       scope.$watchCollection 'data', (data, old) ->
+        $log.info "Watching: data changed"
         scope.render(data)
   ]
