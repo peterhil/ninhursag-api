@@ -1,8 +1,9 @@
 Flask==0.10.1
-Flask-Assets==0.8
+Flask-Assets==0.10
 Flask-FlatPages==0.5
 Flask-RESTful==0.2.12
 Jinja2==2.7.1
+Markdown==2.5.2
 MarkupSafe==0.18
 Unidecode==0.04.14
 Werkzeug==0.9.4
@@ -10,5 +11,5 @@ cssmin==0.1.4
 gunicorn==18.0
 nodeenv==0.7.0
 py==1.4.15
-webassets==0.8
+webassets==0.10.1
 wsgiref==0.1.2
