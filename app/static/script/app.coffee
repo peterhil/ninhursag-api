@@ -11,7 +11,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
+    # 'ngTouch',
     'angular-growl',
     'angularSpinner',
   ])
