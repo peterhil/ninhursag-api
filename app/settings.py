@@ -19,11 +19,12 @@ class Default(object):
     SERVER_NAME = 'localhost:5000'
 
     # Authentication etc
+    # To generate: import os; os.urandom(24)
     SECRET_KEY = 'some-secret-key'
     CSRF_ENABLED = True
 
     # API
-    API_SERVER = 'localhost:5000'
+    API_SERVER = SERVER_NAME
     API_TOKEN = 'some-api-token'
 
     # Flat pages
@@ -33,12 +34,12 @@ class Default(object):
 
 
 class Dev(Default):
-    APP_NAME = project_name + ' dev'
+    APP_NAME = project_name + ' (dev)'
 
     DEBUG = True
 
     SERVER_NAME = '0.0.0.0:5000'
-    API_SERVER = '0.0.0.0:5000'
+    API_SERVER = SERVER_NAME
 
 class Testing(Default):
     TESTING = True
