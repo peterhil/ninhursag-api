@@ -7,8 +7,8 @@ Markdown==2.5.2
 MarkupSafe==0.18
 Unidecode==0.04.14
 Werkzeug==0.9.4
-cssmin==0.1.4
-excelsior>=0.0.3
+cssmin==0.2.0
+excelsior==0.0.5
 gunicorn==18.0
 nodeenv==0.7.0
 numpy==1.9.1
