@@ -60,6 +60,7 @@ js_main = Bundle(
         'coffee/production-chart.coffee',
         'script/app.coffee',
         'script/service/config.coffee',
+        'script/service/api.coffee',
         'script/controller/listing.coffee',
         'script/controller/mineral-ctrl.coffee',
         'script/directive/chart.coffee',

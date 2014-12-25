@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .directive 'chart', ['$http', '$log', ($http, $log) ->
+  .directive 'chart', ['$http', '$log', 'api', ($http, $log, api) ->
     restrict: 'AE'
     replace: true
     scope:
@@ -65,17 +65,12 @@ angular.module('app')
           line(column)(data)
 
       scope.test = ->
-        request_data = JSON.stringify
+        data = JSON.stringify
           'years': _.map(scope.data, (row) -> parseInt(row[scope.index]))
           'data': _.map(scope.data, (row) -> parseFloat(row['World production']))
 
-        $.ajax
-          type: 'POST'
-          url: ['/', '0.0.0.0:5000', 'api/v1', 'estimate'].join '/'
-          data: request_data
-          headers: {"Accept": "application/json", "Content-Type": "application/json"}
-          dataType: 'json'
-          success: (response) ->
+        api.estimate(data)
+          .success (response) ->
             estimate = _.indexBy(_.map(
               _.zipObject(response['years'], response['data']),
               (v, k) ->
