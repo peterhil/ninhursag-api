@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .directive 'chart', ['$http', '$log', 'api', ($http, $log, api) ->
+  .directive 'chart', ['$http', '$log', 'api', 'growl', ($http, $log, api, growl) ->
     restrict: 'AE'
     replace: true
     scope:
@@ -70,7 +70,7 @@ angular.module('app')
           'data': _.map(scope.data, (row) -> parseFloat(row['World production']))
 
         api.estimate(data)
-          .success (response) ->
+          .then (response) ->
             estimate = _.indexBy(_.map(
               _.zipObject(response['years'], response['data']),
               (v, k) ->
@@ -78,6 +78,8 @@ angular.module('app')
                 'Scipy Estimated': parseFloat(v)
               ), 'Year')
             scope.data = _.merge scope.data, estimate
+          , (fail) ->
+            growl.error fail.data.errors.join("\n")
 
       scope.$watchCollection 'data', (data, old) ->
         $log.info "Watching: data changed"
