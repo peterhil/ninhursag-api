@@ -3,11 +3,9 @@
 angular.module('app')
   .factory 'api', ['$http', '$log', ($http, $log) ->
     new class api
+      url: (args...) ->
+        _.flatten([['/', '0.0.0.0:5000', 'api/v1'], args]).join '/'
+
       estimate: (data) ->
-        $.ajax
-          type: 'POST'
-          url: ['/', '0.0.0.0:5000', 'api/v1', 'estimate'].join '/'
-          data: data
-          headers: {"Accept": "application/json", "Content-Type": "application/json"}
-          dataType: 'json'
+        $http.post @url('estimate'), data
   ]

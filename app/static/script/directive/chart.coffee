@@ -77,7 +77,7 @@ angular.module('app')
                 'Year': parseInt(k)
                 'Scipy Estimated': parseFloat(v)
               ), 'Year')
-            scope.$apply(-> scope.data = _.merge scope.data, estimate)
+            scope.data = _.merge scope.data, estimate
 
       scope.$watchCollection 'data', (data, old) ->
         $log.info "Watching: data changed"
