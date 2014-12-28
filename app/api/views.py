@@ -4,6 +4,9 @@
 # See http://flask-restful.readthedocs.org/en/latest/
 # on how to properly implement an REST API with Flask
 
+import json
+import os
+
 from flask import current_app, request, Blueprint
 from flask import jsonify, url_for, send_from_directory
 from flask.ext import restful
@@ -75,8 +78,16 @@ class Estimate(restful.Resource):
         e_years, e_data = result
         return {'years': as_json(e_years), 'data': as_json(e_data.astype(np.float32))}, 200
 
+class Minerals(restful.Resource):
+    def get(self):
+        index = os.path.join(current_app.config['DATA_DIR'], 'tsv', 'index.json')
+        with open(index, 'rb') as f:
+            response = json.load(f)
+        return response
+
 
 rest.add_resource(Estimate, '/estimate')
+rest.add_resource(Minerals, '/minerals')
 rest.add_resource(ApiIndex, '/')
 rest.add_resource(HelloWorld, '/hello')
 rest.add_resource(Items, '/items')
