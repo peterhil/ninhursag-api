@@ -41,6 +41,7 @@ class Dev(Default):
     SERVER_NAME = '0.0.0.0:5000'
     API_SERVER = SERVER_NAME
 
+
 class Testing(Default):
     TESTING = True
     CSRF_ENABLED = False
