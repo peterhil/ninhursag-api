@@ -87,7 +87,7 @@ def estimate(func, data, years, until, name="Data", log=False):
     e_years = e_x + start
 
     if log: data = np.log(data)
-    popt, pcov = curve_fit(func, x, data)
+    popt, pcov = curve_fit(func, x, data, maxfev=10000)
     # print("popt: %r\npcov: %r" % (popt, pcov))
 
     estd = func(e_x, *popt)
