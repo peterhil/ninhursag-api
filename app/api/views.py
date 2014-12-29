@@ -71,7 +71,7 @@ class Estimate(restful.Resource):
 
         try:
             # result = estimate(analysis.logistic, data, years, np.amax(years), log=False)
-            result = estimate(analysis.wrap_scipy(stats.logistic.cdf), data, years, np.amax(years), log=False)
+            result = estimate(analysis.wrap_scipy(stats.logistic.cdf), data, years, np.amax(years) + 50, log=False)
         except Exception, e:
             restful.abort(400, errors=[e.message])
 
