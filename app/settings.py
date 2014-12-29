@@ -32,7 +32,7 @@ class Default(object):
     FLATPAGES_EXTENSION = '.md'
     FLATPAGES_MARKDOWN_EXTENSIONS = []
 
-    DATA_DIR = 'app/static/data'
+    DATA_DIR = 'static/data'
 
 
 class Dev(Default):

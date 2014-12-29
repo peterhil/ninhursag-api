@@ -80,7 +80,7 @@ class Estimate(restful.Resource):
 
 class Minerals(restful.Resource):
     def get(self):
-        index = os.path.join(current_app.config['DATA_DIR'], 'tsv', 'index.json')
+        index = os.path.join(current_app.root_path, current_app.config['DATA_DIR'], 'tsv', 'index.json')
         with open(index, 'rb') as f:
             response = json.load(f)
         return response
