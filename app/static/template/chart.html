@@ -1,4 +1,9 @@
 <figure>
+    <header data-ng-if="header">
+        <span data-ng-repeat="line in header track by $index">
+            {{line}}<br>
+        </span>
+    </header>
     <figcaption data-ng-if="caption">
         {{caption}}
     </figcaption>
@@ -69,4 +74,9 @@
             </g>
         </g>
     </svg>
+    <footer data-ng-if="footer">
+        <span data-ng-repeat="line in footer track by $index">
+            {{line}}<br>
+        </span>
+    </footer>
 </figure>
