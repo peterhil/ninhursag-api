@@ -16,13 +16,15 @@
 
       <div data-ng-controller="MineralCtrl">
         <figure data-chart="true"
-                data-src="/data/ds140-bauxi-clean.csv"
+                {# data-src="/data/ds140-bauxi-clean.csv" #}
+                data-src="/{{config['DATA_DIR']}}/tsv/ds140-bauxi-Bauxite.tsv"
                 data-width="960"
                 data-height="660"
                 data-caption="Global bauxite production 1900&ndash;2010 (Metric tons gross weight)"
                 data-legend="true"
                 data-index="Year"
                 data-series='["World production", "Estimated", "Log. Estimated", "Reserves", "Scipy Estimated", "Production", "Apparent consumption"]'
+                data-exclude='["Imports", "Exports", "Stocks", "Unit value (98$/t)", "Unit value ($/t)"]'
                 >
         </figure>
       </div>
