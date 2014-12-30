@@ -26,6 +26,7 @@ def config():
         'API_URL',
         'APP_NAME',
         'ASSETS_DEBUG',
+        'DATA_DIR',
         'DEBUG',
         'MESSAGES',
         'PREFERRED_URL_SCHEME',
