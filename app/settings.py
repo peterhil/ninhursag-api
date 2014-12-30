@@ -37,11 +37,7 @@ class Default(object):
 
 class Dev(Default):
     APP_NAME = project_name + ' (dev)'
-
     DEBUG = True
-
-    SERVER_NAME = '0.0.0.0:5000'
-    API_SERVER = SERVER_NAME
 
 
 class Testing(Default):
