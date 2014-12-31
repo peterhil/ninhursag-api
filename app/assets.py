@@ -45,6 +45,7 @@ js_vendor = Bundle(
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
     'vendor/foundation/js/foundation/foundation.js',
     'vendor/foundation/js/foundation/foundation.topbar.js',
+    'vendor/humanize-plus/public/src/humanize.js',
     filters='uglifyjs',
     output='gen/vendor.min.js'
 )

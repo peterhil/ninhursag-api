@@ -44,6 +44,8 @@ angular.module('app')
           'Unit value ($/t)',
         ]))))])
 
+        scope.yLabel = (d) -> Humanize.compactInteger(d, 1)
+
         line = (column) ->
           d3.svg.line()
             .x((d, i) -> x(d[chart.index]))
