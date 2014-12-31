@@ -49,10 +49,6 @@ angular.module('app')
             .x((d, i) -> x(d[chart.index]))
             .y((d, i) -> y(parseFloat(d[column]) or 0))
 
-        # Grid and axes
-        scope.xticks = (n) -> x.ticks(n)
-        scope.yticks = (n) -> y.ticks(n)
-
         scope.line = (column) ->
           line(column)(data)
 

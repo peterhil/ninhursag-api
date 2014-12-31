@@ -19,7 +19,7 @@
         <g class="grid">
             <g class="x-axis">
                 <g class="lines">
-                    <line data-ng-repeat="v in xticks(25)"
+                    <line data-ng-repeat="v in x.ticks(25)"
                           data-ng-attr-x1="{{x(v)}}"
                           data-ng-attr-x2="{{x(v)}}"
                           y1="0"
@@ -28,7 +28,7 @@
                     </line>
                 </g>
                 <g class="labels">
-                    <text data-ng-repeat="v in xticks(13)"
+                    <text data-ng-repeat="v in x.ticks(13)"
                           data-ng-attr-x="{{x(v)}}"
                           data-ng-attr-y="{{height}}"
                           dy="1.25em"
@@ -40,7 +40,7 @@
             </g>
             <g class="y-axis">
                 <g class="lines">
-                    <line data-ng-repeat="v in yticks(40)"
+                    <line data-ng-repeat="v in y.ticks(40)"
                           data-ng-attr-y1="{{y(v)}}"
                           data-ng-attr-y2="{{y(v)}}"
                           x1="0"
@@ -49,7 +49,7 @@
                     </line>
                 </g>
                 <g class="labels">
-                    <text data-ng-repeat="v in yticks(20)"
+                    <text data-ng-repeat="v in y.ticks(20)"
                           data-ng-attr-y="{{y(v)}}"
                           data-ng-attr-x="0"
                           dx="6.75em"
