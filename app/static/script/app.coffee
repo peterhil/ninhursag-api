@@ -38,7 +38,8 @@ angular
       growlProvider.globalTimeToLive
         success: 4000
         info: 4000
-        warning: 8000
+        warning: 4000
+        error: 4000
       growlProvider.globalDisableCountDown true
       growlProvider.globalDisableIcons true
       $httpProvider.interceptors.push(growlProvider.serverMessagesInterceptor)
