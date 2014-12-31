@@ -17,6 +17,14 @@ angular.module('app')
         $scope.minerals = _.invert(response)
         $scope.mineral = _($scope.minerals).keys().first()
 
+    productionSeries = (series) ->
+      sorted = _.filter _.sortBy(series), (i) -> not i.match /\(estimated\)$/
+      _.findLast(sorted, (i) ->
+        i.match /(World.+production|(P|p)roduction|Total)/
+      )
+
+    $scope.chart.selectedSeries = productionSeries($scope.chart.series)
+
     isData = (row) ->
       _.any(_.filter(_.map(
         row,
@@ -51,7 +59,7 @@ angular.module('app')
             dynamicTyping: true
           series = _.filter result.meta.fields, (col) ->
             col not in _.flatten [$scope.chart.index, $scope.chart.exclude]
-          series.push("Scipy Estimated")
+          # series.push("Scipy Estimated")
           $scope.chart.series = series
           $scope.chart.header = header or []
           $scope.chart.footer = footer or []
@@ -62,6 +70,9 @@ angular.module('app')
       $log.info "Watching mineral:", val, old
       return unless val
       $scope.chart.src = "/#{config.data_dir}/tsv/#{val}"
+
+    $scope.$watch 'chart.series', (val, old) ->
+      $scope.chart.selectedSeries = productionSeries(val)
 
     $scope.$watch 'chart.src', (src, old) ->
       # $log.info "Watching chart.src:", src, old

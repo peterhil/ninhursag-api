@@ -54,22 +54,24 @@ angular.module('app')
         scope.line = (column) ->
           line(column)(data)
 
-      scope.test2 = ->
-        scope.chart.src = "/data/ds140-bauxi-clean.csv"
-
       scope.test = ->
         request_data =
           'years': _.map(scope.chart.data, (row) -> parseInt(row[scope.chart.index]))
-          'data': _.map(scope.chart.data, (row) -> parseFloat(row['World production']))
+          'data': _.map(scope.chart.data, (row) -> parseFloat(row[scope.chart.selectedSeries]))
 
         api.estimate(request_data)
           .success (response) ->
+            key = "#{scope.chart.selectedSeries} (estimated)"
             estimate = _.indexBy(_.map(
               _.zipObject(response['years'], response['data']),
               (v, k) ->
-                'Year': parseInt(k)
-                'Scipy Estimated': parseFloat(v)
-              ), 'Year')
+                r =
+                  'Year': parseInt(k)
+                r["#{key}"] = parseFloat(v)
+                r
+              ), scope.chart.index)
+            scope.chart.series.push(key)
+            scope.chart.series = _.unique scope.chart.series
             scope.chart.data = _.merge scope.chart.data, estimate
           # .error (response) ->
           #   growl.warning response.errors.join("\n")
