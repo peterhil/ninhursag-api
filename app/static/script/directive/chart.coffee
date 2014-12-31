@@ -21,10 +21,10 @@ angular.module('app')
       scope.preserveAspectRatio ||= "xMidYMid meet"
       scope.chart.src = attrs.src
 
-      scope.render = (data) ->
-        return unless data
-        data = _.map(data)
-        # $log.info "Render:", data, scope.chart.index, scope.chart.series
+      scope.render = (chart) ->
+        return unless chart.data
+        data = _.map(chart.data)
+        # $log.info "Render:", data, chart.index, chart.series
 
         # Workaround jQuery bug with camel cased attributes
         svg = element.find('svg')[0]
@@ -34,11 +34,11 @@ angular.module('app')
           svg.removeAttribute('preserveaspectratio')
           svg.removeAttribute('viewbox')
 
-        x = d3.scale.linear().range([0, scope.width])
-        y = d3.scale.linear().range([scope.height, 0])
+        scope.x = x = d3.scale.linear().range([0, scope.width])
+        scope.y = y = d3.scale.linear().range([scope.height, 0])
 
-        x.domain(d3.extent(data, (d) -> parseInt(d[scope.chart.index])))
-        y.domain([0, d3.max(data, (d) -> _.max(_.pick(d, _.filter(scope.chart.series, (d) -> d not in [
+        x.domain(d3.extent(data, (d) -> parseInt(d[chart.index])))
+        y.domain([0, d3.max(data, (d) -> _.max(_.pick(d, _.filter(chart.series, (d) -> d not in [
           'Reserves',
           'Unit value (98$/t)',
           'Unit value ($/t)',
@@ -46,12 +46,10 @@ angular.module('app')
 
         line = (column) ->
           d3.svg.line()
-            .x((d, i) -> x(d[scope.chart.index]))
+            .x((d, i) -> x(d[chart.index]))
             .y((d, i) -> y(parseFloat(d[column]) or 0))
 
         # Grid and axes
-        scope.x = (d) -> x(d)
-        scope.y = (d) -> y(d)
         scope.xticks = (n) -> x.ticks(n)
         scope.yticks = (n) -> y.ticks(n)
 
@@ -83,7 +81,7 @@ angular.module('app')
             else
               growl.error "#{response.status} #{response.statusText}"
 
-      scope.$watchCollection 'chart', (chart, old) ->
-        # $log.info "Watching chart.data:", chart
-        scope.render(chart.data)
+      scope.$watchCollection 'chart.data', (val, old) ->
+        # $log.info "Watching chart.data:", val
+        scope.render(scope.chart)
   ]
