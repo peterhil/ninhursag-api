@@ -1,15 +1,15 @@
-<figure>
+<figure class="ng-cloak">
     <header data-ng-if="header">
-        <span data-ng-repeat="line in header track by $index">
+        <span data-ng-repeat="line in chart.header track by $index">
             {{line}}<br>
         </span>
     </header>
     <figcaption data-ng-if="caption">
         {{caption}}
     </figcaption>
-    <div data-us-spinner class="chart-spinner" data-ng-if="loading"></div>
+    <div data-us-spinner class="chart-spinner" data-ng-if="chart.loading"></div>
     <svg class="ng-chart"
-         data-ng-if="!loading"
+         data-ng-if="!chart.loading"
          data-ng-attr-width="{{width}}"
          data-ng-attr-height="{{height}}"
          data-ng-attr-viewBox="{{viewBox}}"
@@ -63,10 +63,10 @@
         </g>
         <g class="chart">
             <path class="line series-{{$index}}" data-ng-attr-d="{{line(serie)}}"
-                  data-ng-repeat="serie in series">{{serie}}</path>
+                  data-ng-repeat="serie in chart.series">{{serie}}</path>
         </g>
         <g class="legend" data-ng-if="legend" transform="translate(160, 30)">
-            <g data-ng-repeat="serie in series">
+            <g data-ng-repeat="serie in chart.series">
                 <line class="line series-{{$index}}" x1="0" x2="30" data-ng-attr-y1="{{$index * 1.5 - 0.35}}em" data-ng-attr-y2="{{$index * 1.5 - 0.35}}em"></line>
                 <text dx="40" data-ng-attr-dy="{{$index * 1.5}}em">
                     {{serie}}
@@ -75,7 +75,7 @@
         </g>
     </svg>
     <footer data-ng-if="footer">
-        <span data-ng-repeat="line in footer track by $index">
+        <span data-ng-repeat="line in chart.footer track by $index">
             {{line}}<br>
         </span>
     </footer>
