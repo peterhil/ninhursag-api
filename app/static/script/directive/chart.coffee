@@ -56,7 +56,7 @@ angular.module('app')
         scope.chart.src = "/data/ds140-bauxi-clean.csv"
 
       scope.test = ->
-        request_data = JSON.stringify
+        request_data =
           'years': _.map(scope.chart.data, (row) -> parseInt(row[scope.chart.index]))
           'data': _.map(scope.chart.data, (row) -> parseFloat(row['World production']))
 
