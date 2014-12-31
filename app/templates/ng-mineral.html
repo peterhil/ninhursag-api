@@ -7,17 +7,26 @@
 {% endblock %}
 
 {% block content %}
-  <div class="row">
+  <div class="row" data-ng-controller="MineralCtrl">
     <div class="small-12 large-9 columns">
 
-      <h1>{{ mineral | capitalize }}</h1>
+      <h1 data-ng-bind="minerals[mineral]">{{ mineral | capitalize }}</h1>
 
-      <p class="description">Bauxite is an aluminium ore and is the main source of aluminium.</p>
+      {# <p class="description">Bauxite is an aluminium ore and is the main source of aluminium.</p> #}
 
-      <div data-ng-controller="MineralCtrl">
+      <div>
+        <div class="row">
+          <div class="large-4 columns">
+            <label>Select mineral
+              <select data-ng-options="mineral as src for (mineral, src) in minerals"
+                      data-ng-model="mineral">
+                <option value=""></option>
+              </select>
+            </label>
+          </div>
+        </div>
         <figure data-chart="true"
                 data-ng-model="chart"
-                {# data-src="/data/ds140-bauxi-clean.csv" #}
                 data-src="/{{config['DATA_DIR']}}/tsv/ds140-bauxi-Bauxite.tsv"
                 data-width="960"
                 data-height="660"

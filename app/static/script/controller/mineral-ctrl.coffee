@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .controller 'MineralCtrl', ['$http', '$log', '$scope', ($http, $log, $scope) ->
+  .controller 'MineralCtrl', ['$http', '$log', '$scope', 'config', ($http, $log, $scope, config) ->
     $scope.chart =
       src: ''
       data: []
@@ -9,6 +9,13 @@ angular.module('app')
       index: "Year"
       series: []
       exclude: ["Imports", "Exports", "Stocks", "Unit value (98$/t)", "Unit value ($/t)"]
+
+    $scope.minerals = {}
+    $scope.mineral = ''
+    $http.get('/api/v1/minerals')
+      .success (response) ->
+        $scope.minerals = _.invert(response)
+        $scope.mineral = _($scope.minerals).keys().first()
 
     isData = (row) ->
       _.any(_.filter(_.map(
@@ -50,6 +57,11 @@ angular.module('app')
           $scope.chart.footer = footer or []
           $scope.chart.data = _.indexBy cleanup(result.data), $scope.chart.index
           $scope.chart.loading = false
+
+    $scope.$watch 'mineral', (val, old) ->
+      $log.info "Watching mineral:", val, old
+      return unless val
+      $scope.chart.src = "/#{config.data_dir}/tsv/#{val}"
 
     $scope.$watch 'chart.src', (src, old) ->
       # $log.info "Watching chart.src:", src, old
