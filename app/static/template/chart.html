@@ -27,6 +27,25 @@
                           >
                     </line>
                 </g>
+            </g>
+            <g class="y-axis">
+                <g class="lines">
+                    <line data-ng-repeat="v in y.ticks(40)"
+                          data-ng-attr-y1="{{y(v)}}"
+                          data-ng-attr-y2="{{y(v)}}"
+                          x1="0"
+                          data-ng-attr-x2="{{width}}"
+                          >
+                    </line>
+                </g>
+            </g>
+        </g>
+        <g class="chart">
+            <path class="line series-{{$index}}" data-ng-attr-d="{{line(serie)}}"
+                  data-ng-repeat="serie in chart.series">{{serie}}</path>
+        </g>
+        <g class="grid">
+            <g class="x-axis">
                 <g class="labels">
                     <text data-ng-repeat="v in x.ticks(13)"
                           data-ng-attr-x="{{x(v)}}"
@@ -39,15 +58,6 @@
                 </g>
             </g>
             <g class="y-axis">
-                <g class="lines">
-                    <line data-ng-repeat="v in y.ticks(40)"
-                          data-ng-attr-y1="{{y(v)}}"
-                          data-ng-attr-y2="{{y(v)}}"
-                          x1="0"
-                          data-ng-attr-x2="{{width}}"
-                          >
-                    </line>
-                </g>
                 <g class="labels">
                     <text data-ng-repeat="v in y.ticks(20)"
                           data-ng-attr-y="{{y(v)}}"
@@ -60,10 +70,6 @@
                     </text>
                 </g>
             </g>
-        </g>
-        <g class="chart">
-            <path class="line series-{{$index}}" data-ng-attr-d="{{line(serie)}}"
-                  data-ng-repeat="serie in chart.series">{{serie}}</path>
         </g>
         <g class="legend" data-ng-if="legend" transform="translate(160, 30)">
             <g data-ng-repeat="serie in chart.series">
