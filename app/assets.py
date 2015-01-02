@@ -46,6 +46,7 @@ js_vendor = Bundle(
     'vendor/foundation/js/foundation/foundation.js',
     'vendor/foundation/js/foundation/foundation.topbar.js',
     'vendor/humanize-plus/public/src/humanize.js',
+    'vendor/ramda/ramda.js',
     filters='uglifyjs',
     output='gen/vendor.min.js'
 )
