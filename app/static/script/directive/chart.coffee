@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .directive 'chart', ['$log', 'api', 'growl', ($log, api, growl) ->
+  .directive 'chart', ['$log', 'Functional', 'api', 'growl', ($log, Fx, api, growl) ->
     restrict: 'AE'
     require: 'ngModel'
     replace: true
@@ -23,7 +23,7 @@ angular.module('app')
 
       scope.render = (chart) ->
         return unless chart.data
-        data = _.map(chart.data)
+        data = R.values(chart.data)
         # $log.info "Render:", data, chart.index, chart.series
 
         # Workaround jQuery bug with camel cased attributes
@@ -37,12 +37,15 @@ angular.module('app')
         scope.x = x = d3.scale.linear().range([0, scope.width])
         scope.y = y = d3.scale.linear().range([scope.height, 0])
 
-        x.domain(d3.extent(data, (d) -> parseInt(d[chart.index])))
-        y.domain([0, d3.max(data, (d) -> _.max(_.pick(d, _.filter(chart.series, (d) -> d not in [
+        excludeFromYMax = [
           'Reserves',
           'Unit value (98$/t)',
           'Unit value ($/t)',
-        ]))))])
+        ]
+        yMaxColumns = R.filter R.not(R.contains(excludeFromYMax))
+
+        x.domain(d3.extent(data, (row) -> parseInt(row[chart.index])))
+        y.domain([0, d3.max(data, (row) -> R.max(R.values(R.pick(yMaxColumns(chart.series), row))))])
 
         scope.yLabel = (d) -> Humanize.compactInteger(d, 1)
 
@@ -56,22 +59,30 @@ angular.module('app')
 
       scope.test = ->
         request_data =
-          'years': _.map(scope.chart.data, (row) -> parseInt(row[scope.chart.index]))
-          'data': _.map(scope.chart.data, (row) -> parseFloat(row[scope.chart.selectedSeries]))
+          'years': []
+          'data': []
+        R.map((row) ->
+          index = parseInt(row[scope.chart.index])
+          data = parseFloat(row[scope.chart.selectedSeries])
+          if index and data
+            request_data.years.push index
+            request_data.data.push data
+        , R.values(scope.chart.data))
 
         api.estimate(request_data)
           .success (response) ->
             key = "#{scope.chart.selectedSeries} (estimated)"
-            estimate = _.indexBy(_.map(
-              _.zipObject(response['years'], response['data']),
-              (v, k) ->
-                r =
-                  'Year': parseInt(k)
-                r["#{key}"] = parseFloat(v)
-                r
-              ), scope.chart.index)
+            estimate = Fx.indexBy(scope.chart.index,
+              R.mapObj.idx(
+                (v, k) ->
+                  r =
+                    'Year': parseInt(k)
+                  r[key] = parseFloat(v)
+                  r
+                , R.zipObj(response['years'], response['data']))
+              )
             scope.chart.series.push(key)
-            scope.chart.series = _.unique scope.chart.series
+            scope.chart.series = R.uniq scope.chart.series
             scope.chart.data = _.merge scope.chart.data, estimate
           # .error (response) ->
           #   growl.warning response.errors.join("\n")

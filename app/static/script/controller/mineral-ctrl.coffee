@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .controller 'MineralCtrl', ['$http', '$log', '$scope', 'config', ($http, $log, $scope, config) ->
+  .controller 'MineralCtrl', ['$http', '$log', '$scope', 'Functional', 'config', ($http, $log, $scope, Fx, config) ->
     $scope.chart =
       src: ''
       data: []
@@ -14,40 +14,34 @@ angular.module('app')
     $scope.mineral = ''
     $http.get('/api/v1/minerals')
       .success (response) ->
-        $scope.minerals = _.invert(response)
-        $scope.mineral = _($scope.minerals).keys().first()
+        $scope.minerals = Fx.invert(response)
+        $scope.mineral = R.head(R.keys($scope.minerals))
 
     productionSeries = (series) ->
-      sorted = _.filter _.sortBy(series), (i) -> not i.match /\(estimated\)$/
-      _.findLast(sorted, (i) ->
-        i.match /(World.+production|(P|p)roduction|Total)/
+      production = R.match /(World.+production|(P|p)roduction|Total)/
+      estimated = R.match /\(estimated\)$/
+      R.findLast(
+        R.allPredicates([production, R.not(estimated)])
+        R.sortBy(R.I, series)
       )
 
     $scope.chart.selectedSeries = productionSeries($scope.chart.series)
 
     isData = (row) ->
-      _.any(_.filter(_.map(
-        row,
-        (col) -> _.first(col.match(RegExp('^(\\d{4}|Year)$')))
-        )))
-
-    cleanRow = (row) ->
-      _.map(row, (col) -> col.replace(/^( |")+|( |")+$/g, ''))
+      isIndex = R.match RegExp("^(\\d{4}|#{$scope.chart.index})$")
+      !! R.find(isIndex, row)
 
     dataRows = (csv) ->
       parsed = Papa.parse csv,
           header: false
           dynamicTyping: false
       rows = parsed.data
-      header = _.filter(_.flatten(_.take(rows, (row) -> not isData(row))))
-      data = _.take(rows.slice(header.length), isData)
-      footer = _.filter(_.flatten(rows.slice(header.length + data.length)))
-      data = _.map(data, (row) -> cleanRow(row).join("\t")).join("\n")
-      [data, header, footer]
-
-    cleanup = (data) ->
-      _.filter data, (row) ->
-        parseInt(row[$scope.chart.index])
+      header = R.takeWhile R.not(isData), rows
+      data = R.takeWhile isData, R.skip(header.length, rows)
+      footer = R.skip(header.length + data.length, rows)
+      data = R.join "\n", R.map(R.join("\t"), data)
+      clean = R.compose R.filter(R.I), R.flatten
+      [data, clean(header), clean(footer)]
 
     $scope.getStatistics = (src) ->
       # $scope.chart.loading = true
@@ -57,17 +51,16 @@ angular.module('app')
           result = Papa.parse csv,
             header: true
             dynamicTyping: true
-          series = _.filter result.meta.fields, (col) ->
-            col not in _.flatten [$scope.chart.index, $scope.chart.exclude]
+          series = Fx.filterItems R.append($scope.chart.index, $scope.chart.exclude), result.meta.fields
           # series.push("Scipy Estimated")
           $scope.chart.series = series
           $scope.chart.header = header or []
           $scope.chart.footer = footer or []
-          $scope.chart.data = _.indexBy cleanup(result.data), $scope.chart.index
+          $scope.chart.data = Fx.indexBy $scope.chart.index, result.data
           $scope.chart.loading = false
 
     $scope.$watch 'mineral', (val, old) ->
-      $log.info "Watching mineral:", val, old
+      # $log.info "Watching mineral:", val, old
       return unless val
       $scope.chart.src = "/#{config.data_dir}/tsv/#{val}"
 
