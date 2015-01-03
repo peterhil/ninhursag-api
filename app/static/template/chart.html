@@ -41,8 +41,11 @@
             </g>
         </g>
         <g class="chart">
-            <path class="line series-{{$index}}" data-ng-attr-d="{{line(serie)}}"
-                  data-ng-repeat="serie in chart.series">{{serie}}</path>
+            <path class="line series-{{$index}}"
+                  data-ng-repeat="serie in chart.series"
+                  data-ng-attr-d="{{line(serie)}}"
+                  data-ng-style="seriesStyle(serie)"
+                  >{{serie}}</path>
         </g>
         <g class="grid">
             <g class="x-axis">
@@ -73,7 +76,12 @@
         </g>
         <g class="legend" data-ng-if="legend" transform="translate(160, 30)">
             <g data-ng-repeat="serie in chart.series">
-                <line class="line series-{{$index}}" x1="0" x2="30" data-ng-attr-y1="{{$index * 1.5 - 0.35}}em" data-ng-attr-y2="{{$index * 1.5 - 0.35}}em"></line>
+                <line class="line series-{{$index}}"
+                      x1="0" x2="30"
+                      data-ng-attr-y1="{{$index * 1.5 - 0.35}}em"
+                      data-ng-attr-y2="{{$index * 1.5 - 0.35}}em"
+                      data-ng-style="seriesStyle(serie)"
+                      ></line>
                 <text dx="40" data-ng-attr-dy="{{$index * 1.5}}em">
                     {{serie}}
                 </text>

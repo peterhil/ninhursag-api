@@ -35,7 +35,9 @@
     "spin": "~1.1.6",
     "angular-spinner": "~0.6.0",
     "humanize-plus": "~1.5.0",
-    "ramda": "~0.8.0"
+    "ramda": "~0.8.0",
+    "soundex-code": "~0.1.1",
+    "tinycolor": "https://github.com/GerHobbelt/TinyColor.git#~1.1.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.8",
