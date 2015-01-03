@@ -22,7 +22,7 @@ angular.module('app')
         $scope.mineral = R.head(R.keys($scope.minerals))
 
     $scope.functions = {}
-    $scope.currentFunction = 'gamma'
+    $scope.currentFunction = 'genlogistic'
     $http.get('/api/v1/estimate')
       .success (response) ->
         $scope.functions = response
