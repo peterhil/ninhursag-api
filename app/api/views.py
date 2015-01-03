@@ -26,8 +26,21 @@ bp = Blueprint('rest', __name__, url_prefix='/api/v1')
 rest = restful.Api(bp)
 
 
+def replace_nan(x):
+    if np.ndim(x) > 0:
+        return quote_nans(x)
+    if np.isnan(x): return 'NaN'
+    elif np.isinf(x):
+        return '-Infinity' if np.sign(x) == -1.0 else 'Infinity'
+    else:
+        return x
+
+def quote_nans(lst):
+    return map(replace_nan, lst)
+
+
 def as_json(arr):
-    return arr.tolist()
+    return quote_nans(arr.tolist())
 
 
 class ApiIndex(restful.Resource):
@@ -64,6 +77,7 @@ class Estimate(restful.Resource):
             obj = json.loads(request.data)
             data = obj['data']
             years = obj['years']
+            function = obj['function'] if obj['function'] in analysis.scipy_functions('pdf').keys() else ''
         except ValueError, e:
             restful.abort(400, errors=["Request is not valid JSON."])
         except KeyError, e:
@@ -71,12 +85,17 @@ class Estimate(restful.Resource):
 
         try:
             # result = estimate(analysis.logistic, data, years, np.amax(years), log=False)
-            result = estimate(analysis.wrap_scipy(stats.logistic.cdf), data, years, np.amax(years) + 50, log=False)
+            # result = estimate(analysis.wrap_scipy(stats.gamma.pdf), data, years, np.amax(years) + 100, log=False)
+            result = estimate(analysis.scipy_functions('pdf').get(function), data, years, np.amax(years) + 70, log=False)
         except Exception, e:
             restful.abort(400, errors=[e.message])
 
-        e_years, e_data = result
-        return {'years': as_json(e_years), 'data': as_json(e_data.astype(np.float32))}, 200
+        e_years, e_data, e_cov = result
+        return {
+            'years': as_json(e_years),
+            'data': as_json(e_data.astype(np.float64)),
+            'covariance': as_json(e_cov),
+            }, 200
 
 class Minerals(restful.Resource):
     def get(self):

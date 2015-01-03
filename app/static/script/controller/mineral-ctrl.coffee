@@ -8,7 +8,11 @@ angular.module('app')
       loading: true
       index: "Year"
       series: []
-      exclude: ["Imports", "Exports", "Stocks", "Unit value (98$/t)", "Unit value ($/t)"]
+      exclude: [
+        "Imports", "Exports", "Stocks",
+        # "Apparent consumption",
+        "Unit value (98$/t)", "Unit value ($/t)",
+      ]
 
     $scope.minerals = {}
     $scope.mineral = ''
@@ -16,6 +20,12 @@ angular.module('app')
       .success (response) ->
         $scope.minerals = Fx.invert(response)
         $scope.mineral = R.head(R.keys($scope.minerals))
+
+    $scope.functions = {}
+    $scope.currentFunction = 'gamma'
+    $http.get('/api/v1/estimate')
+      .success (response) ->
+        $scope.functions = response
 
     productionSeries = (series) ->
       production = R.match /(World.+production|(P|p)roduction|Total)/

@@ -20,6 +20,13 @@
             <label>Select mineral
               <select data-ng-options="mineral as src for (mineral, src) in minerals"
                       data-ng-model="mineral">
+              </select>
+            </label>
+          </div>
+          <div class="large-4 columns">
+            <label>Select function
+              <select data-ng-options="fn as fn for fn in functions.pdf track by fn"
+                      data-ng-model="currentFunction">
                 <option value=""></option>
               </select>
             </label>
@@ -27,6 +34,8 @@
         </div>
         <figure data-chart="true"
                 data-ng-model="chart"
+                data-function="currentFunction"
+                data-estimate="estimate"
                 data-src="/{{config['DATA_DIR']}}/tsv/ds140-bauxi-Bauxite.tsv"
                 data-width="960"
                 data-height="660"

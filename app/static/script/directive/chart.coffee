@@ -13,6 +13,8 @@ angular.module('app')
       preserveAspectRatio: '@preserveaspectratio'
       viewBox: '@viewbox'
       chart: '=ngModel'
+      function: '='
+      estimate: '='
     templateUrl: '/static/template/chart.html'
     link: (scope, element, attrs) ->
       scope.width ||= 400
@@ -39,8 +41,6 @@ angular.module('app')
 
         excludeFromYMax = [
           'Reserves',
-          'Unit value (98$/t)',
-          'Unit value ($/t)',
         ]
         yMaxColumns = R.filter R.not(R.contains(excludeFromYMax))
 
@@ -57,10 +57,11 @@ angular.module('app')
         scope.line = (column) ->
           line(column)(data)
 
-      scope.test = ->
+      scope.estimate = (fn) ->
         request_data =
           'years': []
           'data': []
+          'function': fn
         R.map((row) ->
           index = parseInt(row[scope.chart.index])
           data = parseFloat(row[scope.chart.selectedSeries])
@@ -77,7 +78,7 @@ angular.module('app')
                 (v, k) ->
                   r =
                     'Year': parseInt(k)
-                  r[key] = parseFloat(v)
+                  r[key] = if _.isFinite(parseFloat(v)) then parseFloat(v) else null
                   r
                 , R.zipObj(response['years'], response['data']))
               )
@@ -94,5 +95,12 @@ angular.module('app')
 
       scope.$watchCollection 'chart.data', (val, old) ->
         # $log.info "Watching chart.data:", val
+        scope.estimate(scope.function)  # TODO makes double requests
+        scope.render(scope.chart)
+
+      scope.$watch 'function', (val, old) ->
+        $log.info "Watching function:", val, old
+        return unless val
+        scope.estimate(val)
         scope.render(scope.chart)
   ]

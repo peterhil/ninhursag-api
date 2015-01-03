@@ -1,6 +1,7 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 
+import inspect
 import logging
 import numpy as np
 import scipy
@@ -56,9 +57,55 @@ def logistic(x, a, b, c):
 def log_logistic(x, a, b, c):
     return a*c/(a*np.exp(-b*np.log(x)) + c)
 
+def getargspec(func):
+    try:
+        return inspect.getargspec(func.__self__._parse_args)
+    except AttributeError:
+        return inspect.getargspec(func)
+
 def wrap_scipy(func):
-    def wrapped(data, a, b, c, d):
-        return func(data, a, b) * c + d
+    argspec = getargspec(func)
+    arity = len(argspec.args) - 1
+
+    # def args_for(arity):
+    #     abc = [x for x in 'abcdefghijklmnopqrstruvwxyz']
+    #     args = ['data']
+    #     args.extend(abc[:arity])
+    #     return args
+    # args=', '.join(args_for(arity))
+    # fntemplate = """def wrapped({args}):\n    return fn({scipy_args}) * zy + zz"""
+    # code = fntemplate.format(
+    #     n=arity,
+    #     args=', '.join([args, 'zy, zz']),
+    #     scipy_args=args,
+    #     )
+    # exec code in globals(), dict(fn=locals()['func'])
+    def adjust(result, ys):
+        return result * ys
+    if arity == 1:
+        def wrapped(data, xs, ys):
+            return adjust(func(data * xs), ys)
+    elif arity == 2:
+        def wrapped(data, a, xs, ys):
+            return adjust(func(data * xs, a), ys)
+    elif arity == 3:
+        def wrapped(data, loc, scale, xs, ys):
+            return adjust(func(data * xs, loc, scale), ys)
+    elif arity == 4:
+        def wrapped(data, loc, scale, a, xs, ys):
+            return adjust(func(data * xs, a, loc, scale), ys)
+    elif arity == 5:
+        def wrapped(data, loc, scale, a, b, xs, ys):
+            return adjust(func(data * xs, a, b, loc, scale), ys)
+    elif arity == 6:
+        def wrapped(data, loc, scale, a, b, c, xs, ys):
+            return adjust(func(data * xs, a, b, c, loc, scale), ys)
+    else:
+        def wrapped(data, loc, scale, a, b, c, d, xs, ys):
+            return adjust(func(data * xs, a, b, c, d, loc, scale), ys)
+    wrapped.func = func
+    wrapped.__doc__ = func.__doc__
+    wrapped.__name__ = "{}.{}".format(func.__self__.__class__.__name__, func.__name__)
     return wrapped
 
 def scipy_functions(self, kind='pdf'):
@@ -78,7 +125,7 @@ def sanitize(data, years):
     data = data.compressed()
     return data, years
 
-def estimate(func, data, years, until, name="Data", log=False):
+def estimate(func, data, years, until, log=False):
     data, years = sanitize(data, years)
 
     (start, end) = (np.min(years), np.max(years))
@@ -87,12 +134,39 @@ def estimate(func, data, years, until, name="Data", log=False):
     e_years = e_x + start
 
     if log: data = np.log(data)
-    popt, pcov = curve_fit(func, x, data, maxfev=10000)
-    # print("popt: %r\npcov: %r" % (popt, pcov))
+    popt, pcov, infodict, errmsg, ier = curve_fit(func, x, data, maxfev=10000, full_output=True, absolute_sigma=True)
+    std_err = np.sqrt(np.diag(pcov))
 
     estd = func(e_x, *popt)
     if log: estd = np.exp(estd)
 
     # deriv = normalize(np.ediff1d(estd))*np.max(estd)/2
 
-    return (e_years, estd)
+    print("""=============================================================================
+function: {function}
+error mean: {mean_error}
+error: {error}
+errmsg: {errmsg}
+ier: {ier}
+popt: {popt}
+pcov: {pcov}
+data: {data}
+estd: {estd}
+=============================================================================
+""".format(
+    function=func.__name__,
+    error=std_err,
+    mean_error=np.mean(std_err),
+    errmsg=errmsg,
+    ier=ier,
+    popt=popt,
+    pcov=pcov,
+    data=data[:50],
+    estd=estd[:50],
+    )
+)
+
+    if ier not in [1, 2, 3, 4]:
+        raise RuntimeError(errmsg)
+
+    return (e_years, estd, pcov)
