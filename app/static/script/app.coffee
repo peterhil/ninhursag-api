@@ -5,7 +5,7 @@ $(document).foundation()
 angular
   .module('app', [
     'ngAnimate',
-    'ngAria',
+    # 'ngAria',
     'ngCookies',
     'ngMessages',
     'ngResource',
