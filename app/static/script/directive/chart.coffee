@@ -94,17 +94,21 @@ angular.module('app')
               growl.error "#{response.status} #{response.statusText}"
 
       fuzzyColor = (str) ->
-        sndx = soundexPhonetics(str)
+        if (words = str.split(' ')).length > 1
+          colors = R.map fuzzyColor, R.filter(R.I, words)
+          return R.reduce tinycolor.mix, R.head(colors), R.tail(colors)
+        sndx = soundexPhonetics(str or ' ')
         # hue = (sndx[0].charCodeAt() % 64)  * (360 / 64) # modulo is for unicode chars. Or 360?
-        hue = (((sndx[0].charCodeAt() - (65)) + 26) % 26) * (360 / 26)
-        sat = parseInt(sndx.slice(1, 3), 7) * (50 / 48) + 50    # 0...48 => 50...100
+        # hue = (((sndx[0].charCodeAt() - (65)) + 26) % 26) * (360 / 26)
+        hue = (((sndx[0].charCodeAt())) % 26) * (360 / 26)
+        sat = parseInt(sndx.slice(1, 3), 7) * (50 / 48) + 25    # 0...48 => 50...100
         lig = parseInt(sndx.slice(3, 4), 7) * (50 / 6) + 50   # 0..6 => 50...100 (minus word length)
         lig -= Math.min(50, str.length)
-        tinycolor({ h: hue, s: sat, l: lig }).toHexString()
+        tinycolor({ h: hue, s: sat, l: lig })
 
       scope.seriesStyle = (serie) ->
-        stroke: fuzzyColor(serie)
-        strokeDasharray: '2, 2' if serie.match /\(estimated\)/
+        stroke: fuzzyColor(serie).toHexString()
+        strokeDasharray: '6, 2' if serie.match /\(estimated\)/
 
       scope.$watchCollection 'chart.data', (val, old) ->
         # $log.info "Watching chart.data:", val
