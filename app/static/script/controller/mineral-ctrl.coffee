@@ -19,7 +19,7 @@ angular.module('app')
     $http.get('/api/v1/minerals')
       .success (response) ->
         $scope.minerals = Fx.invert(response)
-        $scope.mineral = R.head(R.keys($scope.minerals))
+        $scope.mineral = 'ds140-gold.tsv'  # R.head(R.keys($scope.minerals))
 
     $scope.functions = {}
     $scope.currentFunction = 'genlogistic'
