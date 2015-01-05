@@ -23,7 +23,7 @@
     "Coal combustion products": "ds140-coal.tsv",
     "Cobalt": "ds140-cobal.tsv",
     "Construction sand and gravel": "ds140-sandc.tsv",
-    "Consumption": "ds140-nicke-Consumption.tsv",
+    "Nickel consumption": "ds140-nicke-Consumption.tsv",
     "Copper": "ds140-coppe.tsv",
     "Corundum and emery ": "ds140-abran-Corundum and emery .tsv",
     "Crushed stone": "ds140-stonc.tsv",
@@ -84,7 +84,7 @@
     "Platinum-group metals": "ds140-plati.tsv",
     "Plywood and veneer": "ds140-wood-Plywood and veneer.tsv",
     "Potash": "ds140-potas.tsv",
-    "Primary production": "ds140-nicke-Primary production.tsv",
+    "Nickel primary production": "ds140-nicke-Primary production.tsv",
     "Pumice and pumicite": "ds140-pumic.tsv",
     "Quartz crystal": "ds140-quart.tsv",
     "Rare earths": "ds140-raree.tsv",
@@ -120,7 +120,7 @@
     "Vermiculite": "ds140-vermi.tsv",
     "Wollastonite": "ds140-wolla.tsv",
     "Wood panel products": "ds140-wood-Wood panel products.tsv",
-    "World plant production": "ds140-nicke-World plant production.tsv",
+    "Nickel world plant production": "ds140-nicke-World plant production.tsv",
     "Zinc": "ds140-zinc.tsv",
     "Zirconium": "ds140-zirco.tsv"
 }
