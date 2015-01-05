@@ -18,6 +18,7 @@ import analysis
 import json
 import numpy as np
 import scipy.stats as stats
+import yaml
 
 
 API_VERSION = 1
@@ -104,9 +105,17 @@ class Minerals(restful.Resource):
             response = json.load(f)
         return response
 
+class Reserves(restful.Resource):
+    def get(self):
+        path = os.path.join(current_app.root_path, current_app.config['DATA_DIR'], 'reserves.yml')
+        with open(path, 'rb') as f:
+            response = yaml.load(f)
+        return response
+
 
 rest.add_resource(Estimate, '/estimate')
 rest.add_resource(Minerals, '/minerals')
+rest.add_resource(Reserves, '/reserves')
 rest.add_resource(ApiIndex, '/')
 rest.add_resource(HelloWorld, '/hello')
 rest.add_resource(Items, '/items')
