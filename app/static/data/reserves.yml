@@ -1,0 +1,239 @@
+meta:
+    src: http://minerals.usgs.gov/minerals/pubs/mcs/2014/mcs2014.pdf
+
+notes:
+    Aluminum: Yearend capacity
+    Arsenic: World reserves are thought to be about 20 times annual world production.
+    Asbestos: "Estimated by Peter H. from vague description on USGS data, reserves in Brazil and Russia, and mine production. Source for Russian reserves: http://www.nationsencyclopedia.com/Europe/Russia-MINING.html"
+    Cement: Clinker capacity
+    Cesium: Reserves for top 2 countries
+    Chromium: Reserves for top 4 countries
+    Industrial diamond: Natural industrial diamond only. Note that synthetic diamond production far exceeds natural industrial diamond output. Worldwide production of manufactured industrial diamond totaled at least 4.4 billion carats in 2013; the leading producers included Belarus, China, Ireland, Japan, Russia, South Africa, Sweden, and the United States.
+    Fluorspar: Measured as 100% calcium fluoride.
+    Gemstones: World reserves of diamond-bearing deposits are substantial. No reserve data are available for other gemstones.
+    Iron and Steel Slag: Slag is not a mined material and thus the concept of reserves does not apply to this mineral commodity. Slag production data for the world are unavailable, but it is estimated that annual world iron slag output in 2013 was on the order of 260 to 320 million tons, and steel slag about 170 to 250 million tons, based on typical ratios of slag to crude iron and steel output.
+    Iron ore: Reserves in 2013 were 170,000 tons for crude iron ore and 81,000 tons for iron content.
+    Lime: Adequate for all countries listed.
+    Magnesium metal: Magnesium metal is derived from seawater, natural brines, dolomite, and other minerals. The reserves for this metal are sufficient to supply current and future requirements. To a limited degree, natural brines may be considered to be a renewable resource wherein any magnesium removed by humans may be renewed by nature in a short span of time.
+    Nickel: For Australia, Joint Ore Reserves Committee (JORC)-compliant reserves were about 7.5 million tons compared to 18 million in the estimate here.
+    Nitrogen (Fixed)-Ammonia: Available atmospheric nitrogen and sources of natural gas for production of ammonia are considered adequate for all listed countries.
+    Quartz crystal: This information is unavailable, but the global reserves for lascas are thought to be large.
+    Rubidium: Reserves for Canada only. As for resources, in addition to several significant rubidium-bearing zoned pegmatites in Canada, pegmatite occurrences have been identified in Afghanistan, Namibia, Peru, Russia, the United States, and Zambia. Minor amounts of rubidium are reported in brines in northern Chile and China and in evaporites in France, Germany, and the United States (New Mexico and Utah).
+    Salt: Large. Economic and subeconomic deposits of salt are substantial in principal salt-producing countries. The oceans contain a virtually inexhaustible supply of salt.
+    Construction sand and gravel: Reserves are controlled largely by land use and/or environmental concerns.
+    Industrial sand and gravel: Industrial sand and gravel deposits are widespread.
+    Scandium: No scandium was mined in the United States. Scandium was produced as byproduct material in China, Kazakhstan, Russia, and Ukraine. Foreign mine production data were not available. Scandium occurs in many ores in trace amounts, but has not been found in sufficient concentration to be mined as a primary product. As a result of its low concentration, scandium has been produced exclusively as a byproduct during processing of various ores or recovered from previously processed tailings or residues.
+    Silicon: The reserves in most major producing countries are ample in relation to demand. Quantitative estimates are not available.
+    Crushed stone: Adequate except where special types are needed or where local shortages exist.
+    Dimension stone: Adequate except for certain special types and local shortages.
+    Sulfur: Reserves of sulfur in crude oil, natural gas, and sulfide ores are large. Because most sulfur production is a result of the processing of fossil fuels, supplies should be adequate for the foreseeable future. Because petroleum and sulfide ores can be processed long distances from where they are produced, sulfur production may not be in the country to which the reserves were attributed. For instance, sulfur from Saudi Arabian oil may be recovered at refineries in the United States.
+    Tantalum: For Australia, Joint Ore Reserves Committee (JORC)-compliant reserves were 29,000 tons.
+    Thallium: There are only a few countries where thallium is obtained commercially as a byproduct in the roasting of copper, lead, and zinc ores or is collected from flue dust. Because most producers withhold thallium production data, estimating global production is challenging. In 2013, global production of thallium was estimated to be less than 10,000 kilograms. China, Kazakhstan, and Russia were believed to be leading producers of primary thallium. Since 2005, substantial thallium-rich deposits have been identified in China, Macedonia, and Russia.
+    Thorium: Includes thorium contained in mineralized sands. Reserves for Brazil were under review pending new information from the Departamento Nacional de Produção Mineral.
+    Ilmenite and Slag: U.S. rutile reserves of 2,000 tons are included with ilmenite.
+    Natural & Synthetic Rutile: U.S. rutile reserves of 2,000 tons are included with ilmenite.
+    Tungsten: "Corrections for other countries' reserves posted on August 27, 2014."
+    Vermiculite: Data from Bulgaria, China, Russia and Uganda are missing from the reserve estimate. These countries account for 25.48 % of the world production.
+    Wollastonite: World reserves of wollastonite were estimated to exceed 90 million tons. Many deposits, however, have not been surveyed, making accurate reserve estimates unavailable.
+    Zeolites: World reserves are not determined but are estimated to be large.
+    Zirconium: Metric tons tons of ZrO2
+
+reserves:
+    Aluminum oxide:  # Abrasives
+        2012: 1_190_000
+        2013: 1_190_000
+    Silicon carbide:  # Abrasives
+        2012: 1_010_000
+        2013: 1_010_000
+    Aluminum:
+        2012: 57_000
+        2013: 61_900
+    Antimony:
+        2013: 1_800_000
+    Arsenic:
+        2012: 934_000
+        2013: 900_000
+    Asbestos:
+        2013: 134_477_000
+    Barite:
+        2013: 350_000
+    Bauxite:
+        2013: 28_000_000
+    Beryllium:
+        2013: NA
+    Bismuth:
+        2013: 320_000
+    Boron:
+        2013: 210_000
+    Bromine:
+        2013: Large
+    Cadmium:
+        2013: 500_000
+    Cement:
+        2012: 3_300_000
+        2013: 3_400_000
+    Cesium:
+        2013: 160_000_000
+    Chromium:
+        2013: 480_000
+    Bentonite:  # Clays
+        2012: 9_950
+        2013: 10_300
+    "Fuller's earth":  # Clays
+        2012: 2_980
+        2013: 3_000
+    Kaolin:  # Clays
+        2012: 36_200
+        2013: 37_000
+    Cobalt:
+        2013: 7_200_000
+    Copper:
+        2013: 690_000
+    Industrial diamond:
+        2013: 750
+    Diatomite:
+        2013: Large
+    Feldspar:
+        2013: Large
+    Fluorspar:
+        2013: 240_000
+    Industrial garnet:
+        2013: Moderate to large
+    Gemstones:
+        2013: NA
+    Germanium:
+        2013: NA
+    Gold:
+        2013: 54_000
+    Graphite:
+        2013: 130_000
+    Gypsum:
+        2013: Large
+    Helium:
+        2013: NA
+    Indium:
+        2013: NA
+    Iodine:
+        2013: 7_600_000
+    Pig Iron:  # Iron and steel
+        2012: 1_110
+        2013: 1_170
+    Steel:  # Iron and steel
+        2012: 1_550
+        2013: 1_580
+    Iron and Steel Slag:
+        2013: Not applicable
+    Iron ore:
+        2013: 81_000
+    Iron Oxide Pigments:
+        2013: Large
+    Kyanite:
+        2013: NA
+    Lead:
+        2013: 89_000
+    Lime:
+        2013: Large
+    Lithium:
+        2013: 13_000_000
+    Magnesium compounds:
+        2013: 2_400_000
+    Magnesium metal:
+        2013: Sufficient
+    Manganese:
+        2013: 570_000
+    Mercury:
+        2013: 94_000
+    Mica (natural)_ scrap and flake:
+        2013: Large
+    Mica (natural)_ sheet:
+        2013: Very large
+    Molybdenum:
+        2013: 11_000
+    Nickel:
+        2013: 74_000_000
+    Niobium:
+        2013: 4_300_000
+    Nitrogen (Fixed)-Ammonia:
+        2013: Adequate
+    Peat:
+        2013: 12_000_000
+    Perlite:
+        2013: NA
+    Phosphate rock:
+        2013: 67_000_000
+    Platinum group metals:
+        2013: 66_000_000
+    Potash:
+        2013: 6_000_000
+    Pumice and pumicite:
+        2013: NA
+    Quartz crystal:
+        2013: NA
+    Rare earths:
+        2013: 140_000_000
+    Rhenium:
+        2013: 2_500_000
+    Rubidium:
+        2013: 110_000_000
+    Salt:
+        2013: Large
+    Construction sand and gravel:
+        2013: NA
+    Industrial sand and gravel:
+        2013: Large
+    Scandium:
+        2013: NA
+    Selenium:
+        2013: 120_000
+    Silicon:
+        2013: NA
+    Silver:
+        2013: 520_000
+    Soda ash:
+        2013: 24_000_000
+    Crushed stone:
+        2013: Adequate
+    Dimension stone:
+        2013: Adequate
+    Strontium:
+        2013: 6_800_000
+    Sulfur:
+        2013: Large
+    Talc and pyrophyllite:
+        2013: Large
+    Tantalum:
+        2013: 100_000
+    Tellurium:
+        2013: 24_000
+    Thallium:
+        2013: NA
+    Thorium:
+        2013: 1_400_000
+    Tin:
+        2013: 4_700_000
+    Titanium dioxide:
+        2013: 6_560_000
+    Titanium sponge:
+        2013: 284_000
+    Ilmenite and Slag:
+        2013: 700_000
+    Natural & Synthetic Rutile:
+        2013: 48_000
+    Titanium Concentrates Total:
+        2013: 750_000
+    Tungsten:
+        2013: 3_500_000
+    Vanadium:
+        2013: 14_000
+    Vermiculite:
+        2013: 71_500
+    Wollastonite:
+        2013: 90_000_000
+    Yttrium:
+        2013: 540_000
+    Zeolites:
+        2013: Large
+    Zinc:
+        2013: 250_000
+    Zirconium:
+        2013: 67_000_000
