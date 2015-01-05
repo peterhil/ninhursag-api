@@ -27,6 +27,10 @@ angular.module('app')
       .success (response) ->
         $scope.functions = response
 
+    $http.get('/api/v1/reserves')
+      .success (response) ->
+        $scope.reserves = response
+
     productionSeries = (series) ->
       production = R.match /(World.+production|(P|p)roduction|Total)/
       estimated = R.match /\(estimated\)$/
