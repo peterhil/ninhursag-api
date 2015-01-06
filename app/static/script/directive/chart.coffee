@@ -15,6 +15,9 @@ angular.module('app')
       chart: '=ngModel'
       function: '='
       estimate: '='
+      minerals: '='
+      mineral: '='
+      reserves: '='
     templateUrl: '/static/template/chart.html'
     link: (scope, element, attrs) ->
       scope.width ||= 400
@@ -22,6 +25,10 @@ angular.module('app')
       scope.viewBox ||= "0 0 #{scope.width} #{scope.height}"
       scope.preserveAspectRatio ||= "xMidYMid meet"
       scope.chart.src = attrs.src
+      scope.logscale = true
+
+      identity = ->
+        if scope.logscale then 1 else 0
 
       scope.render = (chart) ->
         return unless chart.data
@@ -36,26 +43,32 @@ angular.module('app')
           svg.removeAttribute('preserveaspectratio')
           svg.removeAttribute('viewbox')
 
-        scope.x = x = d3.scale.linear().range([0, scope.width])
-        scope.y = y = d3.scale.linear().range([scope.height, 0])
+        excludeFromYMax = []
+        unless scope.logscale
+           excludeFromYMax.push 'Reserves'
+        yMaxColumns = R.filter R.not((i) -> R.contains(i, excludeFromYMax))
 
-        excludeFromYMax = [
-          'Reserves',
-        ]
-        yMaxColumns = R.filter R.not(R.contains(excludeFromYMax))
+        scope.x = x = d3.scale.linear().range([0, scope.width])
+        scope.y = y = (if scope.logscale then d3.scale.log() else d3.scale.linear()).range([scope.height, 0])
 
         x.domain(d3.extent(data, (row) -> parseInt(row[chart.index])))
-        y.domain([0, d3.max(data, (row) -> R.max(R.values(R.pick(yMaxColumns(chart.series), row))))])
+        y.domain([identity(), d3.max(data, (row) -> R.max(R.values(R.pick(yMaxColumns(chart.series), row))))])
 
         scope.yLabel = (d) -> Humanize.compactInteger(d, 1)
+
+        fixNaNs = (path) ->
+          R.map(
+            ((i) -> i.replace(/^[A-Z]/, 'M')),
+            R.filter(R.I, path.split(/[A-Z](?:\d+|\d+\.\d+),NaN/))
+          ).join('')
 
         line = (column) ->
           d3.svg.line()
             .x((d, i) -> x(d[chart.index]))
-            .y((d, i) -> y(parseFloat(d[column]) or 0))
+            .y((d, i) -> y(parseFloat(d[column])))
 
         scope.line = (column) ->
-          line(column)(data)
+          fixNaNs(line(column)(data))
 
       scope.estimate = (fn) ->
         request_data =
@@ -78,13 +91,14 @@ angular.module('app')
                 (v, k) ->
                   r =
                     'Year': parseInt(k)
-                  r[key] = if _.isFinite(parseFloat(v)) then parseFloat(v) else null
+                  r[key] = if _.isFinite(parseFloat(v)) then R.max [parseFloat(v), identity()] else null
                   r
                 , R.zipObj(response['years'], response['data']))
               )
             scope.chart.series.push(key)
             scope.chart.series = R.uniq scope.chart.series
             scope.chart.data = _.merge scope.chart.data, estimate
+            scope.getReserves()
           # .error (response) ->
           #   growl.warning response.errors.join("\n")
           .catch (response) ->
@@ -92,6 +106,48 @@ angular.module('app')
               growl.error response.data.errors.join("\n")
             else
               growl.error "#{response.status} #{response.statusText}"
+
+      scope.getReserves = ->
+        mineral = scope.minerals[scope.mineral]
+        data = scope.reserves.data[mineral]
+        # $log.info "getReserves():", mineral, data
+        return unless mineral and data
+
+        latest = R.head R.sort R.lt, R.filter(R.I, R.map(parseInt, R.keys(data)))
+        reserveEstimate = data?[latest]
+        reserveNotes = scope.reserves.notes[mineral]
+
+        return unless parseFloat(reserveEstimate)
+
+        total = 0
+        last = 0
+        cumulative = R.fromPairs R.map (year) ->
+          amount = parseFloat(
+            (last = scope.chart.data[year]["#{scope.chart.selectedSeries}"] or last) or
+            scope.chart.data[year]["#{scope.chart.selectedSeries} (estimated)"]
+          )
+          # $log.info "Last amount:", year, last, amount
+          if amount == identity()
+            amount = last
+          total += amount if amount
+          [year, total]
+        , R.keys(scope.chart.data)
+
+        reserves = Fx.indexBy scope.chart.index, (R.mapObj.idx (production, year) ->
+          amount = R.max [reserveEstimate - (production - cumulative[latest]), identity()]
+          {
+            Year: parseInt(year)
+            Reserves: if _.isFinite(parseFloat(amount)) then parseFloat(amount) else null
+          }
+        , cumulative)
+
+        # $log.info "Reserves estimation:", mineral, latest, reserveEstimate, reserveNotes
+        # $log.info "Cumulative world production:", cumulative
+        # $log.info "Reserves:", reserves
+
+        scope.chart.series.push "Reserves"
+        scope.chart.series = R.uniq scope.chart.series
+        scope.chart.data = _.merge scope.chart.data, reserves
 
       fuzzyColor = (str) ->
         if (words = str.split(' ')).length > 1
@@ -116,7 +172,7 @@ angular.module('app')
         scope.render(scope.chart)
 
       scope.$watch 'function', (val, old) ->
-        $log.info "Watching function:", val, old
+        # $log.info "Watching function:", val, old
         return unless val
         scope.estimate(val)
         scope.render(scope.chart)
