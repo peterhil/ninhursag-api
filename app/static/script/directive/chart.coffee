@@ -141,7 +141,7 @@ angular.module('app')
           }
         , cumulative)
 
-        # $log.info "Reserves estimation:", mineral, latest, reserveEstimate, reserveNotes
+        # $log.info "Reserves estimation:", mineral, latest, Humanize.compactInteger(reserveEstimate, 3), reserveNotes
         # $log.info "Cumulative world production:", cumulative
         # $log.info "Reserves:", reserves
 
