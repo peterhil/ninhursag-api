@@ -166,6 +166,9 @@ angular.module('app')
         stroke: fuzzyColor(serie).toHexString()
         strokeDasharray: '6, 2' if serie.match /\(estimated\)/
 
+      scope.$watch 'logscale', ->
+        scope.render(scope.chart)
+
       scope.$watchCollection 'chart.data', (val, old) ->
         # $log.info "Watching chart.data:", val
         scope.estimate(scope.function)  # TODO makes double requests

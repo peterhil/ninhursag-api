@@ -7,6 +7,16 @@
     <figcaption data-ng-if="caption">
         {{caption}}
     </figcaption>
+    <form name="logScaleForm">
+        <label for="logScale">
+            <input id="logScale"
+                   type="checkbox"
+                   ng-model="logscale"
+                   ng-change="toggleLogscale()"
+                   >
+            Logarithmic y-axis scale
+        </label>
+    </form>
     <div data-us-spinner class="chart-spinner" data-ng-if="chart.loading"></div>
     <svg class="ng-chart"
          data-ng-if="!chart.loading"
