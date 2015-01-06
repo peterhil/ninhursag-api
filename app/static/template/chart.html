@@ -1,9 +1,4 @@
 <figure class="ng-cloak">
-    <header data-ng-if="chart.header">
-        <span data-ng-repeat="line in chart.header track by $index">
-            {{line}}<br>
-        </span>
-    </header>
     <figcaption data-ng-if="caption">
         {{caption}}
     </figcaption>
@@ -98,6 +93,11 @@
             </g>
         </g>
     </svg>
+    <header data-ng-if="chart.header">
+        <span data-ng-repeat="line in chart.header track by $index">
+            {{line}}<br>
+        </span>
+    </header>
     <footer data-ng-if="chart.footer">
         <span data-ng-repeat="line in chart.footer track by $index">
             {{line}}<br>
