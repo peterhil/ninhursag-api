@@ -108,7 +108,7 @@ angular.module('app')
               growl.error "#{response.status} #{response.statusText}"
 
       scope.getReserves = ->
-        mineral = scope.minerals[scope.mineral]
+        mineral = scope.mineral
         data = scope.reserves.data[mineral]
         # $log.info "getReserves():", mineral, data
         return unless mineral and data

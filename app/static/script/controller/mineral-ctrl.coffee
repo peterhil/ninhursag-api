@@ -18,8 +18,8 @@ angular.module('app')
     $scope.mineral = ''
     $http.get('/api/v1/minerals')
       .success (response) ->
-        $scope.minerals = Fx.invert(response)
-        $scope.mineral = 'ds140-gold.tsv'  # R.head(R.keys($scope.minerals))
+        $scope.minerals = response
+        $scope.mineral = 'Gold'
 
     $scope.functions = {}
     $scope.currentFunction = 'genlogistic'
@@ -74,9 +74,10 @@ angular.module('app')
           $scope.chart.loading = false
 
     $scope.$watch 'mineral', (val, old) ->
+      src = $scope.minerals[val]
       # $log.info "Watching mineral:", val, old
-      return unless val
-      $scope.chart.src = "/#{config.data_dir}/tsv/#{val}"
+      return unless src
+      $scope.chart.src = "/#{config.data_dir}/tsv/#{src}"
 
     $scope.$watch 'chart.series', (val, old) ->
       $scope.chart.selectedSeries = productionSeries(val)

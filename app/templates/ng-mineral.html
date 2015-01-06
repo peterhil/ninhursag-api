@@ -10,7 +10,7 @@
   <div class="row" data-ng-controller="MineralCtrl">
     <div class="small-12 large-9 columns">
 
-      <h1 data-ng-bind="minerals[mineral]">{{ mineral | capitalize }}</h1>
+      <h1 data-ng-bind="mineral">{{ mineral | capitalize }}</h1>
 
       {# <p class="description">Bauxite is an aluminium ore and is the main source of aluminium.</p> #}
 
@@ -18,7 +18,7 @@
         <div class="row">
           <div class="large-4 columns">
             <label>Select mineral
-              <select data-ng-options="mineral as src for (mineral, src) in minerals"
+              <select data-ng-options="name as name for (name, src) in minerals"
                       data-ng-model="mineral">
               </select>
             </label>
