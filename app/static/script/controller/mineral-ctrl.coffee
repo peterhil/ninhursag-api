@@ -31,6 +31,10 @@ angular.module('app')
       .success (response) ->
         $scope.reserves = response
 
+    $http.get('/api/v1/images')
+      .success (response) ->
+        $scope.images = response
+
     productionSeries = (series) ->
       production = R.match /(World.+production|(P|p)roduction|Total)/
       estimated = R.match /\(estimated\)$/

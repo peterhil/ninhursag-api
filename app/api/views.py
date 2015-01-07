@@ -112,10 +112,17 @@ class Reserves(restful.Resource):
             response = yaml.load(f)
         return response
 
+class Images(restful.Resource):
+    def get(self):
+        path = os.path.join(current_app.root_path, current_app.config['DATA_DIR'], 'images.yml')
+        with open(path, 'rb') as f:
+            response = yaml.load(f)
+        return response
 
 rest.add_resource(Estimate, '/estimate')
 rest.add_resource(Minerals, '/minerals')
 rest.add_resource(Reserves, '/reserves')
+rest.add_resource(Images, '/images')
 rest.add_resource(ApiIndex, '/')
 rest.add_resource(HelloWorld, '/hello')
 rest.add_resource(Items, '/items')

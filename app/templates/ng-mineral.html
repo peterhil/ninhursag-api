@@ -17,7 +17,7 @@
       <div>
         <div class="row">
           <div class="large-4 columns">
-            <label>Select mineral
+            <label>Select resource
               <select data-ng-options="name as name for (name, src) in minerals"
                       data-ng-model="mineral">
               </select>
@@ -51,19 +51,9 @@
     </div>
     <aside class="small-12 large-3 columns">
 
-      <figure>
-        <img class="mineral" src="http://upload.wikimedia.org/wikipedia/commons/0/04/BauxiteUSGOV.jpg" />
-        <figcaption>
-          Bauxite with an U.S. penny
-        </figcaption>
-      </figure>
-
-      <figure>
-        <img class="mineral" src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Aluminium-4.jpg/480px-Aluminium-4.jpg" />
-        <figcaption>
-          Aluminium
-        </figcaption>
-      </figure>
+      <figure data-resource="true"
+              data-image="image"
+              data-ng-repeat="image in images[mineral]"></figure>
 
       <div>
         <h3>Data sources and references</h3>

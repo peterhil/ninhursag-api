@@ -1,0 +1,9 @@
+<figure>
+    <a data-ng-attr-href="{{image.url}}" target="ninhursag-ext">
+        <img class="mineral" data-ng-attr-src="/static/img/rsrc/{{image.src}}" />
+    </a>
+    <figcaption>
+        <span class="description" data-ng-bind="image.caption"></span>
+        <div class="attribution" data-ng-if="image.by"><small>Image by {{image.by}}</small></div>
+    </figcaption>
+</figure>
