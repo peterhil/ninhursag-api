@@ -63,38 +63,6 @@ Ball clay:
     by: "[Huligan0](http://commons.wikimedia.org/wiki/User:Huligan0)"
     url: "http://commons.wikimedia.org/wiki/File:2010-04-07_Purbeck_Ball_Clay_Mine.jpg"
 
-Beryllium:
-  -
-    src: Beryllium/500px-Be-140g.jpg
-    caption: Beryllium, >99 % pure, crystalline big fragmet >140 g
-    by: "[Alchemist-hp](http://de.wikipedia.org/wiki/Benutzer:Alchemist-hp) (pse-mendelejew.de)"
-    url: "http://commons.wikimedia.org/wiki/File:Be-140g.jpg"
-  -
-    src: Beryllium/640px-BERYLLIUM_-_KUGEL_1.JPG
-    caption: Sphere Beryllium B52 - Gyrocompass
-    by: "[Aatze78](http://commons.wikimedia.org/wiki/User:Aatze78)"
-    url: "http://commons.wikimedia.org/wiki/File:BERYLLIUM_-_KUGEL_1.JPG"
-
-Bismuth:
-  -
-    src: Bismuth/640px-Bismuth_crystals_and_1cm3_cube.jpg
-    caption:  The chemical element bismuth as synthetically made crystals. The surface is oxide free. Additionally, a high purity (99.99 %) 1 cm3 bismuth cube for comparison.
-    by: "[Alchemist-hp](http://de.wikipedia.org/wiki/Benutzer:Alchemist-hp) (pse-mendelejew.de)"
-    url: "http://commons.wikimedia.org/wiki/File:Bismuth_crystals_and_1cm3_cube.jpg"
-  -
-    src: Bismuth/614px-Bismuth_In_Hand.jpg
-    caption: Bismuth crystal illustrating the many iridescent refraction hues of its oxide surface
-    by: "APN MJM"
-    url: "http://commons.wikimedia.org/wiki/File:Bismuth_In_Hand.jpg"
-
-
-Foo:
-  -
-    src: Asbestos/
-    caption: 
-    by: ""
-    url: ""
-
 Barite:
   -
     src: Barite/Barite-4jg40a.jpg
@@ -122,6 +90,30 @@ Bentonite:
     src: Bentonite/Sodium_bentonite.jpg
     caption: Bulk sodium bentonite clay used for mud wrestling.
     url: "http://commons.wikimedia.org/wiki/File:Sodium_bentonite.jpg"
+
+Beryllium:
+  -
+    src: Beryllium/500px-Be-140g.jpg
+    caption: Beryllium, >99 % pure, crystalline big fragmet >140 g
+    by: "[Alchemist-hp](http://de.wikipedia.org/wiki/Benutzer:Alchemist-hp) (pse-mendelejew.de)"
+    url: "http://commons.wikimedia.org/wiki/File:Be-140g.jpg"
+  -
+    src: Beryllium/640px-BERYLLIUM_-_KUGEL_1.JPG
+    caption: Sphere Beryllium B52 - Gyrocompass
+    by: "[Aatze78](http://commons.wikimedia.org/wiki/User:Aatze78)"
+    url: "http://commons.wikimedia.org/wiki/File:BERYLLIUM_-_KUGEL_1.JPG"
+
+Bismuth:
+  -
+    src: Bismuth/640px-Bismuth_crystals_and_1cm3_cube.jpg
+    caption:  The chemical element bismuth as synthetically made crystals. The surface is oxide free. Additionally, a high purity (99.99 %) 1 cm3 bismuth cube for comparison.
+    by: "[Alchemist-hp](http://de.wikipedia.org/wiki/Benutzer:Alchemist-hp) (pse-mendelejew.de)"
+    url: "http://commons.wikimedia.org/wiki/File:Bismuth_crystals_and_1cm3_cube.jpg"
+  -
+    src: Bismuth/614px-Bismuth_In_Hand.jpg
+    caption: Bismuth crystal illustrating the many iridescent refraction hues of its oxide surface
+    by: "APN MJM"
+    url: "http://commons.wikimedia.org/wiki/File:Bismuth_In_Hand.jpg"
 
 Boron:
   -
