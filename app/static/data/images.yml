@@ -193,7 +193,7 @@ Corundum:
   -
     src: Corundum/Ruby_-_Winza,_Tanzania.jpg
     by: StrangerThanKindness
-    caption: Natural ruby crystals on kyanite matrix from Winza, Tanzania
+    caption: Natural ruby crystals in kyanite matrix from Winza, Tanzania
     url: "http://commons.wikimedia.org/wiki/File:Ruby_-_Winza,_Tanzania.jpg"
   -
     src: Corundum/Rubis_sur_gangue_(Pakistan).jpg
@@ -205,6 +205,18 @@ Corundum:
     by: Parent Gery
     caption: Blue sapphire crystals
     url: "http://commons.wikimedia.org/wiki/File:Saphir_bleu_7(Pakistan).jpg"
+
+Corundum and emery:
+  -
+    src: Corundum/Ruby_-_Winza,_Tanzania.jpg
+    by: StrangerThanKindness
+    caption: Natural ruby crystals in kyanite matrix from Winza, Tanzania
+    url: "http://commons.wikimedia.org/wiki/File:Ruby_-_Winza,_Tanzania.jpg"
+  -
+    src: Emery/Corundite_(emery_rock)_slabbed_Naxos_Emery_Deposits.jpg
+    by: "[James St. John](https://www.flickr.com/people/47445767@N05)"
+    caption: "Corundite (emery rock) from the Naxos Emery Deposits. Corundite is a remarkable metamorphic rock dominated by corundum, a very hard (H ≡9) aluminum oxide mineral (Al2O3). This particular rock has blue corundum, therefore it can be called sapphire."
+    url: "http://en.wikipedia.org/wiki/File:Corundite_(emery_rock)_slabbed_Naxos_Emery_Deposits.jpg"
 
 Emery:
   -
