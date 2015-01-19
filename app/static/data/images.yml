@@ -238,6 +238,30 @@ Crude oil:
     caption: The first 100% Brazilian oil platform, the P-51 will produce about 180 thousand barrels of oil and 6 million cubic meters of gas per day when operating at full load
     url: "http://commons.wikimedia.org/wiki/File:Oil_platform_P-51_(Brazil).jpg"
 
+Crushed stone:
+  -
+
+Diatomite:
+  -
+    src: Diatomite/Diatomaceous_Earth.jpg
+    caption: A sample of food-grade diatomaceous Earth. Diatomaceous earth consists of fossilized remains of diatoms, a type of hard-shelled algae. It is used as a filtration aid, mild abrasive in products including toothpaste, mechanical insecticide, porous support for chemical catalysts, cat litter, a stabilizing component of dynamite, and a thermal insulator and in other similar uses.
+    url: "http://commons.wikimedia.org/wiki/File:Diatomite_(diatomaceous_earth)_Monterey_Formation_at_a_diatomite_quarry_just_south_of_Lompoc.jpg"
+  -
+    src: Diatomite/Diatomite_(diatomaceous_earth)_Monterey_Formation_at_a_diatomite_quarry_just_south_of_Lompoc.jpg
+    by: "[James St. John](https://www.flickr.com/people/47445767@N05)"
+    caption: Diatomite (diatomaceous earth) (6.8 cm across) from the Miocene-aged Monterey Formation at a diatomite quarry just south of Lompoc, Santa Barbara County, southern California, USA.
+    url: "http://en.wikipedia.org/wiki/File:Diatomaceous_Earth.jpg"
+
+Dimension stone:
+  -
+
+Direct Reduced Iron:
+  -
+    src: Direct reduced iron/Hot-briquetted_iron.JPG
+    by: "[Borvan53](http://commons.wikimedia.org/wiki/User:Borvan53)"
+    caption: Direct reduced iron as hot-briquetted iron (also named HBI) laying on an A4 (210 mm x 297 mm) to give the scale.
+    url: "http://commons.wikimedia.org/wiki/File:Hot-briquetted_iron.JPG"
+
 Emery:
   -
     src: Emery/Corundite_(emery_rock),_Naxos_Emery_Deposits_Greece.jpg
@@ -254,6 +278,61 @@ Emery:
     by: "[Tenbergen](http://en.wikipedia.org/wiki/User:Tenbergen) at English Wikipedia"
     caption: Crushed or naturally eroded emery (known as black sand) is used as an abrasive — for example, on an emery board and emery cloth, as a traction enhancer in asphalt and tarmac mixtures.
     url: "http://en.wikipedia.org/wiki/File:320_emery_cloth.JPG"
+
+Feldspar:
+  -
+    src: Feldspar/Feldspar-Group-291254.jpg
+    by: "Rob Lavinsky, [iRocks.com](http://www.irocks.com/) - CC-BY-SA-3.0"
+    caption: "Feldspars (KAlSi3O8 – NaAlSi3O8 – CaAl2Si2O8) are a group of rock-forming tectosilicate minerals that make up as much as 60% of the Earth's crust. The name feldspar derives from the German Feldspat, a compound of the words Feld, field, and Spath, a rock that does not contain ore."
+    url: "http://en.wikipedia.org/wiki/File:Feldspar-Group-291254.jpg"
+
+Fire clay:
+  -
+    src: Fire clay/576px-Torpedo_car_refractory_bricks.JPG
+    by: "[Morgan Riley](http://commons.wikimedia.org/wiki/User:Morgan_Riley)"
+    caption: Refractory bricks in a torpedo car used for hauling molten iron. Fire clay is resistant to high temperatures, having fusion points higher than 1,600 °C (2,910 °F), therefore it is suitable for lining furnaces, as fire brick, and for manufacture of utensils used in the metalworking industries, such as crucibles, saggars, retorts and glassware.
+    url: "http://en.wikipedia.org/wiki/File:Torpedo_car_refractory_bricks.JPG"
+
+Fluorspar:
+  -
+    src: Fluorspar/684px-3192M-fluorite1.jpg
+    by: CarlesMillan at English Wikipedia
+    caption: "Deep green isolated fluorite crystal showing cubic and octahedral faces, set upon a micaceous matrix, from Erongo Mountain, Erongo Region, Namibia (crystal size: 19 mm wide, 30 g). Fluorite (also called fluorspar) is the mineral form of calcium fluoride, CaF2. It crystallizes in isometric cubic habit, although octahedral and more complex isometric forms are not uncommon."
+    url: "http://en.wikipedia.org/wiki/File:3192M-fluorite1.jpg"
+
+Fuller's earth:
+  -
+
+Gallium:
+  -
+    src: Gallium/Gallium_crystals.jpg
+    by: "[en:user:foobar](http://en.wikipedia.org/wiki/user:foobar)"
+    caption: Crystals of 99.999% gallium
+    url: "http://en.wikipedia.org/wiki/File:Gallium_crystals.jpg"
+  -
+    src: Gallium/600px-Gallium_(31_Ga).jpg
+    by: "[Hi-Res Images of Chemical Elements](http://images-of-elements.com/gallium.php)"
+    caption:  Gallium is a soft, silvery metal, which is increasingly used in high tech industry. Notable here is gallium arsenide, an important semiconductor for special applications. Pure gallium already melts at 30°C (86°F). It is relatively safe to handle, but eye contact and longer skin contact should be avoided.
+    url: "http://commons.wikimedia.org/wiki/File:Gallium_(31_Ga).jpg"
+
+Gemstones:
+  -
+    src: Gemstones/600px-Cardinal_gems.png
+    by: "Mario Sarto at English Wikipedia and Rob Lavinsky, [iRocks.com](http://www.irocks.com/) - CC-BY-SA-3.0"
+    caption: "The five cardinal gems of antiquity. Clockwise from top: Sapphire, Ruby, Emerald, Amethyst, Diamond."
+    url: "http://en.wikipedia.org/wiki/File:Cardinal_gems.png"
+
+Germanium:
+  -
+    src: Germanium/600px-Polycrystalline-germanium.jpg
+    by: "[Jurii](http://commons.wikimedia.org/wiki/User:Jurii)"
+    caption: 12 grams polycrystalline germanium, 2 x 3 cm.
+    url: "http://en.wikipedia.org/wiki/File:Polycrystalline-germanium.jpg"
+  -
+    src: Germanium/600px-Ultrapure_chunk_of_polycrystalline_germanium,_12_grams.jpg
+    by: "[Hi-Res Images of Chemical Elements](http://images-of-elements.com/germanium.php)"
+    caption: "Germanium is a shiny silvery metalloid and a semiconductor. The latter makes it an important material in electronics and solar technology. Germanium is corrosion-resistant, very brittle and slightly toxic, it doesn't have biological functions. Sometimes organic germanium compounds are sold as obscure miracle cures. These have no medicinal benefit at all and are rather noxious."
+    url: "http://commons.wikimedia.org/wiki/File:Ultrapure_chunk_of_polycrystalline_germanium,_12_grams.jpg"
 
 Industrial diamond:
   -
