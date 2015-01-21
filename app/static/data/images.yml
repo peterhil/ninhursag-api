@@ -356,9 +356,146 @@ Gold:
     caption: Four nines fine standard 400 oz gold bars.
     url: "https://en.wikipedia.org/wiki/File:400-oz-Gold-Bars-AB-01.jpg"
 
+Graphite:
+  -
+    src: Graphite/GraphiteUSGOV.jpg
+    caption: Graphite specimen
+    url: "http://en.wikipedia.org/wiki/File:GraphiteUSGOV.jpg"
+  -
+    src: Graphite/Pencils_hb.jpg
+    by: "[Dmgerman](http://en.wikipedia.org/wiki/User:Dmgerman) at English Wikipedia"
+    caption: Graphite pencils
+    url: "http://en.wikipedia.org/wiki/File:Pencils_hb.jpg"
+  -
+    src: Graphite/640px-Graphitkugel_fuer_Hochtemperaturreaktor_cropped.JPG
+    by: "[Stefan Kühn](http://commons.wikimedia.org/wiki/User:Stefan_K%C3%BChn)"
+    caption: Graphite Pebble for Pebble Bed Nuclear Reactor
+    url: "http://commons.wikimedia.org/wiki/File:Graphitkugel_fuer_Hochtemperaturreaktor_cropped.JPG"
+
+Gypsum:
+  -
+    src: Gypsum/640px-Gypsum_formation_of_Capo_Bianco.jpg
+    by: "[Kalima](http://commons.wikimedia.org/wiki/User:Kalima)"
+    caption: Gypsum formation on Capo Bianco at the mouth of river Platani, Sicily
+    url: "http://commons.wikimedia.org/wiki/File:Gypsum_formation_of_Capo_Bianco.jpg"
+  -
+    src: Gypsum/SeleniteGypsumUSGOV.jpg
+    caption: Fibrous gypsum selenite showing its translucent property
+    url: "http://en.wikipedia.org/wiki/File:SeleniteGypsumUSGOV.jpg"
+  -
+    src: Gypsum/640px-Cristales_cueva_de_Naica.JPG
+    by: Alexander Van Driessche
+    caption: Gypsum crystals of the Naica cave. Note person for scale.
+    url: "http://en.wikipedia.org/wiki/File:Cristales_cueva_de_Naica.JPG"
+
+Hafnium:
+  -
+    src: Hafnium/569px-Hafnium_ebeam_remelted.jpg
+    by: "[Alchemist-hp](http://de.wikipedia.org/wiki/Benutzer:Alchemist-hp) (pse-mendelejew.de)"
+    caption: Pure (99.98 %), Melted tip of a hafnium consumable electrode used in an ebeam remelting furnace, oxidized hafnium ebeam remelted ingot (color from thin film effects in the oxide layer), and additional 1 cm3 hafnium cube for comparison.
+    url: "http://en.wikipedia.org/wiki/File:Hafnium_ebeam_remelted.jpg"
+  -
+    src: Hafnium/640px-Hafnium_bits.jpg
+    by: "[Deglr6328](http://en.wikipedia.org/wiki/User:Deglr6328) at English Wikipedia"
+    caption: Hafnium turnings, >99.9% pure, used for evaporating onto glass as HfO2 to create multi-layer dielectric thin film optics in conjuction with silica layers
+    url: "http://en.wikipedia.org/wiki/File:Hafnium_bits.jpg"
+  -
+    src: Hafnium/640px-Hafnium_pellets_with_a_thin_oxide_layer.jpg
+    by: "[Alchemist-hp](http://de.wikipedia.org/wiki/Benutzer:Alchemist-hp) (pse-mendelejew.de)"
+    caption: Pure (99.9 %), argon arc remelted hafnium-ingots with visible crystalline structures. View of the front- and backside. Colors are a thin film effect in the oxide layer. The metal piece-photo was taken on a white glass plate.
+    url: "http://en.wikipedia.org/wiki/File:Hafnium_pellets_with_a_thin_oxide_layer.jpg"
+
+Helium:
+  -
+    src: Helium/Helium_discharge_tube.jpg
+    by: "[Alchemist-hp](http://de.wikipedia.org/wiki/Benutzer:Alchemist-hp) (pse-mendelejew.de)"
+    caption: Helium on a gas discharge tube
+    url: "http://en.wikipedia.org/wiki/File:Helium_discharge_tube.jpg"
+  -
+    src: Helium/640px-Modern_3T_MRI.JPG
+    by: "[KasugaHuang](http://commons.wikimedia.org/wiki/User:KasugaHuang)"
+    caption: The largest single use of liquid helium is to cool the superconducting magnets in modern MRI scanners.
+    url: "http://en.wikipedia.org/wiki/File:Modern_3T_MRI.JPG"
+
+Ilmenite and Slag:
+  -
+    src: Ilmenite and Slag/Ilmenite-65675.jpg
+    by: "Rob Lavinsky, [iRocks.com](http://www.irocks.com/) - CC-BY-SA-3.0"
+    caption: Ilmenite is the titanium-iron oxide mineral with the idealized formula FeTiO3. It is a weakly magnetic black or steel-gray solid. From the commercial perspective, ilmenite is the most important ore of titanium.
+    url: "http://commons.wikimedia.org/wiki/File:Ilmenite-65675.jpg"
+
+Indium:
+  -
+    src: Indium/600px-Indium_(49_In).jpg
+    by: "[Hi-Res Images of Chemical Elements](http://images-of-elements.com/indium.php)"
+    caption: Indium is a rare metal with a low melting point. It is very soft and can be cut with a knife. Indium is much used in the industry. Indium tin oxide is transparent, but has a good electrical conductivity. Therefore it is used in nearly every modern display device, which made indium a scarce material, that is in danger of running out.
+    url: "http://commons.wikimedia.org/wiki/File:Indium_(49_In).jpg"
+  -
+    src: Indium/678px-Dell_axim_LCD_under_microscope.jpg
+    by: "[Deglr6328](http://en.wikipedia.org/wiki/User:Deglr6328) and [Gabelstaplerfahrer](http://en.wikipedia.org/wiki/User:Gabelstaplerfahrer) at English Wikipedia"
+    caption: A magnified image of an LCD screen showing RGB pixels. Individual transistors are seen as white dots in the bottom part.
+    url: "http://en.wikipedia.org/wiki/File:Dell_axim_LCD_under_microscope.jpg"
+  -
+    src: Indium/Uv-LED.jpg
+    by: "[Christian Pelant](http://de.wikipedia.org/wiki/Benutzer:C._Pelant) at German Wikipedia"
+    caption: InGaN (Indium gallium nitride) blue LED (380–405 nm)
+    url: "http://en.wikipedia.org/wiki/File:Uv-LED.jpg"
+
 Industrial diamond:
+  -
+    src: Industrial diamond/Rough_diamond.jpg
+    caption: The slightly misshapen octahedral shape of this rough diamond crystal in matrix is typical of the mineral. Its lustrous faces also indicate that this crystal is from a primary deposit.
+    url: "http://en.wikipedia.org/wiki/File:Rough_diamond.jpg"
   -
     src: Industrial diamond/509px-Diamant_tropfen.jpg
     caption: Diamond from file.
     by: "[Mario Sarto](http://de.wikipedia.org/wiki/Benutzer:Masa)"
     url: "http://commons.wikimedia.org/wiki/File:Diamant_tropfen.jpg"
+  -
+    src: Industrial diamond/The_Hope_Diamond_-_SIA.jpg
+    caption: The most famous colored diamond, Hope Diamond in 1974, one of the largest of all blue diamonds, 45.52 carats, exhibited at the National Museum of Natural History.
+    by: Smithsonian Institution Archives (SIA)
+    url: "http://en.wikipedia.org/wiki/File:The_Hope_Diamond_-_SIA.jpg"
+  -
+    src: Industrial diamond/640px-Vickers_anvil_diamons.jpg
+    caption: Pyramidal diamond anvil impactor on a Vickers hardness tester
+    by: R. Tanaka
+    url: "http://en.wikipedia.org/wiki/File:Vickers_anvil_diamons.jpg"
+  -
+    src: Industrial diamond/Dia_scalpel.jpg
+    caption: A scalpel with synthetic diamond blade
+    by: "[NIMSoffice](http://en.wikipedia.org/wiki/User:NIMSoffice)"
+    url: "http://en.wikipedia.org/wiki/File:Dia_scalpel.jpg"
+
+Industrial garnet:
+  -
+    src: Industrial garnet/600px-GarnetCrystalUSGOV.jpg
+    caption: Garnet. Jeffery Mine, Quebec, Canada. Bureau of Mines, Mineral Specimens C\01687
+    url: "http://en.wikipedia.org/wiki/File:GarnetCrystalUSGOV.jpg"
+  -
+    src: Industrial garnet/640px-GrossularShades.jpg
+    by: "[Alkivar](http://en.wikipedia.org/wiki/User:Alkivar) at English Wikipedia"
+    caption: Grossular on display at the U.S. National Museum of Natural History. The green gem at right is a type of grossular known as tsavorite.
+    url: "http://en.wikipedia.org/wiki/File:GrossularShades.jpg"
+  -
+    src: Industrial garnet/Garnet.uvarovite.500pix.jpg
+    by: "[Arpingstone](http://en.wikipedia.org/wiki/User:Arpingstone)"
+    caption: Pendant in uvarovite, a rare bright-green garnet
+    url: "http://en.wikipedia.org/wiki/File:Garnet.uvarovite.500pix.jpg"
+
+Industrial sand and gravel:
+  -
+    src: Industrial sand and gravel/640px-Gravel_on_a_beach_in_Thirasia,_Santorini,_Greece.jpg
+    by: Stan Zurek
+    caption: Gravel on a beach in Thirasia, Santorini, Greece
+    url: "http://en.wikipedia.org/wiki/File:Gravel_on_a_beach_in_Thirasia,_Santorini,_Greece.jpg"
+  -
+    src: Industrial sand and gravel/640px-PismoBeachSand.JPG
+    by: "[Wilson44691](http://commons.wikimedia.org/wiki/User:Wilson44691), [Mark A. Wilson, Department of Geology, The College of Wooster](http://www.wooster.edu/academics/areas/geology/faculty-staff/wilson)"
+    caption: Sand from Pismo Beach, California
+    url: "http://en.wikipedia.org/wiki/File:PismoBeachSand.JPG"
+  -
+    src: Industrial sand and gravel/543px-Sand_sorting_tower.jpg
+    by: "[Andrew Dunn](http://en.wikipedia.org/wiki/User:Solipsist) at English Wikipedia. [http://www.andrewdunnphoto.com/](http://www.andrewdunnphoto.com/)"
+    caption: Sand sorting tower at a gravel pit
+    url: "http://en.wikipedia.org/wiki/File:Sand_sorting_tower.jpg"
