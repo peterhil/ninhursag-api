@@ -5,7 +5,6 @@ notes:
     Aluminum: Yearend capacity
     Arsenic: World reserves are thought to be about 20 times annual world production.
     Asbestos: "Estimated by Peter H. from vague description on USGS data, reserves in Brazil and Russia, and mine production. Source for Russian reserves: http://www.nationsencyclopedia.com/Europe/Russia-MINING.html"
-    Cement: Clinker capacity
     Cesium: Reserves for top 2 countries
     Chromium: Reserves for top 4 countries
     Industrial diamond: Natural industrial diamond only. Note that synthetic diamond production far exceeds natural industrial diamond output. Worldwide production of manufactured industrial diamond totaled at least 4.4 billion carats in 2013; the leading producers included Belarus, China, Ireland, Japan, Russia, South Africa, Sweden, and the United States.
@@ -73,9 +72,6 @@ data:
         2013: Large
     Cadmium:
         2013: 500_000
-    Cement:
-        2012: 3_300_000_000
-        2013: 3_400_000_000
     Cesium:
         2013: 160_000
     Chromium:
@@ -122,11 +118,9 @@ data:
     Iodine:
         2013: 7_600_000
     Pig Iron:  # Iron and steel
-        2012: 1_110_000_000
-        2013: 1_170_000_000
-    Steel:  # Iron and steel
-        2012: 1_550_000_000
-        2013: 1_580_000_000
+        2013: 170_000_000_000
+    Steel:  # Iron content
+        2013: 81_000_000_000
     Iron and Steel Slag:
         2013: Not applicable
     Iron ore:
@@ -154,7 +148,7 @@ data:
     Mica (natural)_ sheet:
         2013: Very large
     Molybdenum:
-        2013: 11_000
+        2013: 11_000_000
     Nickel:
         2013: 74_000_000
     Niobium:
@@ -230,7 +224,7 @@ data:
     Tungsten:
         2013: 3_500_000
     Vanadium:
-        2013: 14_000
+        2013: 14_000_000
     Vermiculite:
         2013: 71_500_000
     Wollastonite:
