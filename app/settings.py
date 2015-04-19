@@ -46,4 +46,4 @@ class Testing(Default):
 
 
 class Production(Default):
-    SERVER_NAME = 'ninhursag.herokuapp.com'
+    SERVER_NAME = '0.0.0.0'
