@@ -1,1 +1,1 @@
-web: python run.py
+web: NINHURSAG_ENV=production python run.py

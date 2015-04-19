@@ -17,7 +17,7 @@ if __name__ == '__main__':
     assert 1 <= len(server) <= 2, "SERVER_NAME in settings should be like 'example.com' or 'localhost:5000', not: {}".format(server)
 
     host = server[0]
-    port = int(server[1]) if len(server) == 2 else 5000
+    port = int(server[1]) if len(server) == 2 else 80
     env = environment()
 
     print(u"INFO Starting '{app}' ({env_var_prefix}) on {host}:{port} using environment '{env}'".format(**dict(
