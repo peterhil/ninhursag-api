@@ -46,4 +46,4 @@ class Testing(Default):
 
 
 class Production(Default):
-    SERVER_NAME = '0.0.0.0'
+    SERVER_NAME = '0.0.0.0:5000'
