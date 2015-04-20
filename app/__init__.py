@@ -34,8 +34,10 @@ def get_error_handler(code):
     return handle_error
 
 
+# http://www.onurguzel.com/how-to-run-flask-applications-with-nginx-using-gunicorn/
+app = create_app()
+app.wsgi_app = ProxyFix(app.wsgi_app)
+
+
 if __name__ == '__main__':
-    app = create_app()
-    # http://www.onurguzel.com/how-to-run-flask-applications-with-nginx-using-gunicorn/
-    app.wsgi_app = ProxyFix(app.wsgi_app)
     app.run()

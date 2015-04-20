@@ -1,1 +1,1 @@
-web: gunicorn app:create_app --log-file -
+web: NINHURSAG_ENV=production gunicorn -b 0.0.0.0:5000 app:app --log-file -
