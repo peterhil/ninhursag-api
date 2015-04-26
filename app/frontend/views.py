@@ -5,7 +5,7 @@ import logging
 import os
 
 from flask import current_app, Blueprint, render_template
-from flask import jsonify, url_for, send_from_directory
+from flask import jsonify, url_for, redirect, send_from_directory
 
 from app.helpers import route
 from app.log import logger
@@ -61,7 +61,8 @@ def favicon():
 @route(bp, '/')
 def index():
     """Returns the index."""
-    return render_template('index.html')
+    # return render_template('index.html')
+    return redirect('/ng-mineral/statistics')
 
 @route(bp, '/one')
 @templated('/one.html')
