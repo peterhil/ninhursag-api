@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import logging
 import os
 
 from flask import current_app, Blueprint, render_template
 from flask import jsonify, url_for, send_from_directory
 
 from app.helpers import route
+from app.log import logger
 from ..deco import templated
 
 
@@ -41,7 +43,7 @@ def config():
 @route(bp, '/data/<filename>')
 def data(filename):
     data_dir = os.path.join(current_app.root_path, 'static/data')
-    print("Data asked for %s from directory %s" % (filename, data_dir))
+    logger.debug("Data asked for %s from directory %s" % (filename, data_dir))
     if os.path.splitext(filename)[1][1:].strip().lower() != 'csv':
         return False  # TODO return 404 error
     return send_from_directory(

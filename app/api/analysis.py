@@ -2,15 +2,13 @@
 # -*- coding: utf-8 -*-
 
 import inspect
-import logging
 import numpy as np
 import scipy
 import scipy.stats as stats
 
+from app.log import logger
 from scipy.optimize import curve_fit
 
-
-logger = logging.getLogger("Ninhursag")
 
 def normalize(signal):
     max = np.max(np.abs(signal))
@@ -142,7 +140,7 @@ def estimate(func, data, years, until, log=False):
 
     # deriv = normalize(np.ediff1d(estd))*np.max(estd)/2
 
-    print("""=============================================================================
+    logger.debug("""=============================================================================
 function: {function}
 error mean: {mean_error}
 error: {error}

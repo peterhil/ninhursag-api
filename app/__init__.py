@@ -7,6 +7,7 @@ from werkzeug.contrib.fixers import ProxyFix
 
 from . import factory
 from . import assets
+from . import log
 from .extensions import flatpages
 
 
@@ -16,6 +17,9 @@ def create_app(settings_override=None):
 
     # Init assets
     assets.init_app(app)
+
+    # Init logging
+    log.init_app(app)
 
     # Flat pages
     flatpages.init_app(app)
