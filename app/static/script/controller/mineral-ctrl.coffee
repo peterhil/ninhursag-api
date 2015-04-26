@@ -20,6 +20,7 @@ angular.module('app')
       .success (response) ->
         $scope.minerals = response
         $scope.mineral = if ($cookies.mineral in R.keys($scope.minerals)) then $cookies.mineral else 'Gold'
+        $scope.chart.src = "/#{config.data_dir}/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
     $scope.currentFunction = 'genlogistic'
