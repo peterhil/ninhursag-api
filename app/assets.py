@@ -48,8 +48,7 @@ js_vendor = Bundle(
     'vendor/humanize-plus/public/src/humanize.js',
     'vendor/ramda/ramda.js',
     'vendor/soundex-code/index.js',
-    'vendor/tinycolor/tinycolor.js',
-    filters='uglifyjs',
+    filters='rjsmin',
     output='gen/vendor.min.js'
 )
 
@@ -66,6 +65,7 @@ js_ie = Bundle(
 )
 
 js_main = Bundle(
+    'vendor/tinycolor/tinycolor.js',
     Bundle(
         'coffee/production-chart.coffee',
         'script/app.coffee',
@@ -79,7 +79,7 @@ js_main = Bundle(
         filters='coffeescript',
         output='gen/app.js'
     ),
-    filters='uglifyjs',
+    filters='rjsmin',
     output='gen/app.min.js'
 )
 
