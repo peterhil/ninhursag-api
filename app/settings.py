@@ -47,3 +47,4 @@ class Testing(Default):
 
 class Production(Default):
     SERVER_NAME = 'ninhursag.herokuapp.com'
+    API_SERVER = SERVER_NAME
