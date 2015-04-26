@@ -1,2 +1,2 @@
-https://github.com/heroku/heroku-buildpack-nodejs.git#v71
+https://github.com/heroku/heroku-buildpack-nodejs.git#v75
 https://github.com/kennethreitz/conda-buildpack.git#master
