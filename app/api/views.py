@@ -83,11 +83,12 @@ class Estimate(restful.Resource):
             restful.abort(400, errors=["Request is not valid JSON."])
         except KeyError, e:
             restful.abort(400, errors=["Expected to find property '{}' on the request data.".format(e.message)])
-
+        if len(data) == 0 or len(years) == 0:
+            restful.abort(400, errors=["Empty data or years."])
         try:
-            # result = estimate(analysis.logistic, data, years, np.amax(years), log=False)
-            # result = estimate(analysis.wrap_scipy(stats.gamma.pdf), data, years, np.amax(years) + 100, log=False)
-            result = estimate(analysis.scipy_functions('pdf').get(function), data, years, np.amax(years) + 70, log=False)
+            # result = estimate(analysis.logistic, data, years, 0, log=False)
+            # result = estimate(analysis.wrap_scipy(stats.gamma.pdf), data, years, 100, log=False)
+            result = estimate(analysis.scipy_functions('pdf').get(function), data, years, 100, log=False)
         except Exception, e:
             restful.abort(400, errors=[e.message])
 

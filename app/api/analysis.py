@@ -123,8 +123,11 @@ def sanitize(data, years):
     data = data.compressed()
     return data, years
 
-def estimate(func, data, years, until, log=False):
+def estimate(func, data, years, until=0, log=False):
     data, years = sanitize(data, years)
+    if len(data) == 0 or len(years) == 0:
+        raise ValueError('Empty data or years')
+    until = np.max(years) + until
 
     (start, end) = (np.min(years), np.max(years))
     x = years - start
