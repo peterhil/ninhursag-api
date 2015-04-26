@@ -73,6 +73,7 @@ angular.module('app')
           fixNaNs(line(column)(data))
 
       scope.estimate = (fn) ->
+        return false if R.isEmpty(scope.chart.data)
         request_data =
           'years': []
           'data': []
