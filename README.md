@@ -1,7 +1,7 @@
-# Skeleton is a Python Flask template.
+# Ninhursag is a visual mineral resource index based on US Geologic Survey statistics
 
-It is a simple [Flask](http://flask.pocoo.org/) application with [Twitter Bootstrap](http://getbootstrap.com/) and other front end development utilities. Flask enables [Less](http://www.lesscss.org/) and [Coffeescript](http://coffeescript.org/) asset compilation through [webassets](http://webassets.readthedocs.org/en/latest/) and Twitter Bootstrap is included for fast frontend development.
-
+See [it running on Heroku](http://ninhursag.herokuapp.com/).
+The code is based on [Skeleton](https://github.com/peterhil/skeleton), which is a Python Flask template.
 
 ## Installation
 
@@ -14,23 +14,6 @@ It is a simple [Flask](http://flask.pocoo.org/) application with [Twitter Bootst
 Most Linux distributions come with Python already installed, if not see [the Python documentation](http://docs.python.org/2.7/using/index.html) for instructions on how to install Python.
 
 ### 3. Install the system requirements
-
-#### Important if installing on a server behind a proxy:
-
-* Use `sudo` with the `-E` option to keep the `http_proxy` and `https_proxy` environment variables or alternatively also add these environment variables into the root user’s `.bashrc`. For example:
-
-      export HTTP_PROXY="http://proxy"
-      export HTTPS_PROXY="https://proxy"
-      export FTP_PROXY="ftp://proxy"
-
-* Make `npm` use HTTP instead of HTTPS and/or relax it’s SSL check by using both or one of these settings, see [npm issue #2472](https://github.com/npm/npm/issues/2472):
-
-      npm config set registry=http://registry.npmjs.org/
-      npm config set strict-ssl false
-
-* Make `git` use `https://` protocol instead of `git://` to make it work behind a proxy:
-
-      git config --global url."https://".insteadOf git://
 
 #### Installing up to date pip and setuptools on Fedora:
 
@@ -147,10 +130,10 @@ This software is licensed under the MIT License. See LICENSE for details.
 
 Following libraries are used:
 
-- ### [Twitter Bootstrap](https://github.com/twbs/bootstrap)
+- ### [Zurb Foundation](http://foundation.zurb.com)
 
-    Copyright 2012 Twitter, Inc.
-    Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+    Copyright (c) 2013-2015 ZURB, inc.
+    Licensed under the [MIT License](https://github.com/zurb/foundation/blob/master/LICENSE)
 
 - ### [Font Awesome](http://fortawesome.github.com/Font-Awesome)
 
