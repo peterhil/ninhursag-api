@@ -9,7 +9,7 @@ Unidecode==0.04.14
 Werkzeug==0.9.4
 cssmin==0.2.0
 excelsior==0.0.5
-gunicorn==19.3.0
+gunicorn==19.5.0
 nodeenv==0.7.0
 py==1.4.15
 webassets==0.10.1
