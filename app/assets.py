@@ -6,7 +6,7 @@ from flask.ext.assets import Environment, Bundle
 
 css_application = Bundle(
     'style/main.less',
-    filters='less,autoprefixer',
+    filters='less',
     debug=False,
     output='gen/app.css'
 )
