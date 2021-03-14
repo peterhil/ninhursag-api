@@ -4,13 +4,14 @@ Flask-RESTful==0.2.12
 Flask==0.10.1
 Jinja2==2.7.1
 Markdown==2.5.2
-MarkupSafe==0.18
+MarkupSafe==1.1.1
 Unidecode==0.04.14
 Werkzeug==0.9.4
 cssmin==0.2.0
-excelsior==0.0.5
+#excelsior==0.0.5
 gunicorn==19.3.0
 nodeenv==0.7.0
+numpy==1.19.4
 py==1.4.15
+scipy==1.5.4
 webassets==0.10.1
-wsgiref==0.1.2
