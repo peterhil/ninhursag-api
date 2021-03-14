@@ -6,7 +6,7 @@ import re
 from unidecode import unidecode
 
 
-def slugify(text, delim=u'-'):
+def slugify(text, delim='-'):
     """Slugifier that handles Asian UTF-8 characters and generates an ASCII-only slug.
 
     From: http://flask.pocoo.org/snippets/5/

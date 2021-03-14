@@ -77,7 +77,7 @@ class Estimate(restful.Resource):
             obj = json.loads(request.data)
             data = obj['data']
             years = obj['years']
-            function = obj['function'] if obj['function'] in scipy_functions('pdf').keys() else ''
+            function = obj['function'] if obj['function'] in list(scipy_functions('pdf').keys()) else ''
         except ValueError as e:
             restful.abort(400, errors=["Request is not valid JSON."])
         except KeyError as e:

@@ -109,11 +109,12 @@ def wrap_scipy(func):
 def scipy_functions(self, kind='pdf'):
     if kind not in ['cdf', 'pdf']:
         return dict()
+    statistical_functions = [(f, getattr(getattr(stats, f, None), kind, None)) for f in dir(stats)]
+
     return dict(
-        map(lambda f: (f[0], wrap_scipy(f[1])),
-            filter(lambda x: x[1] is not None,
-                   [(f, getattr(getattr(stats, f, None), kind, None)) for f in dir(stats)]
-                   )))
+        [(f[0], wrap_scipy(f[1])) for f in [x for x in statistical_functions if x[1] is not None]]
+    )
+
 
 def sanitize(data, years):
     data = np.array(data, dtype=np.float64)

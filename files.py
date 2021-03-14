@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     f = []
     for (dirpath, dirnames, filenames) in os.walk(path):
-        f.extend(filter(lambda n: n[:5] == 'ds140' and os.path.splitext(n)[1][1:] in ['xls', 'xlsx'], filenames))
+        f.extend([n for n in filenames if n[:5] == 'ds140' and os.path.splitext(n)[1][1:] in ['xls', 'xlsx']])
         break
 
     minerals = {}
@@ -30,4 +30,4 @@ if __name__ == '__main__':
             minerals[sheet.name] = filename
             # print "{excel}: {sheet}".format(excel=excel_file, sheet=sheet.name)
 
-    print json.dumps(minerals, indent=4, sort_keys=True)
+    print(json.dumps(minerals, indent=4, sort_keys=True))
