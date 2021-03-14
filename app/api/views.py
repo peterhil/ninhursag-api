@@ -36,7 +36,7 @@ def replace_nan(x):
         return x
 
 def quote_nans(lst):
-    return map(replace_nan, lst)
+    return list(map(replace_nan, lst))
 
 
 def as_json(arr):

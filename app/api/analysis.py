@@ -103,7 +103,7 @@ def wrap_scipy(func):
             return adjust(func(data * xs, a, b, c, d, loc, scale), ys)
     wrapped.func = func
     wrapped.__doc__ = func.__doc__
-    wrapped.__name__ = "{}.{}".format(func.__self__.__class__.__name__, func.__name__)
+    #wrapped.__name__ = "{}.{}".format(func.__self__.__class__.__name__, func.__name__)
     return wrapped
 
 def scipy_functions(self, kind='pdf'):
