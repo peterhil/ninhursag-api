@@ -36,7 +36,7 @@ def config():
         'TESTING',
     ]
     return jsonify(dict([
-        (k.lower(), v) for k, v in current_app.config.iteritems() if k in exposed_config
+        (k.lower(), v) for k, v in current_app.config.items() if k in exposed_config
     ]))
 
 
