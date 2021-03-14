@@ -22,8 +22,8 @@ angular.module('app')
     link: (scope, element, attrs) ->
       scope.width ||= 400
       scope.height ||= 300
-      scope.viewBox ||= "0 0 #{scope.width} #{scope.height}"
-      scope.preserveAspectRatio ||= "xMidYMid meet"
+      scope.viewBox ||= "0 -20 #{scope.width} #{scope.height + 40}"
+      scope.preserveAspectRatio ||= "xMidYMin meet"
       scope.chart.src = attrs.src
       scope.logscale = true
       scope['function'] = $cookies['function'] || scope['function']
