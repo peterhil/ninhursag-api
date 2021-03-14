@@ -11,10 +11,9 @@ from flask import current_app, request, Blueprint
 from flask import jsonify, url_for, send_from_directory
 from flask.ext import restful
 
-from analysis import estimate
+from .analysis import estimate, scipy_functions
 from app.helpers import route
 
-import analysis
 import json
 import numpy as np
 import scipy.stats as stats
@@ -69,8 +68,8 @@ class Items(restful.Resource):
 class Estimate(restful.Resource):
     def get(self):
         return {
-            'cdf': sorted(analysis.scipy_functions('cdf').keys()),
-            'pdf': sorted(analysis.scipy_functions('pdf').keys()),
+            'cdf': sorted(scipy_functions('cdf').keys()),
+            'pdf': sorted(scipy_functions('pdf').keys()),
             }
 
     def post(self):
@@ -78,18 +77,18 @@ class Estimate(restful.Resource):
             obj = json.loads(request.data)
             data = obj['data']
             years = obj['years']
-            function = obj['function'] if obj['function'] in analysis.scipy_functions('pdf').keys() else ''
-        except ValueError, e:
+            function = obj['function'] if obj['function'] in scipy_functions('pdf').keys() else ''
+        except ValueError as e:
             restful.abort(400, errors=["Request is not valid JSON."])
-        except KeyError, e:
+        except KeyError as e:
             restful.abort(400, errors=["Expected to find property '{}' on the request data.".format(e.message)])
         if len(data) == 0 or len(years) == 0:
             restful.abort(400, errors=["Empty data or years."])
         try:
             # result = estimate(analysis.logistic, data, years, 0, log=False)
             # result = estimate(analysis.wrap_scipy(stats.gamma.pdf), data, years, 100, log=False)
-            result = estimate(analysis.scipy_functions('pdf').get(function), data, years, 100, log=False)
-        except Exception, e:
+            result = estimate(scipy_functions('pdf').get(function), data, years, 100, log=False)
+        except Exception as e:
             restful.abort(400, errors=[e.message])
 
         e_years, e_data, e_cov = result
