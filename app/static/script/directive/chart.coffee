@@ -156,7 +156,7 @@ angular.module('app')
         if (words = str.split(' ')).length > 1
           colors = R.map fuzzyColor, R.filter(R.I, words)
           return R.reduce tinycolor.mix, R.head(colors), R.tail(colors)
-        sndx = Soundex(str or ' ')
+        sndx = soundexPhonetics(str or ' ')
         # hue = (sndx[0].charCodeAt() % 64)  * (360 / 64) # modulo is for unicode chars. Or 360?
         # hue = (((sndx[0].charCodeAt() - (65)) + 26) % 26) * (360 / 26)
         hue = (((sndx[0].charCodeAt())) % 26) * (360 / 26)
