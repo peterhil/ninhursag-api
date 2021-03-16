@@ -7,6 +7,7 @@ Markdown==2.5.2
 MarkupSafe==1.1.1
 Unidecode==0.04.14
 Werkzeug==0.9.4
+beautifulsoup4==4.9.3
 cssmin==0.2.0
 #excelsior==0.0.5
 gunicorn==19.3.0
