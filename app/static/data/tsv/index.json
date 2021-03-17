@@ -18,9 +18,10 @@
     "Copper": "ds140-coppe.tsv",
     "Corundum and emery": "ds140-abran-Corundum and emery.tsv",
     "Corundum": "ds140-abran-Corundum.tsv",
-    "Emery": "ds140-abran-Emery.tsv",
+    "Crude oil": "Crude oil production.tsv",
     "Diatomite": "ds140-diato.tsv",
     "Direct Reduced Iron": "ds140-feste-Direct Reduced Iron.tsv",
+    "Emery": "ds140-abran-Emery.tsv",
     "Feldspar": "ds140-felds.tsv",
     "Fluorspar": "ds140-fluor.tsv",
     "Gallium": "ds140-galli.tsv",
@@ -84,6 +85,5 @@
     "Vermiculite": "ds140-vermi.tsv",
     "Wollastonite": "ds140-wolla.tsv",
     "Zinc": "ds140-zinc.tsv",
-    "Zirconium": "ds140-zirco.tsv",
-    "Crude oil": "Crude oil production.tsv"
+    "Zirconium": "ds140-zirco.tsv"
 }
