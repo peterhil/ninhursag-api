@@ -1,7 +1,7 @@
-ANTIMONY STATISTICS1												
-U.S. GEOLOGICAL SURVEY												
-[All values are in metric tons (t) antimony content unless otherwise noted]												
-Last modification: April 1, 2014												
+ANTIMONY STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values are in metric tons (t) antimony content unless otherwise noted]
+Last modification: May 6, 2020
 Year	Mine production	Smelter production	Primary production	Secondary production	Shipments	Imports	Exports	Stocks	Apparent consumption	Unit value  ($/t)	Unit value (98$/t)	World production
 1900	137	2250	2380	NA	NA	4890	NA	NA	5490	209	4100	7710
 1901	45	2030	2070	NA	NA	3880	NA	NA	4060	182	3600	7890
@@ -112,10 +112,15 @@ Year	Mine production	Smelter production	Primary production	Secondary production	
 2006	0	W	W	3520	0	23200	2140	2120	24300	5250	4250	173000
 2007	W	W	W	3480	0	21900	1950	1900	23700	5660	4450	180000
 2008	0	W	W	3180	0	29000	2200	1490	30400	6170	4670	185000
-2009	0	W	W	3020	0	20200	2100	1420	21200	5200	3950	154000
-2010	0	W	W	3520	0	26200	2540	1560	27000	8840	6610	178000
-2011	0	W	W	3230	0	23500	4170	1430	22700	14300	10400	183000
-2012	0	W	W	3730	0	22600	4710	1430	21700	12500	8880	174000
-NA Not available. W Withheld to avoid disclosing proprietary data.												
-1Compiled by D.A. Buckingham, J.F. Carlin, Jr., and D.E. Guberman												
-Data are calculated, estimated, or reported.  See notes for more information.												
+2009	0	W	W	3020	0	20200	2100	1420	21200	5200	3940	158000
+2010	0	W	W	2630	0	26200	2540	1560	26100	8850	6610	182000
+2011	0	W	W	2860	0	23500	4170	1430	22300	14300	10400	187000
+2012	0	W	W	3050	0	22300	4680	1430	20600	12500	8870	181000
+2013	0	423	423	4410	0	24300	3970	1470	25200	10200	7140	193000
+2014	0	540	540	4280	0	23800	3240	1400	25400	9370	6450	157000
+2015	0	645	645	3740	0	22500	3200	1290	23700	7210	4960	151000
+2016	0	664	664	3810	0	23300	1950	1090	25800	7390	5020	155000
+2017	0	621	621	4370	0	24700	2260	1360	27400	8770	5840	137000
+NA Not available. W Withheld to avoid disclosing proprietary data.
+1Compiled by D.A. Buckingham, J.F. Carlin, Jr., D.E. Guberman, and K. Klochko.
+Data are calculated, estimated, or reported.  See notes for more information.

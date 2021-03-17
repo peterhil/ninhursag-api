@@ -1,7 +1,7 @@
-PEAT STATISTICS1								
-U.S. GEOLOGICAL SURVEY								
-[All values in metric tons (t) gross weight unless otherwise noted]								
-Last modification: April 1, 2014								
+PEAT  STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values in metric tons (t) gross weight unless otherwise noted]
+Last modification: July 26, 2019
 Year	 Production	Imports	Exports	Stocks	Apparent consumption	Unit value ($/t)	Unit value (98$/t)	World production
 1904	1090	NA	NA	NA	1090	5.4	97.6	NA
 1905	7180	NA	NA	NA	7180	5.2	94	NA
@@ -109,9 +109,15 @@ Year	 Production	Imports	Exports	Stocks	Apparent consumption	Unit value ($/t)	Un
 2007	635000	977000	56000	98000	1590000	25.6	20.1	31500000
 2008	615000	936000	57000	152000	1440000	26.4	20	29500000
 2009	609000	906000	77000	149000	1440000	23.2	17.6	27600000
-2010	628000	947000	69000	100000	1560000	24.4	18.2	27300000
-2011	568000	982000	49000	133000	1500000	22.7	16.4	27100000
-2012	488000	911000	76000	218000	1240000	24.4	17.3	24700000
-NA Not available. 								
-1Compiled by C.A. DiFrancesco, S.M. Jasinski, and L.E. Apodaca.								
-Data are calculated, estimated, or reported.  See notes for more information.								
+2010	628000	947000	69000	100000	1560000	24.4	18.2	30800000
+2011	568000	982000	49000	133000	1470000	22.7	16.4	29900000
+2012	488000	909000	75000	218000	1240000	24.4	17.3	27400000
+2013	465000	915000	41000	174000	1380000	25.4	17.8	28300000
+2014	468000	994000	29000	222000	1390000	25	17.2	30200000
+2015	455000	1150000	28000	179000	1620000	28.4	19.5	29200000
+2016	441000	1130000	30000	125000	1590000	32	21.7	30800000
+2017	498000	1150000	30000	222000	1520000	27.6	18.4	31100000
+2018	479000	1200000	37000	196000	1670000	25.9	16.9	30400000
+NA Not available.
+1Compiled by C.A. DiFrancesco, S.M. Jasinski, L.E. Apodaca, and A.S. Brioche.
+Data are calculated, estimated, or reported.  See notes for more information.

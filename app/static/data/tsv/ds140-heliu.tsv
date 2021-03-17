@@ -1,7 +1,7 @@
-HELIUM STATISTICS1									
-U.S. GEOLOGICAL SURVEY									
-[All values are in metric tons (t) helium content unless otherwise noted]									
-Last modification: April 1, 2014									
+HELIUM STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values are in metric tons (t) helium content unless otherwise noted]
+Last modification: January 19, 2017
 Year	Production	Shipments	Imports	Exports	Stocks	Apparent consumption	Unit value ($/t)	Unit value (98$/t)	World production
 1935	49	NA	NA	NA	NA	49	NA	NA	49
 1936	22.4	NA	NA	NA	NA	22	NA	NA	22.4
@@ -69,8 +69,8 @@ Year	Production	Shipments	Imports	Exports	Stocks	Apparent consumption	Unit value
 1998	19300	19000	40	4710	163000	14300	11700	11700	22700
 1999	19300	19800	0	4540	166000	15200	11700	11400	22900
 2000	16600	21500	0	6260	161000	15200	10500	9940	19800
-2001	14700	22300	0	7280	153000	15100	10650	9840	17900
-2002	14800	21500	0	6690	147000	14800	11000	9960	18500
+2001	14700	22300	0	7280	153000	15100	10700	9850	17900
+2002	14800	21500	0	6690	147000	14800	11000	9970	18500
 2003	14700	20700	0	7000	141000	13700	11200	9920	24400
 2004	14600	22000	0	7600	133000	14000	11500	9920	26100
 2005	12900	22500	0	8700	124000	13800	11500	9600	27100
@@ -78,9 +78,12 @@ Year	Production	Shipments	Imports	Exports	Stocks	Apparent consumption	Unit value
 2007	13000	23400	0	10900	103000	12400	12500	9830	28900
 2008	13500	22000	0	11800	94900	10200	12900	9770	29600
 2009	13200	20000	0	12000	87900	7960	13300	10100	24900
-2010	12700	21700	0	13000	78700	8630	13800	10300	28400
-2011	12000	22000	0	13900	68300	8130	15900	11500	29100
-2012	12400	22500	0	14400	59700	8130	13900	9870	29500
-NA Not available. 									
-1Compiled by T.D. Kelly,  D.I. Bleiwas, and N. Pacheco [U.S. Bureau of Land Management (BLM)], P.J. Madrid (BLM), and J.E. Hamak (BLM).									
-Data are calculated, estimated, or reported.  See notes for more information.									
+2010	12700	21700	0	13000	79100	8500	13800	10300	28400
+2011	12000	22000	0	13900	68300	8090	15900	11500	29100
+2012	12400	22500	0	14400	59700	8130	16100	11400	29500
+2013	11700	20000	339	13700	51700	6640	17900	12500	28900
+2014	12700	17300	1190	11300	42500	7140	20300	14000	27800
+2015	11200	14900	2710	11000	38500	6600	22200	15300	26400
+NA Not available.
+1Compiled by T.D. Kelly,  D.I. Bleiwas, and N. Pacheco [U.S. Bureau of Land Management (BLM)], P.J. Madrid (BLM), and J.E. Hamak (BLM).
+Data are calculated, estimated, or reported.  See notes for more information.

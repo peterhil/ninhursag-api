@@ -1,8 +1,8 @@
-BARITE STATISTICS1								
-U.S. GEOLOGICAL SURVEY								
-[All values are in metric tons (t) gross weight unless otherwise noted]								
-Last modification: April 1, 2014								
-Year	Production      (sold or used)	Imports	Exports	Apparent consumption	Consumption (crushed and ground - sold or used)	Unit value ($/t)	Unit value (98$/t)	World production
+BARITE STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values are in metric tons (t) gross weight unless otherwise noted]
+Last modification: April 9, 2020
+Year	Production      (sold or used)	Imports	Exports	Apparent consumption	Production (crushed and ground - sold or used)	Unit value ($/t)	Unit value (98$/t)	World production
 1900	61400	4560	NA	66000	NA	3.34	65	NA
 1901	44500	5080	NA	49600	NA	3.98	78	NA
 1902	55900	8600	NA	64500	NA	5.4	100	NA
@@ -112,10 +112,16 @@ Year	Production      (sold or used)	Imports	Exports	Apparent consumption	Consump
 2006	589000	2550000	72000	3070000	3040000	56	45.3	7910000
 2007	455000	2600000	15000	3040000	2980000	71.9	56.5	7960000
 2008	648000	2620000	62000	3210000	2840000	76.3	57.8	8720000
-2009	396000	1430000	49000	1780000	2410000	85.1	64.7	6670000
-2010	662000	2110000	109000	2660000	2570000	86.2	64.4	7950000
-2011	710000	2320000	98000	2930000	2910000	98.6	71.4	8510000
-2012	666000	2920000	151000	3430000	3310000	111.9	79.5	9200000
-NA Not available.								
-1Compiled by D.A. Buckingham, J.P. Searls, and M.M. Miller.								
-Data are calculated, estimated, or reported.  See notes for more information.								
+2009	396000	1430000	49000	1780000	2410000	85.1	64.7	7050000
+2010	662000	2110000	109000	2660000	2570000	86.2	64.4	6820000
+2011	710000	2320000	98000	2930000	2910000	98.6	71.5	8370000
+2012	666000	2920000	155000	3430000	3310000	141	100	9490000
+2013	831000	2250000	207000	2870000	3550000	133	93	9000000
+2014	667000	2710000	161000	3210000	3410000	130	89.5	9670000
+2015	433000	1660000	147000	1950000	2010000	125	86	8380000
+2016	232000	1260000	78500	1410000	1420000	130	88.3	7710000
+2017	334000	2470000	116000	2680000	2030000	100	66.5	8200000
+2018	366000	2460000	67300	2760000	2420000	110	71.4	9180000
+NA Not available.
+1Compiled by D.A. Buckingham, J.P. Searls, M.M. Miller, and M.E. McRae.
+Data are calculated, estimated, or reported.  See notes for more information.

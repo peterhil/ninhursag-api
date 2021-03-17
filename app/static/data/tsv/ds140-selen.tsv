@@ -1,7 +1,7 @@
-SELENIUM STATISTICS1										
-U.S. GEOLOGICAL SURVEY										
-[All values in metric tons (t) selenium content unless otherwise noted]										
-Last modification: April 1, 2014										
+SELENIUM STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values in metric tons (t) selenium content unless otherwise noted]
+Last modification: October 4, 2018
 Year	Primary production	Secondary production	Shipments	Imports	Exports	Stocks	Apparent consumption	Unit value ($/t)	Unit value (98$/t)	World production
 1900	0	NA	0	0	0	NA	0	NA	NA	NA
 1901	0	NA	0	0	0	NA	0	NA	NA	NA
@@ -105,17 +105,22 @@ Year	Primary production	Secondary production	Shipments	Imports	Exports	Stocks	Ap
 1999	W	NA	W	326	233	W	383	5510	5390	1410
 2000	W	NA	W	476	82.1	W	504	8470	8020	1460
 2001	W	NA	W	483	41.2	W	480	8380	7710	1470
-2002	W	NA	W	322	80.9	W	420	9410	8530	1480
-2003	W	NA	W	367	249	W	370	12500	11070	1570
-2004	W	NA	W	412	160	W	410	54900	47400	1440
-2005	W	NA	W	589	254	W	590	113000	94300	2020
+2002	W	NA	W	422	84.9	W	420	9410	8530	1480
+2003	W	NA	W	328	243	W	330	12500	11070	1570
+2004	W	NA	W	413	119	W	410	54900	47400	1440
+2005	W	NA	W	585	254	W	590	113000	94300	2020
 2006	W	NA	W	409	191	W	410	54200	43800	2090
-2007	W	NA	W	544	592	W	545	72900	57300	2240
-2008	W	NA	W	519	562	W	519	71200	53900	2260
-2009	W	NA	W	263	618	W	W	50900	38700	2120
-2010	W	NA	W	480	919	W	W	83400	62300	2180
-2011	W	NA	W	601	1348	W	W	146000	106000	2280
-2012	W	NA	W	454	952	W	W	120000	85200	2240
-NA Not available. W Withheld to avoid disclosing company proprietary data.										
-1Compiled by K.E. Porter and M.W. George.										
-Data are calculated, estimated, or reported.  See notes for more information.										
+2007	W	NA	W	544	562	W	540	72900	57300	2240
+2008	W	NA	W	519	545	W	520	71200	53900	2260
+2009	W	NA	W	263	613	W	W	50900	38700	2160
+2010	W	NA	W	481	857	W	W	83400	62300	2150
+2011	W	NA	W	601	1360	W	W	146000	106000	2180
+2012	W	NA	W	457	953	W	W	120000	85300	2820
+2013	W	NA	W	435	648	W	W	79500	55600	2280
+2014	W	NA	W	475	521	W	W	59000	40700	2470
+2015	W	NA	W	457	468	W	W	48700	33500	2660
+2016	W	NA	W	433	150	W	W	52200	35500	2800
+2017	W	NA	W	469	268	W	W	23800	15800	2710
+NA Not available. W Withheld to avoid disclosing company proprietary data.
+1Compiled by K.E. Porter, M.W. George, and C.S. Anderson.
+Data are calculated, estimated, or reported.  See notes for more information.

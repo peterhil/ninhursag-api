@@ -1,7 +1,7 @@
-MICA (NATURAL), SHEET STATISTICS1									
-U.S. GEOLOGICAL SURVEY									
-[All values in metric tons (t) gross weight unless otherwise noted]									
-Last modification: October 17, 2013									
+MICA (NATURAL), SHEET STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values in metric tons (t) gross weight unless otherwise noted]
+Last modification: November 15th, 2018
 Year	 Production	Imports	Exports	Stocks	Shipments	Apparent consumption	Unit value ($/t)	Unit value (98$/t)	World production
 1900	207	887	NA	NA	NA	6080	448	8800	1140
 1901	163	761	NA	NA	NA	2890	605	12000	1320
@@ -110,12 +110,17 @@ Year	 Production	Imports	Exports	Stocks	Shipments	Apparent consumption	Unit valu
 2004	0	1400	1090	514	18	328	2890	2490	5200
 2005	0	1390	1430	505	38	3	1840	1540	5200
 2006	0	1770	1390	505	6	380	721	582.861762328	5200
-2007	0	1950	1300	0	7	650	1900	1500	5200
-2008	0	1900	2060	0	0.24	NA	3580	2710	5200
-2009	0	1500	1110	0	0	390	6290	4780	5200
-2010	0	1980	932	0	0	1050	3550	2650	5200
-2011	0	2190	1040	0	0	1150	1480	1070	5200
-2012	0	2380	1660	0	0	716	3270	2320	5200
-NA Not available. 									
-1Compiled by C.A. DiFrancesco (retired), J.B. Hedrick (retired), and J.C. Willett.									
-Data are calculated, estimated, or reported.  See notes for more information.									
+2007	0	1950	1300	NA	7	650	1900	1500	5200
+2008	0	1900	2060	NA	0.24	NA	3580	2710	5200
+2009	0	1500	1110	NA	0	390	6290	4780	5200
+2010	0	1980	932	NA	0	1050	3550	2650	5200
+2011	0	2190	1040	NA	0	1150	1480	1070	5200
+2012	0	2380	1660	NA	0	310	3270	2320	5700
+2013	0	1900	1090	NA	0	810	8640	6040	3700
+2014	0	2470	868	NA	0	1600	8140	5610	2960
+2015	W	2130	911	NA	0	1220	7930	5450	3300
+2016	W	2060	689	NA	0	1370	8470	5750	1200
+2017	W	1850	704	NA	0	1150	8530	5670	1200
+NA Not available. W Withheld to avoid disclosing company proprietary data.
+1Compiled by C.A. DiFrancesco (deceased), J.B. Hedrick (retired), C.L.Thomas, and K.C. Curry
+Data are calculated, estimated, or reported.  See notes for more information.

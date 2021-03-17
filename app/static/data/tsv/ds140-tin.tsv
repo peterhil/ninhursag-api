@@ -1,7 +1,7 @@
-TIN STATISTICS1											
-U.S. GEOLOGICAL SURVEY											
-[All values in metric tons (t) tin content unless otherwise noted]											
-Last modification: April 1, 2014											
+TIN STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values in metric tons (t) tin content unless otherwise noted]
+Last modification: December 3, 2018
 Year	Primary production	Secondary production	Imports	Exports	Government shipments	Government stocks	Industry stocks	Apparent consumption	Unit value ($/t)	Unit value (98$/t)	World production
 1900	NA	NA	31700	NA	NA	NA	NA	31700	659	12900	NA
 1901	NA	NA	33800	NA	NA	NA	NA	33800	368	7220	NA
@@ -113,10 +113,14 @@ Year	Primary production	Secondary production	Imports	Exports	Government shipment
 2007	0	12200	34600	6410	4540	3850	9100	43700	19800	15600	301000
 2008	0	11700	36300	9800	60	4020	8560	38800	24900	18900	258000
 2009	0	11100	33000	3170	0	4020	7070	42400	18500	14100	237000
-2010	0	11100	35300	5630	0	4020	6410	41400	27300	20400	253000
-2011	0	11000	34200	5450	0	4020	5880	40300	34700	25100	255000
-2012	0	11200	36900	5560	0	4020	6140	42300	28300	20100	240000
-NA Not available. W Withheld to avoid disclosing company proprietary data.											
-1Compiled by C.A. DiFrancesco, J.F. Carlin, Jr., and A.C. Tolcin.											
-Data are calculated, estimated, or reported.  See notes for more information.											
-											
+2010	0	11100	35300	5630	0	4020	6410	41400	27300	20400	266000
+2011	0	11000	34200	5450	0	4020	6280	39600	34700	25100	267000
+2012	0	11200	36900	5560	0	4020	6910	43200	28300	20100	226000
+2013	0	10600	34900	3000	0	4020	6520	42900	22900	16000	302000
+2014	0	10100	35600	2920	0	4020	6970	42400	22600	15500	324000
+2015	0	10100	33600	807	0	4020	7090	42700	16700	11500	318000
+2016	0	10300	32200	1150	0	4040	6370	42100	18500	12600	301000
+2017	0	10300	34300	1560	2	4040	6390	43000	20700	13700	313000
+NA Not available. W Withheld to avoid disclosing company proprietary data.
+1Compiled by C.A. DiFrancesco, J.F. Carlin, Jr., A.C. Tolcin, and C.S. Anderson.
+Data are calculated, estimated, or reported.  See notes for more information.

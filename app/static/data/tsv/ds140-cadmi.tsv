@@ -1,7 +1,7 @@
-CADMIUM STATISTICS1									
-U.S. GEOLOGICAL SURVEY									
-[All values are in metric tons (t) cadmium content unless otherwise noted]									
-Last modification: April 1, 2014									
+CADMIUM STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values are in metric tons (t) cadmium content unless otherwise noted]
+Last modification: January 28, 2020
 Year	Production	Imports	Exports	Shipments	Stocks	Apparent consumption	Unit value ($/t)	Unit value (98 $/t)	World production
 1900	0	NA	NA	NA	NA	NA	1430	28000	14
 1901	0	NA	NA	NA	NA	NA	1500	29000	13
@@ -105,17 +105,25 @@ Year	Production	Imports	Exports	Shipments	Stocks	Apparent consumption	Unit value
 1999	1190	294	20	1020	893	1850	390	382	20000
 2000	1890	425	314	1580	1200	2010	362	343	20300
 2001	1450	107	216	1040	1750	1000	500	460	20000
-2002	1280	81	264	1470	1360	1700	644	583	17800
-2003	1450	112	615	1200	1430	1020	1310	1160	18400
-2004	1480	263	154	1410	1170	1840	1200	1040	18600
-2005	1470	288	686	1680	184	2060	3300	2750	20100
-2006	723	180	483	833	74	530	2980	2410	19900
-2007	735	316	424	692	107	594	7610	5980	18700
-2008	777	197	421	774	132	528	5920	4480	21600
-2009	633	122	661	737	27	199	2870	2180	20300
-2010	637	221	306	563	102	477	3900	2920	22700
-2011	W	211	271	W	W	W	2760	2000	20400
-2012	W	192	631	W	W	W	2030	1440	20900
-NA Not available. W Withheld to avoid disclosing company proprietary data.									
-1Compiled by D.A. Buckingham (retired), J. Plachy (retired), P.H. Kuck, and A.C. Tolcin.									
-Data are calculated, estimated, or reported.  See notes for more information.									
+2002	1280	56	95	1470	1360	1630	644	583	17800
+2003	1450	74	38	1200	1430	1420	1310	1160	18400
+2004	1480	102	22	1410	1170	1820	1200	1040	18600
+2005	1470	207	0.14	1680	184	2660	3300	2750	20100
+2006	723	179	18	833	74	994	2980	2410	19900
+2007	735	315	270	692	107	747	7610	5980	18700
+2008	777	153	295	774	132	610	5920	4480	21600
+2009	633	117	276	737	27	579	2870	2180	20800
+2010	637	216	75	563	102	703	3900	2910	23700
+2011	W	201	63	W	W	W	2760	2000	21100
+2012	W	170	253	W	W	W	2030	1440	22500
+2013	W	284	131	W	W	W	1920	1340	22500
+2014	W	133	198	W	W	W	1940	1340	25600
+2015	W	237	350	W	W	W	1470	1010	25100
+2016	W	240	157	W	W	W	1340	910	26000
+2017	W	274	223	W	W	W	1750	1160	25200
+2018	W	273	40	W	W	W	2890	1880	25100
+NA Not available. W Withheld to avoid disclosing company proprietary data.
+1Compiled by D.A. Buckingham, J. Plachy, P.H. Kuck,  and A.C. Tolcin.
+Data are calculated, estimated, or reported.  See notes in embedded document for more information.
+Other publications and contact information for the USGS cadmium specialist can be found at:
+https://www.usgs.gov/centers/nmic/cadmium-statistics-and-information.

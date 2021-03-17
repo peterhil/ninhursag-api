@@ -1,7 +1,7 @@
-MERCURY STATISTICS1											
-U.S. GEOLOGICAL SURVEY											
-[All values in metric tons (t) mercury content unless otherwise noted]											
-Last modification: April 1, 2014											
+MERCURY STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values in metric tons (t) mercury content unless otherwise noted]
+Last modification: October 4, 2018
 Year	Primary production	Secondary production	Imports	Exports	Government stocks	Government shipments	Stocks	Apparent consumption	Unit value ($/t)	Unit value (98$/t)	World production
 1900	983	NA	1.18	353	0	0	NA	631	1500	29000	3150
 1901	1030	NA	0.659	389	0	0	NA	643	1400	27000	2960
@@ -107,15 +107,21 @@ Year	Primary production	Secondary production	Imports	Exports	Government stocks	G
 2001	0	NA	100	108	4440	0	NA	NA	4500	4140	1500
 2002	0	NA	209	201	4440	0	NA	NA	4500	4080	1490
 2003	0	NA	46	287	4440	0	NA	NA	4930	4370	1730
-2004	0	NA	92	278	4440	0	NA	NA	10200	8800	1900
-2005	0	NA	212	319	4440	0	NA	NA	16100	13400	1520
-2006	0	NA	94	390	4440	0	NA	NA	19400	15700	1150
-2007	0	NA	67	84	4440	0	NA	NA	15400	12100	1200
+2004	0	NA	92	278	4440	0	NA	NA	16700	14400	1900
+2005	0	NA	212	319	4440	0	NA	NA	23800	19900	1520
+2006	0	NA	94	390	4440	0	NA	NA	17200	13900	1150
+2007	0	NA	67	84	4440	0	NA	NA	16100	12700	1200
 2008	0	NA	155	732	4440	0	NA	NA	17400	13200	1820
-2009	0	NA	206	753	4440	0	NA	NA	17700	13400	1990
-2010	0	NA	294	459	4440	0	NA	NA	31200	23300	2250
-2011	0	NA	110	133	4440	0	NA	NA	53700	38900	2000
-2012	0	NA	249	103	4440	0	NA	NA	53700	38100	1810
-NA Not available. 											
-1Compiled by K.E. Porter (retired), W.E. Brooks (retired), and R.L. Virta.											
-Data are calculated, estimated, or reported.  See notes for more information.											
+2009	0	NA	206	753	4440	0	NA	NA	17400	13200	1880
+2010	0	NA	294	459	4440	0	NA	NA	27300	20400	2180
+2011	0	NA	110	129	4440	0	NA	NA	51200	37100	1970
+2012	0	NA	249	28	4440	0	NA	NA	74800	53100	1830
+2013	0	NA	38	(2)	4440	0	NA	NA	99000	69200	2320
+2014	0	NA	49	0	4440	0	NA	NA	88100	60700	2770
+2015	0	NA	26	(2)	4440	0	NA	NA	56700	39000	3300
+2016	0	NA	24	0	4440	0	NA	NA	40700	27600	3670
+2017	0	NA	20	0	4440	0	NA	NA	30200	20100	3790
+NA Not available.
+1Compiled by K.E. Porter, W.E. Brooks, R.L. Virta, and M.W. George.
+2Less than \xbd unit.
+Data are calculated, estimated, or reported.  See notes for more information.

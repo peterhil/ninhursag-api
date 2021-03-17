@@ -1,7 +1,7 @@
-SILVER STATISTICS1											
-U.S. GEOLOGICAL SURVEY											
-[All values in metric tons (t) silver content unless otherwise noted]											
-Last modification: April 1, 2014											
+SILVER STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values in metric tons (t) silver content unless otherwise noted]
+Last modification: December 19, 2018
 Year	Mine production	Primary production	Secondary production	Shipments	Imports	Exports	Stocks	Apparent consumption	Unit value ($/t)	Unit value (98$/t)	World production
 1900	1790	1790	NA	NA	NA	NA	NA	420	20000	390000	5400
 1901	1720	1720	38	NA	NA	NA	NA	401.545842632	19000	380000	5380
@@ -111,11 +111,16 @@ Year	Mine production	Primary production	Secondary production	Shipments	Imports	E
 2005	1230	2530	981	0	3880	166	3970	6140	236000	197000	20800
 2006	1160	2210	1110	0	4280	1500	3540	5130	373000	302000	20100
 2007	1280	791	1130	0	4210	660	4190	5250	431000	339000	20800
-2008	1250	779	1210	0	3860	413	4130	6320	482000	365000	21400
-2009	1250	796	1340	0	2800	167	3650	6110	472000	359000	22200
-2010	1280	819	1330	0	4630	523	3380	7530	649000	485000	23800
-2011	1120	790	1710	0	5250	625	3800	5920	1130000	819000	23300
-2012	1060	796	1660	0	4030	837	4720	5990	1000000	713000	25500
-NA Not available. 											
-1Compiled by K.E. Porter, H.E. Hilliard, W.E. Brooks, M.W. George, and F.C. Katrivanos.											
-Data are calculated, estimated, or reported.  See notes for more information.											
+2008	1250	779	1210	0	3860	413	4130	6320	482000	365000	21300
+2009	1250	796	1340	0	2800	167	3650	6090	472000	359000	22300
+2010	1280	819	1330	0	4630	523	3380	7540	644000	481000	23300
+2011	1120	790	1710	0	5250	625	3800	7920	1130000	819000	23300
+2012	1060	796	1660	0	4030	837	4720	5920	1000000	710000	24300
+2013	1050	800	1700	0	3830	347	5460	6670	767000	537000	26700
+2014	1180	800	1400	0	3940	342	5730	5530	614000	423000	27800
+2015	1090	800	1200	0	4660	781	5130	6480	505000	347000	27500
+2016	1150	800	1300	0	4870	237	5840	6010	553000	376000	27900
+2017	1030	800	1300	0	3950	92	7720	4090	549000	365000	27800
+NA Not available.
+1Compiled by K.E. Porter, H.E. Hilliard, W.E. Brooks, M.W. George, F.C. Katrivanos, and S.M. Bennett.
+Data are calculated, estimated, or reported.  See notes for more information.

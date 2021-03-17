@@ -1,7 +1,7 @@
-BORON STATISTICS1							
-U.S. GEOLOGICAL SURVEY							
-[All values are in metric tons (t) boron oxide (B2O3) content unless otherwise noted]							
-Last modification: April 1, 2014							
+BORON STATISTICS1
+U.S. GEOLOGICAL SURVEY
+[All values are in metric tons (t) boron oxide (B2O3) content unless otherwise noted]
+Last modification: June 6, 2019
 Year	Production	Imports	Exports	Apparent consumption	Unit value  ($/t)	Unit value (98$/t)	World production (gross weight)
 1900	9250	178	NA	9430	111	2170	46900
 1901	8420	297	NA	8720	123	2390	42900
@@ -112,10 +112,16 @@ Year	Production	Imports	Exports	Apparent consumption	Unit value  ($/t)	Unit valu
 2006	W	118000	260000	W	935	756	3620000
 2007	W	91000	293000	W	935	735	4200000
 2008	W	76200	350000	W	934	707	4480000
-2009	W	49100	417000	W	878	667	3760000
-2010	W	53800	423000	W	680	508	4300000
-2011	W	55300	492000	W	871	631	4320000
-2012	W	54800	456000	W	871	618	4420000
-NA Not available. W Withheld to avoid disclosing company proprietary data.							
-1Compiled by D.A. Buckingham, P.A. Lyday, D.S. Kostick, D.E. Polyak, M.A. Angulo, and R.D. Crangle, Jr.							
-Data are calculated, estimated, or reported.  See notes for more information.							
+2009	W	49100	417000	W	878	667	3600000
+2010	W	53800	423000	W	680	508	4120000
+2011	W	56000	492000	W	871	631	8150000
+2012	W	55000	457000	W	784	557	5910000
+2013	W	53000	489000	W	694	486	6030000
+2014	W	142000	430000	W	1094	764	NA
+2015	W	135000	371000	W	1128	782	NA
+2016	W	146000	422000	W	1147	779	NA
+2017	W	139000	404000	W	1170	778	NA
+2018	W	146000	443000	W	1170	763	NA
+NA Not available. W Withheld to avoid disclosing company proprietary data.
+1Compiled by D.A. Buckingham, P.A. Lyday, D.S. Kostick, D.E. Polyak, M.A. Angulo,  R.D. Crangle, Jr., and A. Brioche
+Data are calculated, estimated, or reported.  See notes for more information.
