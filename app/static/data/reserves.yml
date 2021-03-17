@@ -1,12 +1,14 @@
 meta:
-    src: http://minerals.usgs.gov/minerals/pubs/mcs/2014/mcs2014.pdf
+    src: https://pubs.usgs.gov/periodicals/mcs2021/mcs2021.pdf
 
 notes:
-    Aluminum: Yearend capacity
     Arsenic: World reserves are thought to be about 20 times annual world production.
     Asbestos: "Estimated by Peter H. from vague description on USGS data, reserves in Brazil and Russia, and mine production. Source for Russian reserves: http://www.nationsencyclopedia.com/Europe/Russia-MINING.html"
+    Barite: In response to concerns about dwindling global reserves of 4.2-specificgravity barite used by the oil and gas drilling industry, the American Petroleum Institute issued an alternate specification for 4.1-specific-gravity weighting agents in 2010. This has likely stimulated exploration and expansion of global barite resources. Estimated reserves data are included only if developed since the adoption of the 4.1-specificgravity standard.
+    Boron: At least, data for Bolivia and Kazakhstan is not available and reporting metrics vary. World totals cannot be calculated because production and reserves are not reported in a consistent manner by all countries.
+    Bromine: At least, includes only US and Azerbaijan reserves. Bromine is found principally in seawater, evaporitic (salt) lakes, and underground brines associated with petroleum deposits. The Dead Sea, in the Middle East, is estimated to contain 1 billion tons of bromine. Seawater contains about 65 parts per million bromine, or an estimated 100 trillion tons.
     Cesium: Reserves for top 2 countries
-    Chromium: Reserves for top 4 countries
+    Chromium: Reserves for top 4 countries. The change in scale around 2012 is apparently caused by different definitions of what exactly is produced. Reserves units are thousand metric tons of shipping-grade chromite ore, which is deposit quantity and grade normalized to 45% Cr2O3. World production data from 2012 onwards is from MCS reports at https://www.usgs.gov/centers/nmic/mineral-commodity-summaries
     Industrial diamond: Natural industrial diamond only. Note that synthetic diamond production far exceeds natural industrial diamond output. Worldwide production of manufactured industrial diamond totaled at least 4.4 billion carats in 2013; the leading producers included Belarus, China, Ireland, Japan, Russia, South Africa, Sweden, and the United States.
     Fluorspar: Measured as 100% calcium fluoride.
     Gemstones: World reserves of diamond-bearing deposits are substantial. No reserve data are available for other gemstones.
@@ -42,53 +44,46 @@ notes:
     Zirconium: Metric tons tons of ZrO2.
 
 data:
-    Aluminum oxide:  # Abrasives
-        2012: 1_190_000
-        2013: 1_190_000
-    Silicon carbide:  # Abrasives
-        2012: 1_010_000
-        2013: 1_010_000
-    Aluminum:
-        2012: 57_000_000
-        2013: 61_900_000
     Antimony:
         2013: 1_800_000
+        2020: 1_900_000
     Arsenic:
-        2012: 934_000
-        2013: 900_000
+        2012: 362_000
+        2013: 386_000
+        2018: 500_000
     Asbestos:
         2013: 134_477_000
+        2020: 326_000_000
     Barite:
         2013: 350_000_000
+        2020: 390_000_000
     Bauxite:
         2013: 28_000_000_000
+        2020: 30_000_000_000
     Beryllium:
         2013: NA
     Bismuth:
         2013: 320_000
     Boron:
         2013: 210_000_000
+        2020: 1_243_000_000
     Bromine:
         2013: Large
+        2020: 12_300_000_000
     Cadmium:
         2013: 500_000
     Cesium:
         2013: 160_000
+        2020: 90_000
     Chromium:
         2013: 480_000_000
-    Bentonite:  # Clays
-        2012: 9_950_000
-        2013: 10_300_000
-    "Fuller's earth":  # Clays
-        2012: 2_980_000
-        2013: 3_000_000
-    Kaolin:  # Clays
-        2012: 36_200_000
-        2013: 37_000_000
+        2020: 560_000_000
     Cobalt:
         2013: 7_200_000
+        2020: 7_100_000
     Copper:
         2013: 690_000_000
+        2020: 870_000_000
     Industrial diamond:
         2013: 150
     Diatomite:
