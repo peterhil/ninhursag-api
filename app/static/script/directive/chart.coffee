@@ -116,7 +116,7 @@ angular.module('app')
         # $log.info "getReserves():", mineral, data
         return unless mineral and data
 
-        latest = R.head R.sort R.lt, R.filter(R.I, R.map(parseInt, R.keys(data)))
+        latest = R.last R.sort R.lt, R.filter(R.I, R.map(parseInt, R.keys(data)))
         reserveEstimate = data?[latest]
         reserveNotes = scope.reserves.notes[mineral]
 
