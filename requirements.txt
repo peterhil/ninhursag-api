@@ -2,7 +2,7 @@ Flask-Assets==0.10
 Flask-FlatPages==0.5
 Flask-RESTful==0.2.12
 Flask==0.10.1
-Jinja2==2.7.1
+Jinja2==2.11.3
 Markdown==2.5.2
 MarkupSafe==0.18
 Unidecode==0.04.14
