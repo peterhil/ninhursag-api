@@ -92,6 +92,7 @@ data:
         2013: Large
     Fluorspar:
         2013: 240_000_000
+        2020: 320_000_000
     Gallium:
         2013: NA
     Garnet (industrial):
@@ -102,6 +103,7 @@ data:
         2013: NA
     Gold:
         2013: 54_000
+        2020: 53_000
     Graphite:
         2013: 130_000_000
     Gypsum:
