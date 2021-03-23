@@ -23,7 +23,7 @@ angular.module('app')
         $scope.chart.src = "/#{config.data_dir}/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
-    $scope.currentFunction = 'genlogistic'
+    $scope.currentFunction = 'powerlognorm'
     $http.get('/api/v1/estimate')
       .success (response) ->
         $scope.functions = response
