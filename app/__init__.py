@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os.path
+
 from flask import render_template
 from werkzeug.middleware.proxy_fix import ProxyFix
 
@@ -10,9 +12,13 @@ from . import log
 from .extensions import flatpages
 
 
+def root_dir():
+    return os.path.abspath(os.path.dirname(__file__))
+
+
 def create_app(settings_override=None):
     """Returns the application instance"""
-    app = factory.create_app(__name__, __path__, settings_override)
+    app = factory.create_app(__name__, [root_dir()], settings_override)
 
     # Init assets
     assets.init_app(app)
