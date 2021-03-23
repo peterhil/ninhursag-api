@@ -50,7 +50,7 @@ def create_app(package_name, package_path, settings_override=None):
     :param package_path: application package path
     :param settings_override: a dictionary of settings to override
     """
-    app = Flask(package_name)
+    app = Flask(package_name, instance_relative_config=True)
 
     def env_settings(module):
         return '.'.join([module, environment().capitalize()])
