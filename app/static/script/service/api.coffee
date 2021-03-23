@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .factory 'api', ['$http', 'config', ($http, config) ->
+  .factory 'api', ['$http', ($http) ->
     new class api
       url: (args...) ->
         R.join('/', R.concat(['/api/v1'], args))
