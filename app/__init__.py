@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import render_template
-from flask_flatpages import FlatPages
-from werkzeug.contrib.fixers import ProxyFix
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 from . import factory
 from . import assets

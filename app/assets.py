@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask.ext.assets import Environment, Bundle
+from flask_assets import Environment, Bundle
 
 
 css_application = Bundle(
