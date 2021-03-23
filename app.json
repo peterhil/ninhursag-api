@@ -1,3 +1,11 @@
 {
-   "stack": "heroku-20"
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "heroku/nodejs"
+        }
+    ],
+    "stack": "heroku-20"
 }
