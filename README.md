@@ -9,17 +9,11 @@ The code is based on [Skeleton](https://github.com/peterhil/skeleton), which is 
 
     git clone https://github.com/peterhil/skeleton skeleton-git
 
-### 2. Make sure a Python version greater than or equal to 2.6 is installed
+### 2. Make sure a Python version greater than or equal to 3.8 is installed
 
-Most Linux distributions come with Python already installed, if not see [the Python documentation](http://docs.python.org/2.7/using/index.html) for instructions on how to install Python.
+Most Linux distributions come with Python already installed, if not see [the Python documentation](https://docs.python.org/3/using/index.html) for instructions on how to install Python.
 
 ### 3. Install the system requirements
-
-#### Installing up to date pip and setuptools on Fedora:
-
-    sudo -E yum install python-pip
-    sudo -E python-pip install -U pip
-    sudo -E pip install -U setuptools  # To get >=0.7 setuptools, preferably >=2.1.0
 
 #### Install the dependencies:
 
@@ -35,8 +29,8 @@ Command `port` refers to using Macports on Mac OS X. If you are using a differen
 ### 4. Install Python into [virtualenv](http://www.virtualenv.org/en/latest/virtualenv.html) and install Python dependencies with [pip](http://www.pip-installer.org/en/latest/)
 
     cd skeleton-git
-    virtualenv -p python2.7 --no-site-packages venv/py27
-    source ./venv/py27/bin/activate
+    virtualenv -p python3.8 venv/py38
+    source ./venv/py38/bin/activate
 
     # Install the application's Python package and dependencies with pip
     pip install .
@@ -122,7 +116,7 @@ To import YAML data, do `import YAML` on views.py and use like this:
 
 ## License
 
-Copyright (c) 2014 [Peter hillerström](https://github.com/peterhil)
+Copyright (c) 2014–2021 [Peter hillerström](https://github.com/peterhil)
 This software is licensed under the MIT License. See LICENSE for details.
 
 
