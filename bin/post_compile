@@ -3,21 +3,6 @@
 set -eo pipefail
 
 # The post_compile hook is run by heroku-buildpack-python
-# from: https://github.com/nigma/heroku-django-cookbook/blob/master/bin/post_compile
-
-echo "-----> Post-compile starting"
-
-if [ -f bin/install_nodejs ]; then
-    echo "-----> Running install_nodejs"
-    chmod +x bin/install_nodejs
-    bin/install_nodejs
-
-    if [ -f bin/install_less ]; then
-        echo "-----> Running install_lessc"
-        chmod +x bin/install_less
-        bin/install_less
-    fi
-fi
 
 echo "-----> Building Flask assets"
 
