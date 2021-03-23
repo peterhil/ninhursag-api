@@ -15,16 +15,12 @@ class Default(object):
     DEBUG = False
     TESTING = False
 
-    # Servers and URLs
-    SERVER_NAME = 'localhost:5000'
-
     # Authentication etc
     # To generate: import os; os.urandom(24)
     SECRET_KEY = 'some-secret-key'
     CSRF_ENABLED = True
 
     # API
-    API_SERVER = SERVER_NAME
     API_TOKEN = 'some-api-token'
 
     # Flat pages
@@ -46,5 +42,4 @@ class Testing(Default):
 
 
 class Production(Default):
-    SERVER_NAME = 'ninhursag.herokuapp.com'
-    API_SERVER = SERVER_NAME
+    pass

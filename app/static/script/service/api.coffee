@@ -1,10 +1,10 @@
 'use strict'
 
 angular.module('app')
-  .factory 'api', ['$http', 'config', ($http, config) ->
+  .factory 'api', ['$http', ($http) ->
     new class api
       url: (args...) ->
-        R.join('/', R.concat(['/', config.api_server, 'api/v1'], args))
+        R.join('/', R.concat(['/api/v1'], args))
 
       estimate: (data) ->
         $http.post @url('estimate'), data

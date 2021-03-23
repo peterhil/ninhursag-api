@@ -15,4 +15,4 @@ nodeenv==0.7.0
 numpy==1.19.4
 py==1.4.15
 scipy==1.5.4
-webassets==0.10.1
+webassets>=2.0
