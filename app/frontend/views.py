@@ -1,15 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import logging
 import os
 
 from flask import current_app, Blueprint, render_template
-from flask import jsonify, url_for, redirect, send_from_directory
+from flask import jsonify, redirect, send_from_directory
 
 from app.helpers import route
 from app.log import logger
-from ..deco import templated
 
 
 bp = Blueprint('front', __name__)
