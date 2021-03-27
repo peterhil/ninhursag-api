@@ -67,7 +67,6 @@ js_ie = Bundle(
 js_main = Bundle(
     'vendor/tinycolor/tinycolor.js',
     Bundle(
-        'coffee/production-chart.coffee',
         'script/app.coffee',
         'script/service/config.coffee',
         'script/service/api.coffee',

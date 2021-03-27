@@ -61,12 +61,12 @@ def favicon():
 @route(bp, '/')
 def index():
     """Returns the index."""
-    return redirect('/ng-mineral/statistics')
+    return redirect('/mineral/statistics')
 
 
 @route(bp, '/mineral/<mineral>')
 def mineral(mineral='Aluminium'):
-    return render_template('/mineral.html', mineral=mineral)
+    return render_template('/ng-mineral.html', mineral=mineral)
 
 
 @route(bp, '/ng-mineral/<mineral>')
