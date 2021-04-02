@@ -19,7 +19,7 @@ css_foundation = Bundle(
 )
 
 css_all = Bundle(
-    'vendor/angular-growl-v2/build/angular-growl.css',
+    'vendor/angular-growl-v2/build/angular-growl-foundation.css',
     css_foundation,
     css_application,
     filters='cssmin',

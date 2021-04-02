@@ -3,7 +3,7 @@ dependencies:
   angular-animate: 1.3.20
   angular-aria: 1.3.20
   angular-cookies: 1.3.20
-  angular-growl-v2: 0.7.5
+  angular-growl-v2: github.com/Jacq/angular-growl-2/8ef35967afa04e179050fb169072f51cbf6cf312
   angular-messages: 1.3.20
   angular-resource: 1.3.20
   angular-route: 1.3.20
@@ -42,10 +42,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WQ7RhQGBWniYqnNOQR1AnvOQNIs=
-  /angular-growl-v2/0.7.5:
-    dev: false
-    resolution:
-      integrity: sha1-V4dtURYigBlIwC46ld2WM3r2Rw0=
   /angular-messages/1.3.20:
     dev: false
     resolution:
@@ -591,12 +587,18 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
+  github.com/Jacq/angular-growl-2/8ef35967afa04e179050fb169072f51cbf6cf312:
+    dev: false
+    name: angular-growl-v2
+    resolution:
+      tarball: 'https://codeload.github.com/Jacq/angular-growl-2/tar.gz/8ef35967afa04e179050fb169072f51cbf6cf312'
+    version: 0.7.1
 specifiers:
   angular: 1.3.20
   angular-animate: 1.3.20
   angular-aria: 1.3.20
   angular-cookies: 1.3.20
-  angular-growl-v2: ^0.7.5
+  angular-growl-v2: 'github:Jacq/angular-growl-2'
   angular-messages: 1.3.20
   angular-resource: 1.3.20
   angular-route: 1.3.20
