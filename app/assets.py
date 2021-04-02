@@ -12,14 +12,15 @@ css_application = Bundle(
 )
 
 css_foundation = Bundle(
-    'vendor/foundation/css/normalize.css',
-    'vendor/foundation/css/foundation.css',
-    # filters='scss',
+    'vendor/normalize.css/normalize.css',
+    # 'vendor/foundation/scss/normalize.scss',
+    'vendor/foundation/scss/foundation.scss',
+    filters='scss',
     output='gen/foundation.css'
 )
 
 css_all = Bundle(
-    'vendor/angular-growl-v2/build/angular-growl-foundation.css',
+    'vendor/angular-growl-v2/build/angular-growl.css',
     css_foundation,
     css_application,
     filters='cssmin',
@@ -41,7 +42,7 @@ js_vendor = Bundle(
     'vendor/angular-growl-v2/build/angular-growl.js',
     'vendor/angular-spinner/angular-spinner.js',
     'vendor/lodash/dist/lodash.js',
-    'vendor/Papa-Parse/papaparse.js',
+    'vendor/papaparse/papaparse.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
     'vendor/foundation/js/foundation/foundation.js',
     'vendor/foundation/js/foundation/foundation.topbar.js',
@@ -65,7 +66,7 @@ js_ie = Bundle(
 )
 
 js_main = Bundle(
-    'vendor/tinycolor/tinycolor.js',
+    'vendor/tinycolor2/tinycolor.js',
     Bundle(
         'coffee/production-chart.coffee',
         'script/app.coffee',
