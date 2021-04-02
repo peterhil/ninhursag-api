@@ -13,7 +13,7 @@ dependencies:
   coffeescript: 2.5.1
   d3: 3.5.17
   es5-shim: 4.5.15
-  foundation: 4.2.1-1
+  foundation-sites: 5.5.3
   graceful-fs: 4.2.6
   humanize-plus: 1.5.0
   jquery: 2.1.4
@@ -22,7 +22,6 @@ dependencies:
   minimatch: 3.0.4
   mkdirp: 1.0.4
   modernizr: 3.11.6
-  normalize.css: 3.0.3
   papaparse: 4.0.7
   ramda: 0.8.0
   soundex-code: 0.1.2
@@ -151,12 +150,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GK6QUtisv4fNS+XcI7shX0Gx9ORg7QqIznyfho79JTnX1XhLiyZHfftvGiziqzRiEi/Bjhgpi+D2o7HxJFPnDQ==
-  /cssom/0.2.5:
-    dev: false
-    engines:
-      node: '>=0.2.0'
-    resolution:
-      integrity: sha1-JoJwm1kC5yEt9SkRb/eIzVslSJQ=
   /d3/3.5.17:
     dev: false
     resolution:
@@ -168,19 +161,6 @@ packages:
     optional: true
     resolution:
       integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==
-  /debug/4.3.1:
-    dependencies:
-      ms: 2.1.2
-    dev: false
-    engines:
-      node: '>=6.0'
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    resolution:
-      integrity: sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
   /decamelize/1.2.0:
     dev: false
     engines:
@@ -236,13 +216,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw==
-  /foundation/4.2.1-1:
-    dependencies:
-      stylus: 0.32.1
-      stylus-type-utils: 0.0.3_stylus@0.32.1
+  /foundation-sites/5.5.3:
     dev: false
     resolution:
-      integrity: sha1-Tkl+LZc3UzM0seaDVM2N0DnLxHs=
+      integrity: sha1-ZVbrKzHN47ImYwEWvSFdldBWwKc=
   /get-caller-file/2.0.5:
     dev: false
     engines:
@@ -377,11 +354,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
-  /mkdirp/0.3.5:
-    deprecated: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
-    dev: false
-    resolution:
-      integrity: sha1-3j5fiWHIjHh+4TaN+EmsRBPsqNc=
   /mkdirp/0.5.5:
     dependencies:
       minimist: 1.2.5
@@ -409,10 +381,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-tDgC8hrXPL5IMqziT+jWohYtXb6LPDFrNRqal0xIoEz4ko1E3/DLO5fjauFHREm6Zw4EKX92qt3m072IKEkqzQ==
-  /ms/2.1.2:
-    dev: false
-    resolution:
-      integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
   /ms/2.1.3:
     dev: false
     optional: true
@@ -430,10 +398,6 @@ packages:
     optional: true
     resolution:
       integrity: sha512-KKYdza4heMsEfSWD7VPUIz3zX2XDwOyX2d+geb4vrERZMT5RMU6ujjaD+I5Yr54uZxQ2w6XRTAhHBbSCyovZBg==
-  /normalize.css/3.0.3:
-    dev: false
-    resolution:
-      integrity: sha1-rMACYuI1osqpE2Oi5eO/pPitBcY=
   /p-limit/2.3.0:
     dependencies:
       p-try: 2.2.0
@@ -563,23 +527,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
-  /stylus-type-utils/0.0.3_stylus@0.32.1:
-    dependencies:
-      stylus: 0.32.1
-    dev: false
-    peerDependencies:
-      stylus: 0.x
-    resolution:
-      integrity: sha1-8EgzRyi7UUTs1ZnGJ1U9tk6gprs=
-  /stylus/0.32.1:
-    dependencies:
-      cssom: 0.2.5
-      debug: 4.3.1
-      mkdirp: 0.3.5
-    dev: false
-    hasBin: true
-    resolution:
-      integrity: sha1-PSgnW9nxgQhfjdD6UqhVlpaXghI=
   /tinycolor2/1.1.2:
     dev: false
     resolution:
@@ -659,7 +606,7 @@ specifiers:
   coffeescript: ^2.5.1
   d3: 3.5.17
   es5-shim: 4.5.15
-  foundation: ^4.2.1-1
+  foundation-sites: 5.5.3
   graceful-fs: ^4.2.6
   humanize-plus: 1.5.0
   jquery: 2.1.4
@@ -668,7 +615,6 @@ specifiers:
   minimatch: ^3.0.4
   mkdirp: ^1.0.4
   modernizr: ^3.11.6
-  normalize.css: 3.0.3
   papaparse: 4.0.7
   ramda: 0.8.0
   soundex-code: 0.1.2

@@ -12,9 +12,8 @@ css_application = Bundle(
 )
 
 css_foundation = Bundle(
-    'vendor/normalize.css/normalize.css',
-    # 'vendor/foundation/scss/normalize.scss',
-    'vendor/foundation/scss/foundation.scss',
+    'vendor/foundation-sites/scss/normalize.scss',
+    'vendor/foundation-sites/scss/foundation.scss',
     filters='scss',
     output='gen/foundation.css'
 )
@@ -44,8 +43,8 @@ js_vendor = Bundle(
     'vendor/lodash/dist/lodash.js',
     'vendor/papaparse/papaparse.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
-    'vendor/foundation/js/foundation/foundation.js',
-    'vendor/foundation/js/foundation/foundation.topbar.js',
+    'vendor/foundation-sites/js/foundation/foundation.js',
+    'vendor/foundation-sites/js/foundation/foundation.topbar.js',
     'vendor/humanize-plus/public/src/humanize.js',
     'vendor/ramda/ramda.js',
     'vendor/soundex-code/index.js',
@@ -68,7 +67,6 @@ js_ie = Bundle(
 js_main = Bundle(
     'vendor/tinycolor2/tinycolor.js',
     Bundle(
-        'coffee/production-chart.coffee',
         'script/app.coffee',
         'script/service/config.coffee',
         'script/service/api.coffee',
