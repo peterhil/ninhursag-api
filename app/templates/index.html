@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block head %}
-  {{ super() }}
+{{ super() }}
 {% endblock %}
 {% block content %}
-  <div>
+<div data-ng-app="app" data-ng-strict-di>
 	<h1>{{ config.APP_NAME }}</h1>
     <img class="logo" src="/static/img/logo.png" alt="Logo">
     <div class="listing" ng-view="" ng-controller="ListingCtrl">
-      <p>No items yet.</p>
+        <p>No items yet.</p>
     </div>
-  </div>
+</div>
 {% endblock %}

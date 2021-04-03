@@ -23,21 +23,12 @@
     <![endif]-->
     {%- endblock %}
   </head>
-  <body data-ng-app="app" data-ng-strict-di>
+  <body>
     {% block navigation %}
       {% include "_menu.html" %}
     {% endblock %}
-    <div data-growl="true" data-foundation="true" id="notifications" class="container in-page"></div>
-    <div id="content" class="container" role="main">
-      {% block content %}{% endblock %}
-    </div>
+    {% block content %}{% endblock %}
     {%- block scripts %}
-      {%- assets "js_vendor" %}
-      <script src="{{ ASSET_URL }}"></script>
-      {%- endassets -%}
-      {%- assets "js_main" %}
-      <script src="{{ ASSET_URL }}"></script>
-      {%- endassets -%}
     {%- endblock %}
   </body>
 </html>

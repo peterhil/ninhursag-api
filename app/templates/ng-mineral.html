@@ -3,18 +3,17 @@
 {% block title %}{{ mineral | capitalize }} &ndash; world production{% endblock %}
 
 {% block head %}
-  {{ super() }}
+{{ super() }}
 {% endblock %}
 
 {% block content %}
-  <div class="row" data-ng-controller="MineralCtrl">
-    <div class="small-12 large-9 columns">
+<div data-ng-app="app" data-ng-strict-di>
+  <div data-growl="true" data-foundation="true" id="notifications" class="container in-page"></div>
+  <div class="container" role="main">
+    <div class="row" data-ng-controller="MineralCtrl">
+      <div class="small-12 large-9 columns">
+        <h1 data-ng-bind="mineral">{{ mineral | capitalize }}</h1>
 
-      <h1 data-ng-bind="mineral">{{ mineral | capitalize }}</h1>
-
-      {# <p class="description">Bauxite is an aluminium ore and is the main source of aluminium.</p> #}
-
-      <div>
         <div class="row">
           <div class="large-4 columns">
             <label>Select resource
@@ -32,6 +31,7 @@
             </label>
           </div>
         </div>
+
         <figure data-chart="true"
                 data-ng-model="chart"
                 data-function="currentFunction"
@@ -48,51 +48,54 @@
         </figure>
       </div>
 
-    </div>
-    <aside class="small-12 large-3 columns">
+      <aside class="small-12 large-3 columns">
+        <figure data-resource="true"
+                data-image="image"
+                data-ng-repeat="image in images[mineral]"></figure>
 
-      <figure data-resource="true"
-              data-image="image"
-              data-ng-repeat="image in images[mineral]"></figure>
-
-      <div>
         <h3>Data sources and references</h3>
         <ul>
-            <li>
-                <a href="https://www.usgs.gov/centers/nmic/historical-statistics-mineral-and-material-commodities-united-states">
-                    U.S. Geological Survey Data Series 140 (in XLSX format)
-                </a>
-            </li>
-            <li>
-                <a href="https://www.usgs.gov/centers/nmic/mineral-commodity-summaries">
-                    USGS Mineral Commodity Summaries
-                </a>
-            </li>
+          <li>
+            <a href="https://www.usgs.gov/centers/nmic/historical-statistics-mineral-and-material-commodities-united-states">
+              U.S. Geological Survey Data Series 140 (in XLSX format)
+            </a>
+          </li>
+          <li>
+            <a href="https://www.usgs.gov/centers/nmic/mineral-commodity-summaries">
+              USGS Mineral Commodity Summaries
+            </a>
+          </li>
         </ul>
 
         <h4>Other info</h4>
         <ul>
-            <li>
-                <a href="https://en.wikipedia.org/wiki/List_of_top_international_rankings_by_country">
-                    Wikipedia – List of top international rankings by country
-                </a>
-            </li>
-            <li>
-                <a href="https://docs.scipy.org/doc/scipy/reference/stats.html#continuous-distributions">
-                    Scientific Python statistical functions – continuous distributions
-                </a>
-            </li>
+          <li>
+            <a href="https://en.wikipedia.org/wiki/List_of_top_international_rankings_by_country">
+              Wikipedia – List of top international rankings by country
+            </a>
+          </li>
+          <li>
+            <a href="https://docs.scipy.org/doc/scipy/reference/stats.html#continuous-distributions">
+              Scientific Python statistical functions – continuous distributions
+            </a>
+          </li>
         </ul>
-      </div>
+      </aside>
 
-    </aside>
+    </div>
   </div>
-
+</div>
 {% endblock %}
 
 {%- block scripts %}
-  {%- assets "js_d3" %}
-  <script src="{{ ASSET_URL }}" charset="utf-8"></script>
-  {%- endassets -%}
-  {{ super() }}
+{%- assets "js_d3" %}
+<script src="{{ ASSET_URL }}" charset="utf-8"></script>
+{%- endassets -%}
+{%- assets "js_vendor" %}
+<script src="{{ ASSET_URL }}"></script>
+{%- endassets -%}
+{%- assets "js_main" %}
+<script src="{{ ASSET_URL }}"></script>
+{%- endassets -%}
+{{ super() }}
 {%- endblock %}
