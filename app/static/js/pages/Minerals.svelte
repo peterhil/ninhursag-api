@@ -1,14 +1,14 @@
+<script>
+    import SelectMineral from '../components/SelectMineral.svelte'
+</script>
+
 <div class="row" data-ng-controller="MineralCtrl">
     <div class="small-12 large-9 columns">
         <h1 data-ng-bind="mineral">Statistics</h1>
 
         <div class="row">
             <div class="large-4 columns">
-                <label>Select resource
-                    <select data-ng-options="name as name for (name, src) in minerals"
-                            data-ng-model="mineral">
-                    </select>
-                </label>
+                <SelectMineral />
             </div>
             <div class="large-4 columns">
                 <label>Select function
