@@ -10,6 +10,7 @@ dependencies:
   angular-sanitize: 1.3.20
   angular-spinner: 0.6.2
   angular-touch: 1.3.20
+  axios: 0.21.1
   coffeescript: 2.5.1
   d3: 3.5.17
   foundation-sites: 5.5.3
@@ -331,6 +332,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
+  /axios/0.21.1:
+    dependencies:
+      follow-redirects: 1.13.3
+    dev: false
+    resolution:
+      integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   /balanced-match/1.0.0:
     resolution:
       integrity: sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
@@ -1069,6 +1076,17 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw==
+  /follow-redirects/1.13.3:
+    dev: false
+    engines:
+      node: '>=4.0'
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    resolution:
+      integrity: sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
   /forever-agent/0.6.1:
     dev: true
     resolution:
@@ -3514,6 +3532,7 @@ specifiers:
   angular-sanitize: 1.3.20
   angular-spinner: 0.6.2
   angular-touch: 1.3.20
+  axios: ^0.21.1
   chokidar: ^3.5.1
   coffeescript: ^2.5.1
   d3: 3.5.17
