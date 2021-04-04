@@ -6,15 +6,15 @@
 </script>
 
 <label for="mineral">Select resource
-    {#if $minerals.loading }
+    {#await $minerals }
     <p>Loading...</p>
-    {:else if !isEmpty($minerals.data)}
+    {:then $minerals}
     <select id="mineral" bind:value={selectedMineral}>
-        {#each [...Object.entries($minerals.data)] as [mineral, src] (mineral)}
+        {#each [...Object.entries($minerals)] as [mineral, src] (mineral)}
         <option value="{mineral}" selected="{mineral === selectedMineral}">{mineral}</option>
         {/each}
     </select>
-    {:else}
+    {:catch error}
     <p class="text-error">Problem loading mineral data: { $minerals.error }</p>
-    {/if}
+    {/await}
 </label>

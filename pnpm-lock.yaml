@@ -38,6 +38,7 @@ devDependencies:
   rollup-plugin-svelte: 7.1.0_rollup@2.44.0+svelte@3.37.0
   rollup-plugin-terser: 7.0.2_rollup@2.44.0
   svelte: 3.37.0
+  svelte-asyncable: 2.0.2_svelte@3.37.0
 lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.12.13:
@@ -3179,6 +3180,16 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
+  /svelte-asyncable/2.0.2_svelte@3.37.0:
+    dependencies:
+      svelte: 3.37.0
+    dev: true
+    engines:
+      node: '>=10.0.0'
+    peerDependencies:
+      svelte: 3.x
+    resolution:
+      integrity: sha512-Z5D9v6/j4SpYHdT8rZ5XIV1CIa2olz5EeR1Pgh7bXx3f9MC8F65OtR02GlP5K23nKxwTs+QclqL5l8awgE3bUw==
   /svelte/3.37.0:
     dev: true
     engines:
@@ -3525,5 +3536,6 @@ specifiers:
   soundex-code: 0.1.2
   spin.js: 2.0.1
   svelte: ^3.37.0
+  svelte-asyncable: ^2.0.2
   tinycolor2: 1.1.2
   uglify-js: ^3.13.2
