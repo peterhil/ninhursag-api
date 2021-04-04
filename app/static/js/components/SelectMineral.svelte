@@ -1,5 +1,4 @@
 <script>
-    import { isEmpty } from 'ramda'
     import { minerals } from '../stores/minerals'
 
     export let selectedMineral = 'Gold'
@@ -10,11 +9,11 @@
     <p>Loading...</p>
     {:then $minerals}
     <select id="mineral" bind:value={selectedMineral}>
-        {#each [...Object.entries($minerals)] as [mineral, src] (mineral)}
+        {#each [...Object.keys($minerals)] as mineral}
         <option value="{mineral}" selected="{mineral === selectedMineral}">{mineral}</option>
         {/each}
     </select>
     {:catch error}
-    <p class="text-error">Problem loading mineral data: { $minerals.error }</p>
+    <p class="text-error">Problem loading mineral data: { error }</p>
     {/await}
 </label>
