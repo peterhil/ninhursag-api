@@ -37,7 +37,7 @@
 
     <aside class="small-12 large-3 columns">
         {#await $images }
-        <p>Loading images...</p>
+        <div class="loading">Loading images...</div>
         {:then $images}
         {#each $images['Gold'] as image}
         <Image {image} />
