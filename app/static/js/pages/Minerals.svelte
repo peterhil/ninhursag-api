@@ -4,15 +4,17 @@
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
     import { images } from '../stores/images.js'
+
+    export let mineral = 'Gold'
 </script>
 
-<div class="row" data-ng-controller="MineralCtrl">
+<div class="row">
     <div class="small-12 large-9 columns">
-        <h1 data-ng-bind="mineral">Statistics</h1>
+        <h1>{mineral}</h1>
 
         <div class="row">
             <div class="large-4 columns">
-                <SelectMineral />
+                <SelectMineral selected="{mineral}" />
             </div>
             <div class="large-4 columns">
                 <SelectFunction />
@@ -39,7 +41,7 @@
         {#await $images }
         <div class="loading">Loading images...</div>
         {:then $images}
-        {#each $images['Gold'] as image}
+        {#each $images[mineral] as image}
         <Image {image} />
         {/each}
         {:catch error}
