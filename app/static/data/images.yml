@@ -1,9 +1,4 @@
-"Agriculture and fishery":
-  -
-    src: Agriculture and fishery/Zapotec_fish_farm_in_Ixtlan_Oaxaca.png
-    caption: A communal Zapotec fish farm in Ixtlán de Juárez, Oaxaca, Mexico
-    by: "[Nsaum75 at en.wikipedia](http://en.wikipedia.org/wiki/User:Nsaum75)"
-    url: "http://en.wikipedia.org/wiki/File:Zapotec_fish_farm_in_Ixtlan_Oaxaca.png"
+Abrasives – Total natural abrasives:
 
 Alumina:
   -
@@ -17,13 +12,6 @@ Aluminum:
     caption: Chunk of aluminium, 2.6 g
     by: "http://images-of-elements.com/"
     url: "http://en.wikipedia.org/wiki/File:Aluminium-4.jpg"
-
-Aluminum oxide:
-  -
-    src: Aluminum oxide/450px-Aluminium_oxide.jpg
-    caption: Aluminium oxide
-    by: "http://commons.wikimedia.org/wiki/User:Dorgan"
-    url: "http://commons.wikimedia.org/wiki/File:Aluminium_oxide.jpg"
 
 Antimony:
   -
@@ -55,14 +43,6 @@ Asbestos:
     by: Aram Dulyan
     url: "http://en.wikipedia.org/wiki/File:Asbestos_with_muscovite.jpg"
 
-
-Ball clay:
-  -
-    src: Ball clay/640px-2010-04-07_Purbeck_Ball_Clay_Mine.jpg
-    caption: Purbeck Ball Clay Quarry
-    by: "[Huligan0](http://commons.wikimedia.org/wiki/User:Huligan0)"
-    url: "http://commons.wikimedia.org/wiki/File:2010-04-07_Purbeck_Ball_Clay_Mine.jpg"
-
 Barite:
   -
     src: Barite/Barite-4jg40a.jpg
@@ -84,12 +64,6 @@ Bauxite:
     src: Aluminum/600px-Aluminium-4.jpg
     caption: Chunk of aluminium, 2.6 g, 1 x 2 cm
     by: "http://images-of-elements.com/"
-
-Bentonite:
-  -
-    src: Bentonite/Sodium_bentonite.jpg
-    caption: Bulk sodium bentonite clay used for mud wrestling.
-    url: "http://commons.wikimedia.org/wiki/File:Sodium_bentonite.jpg"
 
 Beryllium:
   -
@@ -130,12 +104,6 @@ Boron:
     caption: "Photograph of mineral ulexite from California, USA, displaying its characteristic optic property."
     url: "http://en.wikipedia.org/wiki/File:Ulexita_br.jpg"
 
-Boron carbide:
-  -
-    src: Boron carbide/640px-Boron_carbide.JPG
-    caption: A piece of Boron carbide (B4C) on an oak wooden floor
-    url: "http://en.wikipedia.org/wiki/File:Boron_carbide.JPG"
-
 Bromine:
   -
     src: Bromine/606px-Bromine_vial_in_acrylic_cube.jpg
@@ -151,7 +119,6 @@ Cadmium:
     url: "http://en.wikipedia.org/wiki/File:Cadmium-crystal_bar.jpg"
 
 Cement:
-  -
 
 Cesium:
   -
@@ -203,18 +170,6 @@ Corundum:
     caption: Blue sapphire crystals
     url: "http://commons.wikimedia.org/wiki/File:Saphir_bleu_7(Pakistan).jpg"
 
-Corundum and emery:
-  -
-    src: Corundum/Ruby_-_Winza,_Tanzania.jpg
-    by: StrangerThanKindness
-    caption: Natural ruby crystals in kyanite matrix from Winza, Tanzania
-    url: "http://commons.wikimedia.org/wiki/File:Ruby_-_Winza,_Tanzania.jpg"
-  -
-    src: Emery/Corundite_(emery_rock)_slabbed_Naxos_Emery_Deposits.jpg
-    by: "[James St. John](https://www.flickr.com/people/47445767@N05)"
-    caption: "Corundite (emery rock) from the Naxos Emery Deposits. Corundite is a remarkable metamorphic rock dominated by corundum, a very hard (H ≡9) aluminum oxide mineral (Al2O3). This particular rock has blue corundum, therefore it can be called sapphire."
-    url: "http://en.wikipedia.org/wiki/File:Corundite_(emery_rock)_slabbed_Naxos_Emery_Deposits.jpg"
-
 Crude oil:
   -
     src: Crude oil/640px-Colour_of_crude_oils.jpg
@@ -235,6 +190,32 @@ Crude oil:
     caption: The first 100% Brazilian oil platform, the P-51 will produce about 180 thousand barrels of oil and 6 million cubic meters of gas per day when operating at full load
     url: "http://commons.wikimedia.org/wiki/File:Oil_platform_P-51_(Brazil).jpg"
 
+Diamond (industrial):
+  -
+    src: Industrial diamond/Rough_diamond.jpg
+    caption: The slightly misshapen octahedral shape of this rough diamond crystal in matrix is typical of the mineral. Its lustrous faces also indicate that this crystal is from a primary deposit.
+    url: "http://en.wikipedia.org/wiki/File:Rough_diamond.jpg"
+  -
+    src: Industrial diamond/509px-Diamant_tropfen.jpg
+    caption: Diamond from file.
+    by: "[Mario Sarto](http://de.wikipedia.org/wiki/Benutzer:Masa)"
+    url: "http://commons.wikimedia.org/wiki/File:Diamant_tropfen.jpg"
+  -
+    src: Industrial diamond/The_Hope_Diamond_-_SIA.jpg
+    caption: The most famous colored diamond, Hope Diamond in 1974, one of the largest of all blue diamonds, 45.52 carats, exhibited at the National Museum of Natural History.
+    by: Smithsonian Institution Archives (SIA)
+    url: "http://en.wikipedia.org/wiki/File:The_Hope_Diamond_-_SIA.jpg"
+  -
+    src: Industrial diamond/640px-Vickers_anvil_diamons.jpg
+    caption: Pyramidal diamond anvil impactor on a Vickers hardness tester
+    by: R. Tanaka
+    url: "http://en.wikipedia.org/wiki/File:Vickers_anvil_diamons.jpg"
+  -
+    src: Industrial diamond/Dia_scalpel.jpg
+    caption: A scalpel with synthetic diamond blade
+    by: "[NIMSoffice](http://en.wikipedia.org/wiki/User:NIMSoffice)"
+    url: "http://en.wikipedia.org/wiki/File:Dia_scalpel.jpg"
+
 Diatomite:
   -
     src: Diatomite/Diatomaceous_Earth.jpg
@@ -245,13 +226,6 @@ Diatomite:
     by: "[James St. John](https://www.flickr.com/people/47445767@N05)"
     caption: Diatomite (diatomaceous earth) (6.8 cm across) from the Miocene-aged Monterey Formation at a diatomite quarry just south of Lompoc, Santa Barbara County, southern California, USA.
     url: "http://en.wikipedia.org/wiki/File:Diatomaceous_Earth.jpg"
-
-Direct Reduced Iron:
-  -
-    src: Direct reduced iron/Hot-briquetted_iron.JPG
-    by: "[Borvan53](http://commons.wikimedia.org/wiki/User:Borvan53)"
-    caption: Direct reduced iron as hot-briquetted iron (also named HBI) laying on an A4 (210 mm x 297 mm) to give the scale.
-    url: "http://commons.wikimedia.org/wiki/File:Hot-briquetted_iron.JPG"
 
 Emery:
   -
@@ -277,13 +251,6 @@ Feldspar:
     caption: "Feldspars (KAlSi3O8 – NaAlSi3O8 – CaAl2Si2O8) are a group of rock-forming tectosilicate minerals that make up as much as 60% of the Earth's crust. The name feldspar derives from the German Feldspat, a compound of the words Feld, field, and Spath, a rock that does not contain ore."
     url: "http://en.wikipedia.org/wiki/File:Feldspar-Group-291254.jpg"
 
-Fire clay:
-  -
-    src: Fire clay/576px-Torpedo_car_refractory_bricks.JPG
-    by: "[Morgan Riley](http://commons.wikimedia.org/wiki/User:Morgan_Riley)"
-    caption: Refractory bricks in a torpedo car used for hauling molten iron. Fire clay is resistant to high temperatures, having fusion points higher than 1,600 °C (2,910 °F), therefore it is suitable for lining furnaces, as fire brick, and for manufacture of utensils used in the metalworking industries, such as crucibles, saggars, retorts and glassware.
-    url: "http://en.wikipedia.org/wiki/File:Torpedo_car_refractory_bricks.JPG"
-
 Fluorspar:
   -
     src: Fluorspar/684px-3192M-fluorite1.jpg
@@ -302,6 +269,22 @@ Gallium:
     by: "[Hi-Res Images of Chemical Elements](http://images-of-elements.com/gallium.php)"
     caption:  Gallium is a soft, silvery metal, which is increasingly used in high tech industry. Notable here is gallium arsenide, an important semiconductor for special applications. Pure gallium already melts at 30°C (86°F). It is relatively safe to handle, but eye contact and longer skin contact should be avoided.
     url: "http://commons.wikimedia.org/wiki/File:Gallium_(31_Ga).jpg"
+
+Garnet (industrial):
+  -
+    src: Industrial garnet/600px-GarnetCrystalUSGOV.jpg
+    caption: Garnet. Jeffery Mine, Quebec, Canada. Bureau of Mines, Mineral Specimens C\01687
+    url: "http://en.wikipedia.org/wiki/File:GarnetCrystalUSGOV.jpg"
+  -
+    src: Industrial garnet/640px-GrossularShades.jpg
+    by: "[Alkivar](http://en.wikipedia.org/wiki/User:Alkivar) at English Wikipedia"
+    caption: Grossular on display at the U.S. National Museum of Natural History. The green gem at right is a type of grossular known as tsavorite.
+    url: "http://en.wikipedia.org/wiki/File:GrossularShades.jpg"
+  -
+    src: Industrial garnet/Garnet.uvarovite.500pix.jpg
+    by: "[Arpingstone](http://en.wikipedia.org/wiki/User:Arpingstone)"
+    caption: Pendant in uvarovite, a rare bright-green garnet
+    url: "http://en.wikipedia.org/wiki/File:Garnet.uvarovite.500pix.jpg"
 
 Gemstones:
   -
@@ -376,23 +359,6 @@ Gypsum:
     caption: Gypsum crystals of the Naica cave. Note person for scale.
     url: "http://en.wikipedia.org/wiki/File:Cristales_cueva_de_Naica.JPG"
 
-Hafnium:
-  -
-    src: Hafnium/569px-Hafnium_ebeam_remelted.jpg
-    by: "[Alchemist-hp](http://de.wikipedia.org/wiki/Benutzer:Alchemist-hp) (pse-mendelejew.de)"
-    caption: Pure (99.98 %), Melted tip of a hafnium consumable electrode used in an ebeam remelting furnace, oxidized hafnium ebeam remelted ingot (color from thin film effects in the oxide layer), and additional 1 cm3 hafnium cube for comparison.
-    url: "http://en.wikipedia.org/wiki/File:Hafnium_ebeam_remelted.jpg"
-  -
-    src: Hafnium/640px-Hafnium_bits.jpg
-    by: "[Deglr6328](http://en.wikipedia.org/wiki/User:Deglr6328) at English Wikipedia"
-    caption: Hafnium turnings, >99.9% pure, used for evaporating onto glass as HfO2 to create multi-layer dielectric thin film optics in conjuction with silica layers
-    url: "http://en.wikipedia.org/wiki/File:Hafnium_bits.jpg"
-  -
-    src: Hafnium/640px-Hafnium_pellets_with_a_thin_oxide_layer.jpg
-    by: "[Alchemist-hp](http://de.wikipedia.org/wiki/Benutzer:Alchemist-hp) (pse-mendelejew.de)"
-    caption: Pure (99.9 %), argon arc remelted hafnium-ingots with visible crystalline structures. View of the front- and backside. Colors are a thin film effect in the oxide layer. The metal piece-photo was taken on a white glass plate.
-    url: "http://en.wikipedia.org/wiki/File:Hafnium_pellets_with_a_thin_oxide_layer.jpg"
-
 Helium:
   -
     src: Helium/Helium_discharge_tube.jpg
@@ -404,13 +370,6 @@ Helium:
     by: "[KasugaHuang](http://commons.wikimedia.org/wiki/User:KasugaHuang)"
     caption: The largest single use of liquid helium is to cool the superconducting magnets in modern MRI scanners.
     url: "http://en.wikipedia.org/wiki/File:Modern_3T_MRI.JPG"
-
-Ilmenite and Slag:
-  -
-    src: Ilmenite and Slag/Ilmenite-65675.jpg
-    by: "Rob Lavinsky, [iRocks.com](http://www.irocks.com/) - CC-BY-SA-3.0"
-    caption: Ilmenite is the titanium-iron oxide mineral with the idealized formula FeTiO3. It is a weakly magnetic black or steel-gray solid. From the commercial perspective, ilmenite is the most important ore of titanium.
-    url: "http://commons.wikimedia.org/wiki/File:Ilmenite-65675.jpg"
 
 Indium:
   -
@@ -429,65 +388,6 @@ Indium:
     caption: InGaN (Indium gallium nitride) blue LED (380–405 nm)
     url: "http://en.wikipedia.org/wiki/File:Uv-LED.jpg"
 
-Industrial diamond:
-  -
-    src: Industrial diamond/Rough_diamond.jpg
-    caption: The slightly misshapen octahedral shape of this rough diamond crystal in matrix is typical of the mineral. Its lustrous faces also indicate that this crystal is from a primary deposit.
-    url: "http://en.wikipedia.org/wiki/File:Rough_diamond.jpg"
-  -
-    src: Industrial diamond/509px-Diamant_tropfen.jpg
-    caption: Diamond from file.
-    by: "[Mario Sarto](http://de.wikipedia.org/wiki/Benutzer:Masa)"
-    url: "http://commons.wikimedia.org/wiki/File:Diamant_tropfen.jpg"
-  -
-    src: Industrial diamond/The_Hope_Diamond_-_SIA.jpg
-    caption: The most famous colored diamond, Hope Diamond in 1974, one of the largest of all blue diamonds, 45.52 carats, exhibited at the National Museum of Natural History.
-    by: Smithsonian Institution Archives (SIA)
-    url: "http://en.wikipedia.org/wiki/File:The_Hope_Diamond_-_SIA.jpg"
-  -
-    src: Industrial diamond/640px-Vickers_anvil_diamons.jpg
-    caption: Pyramidal diamond anvil impactor on a Vickers hardness tester
-    by: R. Tanaka
-    url: "http://en.wikipedia.org/wiki/File:Vickers_anvil_diamons.jpg"
-  -
-    src: Industrial diamond/Dia_scalpel.jpg
-    caption: A scalpel with synthetic diamond blade
-    by: "[NIMSoffice](http://en.wikipedia.org/wiki/User:NIMSoffice)"
-    url: "http://en.wikipedia.org/wiki/File:Dia_scalpel.jpg"
-
-Industrial garnet:
-  -
-    src: Industrial garnet/600px-GarnetCrystalUSGOV.jpg
-    caption: Garnet. Jeffery Mine, Quebec, Canada. Bureau of Mines, Mineral Specimens C\01687
-    url: "http://en.wikipedia.org/wiki/File:GarnetCrystalUSGOV.jpg"
-  -
-    src: Industrial garnet/640px-GrossularShades.jpg
-    by: "[Alkivar](http://en.wikipedia.org/wiki/User:Alkivar) at English Wikipedia"
-    caption: Grossular on display at the U.S. National Museum of Natural History. The green gem at right is a type of grossular known as tsavorite.
-    url: "http://en.wikipedia.org/wiki/File:GrossularShades.jpg"
-  -
-    src: Industrial garnet/Garnet.uvarovite.500pix.jpg
-    by: "[Arpingstone](http://en.wikipedia.org/wiki/User:Arpingstone)"
-    caption: Pendant in uvarovite, a rare bright-green garnet
-    url: "http://en.wikipedia.org/wiki/File:Garnet.uvarovite.500pix.jpg"
-
-Industrial sand and gravel:
-  -
-    src: Industrial sand and gravel/640px-Gravel_on_a_beach_in_Thirasia,_Santorini,_Greece.jpg
-    by: Stan Zurek
-    caption: Gravel on a beach in Thirasia, Santorini, Greece
-    url: "http://en.wikipedia.org/wiki/File:Gravel_on_a_beach_in_Thirasia,_Santorini,_Greece.jpg"
-  -
-    src: Industrial sand and gravel/640px-PismoBeachSand.JPG
-    by: "[Wilson44691](http://commons.wikimedia.org/wiki/User:Wilson44691), [Mark A. Wilson, Department of Geology, The College of Wooster](http://www.wooster.edu/academics/areas/geology/faculty-staff/wilson)"
-    caption: Sand from Pismo Beach, California
-    url: "http://en.wikipedia.org/wiki/File:PismoBeachSand.JPG"
-  -
-    src: Industrial sand and gravel/543px-Sand_sorting_tower.jpg
-    by: "[Andrew Dunn](http://en.wikipedia.org/wiki/User:Solipsist) at English Wikipedia. [http://www.andrewdunnphoto.com/](http://www.andrewdunnphoto.com/)"
-    caption: Sand sorting tower at a gravel pit
-    url: "http://en.wikipedia.org/wiki/File:Sand_sorting_tower.jpg"
-
 Iodine:
   -
     src: Iodine/640px-Iodinecrystals.JPG
@@ -503,7 +403,16 @@ Iodine:
     caption: Providone-Iodine applied to the skin
     url: "http://commons.wikimedia.org/wiki/File:ExAntiseptic.jpg"
 
-Iron Oxide Pigments:
+Iron (direct reduced):
+  -
+    src: Direct reduced iron/Hot-briquetted_iron.JPG
+    by: "[Borvan53](http://commons.wikimedia.org/wiki/User:Borvan53)"
+    caption: Direct reduced iron as hot-briquetted iron (also named HBI) laying on an A4 (210 mm x 297 mm) to give the scale.
+    url: "http://commons.wikimedia.org/wiki/File:Hot-briquetted_iron.JPG"
+
+Iron (pig iron):
+
+Iron oxide pigments:
   -
     src: Iron Oxide Pigments/640px-AboriginalOchrePitCentralAustralia.JPG
     by: "[Toby Hudson](http://commons.wikimedia.org/wiki/User:99of9)"
@@ -537,10 +446,6 @@ Iron Oxide Pigments:
     src: Iron Oxide Pigments/ManganeseOreUSGOV.jpg
     caption: The presence of a large amount of manganese makes umber earth colors darker than ocher or sienna
     url: "http://en.wikipedia.org/wiki/File:ManganeseOreUSGOV.jpg"
-
-Iron and Steel scrap:
-
-Iron and Steel slag:
 
 Iron ore:
   -
@@ -578,7 +483,7 @@ Kyanite:
   -
     src: Kyanite/640px-DisthèneNépal.jpg
     by: "[Archaeodontosaurus](http://commons.wikimedia.org/wiki/User:Archaeodontosaurus) at Wikimedia"
-    caption: Cut Kyanite from Nepal. Kyanite has been used as a semiprecious gemstone, which may display cat's eye chatoyancy, though this use is limited by its anisotropism and perfect cleavage.
+    caption: "Cut Kyanite from Nepal. Kyanite has been used as a semiprecious gemstone, which may display cat's eye chatoyancy, though this use is limited by its anisotropism and perfect cleavage."
     url: "http://commons.wikimedia.org/wiki/File:Disth%C3%A8neN%C3%A9pal.jpg"
 
 Lead:
@@ -620,12 +525,110 @@ Lithium:
     caption: Lithium floating in paraffin oil
     url: "http://en.wikipedia.org/wiki/File:Lithium_paraffin.jpg"
 
-Logs and wood chips:
-
-Lumber:
-
 Magnesium compounds:
 
 Magnesium metal:
 
 Manganese:
+
+Mercury:
+
+Mica (natural), scrap and flake:
+
+Mica (natural), sheet:
+
+Molybdenum:
+
+Nickel:
+
+Niobium:
+
+Nitrogen (Fixed)-Ammonia:
+
+Peat:
+
+Perlite:
+
+Phosphate rock:
+
+Platinum-group metals:
+
+Potash:
+
+Pumice and pumicite:
+
+Quartz crystal:
+
+Rare earths:
+
+Rhenium:
+
+Salt:
+
+Sand and gravel (industrial):
+  -
+    src: Industrial sand and gravel/640px-Gravel_on_a_beach_in_Thirasia,_Santorini,_Greece.jpg
+    by: Stan Zurek
+    caption: Gravel on a beach in Thirasia, Santorini, Greece
+    url: "http://en.wikipedia.org/wiki/File:Gravel_on_a_beach_in_Thirasia,_Santorini,_Greece.jpg"
+  -
+    src: Industrial sand and gravel/640px-PismoBeachSand.JPG
+    by: "[Wilson44691](http://commons.wikimedia.org/wiki/User:Wilson44691), [Mark A. Wilson, Department of Geology, The College of Wooster](http://www.wooster.edu/academics/areas/geology/faculty-staff/wilson)"
+    caption: Sand from Pismo Beach, California
+    url: "http://en.wikipedia.org/wiki/File:PismoBeachSand.JPG"
+  -
+    src: Industrial sand and gravel/543px-Sand_sorting_tower.jpg
+    by: "[Andrew Dunn](http://en.wikipedia.org/wiki/User:Solipsist) at English Wikipedia. [http://www.andrewdunnphoto.com/](http://www.andrewdunnphoto.com/)"
+    caption: Sand sorting tower at a gravel pit
+    url: "http://en.wikipedia.org/wiki/File:Sand_sorting_tower.jpg"
+
+Selenium:
+
+Silicon:
+
+Silver:
+
+Soda ash:
+
+Sodium sulfate:
+
+Steel:
+
+Strontium:
+
+Sulfur:
+
+Talc and pyrophyllite:
+
+Tantalum:
+
+Tellurium:
+
+Thallium:
+
+Thorium:
+
+Tin:
+
+Titanium – Ilmenite and Slag:
+  -
+    src: Ilmenite and Slag/Ilmenite-65675.jpg
+    by: "Rob Lavinsky, [iRocks.com](http://www.irocks.com/) - CC-BY-SA-3.0"
+    caption: Ilmenite is the titanium-iron oxide mineral with the idealized formula FeTiO3. It is a weakly magnetic black or steel-gray solid. From the commercial perspective, ilmenite is the most important ore of titanium.
+    url: "http://commons.wikimedia.org/wiki/File:Ilmenite-65675.jpg"
+
+Titanium – Natural & Synthetic Rutile:
+
+Titanium – Total concentrates:
+
+Tungsten:
+
+Vanadium:
+
+Vermiculite:
+
+Wollastonite:
+
+Zinc:
+
+Zirconium:
