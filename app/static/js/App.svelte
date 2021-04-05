@@ -1,4 +1,5 @@
 <script>
+    import '../style/app.scss'
     import Minerals from './pages/Minerals.svelte'
 </script>
 

@@ -62,9 +62,12 @@ export default [{
     },
     plugins: plugins,
     watch: {
-      chokidar: true,
-      clearScreen: true,
-      exclude: ['node_modules/**'],
-      include: ['app/static/js/**/*'],
+        chokidar: true,
+        clearScreen: true,
+        exclude: ['node_modules/**'],
+        include: [
+            'app/static/js/**/*',
+            'app/static/style/**/*',
+        ],
     },
 }]
