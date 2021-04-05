@@ -1,6 +1,7 @@
 <script>
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
+    import References from '../../../templates/_references.html'
 </script>
 
 <div class="row" data-ng-controller="MineralCtrl">
@@ -37,6 +38,6 @@
                 data-image="image"
                 data-ng-repeat="image in images[mineral]"></figure>
 
-        <p>References...</p>
+        <References />
     </aside>
 </div>

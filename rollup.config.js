@@ -20,7 +20,11 @@ const plugins = [
     // }),
 
     svelte({
-        include: 'app/static/js/**/*.svelte',
+        extensions: ['.svelte', '.html'],
+        include: [
+            'app/static/js/**/*.svelte',
+            'app/templates/**/*.html',
+        ],
     }),
 
     styles({
