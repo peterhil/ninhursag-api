@@ -1,7 +1,9 @@
 <script>
+    import References from '../../../templates/_references.html'
+    import Image from '../components/Image.svelte'
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
-    import References from '../../../templates/_references.html'
+    import { images } from '../stores/images.js'
 </script>
 
 <div class="row" data-ng-controller="MineralCtrl">
@@ -34,10 +36,15 @@
     </div>
 
     <aside class="small-12 large-3 columns">
-        <figure data-resource="true"
-                data-image="image"
-                data-ng-repeat="image in images[mineral]"></figure>
-
+        {#await $images }
+        <p>Loading images...</p>
+        {:then $images}
+        {#each $images['Gold'] as image}
+        <Image {image} />
+        {/each}
+        {:catch error}
+        <p class="text-error">Problem loading images: { error }</p>
+        {/await}
         <References />
     </aside>
 </div>
