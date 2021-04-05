@@ -13,6 +13,7 @@ dependencies:
   axios: 0.21.1
   coffeescript: 2.5.1
   d3: 3.5.17
+  events: 3.3.0
   foundation-sites: 5.5.3
   graceful-fs: 4.2.6
   humanize-plus: 1.5.0
@@ -808,6 +809,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
+  /events/3.3.0:
+    dev: false
+    engines:
+      node: '>=0.8.x'
+    resolution:
+      integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
   /file/0.2.2:
     dev: false
     resolution:
@@ -2501,6 +2508,7 @@ specifiers:
   chokidar: ^3.5.1
   coffeescript: ^2.5.1
   d3: 3.5.17
+  events: ^3.3.0
   foundation-sites: 5.5.3
   graceful-fs: ^4.2.6
   humanize-plus: 1.5.0
