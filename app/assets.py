@@ -26,9 +26,7 @@ css_all = Bundle(
     output='gen/app.min.css'
 )
 
-js_vendor = Bundle(
-    'vendor/jquery/dist/jquery.js',
-    'vendor/spin.js/spin.js',
+js_angular = Bundle(
     'vendor/angular/angular.js',
     'vendor/angular-animate/angular-animate.js',
     'vendor/angular-aria/angular-aria.js',
@@ -40,11 +38,23 @@ js_vendor = Bundle(
     'vendor/angular-touch/angular-touch.js',
     'vendor/angular-growl-v2/build/angular-growl.js',
     'vendor/angular-spinner/angular-spinner.js',
+    filters='rjsmin',
+    output='gen/angular.min.js',
+)
+
+js_foundation = Bundle(
+    'vendor/jquery/dist/jquery.js',
+    'vendor/foundation-sites/js/foundation/foundation.js',
+    'vendor/foundation-sites/js/foundation/foundation.topbar.js',
+    filters='rjsmin',
+    output='gen/foundation.min.js'
+)
+
+js_vendor = Bundle(
+    'vendor/spin.js/spin.js',
     'vendor/lodash/dist/lodash.js',
     'vendor/papaparse/papaparse.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
-    'vendor/foundation-sites/js/foundation/foundation.js',
-    'vendor/foundation-sites/js/foundation/foundation.topbar.js',
     'vendor/humanize-plus/public/src/humanize.js',
     'vendor/ramda/ramda.js',
     'vendor/soundex-code/index.js',
@@ -79,6 +89,8 @@ js_main = Bundle(
 def init_app(app):
     webassets = Environment(app)
     webassets.register('css_all', css_all)
+    webassets.register('js_angular', js_angular)
+    webassets.register('js_foundation', js_foundation)
     webassets.register('js_vendor', js_vendor)
     webassets.register('js_d3', js_d3)
     webassets.register('js_main', js_main)

@@ -12,3 +12,9 @@
     </div>
 </div>
 {% endblock %}
+
+{% block scripts %}
+{%- assets "js_angular" %}
+<script src="{{ ASSET_URL }}" charset="utf-8"></script>
+{%- endassets -%}
+{% endblock %}

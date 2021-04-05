@@ -6,19 +6,10 @@
 {{ super() }}
 {% endblock %}
 
-{% block styles %}
+{%- block styles %}
 {{ super() }}
-{% assets "css_all" -%}
-<link rel="stylesheet" type="text/css" media="all" href="{{ ASSET_URL }}" />
-{%- endassets %}
-{% endblock %}
-
-{%- block scripts %}
-{{ super() }}
-{%- assets "js_vendor" %}
-<script src="{{ ASSET_URL }}"></script>
-{%- endassets -%}
-{%- assets "js_main" %}
-<script src="{{ ASSET_URL }}"></script>
-{%- endassets -%}
 {%- endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "old.html" %}
+{% extends "base.html" %}
 {% block title %}{{ page.title }}{% endblock %}
 {% block head %}
 {{ super() }}
@@ -10,3 +10,7 @@
     </div>
 </div>
 {% endblock %}
+
+{%- block scripts %}
+{{ super() }}
+{%- endblock %}

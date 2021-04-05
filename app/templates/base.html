@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% block head -%}
+    {%- block head %}
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -11,17 +11,29 @@
     <title>{% block title %}{% endblock %} &ndash; {{ config.APP_NAME }}</title>
 
     <link rel="shortcut icon" href="/favicon.ico">
-    {% block styles %}
+
+    {%- block styles %}
     <link href="https://fonts.googleapis.com/css?family=Kameron%7CLora%7CQuattrocento&amp;v2" rel="stylesheet" type="text/css">
+    {%- assets "css_all" %}
+    <link rel="stylesheet" type="text/css" media="all" href="{{ ASSET_URL }}" />
+    {%- endassets %}
     {%- endblock %}
     {%- endblock %}
   </head>
   <body>
-    {% block navigation %}
-      {% include "_menu.html" %}
-    {% endblock %}
+    {%- block navigation %}
+    {% include "_menu.html" %}
+    {%- endblock %}
+
     {% block content %}{% endblock %}
+
     {%- block scripts %}
+    {%- assets "js_foundation" %}
+    <script src="{{ ASSET_URL }}"></script>
+    {%- endassets %}
+    <script>
+      $(document).foundation();
+    </script>
     {%- endblock %}
   </body>
 </html>

@@ -1,24 +1,21 @@
-{% extends "old.html" %}
+{% extends "base.html" %}
+
 {% block title %}404 Page not found{% endblock %}
-{% block head -%}
-    {{ super() }}
-{%- endblock %}
-{% block scripts -%}
-{%- endblock %}
-{% block content -%}
+
+{% block content %}
 <main class="container" role="main">
-    <div class="columns">
-        <h1>Page Not found</h1>
+  <div class="columns">
+    <h1>Page Not found</h1>
 
-        <p>What you were looking for is not there.</p>
+    <p>What you were looking for is not there.</p>
 
-        <h3>Try these instead:</h3>
+    <h3>Try these instead:</h3>
 
-        <ul>
-            <li><a onclick="javascript:window.history.back();">Go back</a></li>
-            <li><a href="../">Up one level</a></li>
-            <li><a href="/">Front page</a></li>
-        </ul>
-    </div>
+    <ul>
+      <li><a onclick="javascript:window.history.back();">Go back</a></li>
+      <li><a href="../">Up one level</a></li>
+      <li><a href="/">Front page</a></li>
+    </ul>
+  </div>
 </main>
 {% endblock %}
