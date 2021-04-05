@@ -1,4 +1,5 @@
 <script>
+    import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
 </script>
 
@@ -11,12 +12,7 @@
                 <SelectMineral />
             </div>
             <div class="large-4 columns">
-                <label>Select function
-                    <select data-ng-options="fn as fn for fn in functions.pdf track by fn"
-                            data-ng-model="currentFunction">
-                        <option value=""></option>
-                    </select>
-                </label>
+                <SelectFunction />
             </div>
         </div>
 
