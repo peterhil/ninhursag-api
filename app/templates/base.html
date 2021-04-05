@@ -11,10 +11,9 @@
     <title>{% block title %}{% endblock %} &ndash; {{ config.APP_NAME }}</title>
 
     <link rel="shortcut icon" href="/favicon.ico">
-    {% assets "css_all" -%}
+    {% block styles %}
     <link href="https://fonts.googleapis.com/css?family=Kameron%7CLora%7CQuattrocento&amp;v2" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" media="all" href="{{ ASSET_URL }}" />
-    {%- endassets %}
+    {%- endblock %}
     {%- endblock %}
   </head>
   <body>

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "old.html" %}
 {% block title %}404 Page not found{% endblock %}
 {% block head -%}
     {{ super() }}
@@ -6,7 +6,8 @@
 {% block scripts -%}
 {%- endblock %}
 {% block content -%}
-    <div class="row">
+<main class="container" role="main">
+    <div class="columns">
         <h1>Page Not found</h1>
 
         <p>What you were looking for is not there.</p>
@@ -19,4 +20,5 @@
             <li><a href="/">Front page</a></li>
         </ul>
     </div>
+</main>
 {% endblock %}

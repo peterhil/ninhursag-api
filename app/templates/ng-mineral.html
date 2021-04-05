@@ -1,10 +1,6 @@
-{% extends "base.html" %}
+{% extends "old.html" %}
 
 {% block title %}{{ mineral | capitalize }} &ndash; world production{% endblock %}
-
-{% block head %}
-{{ super() }}
-{% endblock %}
 
 {% block content %}
 <div data-ng-app="app" data-ng-strict-di>
@@ -64,12 +60,6 @@
 {%- block scripts %}
 {%- assets "js_d3" %}
 <script src="{{ ASSET_URL }}" charset="utf-8"></script>
-{%- endassets -%}
-{%- assets "js_vendor" %}
-<script src="{{ ASSET_URL }}"></script>
-{%- endassets -%}
-{%- assets "js_main" %}
-<script src="{{ ASSET_URL }}"></script>
 {%- endassets -%}
 {{ super() }}
 {%- endblock %}
