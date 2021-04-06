@@ -119,6 +119,11 @@ Cadmium:
     url: "http://en.wikipedia.org/wiki/File:Cadmium-crystal_bar.jpg"
 
 Cement:
+  -
+    src: Cement/Cement_02.JPG
+    caption: A bag of cement.
+    by: Szlomo Lejb
+    url: "https://commons.wikimedia.org/wiki/File:Cement_02.JPG"
 
 Cesium:
   -
@@ -411,6 +416,10 @@ Iron (direct reduced):
     url: "http://commons.wikimedia.org/wiki/File:Hot-briquetted_iron.JPG"
 
 Iron (pig iron):
+  -
+    src: Iron (pig iron)/618px-Casting_pig_iron,_Iroquois_smelter,_Chicago.jpg
+    caption: Casting pig iron, Iroquois smelter, Chicago, between 1890 and 1901
+    url: "https://commons.wikimedia.org/wiki/File:Casting_pig_iron,_Iroquois_smelter,_Chicago.jpg"
 
 Iron oxide pigments:
   -
@@ -526,16 +535,254 @@ Lithium:
     url: "http://en.wikipedia.org/wiki/File:Lithium_paraffin.jpg"
 
 Magnesium compounds:
+  -
+    src: Magnesium compounds/Magnesium_oxide.jpg
+    by: "[Martin Walker](https://commons.wikimedia.org/wiki/User:Walkerma)"
+    caption: A sample of magnesium oxide. Magnesium compounds, primarily magnesium oxide (MgO), are used as a refractory material in furnace linings for producing iron, steel, nonferrous metals, glass, and cement. Magnesium oxide and other magnesium compounds are also used in the agricultural, chemical, and construction industries. Magnesium oxide from calcination is used as an electrical insulator in fire-resistant cables.
+    url: "https://en.wikipedia.org/wiki/File:Magnesium_oxide.jpg"
+  -
+    src: Magnesium compounds/Magnesium_sulfate_anhydrous.jpg
+    by: "[Martin Walker](https://commons.wikimedia.org/wiki/User:Walkerma)"
+    caption: A sample of anhydrous magnesium sulfate
+    url: "https://en.wikipedia.org/wiki/File:Magnesium_sulfate_anhydrous.jpg"
+  -
+    src: Magnesium compounds/640px-Epsomita_01.jpg
+    by: Manuel Pina L
+    caption: Epsomite formation in a New Mexico cave
+    url: "https://en.wikipedia.org/wiki/File:Epsomita_01.jpg"
 
 Magnesium metal:
+  -
+    src: Magnesium metal/CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg
+    by: Mark Fergus, CSIRO
+    caption: Crystalised magnesium
+    url: "https://en.wikipedia.org/wiki/File:CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg"
+  -
+    src: Magnesium metal/640px-Magnesium-products.jpg
+    by: Markus Brunner
+    caption: "Products made of magnesium: firestarter and shavings, sharpener, magnesium ribbon"
+    url: "https://en.wikipedia.org/wiki/File:Magnesium-products.jpg"
+  -
+    src: Magnesium metal/Magnesium_Sparks.jpg
+    by: Hiroaki Nakamura
+    caption: Photographic capture of a flame created by throwing flint sparks onto a small pile of magnesium shavings from a common emergency firestarter and pocketknife
+    url: "https://en.wikipedia.org/wiki/File:Magnesium_Sparks.jpg"
+  -
+    src: Magnesium metal/Mg_sheets_and_ingots.jpg
+    by: Mark Fergus
+    caption: Coiled magnesium sheets and magnesium ingots
+    url: "https://en.wikipedia.org/wiki/File:Mg_sheets_and_ingots.jpg"
 
 Manganese:
+  -
+    src: Manganese/Mangan_1-crop.jpg
+    by: "[Tomihahndorf](https://en.wikipedia.org/wiki/de:User:Tomihahndorf)"
+    caption: Manganese is a chemical element with the symbol Mn and atomic number 25. It is often found in minerals in combination with iron. Manganese is a transition metal with a multifaceted array of industrial alloy uses, particularly in stainless steels.
+    url: "https://en.wikipedia.org/wiki/File:Mangan_1-crop.jpg"
+  -
+    src: Manganese/Manganese_electrolytic_and_1cm3_cube.jpg
+    by: "[Alchemist-hp](https://commons.wikimedia.org/wiki/User:Alchemist-hp) (pse-mendelejew.de)"
+    caption: Electrolytically refined manganese chips and a 1 cm3 cube
+    url: "https://en.wikipedia.org/wiki/File:Manganese_electrolytic_and_1cm3_cube.jpg"
+  -
+    src: Manganese/Mineraly.sk_-_psilomelan.jpg
+    by: "[Helix84](https://commons.wikimedia.org/wiki/User:Helix84)"
+    caption: Psilomelane (manganese ore)
+    url: "https://en.wikipedia.org/wiki/File:Mineraly.sk_-_psilomelan.jpg"
+  -
+    src: Manganese/640px-Spiegeleisen.jpg
+    caption: Spiegeleisen is an iron alloy with a manganese content of approximately 15%
+    url: "https://en.wikipedia.org/wiki/File:Spiegeleisen.jpg"
+  -
+    src: Manganese/Lascaux_painting.jpg
+    by: "[Prof saxx](https://commons.wikimedia.org/wiki/User:Prof_saxx)"
+    caption: Some of the cave paintings in Lascaux, France, use manganese-based pigments.
+    url: "https://en.wikipedia.org/wiki/File:Lascaux_painting.jpg"
+  -
+    src: Manganese/The_Searchlight_Rhodochrosite_Crystal.jpg
+    by: Eric Hunt
+    caption: Mineral rhodochrosite (manganese(II) carbonate)
+    url: "https://en.wikipedia.org/wiki/File:The_Searchlight_Rhodochrosite_Crystal.jpg"
+  -
+    src: Manganese/M1917helmet.jpg
+    by: Joshua R. Murray
+    caption: U.S. M1917 combat helmet, a variant of Brodie helmet, made from Hadfield steel manganese alloy.
+    url: "https://en.wikipedia.org/wiki/File:M1917helmet.jpg"
+  -
+    src: Manganese/Chlorid_manganatý.JPG
+    by: Ondřej Mangl
+    caption: Manganese(II) chloride crystals – the pale pink color of Mn(II) salts is due to a spin-forbidden 3d transition.
+    url: "https://en.wikipedia.org/wiki/File:Chlorid_manganat%C3%BD.JPG"
+  -
+    src: Manganese/KMnO4_in_H2O.jpg
+    by: David Mülheims
+    caption: Aqueous solution of KMnO4 illustrating the deep purple of Mn(VII) as it occurs in permanganate
+    url: "https://en.wikipedia.org/wiki/File:KMnO4_in_H2O.jpg"
 
 Mercury:
+  -
+    src: Mercury/Mercury-27128.jpg
+    by: Robert M. Lavinsky
+    caption: Native mercury with cinnabar, Socrates mine, Sonoma County, California. Cinnabar sometimes alters to native mercury in the oxidized zone of mercury deposits.
+    url: "https://en.wikipedia.org/wiki/File:Mercury-27128.jpg"
+  -
+    src: Mercury/Cinnabarit_01.jpg
+    by: "[H. Zell](https://commons.wikimedia.org/wiki/User:Llez)"
+    caption: "Cinnabar or cinnabarite is the bright scarlet to brick-red form of mercury(II) sulfide (HgS). It is the most common source ore for refining elemental mercury, and is the historic source for the brilliant red or scarlet pigment termed vermilion and associated red mercury pigments."
+    url: "https://en.wikipedia.org/wiki/File:Cinnabarit_01.jpg"
+  -
+    src: Mercury/Cinnabar09.jpg
+    caption: Cinnabar mercury ore from Nevada, United States
+    url: "https://en.wikipedia.org/wiki/File:Cinnabar09.jpg"
+  -
+    src: Mercury/640px-Cinnabar-1cm-_xl-Almaden.jpg
+    by: Bergminer
+    caption: Cinnabar crystals of an individual size of one centimeter, on quartz
+    url: "https://en.wikipedia.org/wiki/File:Cinnabar-1cm-_xl-Almaden.jpg"
+  -
+    src: Mercury/640px-Mercury_discharge_tube.jpg
+    by: "[Alchemist-hp](https://commons.wikimedia.org/wiki/User:Alchemist-hp) (pse-mendelejew.de)"
+    caption: Mercury-discharge spectral calibration lamp
+    url: "https://en.wikipedia.org/wiki/File:Mercury_discharge_tube.jpg"
+  -
+    src: Mercury/Pouring_liquid_mercury_bionerd.jpg
+    by: "[Bionerd](https://commons.wikimedia.org/wiki/User:Bionerd)"
+    caption: Mercury is a chemical element with the symbol Hg and atomic number 80. It is commonly known as quicksilver and was formerly named hydrargyrum. Mercury is the only metallic element that is liquid at standard conditions for temperature and pressure.
+    url: "https://en.wikipedia.org/wiki/File:Pouring_liquid_mercury_bionerd.jpg"
+  -
+    src: Mercury/Maximum_thermometer_close_up_2.JPG
+    caption: The bulb of a mercury-in-glass thermometer
+    url: "https://en.wikipedia.org/wiki/File:Maximum_thermometer_close_up_2.JPG"
+  -
+    src: Mercury/Mercury_symbol.svg
+    by: "[Lexicon](https://commons.wikimedia.org/wiki/User:Lexicon)"
+    caption: The symbol for the planet Mercury (☿) has been used since ancient times to represent the element.
+    url: "https://en.wikipedia.org/wiki/File:Mercury_symbol.svg"
 
 Mica (natural), scrap and flake:
+  -
+    src: Mica scrap and flake/Baffin_Island_glacier_and_peg_swarm.jpg
+    by: Mike Beauregard
+    caption: The mica group includes 37 phyllosilicate minerals. Micas are translucent to opaque with a distinct vitreous or pearly luster, and different mica minerals display colors ranging from white to green or red to black. Deposits of mica tend to have a flaky or platy appearance.
+    url: "https://en.wikipedia.org/wiki/File:Baffin_Island_glacier_and_peg_swarm.jpg"
+  -
+    src: Mica scrap and flake/Utamaro_(1793)_Naniwaya_O-Kita.jpg
+    caption: Kirazuri printing technique adds mica powder to the gelatin solution as adhesive, here printed on the background. The mineral is also used in cosmetics to add shimmer or frost.
+    url: "https://en.wikipedia.org/wiki/File:Utamaro_(1793)_Naniwaya_O-Kita.jpg"
+  -
+    src: Mica scrap and flake/640px-Schist_detail.jpg
+    by: Michael C. Rygel
+    caption: Schist specimen showing the characteristic scaly schistose texture, caused by platy micas
+    url: "https://en.wikipedia.org/wiki/File:Schist_detail.jpg"
+  -
+    src: Mica scrap and flake/640px-Dark_Mica_from_Eastern_Ontario.jpg
+    by: "[Fukuto](https://en.wikipedia.org/wiki/User:Fukuto)"
+    caption: Dark mica from Eastern Ontario
+    url: "https://en.wikipedia.org/wiki/File:Dark_Mica_from_Eastern_Ontario.jpg"
+  -
+    src: Mica scrap and flake/640px-Illite.jpg
+    caption: Sample of Illite from the USGS
+    url: "https://en.wikipedia.org/wiki/File:Illite.jpg"
+  -
+    src: Mica scrap and flake/575px-Boromuscovite-Lepidolite-ch38a.jpg
+    by: Robert M. Lavinsky
+    caption: Lepidolite is a lilac-gray or rose-colored member of the mica group of minerals. It is the most abundant lithium-bearing mineral and is a secondary source of this metal.
+    url: "https://en.wikipedia.org/wiki/File:Boromuscovite-Lepidolite-ch38a.jpg"
+  -
+    src: Mica scrap and flake/Fluorapatite-Quartz-Topaz-gha5a.jpg
+    by: Robert M. Lavinsky
+    caption: Fluorapatite with topaz on zinnwaldite and quartz
+    url: "https://en.wikipedia.org/wiki/File:Fluorapatite-Quartz-Topaz-gha5a.jpg"
+  -
+    src: Mica scrap and flake/Clintonite-Spinel-235093.jpg
+    by: Robert M. Lavinsky
+    caption: Clintonite with spinel on orthoclase matrix from Amity, New York
+    url: "https://en.wikipedia.org/wiki/File:Clintonite-Spinel-235093.jpg"
+  -
+    src: Mica scrap and flake/Phengite-002MS.jpg
+    by: "[Hectonichus](https://commons.wikimedia.org/wiki/User:Hectonichus)"
+    caption: Phengite is a series name for dioctahedral micas similar to muscovite but with addition of magnesium.
+    url: "https://en.wikipedia.org/wiki/File:Phengite-002MS.jpg"
+  -
+    src: Mica scrap and flake/640px-Biotite_mica_2_(31739438210).jpg
+    by: James St. John
+    caption: Flaky biotite sheets
+    url: "https://en.wikipedia.org/wiki/File:Biotite_mica_2_(31739438210).jpg"
+  -
+    src: Mica scrap and flake/Margarite-181325.jpg
+    by: Robert M. Lavinsky
+    caption: Margarite is a calcium rich member of the mica group
+    url: "https://en.wikipedia.org/wiki/File:Margarite-181325.jpg"
+  -
+    src: Mica scrap and flake/Verdite_(microcrystalline_fuchsite_metamorphite)_South_Africa.jpg
+    by: James St. John
+    caption: Verdite, a microcrystalline metamorphic rock, is composed mostly of green fuchsite. Fuchsite, also known as chrome mica, is a chromium (Cr) rich variety of the mineral muscovite.
+    url: "https://en.wikipedia.org/wiki/File:Verdite_(microcrystalline_fuchsite_metamorphite)_South_Africa.jpg"
+  -
+    src: Mica scrap and flake/Lepidolite-140533.jpg
+    by: Robert M. Lavinsky
+    caption: Yellow lepidolite from Itinga, Minas Gerais, Brazil
+    url: "https://en.wikipedia.org/wiki/File:Lepidolite-140533.jpg"
+  -
+    src: Mica scrap and flake/Lepidolite-76774.jpg
+    by: Robert M. Lavinsky
+    caption: Lepidolite, Virgem da Lapa, Minas Gerais, Brazil
+    url: "https://en.wikipedia.org/wiki/File:Lepidolite-76774.jpg"
+  -
+    src: Mica scrap and flake/Lepidolite-208658.jpg
+    by: Robert M. Lavinsky
+    caption: "A cluster of slightly lavender, translucent 'books' of bladed lepidolite from the Himalaya"
+    url: "https://en.wikipedia.org/wiki/File:Lepidolite-208658.jpg"
+  -
+    src: Mica scrap and flake/640px-Biotite_aggregate_-_Ochtendung,_Eifel,_Germany.jpg
+    by: Fred Kruijen
+    caption: Thin tabular biotite aggregate (image width 2.5 mm). Biotite is used extensively to constrain ages of rocks, by either potassium-argon dating or argon–argon dating.
+    url: "https://en.wikipedia.org/wiki/File:Biotite_aggregate_-_Ochtendung,_Eifel,_Germany.jpg"
 
 Mica (natural), sheet:
+  -
+    src: Mica sheet/640px-Mica_(6911818878).jpg
+    by: Pascal Terjan
+    caption: Micas are a group of minerals whose outstanding physical characteristic is that individual mica crystals can easily be split into extremely thin elastic plates. The commercially important micas are muscovite and phlogopite.
+    url: "https://en.wikipedia.org/wiki/File:Mica_(6911818878).jpg"
+  -
+    src: Mica sheet/MicaSheetUSGOV.jpg
+    caption: Sheets of mica. Technical grade sheet mica is used in electrical components, electronics, in atomic force microscopy and as window sheets. Other uses include diaphragms for oxygen-breathing equipment, marker dials for navigation compasses, optical filters, pyrometers, thermal regulators, stove and kerosene heater windows, radiation aperture covers for microwave ovens, and micathermic heater elements.
+    url: "https://en.wikipedia.org/wiki/File:MicaSheetUSGOV.jpg"
+  -
+    src: Mica sheet/640px-Silver_mica_capacitors.jpg
+    by: "[Mataresephotos](https://commons.wikimedia.org/wiki/User:Mataresephotos)"
+    caption: Silver mica capacitors. Sheet mica is used principally in the electronic and electrical industries. Mica is unusual in that it is a good electrical insulator at the same time as being a good thermal conductor.
+    url: "https://en.wikipedia.org/wiki/File:Silver_mica_capacitors.jpg"
+  -
+    src: Mica sheet/Muscovite-Albite-122887.jpg
+    by: Robert M. Lavinsky
+    caption: Muscovite with albite from Doce valley, Minas Gerais, Brazil
+    url: "https://en.wikipedia.org/wiki/File:Muscovite-Albite-122887.jpg"
+  -
+    src: Mica sheet/Beryl-Muscovite-171688.jpg
+    by: Robert M. Lavinsky
+    caption: Muscovite with beryl (var. morganite) from Paprok, Afghanistan
+    url: "https://en.wikipedia.org/wiki/File:Beryl-Muscovite-171688.jpg"
+  -
+    src: Mica sheet/640px-Alurgite_St_Marcel.jpg
+    by: Didier Descouens
+    caption: Muscovite (var. alurgite), from Prabornaz Mine, Aosta Valley, Italy
+    url: "https://en.wikipedia.org/wiki/File:Alurgite_St_Marcel.jpg"
+  -
+    src: Mica sheet/687px-Muscovite_window.jpg
+    caption: Muscovite windows
+    url: "https://en.wikipedia.org/wiki/File:Muscovite_window.jpg"
+  -
+    src: Mica sheet/640px-Sheet_mica,_Namibia.jpg
+    by: Olga Ernst
+    caption: Glimmerite from Namibia
+    url: "https://en.wikipedia.org/wiki/File:Sheet_mica,_Namibia.jpg"
+  -
+    src: Mica sheet/640px-Phlogopite_3.JPG
+    by: Parent Géry
+    caption: Phlogopite is a yellow, greenish, or reddish-brown member of the mica family of phyllosilicates. It is also known as magnesium mica. The largest documented single crystal of phlogopite was found in Lacey mine, Ontario, Canada; it measured 10 x 4.3 x 4.3 m and weighed about 330 tonnes.
+    url: "https://en.wikipedia.org/wiki/File:Phlogopite_3.JPG"
 
 Molybdenum:
 
@@ -626,6 +873,10 @@ Tungsten:
 Vanadium:
 
 Vermiculite:
+  -
+    src: Vermiculite/VermiculiteUSGOV.jpg
+    caption: Vermiculite is a hydrous phyllosilicate mineral which undergoes significant expansion when heated. It has multitude of commercial uses, but also controversy about health risks. Pure vermiculite does not contain asbestos and is non-toxic. Impure vermiculite may contain, apart from asbestos, also minor diopside or remnants of the precursor minerals biotite or phlogopite (see micas).
+    url: "https://en.wikipedia.org/wiki/File:VermiculiteUSGOV.jpg"
 
 Wollastonite:
 
