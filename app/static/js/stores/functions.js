@@ -6,7 +6,7 @@ import { errorHandler } from '../lib/api'
 export const functions = asyncable(async () => {
     try {
         const res = await axios('/api/v1/estimate')
-        return res.data.pdf
+        return res.data
     } catch (error) {
         errorHandler(error)
         return error

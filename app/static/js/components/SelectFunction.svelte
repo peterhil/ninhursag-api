@@ -9,7 +9,7 @@
     <p>Loading...</p>
     {:then $functions}
     <select id="function" bind:value={selectedFunction}>
-        {#each $functions as fn}
+        {#each $functions.pdf as fn}
         <option value="{fn}" selected="{fn === selectedFunction}">{fn}</option>
         {/each}
     </select>
