@@ -2,10 +2,9 @@
     import { onDestroy, onMount } from 'svelte'
 
     import References from '../../../templates/_references.html'
-    import Image from '../components/Image.svelte'
+    import Images from '../components/Images.svelte'
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
-    import { images } from '../stores/images.js'
     import { messages } from '../lib/messaging'
 
     export let mineral = 'Gold'
@@ -50,17 +49,7 @@
     </div>
 
     <aside class="small-12 large-3 columns">
-        {#await $images }
-        <div class="loading">Loading images...</div>
-        {:then $images}
-        {#if $images[mineral]}
-        {#each $images[mineral] as image}
-        <Image {image} />
-        {/each}
-        {/if}
-        {:catch error}
-        <p class="text-error">Problem loading images: { error }</p>
-        {/await}
+        <Images {mineral} />
         <References />
     </aside>
 </div>
