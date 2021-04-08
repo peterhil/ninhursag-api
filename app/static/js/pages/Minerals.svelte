@@ -3,7 +3,6 @@
     import Images from '../components/Images.svelte'
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
-    import { messages } from '../lib/messaging'
     import { data } from '../stores/data'
     import { mineral } from '../stores/mineral'
 </script>
