@@ -1,5 +1,5 @@
 <script>
-    import { data } from '../stores/raw_data'
+    import { data } from '../stores/data'
 </script>
 
 {#await $data}
@@ -8,8 +8,10 @@
 </div>
 {:then $data}
 <pre>
-    {$data}
+    {$data.data}
 </pre>
+{$data.header}
+{$data.footer}
 {:catch error}
 <p class="text-error">
     Failed loading data: {error}

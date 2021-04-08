@@ -72,6 +72,7 @@ angular.module('app')
             dynamicTyping: true
           series = Fx.filterItems R.append($scope.chart.index, $scope.chart.exclude), result.meta.fields
           # series.push("Scipy Estimated")
+          # $log.info('Data:', series, result, header, footer)
           $scope.chart.series = series
           $scope.chart.header = header or []
           $scope.chart.footer = footer or []
