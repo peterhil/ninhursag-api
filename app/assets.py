@@ -54,7 +54,6 @@ js_vendor = Bundle(
     'vendor/spin.js/spin.js',
     'vendor/lodash/dist/lodash.js',
     'vendor/papaparse/papaparse.js',
-    # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
     'vendor/humanize-plus/public/src/humanize.js',
     'vendor/ramda/ramda.js',
     'vendor/soundex-code/index.js',

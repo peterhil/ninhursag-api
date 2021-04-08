@@ -41,7 +41,6 @@
     "lodash": "2.4.2",
     "minimatch": "^3.0.4",
     "mkdirp": "^1.0.4",
-    "modernizr": "^3.11.6",
     "papaparse": "4.0.7",
     "ramda": "0.8.0",
     "soundex-code": "0.1.2",
