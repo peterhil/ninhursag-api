@@ -1,6 +1,6 @@
 <script>
     import References from '../../../templates/_references.html'
-    import Data from '../components/Data.svelte'
+    import RawData from '../components/RawData.svelte'
     import Images from '../components/Images.svelte'
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
@@ -35,7 +35,7 @@
                 >
         </figure>
 
-        <Data></Data>
+        <RawData></RawData>
     </div>
 
     <aside class="small-12 large-3 columns">

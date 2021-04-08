@@ -1,5 +1,5 @@
 <script>
-    import { data } from '../stores/data'
+    import { data } from '../stores/raw_data'
 </script>
 
 {#await $data}
