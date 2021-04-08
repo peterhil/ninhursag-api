@@ -58,6 +58,7 @@ js_vendor = Bundle(
     'vendor/humanize-plus/public/src/humanize.js',
     'vendor/ramda/ramda.js',
     'vendor/soundex-code/index.js',
+    'vendor/tinycolor2/tinycolor.js',
     filters='rjsmin',
     output='gen/vendor.min.js'
 )
@@ -69,20 +70,15 @@ js_d3 = Bundle(
 )
 
 js_main = Bundle(
-    'vendor/tinycolor2/tinycolor.js',
-    Bundle(
-        'script/app.coffee',
-        'script/service/config.coffee',
-        'script/service/api.coffee',
-        'script/service/functional.coffee',
-        'script/controller/listing.coffee',
-        'script/controller/mineral-ctrl.coffee',
-        'script/directive/chart.coffee',
-        'script/directive/resource.coffee',
-        filters='coffeescript',
-        output='gen/app.js'
-    ),
-    filters='rjsmin',
+    'script/app.coffee',
+    'script/service/config.coffee',
+    'script/service/api.coffee',
+    'script/service/functional.coffee',
+    'script/controller/listing.coffee',
+    'script/controller/mineral-ctrl.coffee',
+    'script/directive/chart.coffee',
+    'script/directive/resource.coffee',
+    filters=['coffeescript', 'rjsmin'],
     output='gen/app.min.js'
 )
 
