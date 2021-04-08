@@ -1,3 +1,4 @@
 import { writable } from 'svelte/store'
 
-export const mineral = writable('Gold')
+// TODO Sync with cookies
+export let mineral = writable('Gold')

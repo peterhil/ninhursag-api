@@ -4,9 +4,8 @@
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
     import { messages } from '../lib/messaging'
+    import { data } from '../stores/data'
     import { mineral } from '../stores/mineral'
-
-    mineral = 'Gold'
 </script>
 
 <div class="row">
@@ -22,6 +21,19 @@
             </div>
         </div>
 
+        {#await $data}
+        <div class="loading">
+            Loading data...
+        </div>
+        {:then $data}
+        <pre>
+            {$data}
+        </pre>
+        {:catch error}
+        <p class="text-error">
+            Failed loading data: {error}
+        </p>
+        {/await}
         <figure data-chart="true"
                 data-ng-model="chart"
                 data-function="currentFunction"
