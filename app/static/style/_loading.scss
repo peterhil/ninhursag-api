@@ -10,6 +10,7 @@ $loading-ratio: 62%;
     height: 4rem;
     margin: 2rem auto;
     text-indent: -9999em;  // hide text
+    overflow: hidden;
     border-radius: 50%;
     background-color: $loading-color;
     background: linear-gradient(to right, $loading-color 10%, color.change($loading-color, $alpha: 0) 42%);
