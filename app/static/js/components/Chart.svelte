@@ -1,4 +1,6 @@
 <script>
+    import LoadingSpinner from './LoadingSpinner.svelte'
+
     export let caption = 'U.S. Geological Survey statistics (Metric tons gross weight)'
     export let scale
 
@@ -23,5 +25,5 @@
             Logarithmic y-axis scale
         </label>
     </form>
-    <div class="loading">Loading chart...</div>
+    <LoadingSpinner title="Loading chart..." />
 </figure>

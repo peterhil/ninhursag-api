@@ -1,11 +1,10 @@
 <script>
     import { data } from '../stores/data'
+    import LoadingSpinner from './LoadingSpinner.svelte'
 </script>
 
 {#await $data}
-<div class="loading">
-    Loading data...
-</div>
+<LoadingSpinner title="Loading data..." />
 {:then $data}
 <pre>
     {$data.data}
