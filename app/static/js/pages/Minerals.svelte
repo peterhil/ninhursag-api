@@ -1,10 +1,12 @@
 <script>
     import References from '../../../templates/_references.html'
     import RawData from '../components/RawData.svelte'
+    import Chart from '../components/Chart.svelte'
     import Images from '../components/Images.svelte'
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
     import { fn } from '../stores/function'
+    import { scale } from '../stores/scale'
     import { mineral } from '../stores/mineral'
 </script>
 
@@ -21,6 +23,8 @@
             </div>
         </div>
 
+        <Chart bind:scale="{$scale}"></Chart>
+
         <figure data-chart="true"
                 data-ng-model="chart"
                 data-function="currentFunction"
@@ -31,8 +35,6 @@
                 data-src=""
                 data-width="960"
                 data-height="660"
-                data-caption="U.S. Geological Survey statistics (Metric tons gross weight)"
-                data-legend="true"
                 >
         </figure>
 
