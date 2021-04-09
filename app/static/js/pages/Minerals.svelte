@@ -4,6 +4,7 @@
     import Images from '../components/Images.svelte'
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
+    import { fn } from '../stores/function'
     import { mineral } from '../stores/mineral'
 </script>
 
@@ -16,7 +17,7 @@
                 <SelectMineral bind:selected="{$mineral}" />
             </div>
             <div class="large-4 columns">
-                <SelectFunction />
+                <SelectFunction bind:selected="{$fn}" />
             </div>
         </div>
 
