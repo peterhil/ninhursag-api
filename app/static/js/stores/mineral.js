@@ -1,4 +1,3 @@
-import { writable } from 'svelte/store'
+import { cookieStore } from './cookieStore'
 
-// TODO Sync with cookies
-export let mineral = writable('Gold')
+export const mineral = cookieStore('mineral', 'Gold')

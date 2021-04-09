@@ -1,4 +1,3 @@
-import { writable } from 'svelte/store'
+import { cookieStore } from './cookieStore'
 
-// TODO Sync with cookies
-export let fn = writable('powerlognorm')
+export const fn = cookieStore('function', 'powerlognorm')
