@@ -37,6 +37,7 @@
     "graceful-fs": "^4.2.6",
     "humanize-plus": "1.5.0",
     "jquery": "2.1.4",
+    "js-cookie": "^2.2.1",
     "less": "^4.1.1",
     "lodash": "2.4.2",
     "minimatch": "^3.0.4",

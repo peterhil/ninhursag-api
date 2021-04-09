@@ -18,6 +18,7 @@ dependencies:
   graceful-fs: 4.2.6
   humanize-plus: 1.5.0
   jquery: 2.1.4
+  js-cookie: 2.2.1
   less: 4.1.1
   lodash: 2.4.2
   minimatch: 3.0.4
@@ -1121,6 +1122,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-IoveaYoMYUMdwmMKahVPFYkNIxc=
+  /js-cookie/2.2.1:
+    dev: false
+    resolution:
+      integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==
   /js-tokens/4.0.0:
     dev: true
     resolution:
@@ -2266,6 +2271,7 @@ specifiers:
   graceful-fs: ^4.2.6
   humanize-plus: 1.5.0
   jquery: 2.1.4
+  js-cookie: ^2.2.1
   less: ^4.1.1
   lodash: 2.4.2
   minimatch: ^3.0.4
