@@ -1,6 +1,7 @@
 import commonjs from '@rollup/plugin-commonjs'
 import image from '@rollup/plugin-image'
 import resolve from '@rollup/plugin-node-resolve'
+import sveltePreprocess from 'svelte-preprocess'
 import styles from 'rollup-plugin-styles'
 import svelte from 'rollup-plugin-svelte'
 // import { eslint } from 'rollup-plugin-eslint'
@@ -25,6 +26,7 @@ const plugins = [
             'app/static/js/**/*.svelte',
             'app/templates/**/*.html',
         ],
+        preprocess: sveltePreprocess(),
     }),
 
     styles({
