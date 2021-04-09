@@ -1,10 +1,11 @@
 <script>
     import LoadingSpinner from './LoadingSpinner.svelte'
 
-    export let caption = 'U.S. Geological Survey statistics (Metric tons gross weight)'
     export let scale
 
-    export function onScaleToggle (event) {
+    let caption = 'U.S. Geological Survey statistics (Metric tons gross weight)'
+
+    function onScaleToggle (event) {
         scale = event.target.checked ? 'log' : 'linear'
         return false
     }
