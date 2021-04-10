@@ -1,7 +1,7 @@
 <script>
     import References from '../../../templates/_references.html'
     import RawData from '../components/RawData.svelte'
-    import Chart from '../components/Chart.svelte'
+    import LineChart from '../components/LineChart.svelte'
     import Images from '../components/Images.svelte'
     import LogScaleCheckbox from '../components/LogScaleCheckbox.svelte'
     import SelectFunction from '../components/SelectFunction.svelte'
@@ -31,7 +31,9 @@
             <figcaption>{caption}</figcaption>
             {/if}
             <LogScaleCheckbox bind:scale="{$scale}"></LogScaleCheckbox>
-            <Chart></Chart>
+            <RawData let:data>
+                <LineChart {data}></LineChart>
+            </RawData>
         </figure>
 
         <figure data-chart="true"

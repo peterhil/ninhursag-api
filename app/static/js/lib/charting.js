@@ -1,0 +1,44 @@
+import soundexPhonetics from 'soundex-code'
+import tinycolor from 'tinycolor2'
+import {
+    filter,
+    head,
+    identity,
+    map,
+    reduce,
+    tail,
+    test,
+    toPairs,
+} from 'ramda'
+
+export function fuzzyColor (str) {
+    const words = str.split(' ')
+    if (words.length > 1) {
+        const colors = map(fuzzyColor, filter(identity, words))
+        return reduce(tinycolor.mix, head(colors), tail(colors))
+    }
+
+    const sndx = soundexPhonetics(str || ' ')
+    // const hue = (sndx[0].charCodeAt() % 64)  * (360 / 64) // modulo is for unicode chars. Or 360?
+    // const hue = (((sndx[0].charCodeAt() - (65)) + 26) % 26) * (360 / 26)
+    const hue = (((sndx[0].charCodeAt())) % 26) * (360 / 26)
+    const sat = parseInt(sndx.slice(1, 3), 7) * (50 / 48) + 25    // 0...48 => 50...100
+    let lig = parseInt(sndx.slice(3, 4), 7) * (50 / 6) + 50   // 0..6 => 50...100 (minus word length)
+    lig -= Math.min(50, str.length)
+    return tinycolor({ h: hue, s: sat, l: lig })
+}
+
+function svgInlineStyle (styleRules) {
+    const toText = (decl) => decl.join(": ") + ";"
+    return map(toText, toPairs(styleRules)).join(' ')
+}
+
+export function seriesStyle (serie) {
+    const style = {
+        stroke: fuzzyColor(serie).toHexString(),
+    }
+    if (test(/\(estimated\)/, serie)) {
+        style.strokeDasharray = '6, 2'
+    }
+    return svgInlineStyle(style)
+}

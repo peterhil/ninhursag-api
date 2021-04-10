@@ -42,10 +42,11 @@ export function cleanup (rawData) {
         header: true,
         dynamicTyping: true,
     })
+    const series = reparsed.meta.fields
 
     if (reparsed.errors.length > 0) {
         console.error("Errors while parsing raw data:", reparsed.errors)
     }
 
-    return Object.assign(reparsed, {header, footer})
+    return Object.assign(reparsed, {header, footer, series})
 }
