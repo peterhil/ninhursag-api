@@ -36,19 +36,6 @@
             </RawData>
         </figure>
 
-        <figure data-chart="true"
-                data-ng-model="chart"
-                data-function="currentFunction"
-                data-estimate="estimate"
-                data-mineral="mineral"
-                data-minerals="minerals"
-                data-reserves="reserves"
-                data-src=""
-                data-width="960"
-                data-height="660"
-                >
-        </figure>
-
         <RawData let:data>
             <pre>
                 {data.data}
