@@ -1,5 +1,6 @@
 <script>
     import References from '../../../templates/_references.html'
+    import DataTable from '../components/DataTable.svelte'
     import RawData from '../components/RawData.svelte'
     import SvgChart from '../components/SvgChart.svelte'
     import Images from '../components/Images.svelte'
@@ -37,11 +38,7 @@
         </figure>
 
         <RawData let:data>
-            <pre>
-                {data.data}
-            </pre>
-            {data.header}
-            {data.footer}
+            <DataTable {data} />
         </RawData>
     </div>
 
