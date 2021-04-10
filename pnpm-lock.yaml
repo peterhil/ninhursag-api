@@ -24,7 +24,7 @@ dependencies:
   minimatch: 3.0.4
   mkdirp: 1.0.4
   papaparse: 5.3.0
-  ramda: 0.8.0
+  ramda: 0.27.1
   soundex-code: 0.1.2
   spin.js: 2.0.1
   tinycolor2: 1.1.2
@@ -1865,10 +1865,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XDxAeVmpfu1/6IjyT/gXHOl+S0vQ9owggJ30hhWKdHAsNPOcasn5o9BW0eejZqL2e4vMjhAxoW3jVHcD6mbcYw==
-  /ramda/0.8.0:
+  /ramda/0.27.1:
     dev: false
     resolution:
-      integrity: sha1-FB3buAaVtpKfKF7+oUEF2R5rM8w=
+      integrity: sha512-PgIdVpn5y5Yns8vqb8FzBUEYn98V3xcPgawAkkgj0YJ0qDsnHCiNmZYfOGMgOvoB0eWFLpYbhxUR3mxfDIMvpw==
   /randombytes/2.1.0:
     dependencies:
       safe-buffer: 5.2.1
@@ -2360,7 +2360,7 @@ specifiers:
   minimatch: ^3.0.4
   mkdirp: ^1.0.4
   papaparse: ^5.3.0
-  ramda: 0.8.0
+  ramda: 0.27.1
   rollup: ^2.44.0
   rollup-plugin-styles: ^3.14.1
   rollup-plugin-svelte: ^7.1.0

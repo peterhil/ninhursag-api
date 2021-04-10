@@ -48,20 +48,20 @@ angular.module('app')
         excludeFromYMax = []
         unless scope.logscale
            excludeFromYMax.push 'Reserves'
-        yMaxColumns = R.filter R.not((i) -> R.contains(i, excludeFromYMax))
+        yMaxColumns = R.filter R.complement((i) -> R.contains(i, excludeFromYMax))
 
         scope.x = x = d3.scale.linear().range([0, scope.width])
         scope.y = y = (if scope.logscale then d3.scale.log() else d3.scale.linear()).range([scope.height, 0])
 
         x.domain(d3.extent(data, (row) -> parseInt(row[chart.index])))
-        y.domain([identity(), d3.max(data, (row) -> R.max(R.values(R.pick(yMaxColumns(chart.series), row))))])
+        y.domain([identity(), d3.max(data, (row) -> R.reduce(R.max, identity(), (R.values(R.pick(yMaxColumns(chart.series), row)))))])
 
         scope.yLabel = (d) -> Humanize.compactInteger(d, 1)
 
         fixNaNs = (path) ->
           R.map(
             ((i) -> i.replace(/^[A-Z]/, 'M')),
-            R.filter(R.I, path.split(/[A-Z](?:\d+|\d+\.\d+),NaN/))
+            R.filter(R.identity, path.split(/[A-Z](?:\d+|\d+\.\d+),NaN/))
           ).join('')
 
         line = (column) ->
@@ -90,11 +90,11 @@ angular.module('app')
           .success (response) ->
             key = "#{scope.chart.selectedSeries} (estimated)"
             estimate = Fx.indexBy(scope.chart.index,
-              R.mapObj.idx(
+              R.mapObjIndexed(
                 (v, k) ->
                   r =
                     'Year': parseInt(k)
-                  r[key] = if _.isFinite(parseFloat(v)) then R.max [parseFloat(v), identity()] else null
+                  r[key] = if _.isFinite(parseFloat(v)) then R.max(parseFloat(v), identity()) else null
                   r
                 , R.zipObj(response['years'], response['data']))
               )
@@ -116,7 +116,7 @@ angular.module('app')
         # $log.info "getReserves():", mineral, data
         return unless mineral and data
 
-        latest = R.last R.sort R.lt, R.filter(R.I, R.map(parseInt, R.keys(data)))
+        latest = R.last R.sort R.lt, R.filter(R.identity, R.map(parseInt, R.keys(data)))
         reserveEstimate = data?[latest]
         reserveNotes = scope.reserves.notes[mineral]
 
@@ -136,8 +136,8 @@ angular.module('app')
           [year, total]
         , R.keys(scope.chart.data)
 
-        reserves = Fx.indexBy scope.chart.index, (R.mapObj.idx (production, year) ->
-          amount = R.max [reserveEstimate - (production - cumulative[latest]), identity()]
+        reserves = Fx.indexBy scope.chart.index, (R.mapObjIndexed (production, year) ->
+          amount = R.max(reserveEstimate - (production - cumulative[latest]), identity())
           {
             Year: parseInt(year)
             Reserves: if _.isFinite(parseFloat(amount)) then parseFloat(amount) else null
@@ -146,8 +146,8 @@ angular.module('app')
 
         # $log.info "Reserves estimation:", mineral, latest, Humanize.compactInteger(reserveEstimate, 3), reserveNotes
 
-        # cumulativeIdx = Fx.indexBy scope.chart.index, (R.mapObj.idx (production, year) ->
-        #   amount = R.max [production, identity()]
+        # cumulativeIdx = Fx.indexBy scope.chart.index, (R.mapObjIndexed (production, year) ->
+        #   amount = R.max(production, identity())
         #   {
         #     Year: parseInt(year)
         #     Cumulative: if _.isFinite(parseFloat(amount)) then parseFloat(amount) else null
@@ -166,7 +166,7 @@ angular.module('app')
 
       fuzzyColor = (str) ->
         if (words = str.split(' ')).length > 1
-          colors = R.map fuzzyColor, R.filter(R.I, words)
+          colors = R.map fuzzyColor, R.filter(R.identity, words)
           return R.reduce tinycolor.mix, R.head(colors), R.tail(colors)
         sndx = soundexPhonetics(str or ' ')
         # hue = (sndx[0].charCodeAt() % 64)  * (360 / 64) # modulo is for unicode chars. Or 360?

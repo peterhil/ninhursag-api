@@ -37,17 +37,17 @@ angular.module('app')
         $scope.images = response
 
     productionSeries = (series) ->
-      production = R.match /(World.+production|(P|p)roduction|Total)/
-      estimated = R.match /\(estimated\)$/
+      production = R.test /(World.+production|(P|p)roduction|Total)/
+      estimated = R.test /\(estimated\)$/
       R.findLast(
-        R.allPredicates([production, R.not(estimated)])
-        R.sortBy(R.I, series)
+        R.allPass([production, R.complement(estimated)])
+        R.sortBy(R.identity, series)
       )
 
     $scope.chart.selectedSeries = productionSeries($scope.chart.series)
 
     isData = (row) ->
-      isIndex = R.match RegExp("^(\\d{4}|#{$scope.chart.index})$")
+      isIndex = R.test RegExp("^(\\d{4}|#{$scope.chart.index})$")
       !! R.find(isIndex, row)
 
     dataRows = (csv) ->
@@ -55,11 +55,11 @@ angular.module('app')
           header: false
           dynamicTyping: false
       rows = parsed.data
-      header = R.takeWhile R.not(isData), rows
-      data = R.takeWhile isData, R.skip(header.length, rows)
-      footer = R.skip(header.length + data.length, rows)
+      header = R.takeWhile R.complement(isData), rows
+      data = R.takeWhile isData, R.drop(header.length, rows)
+      footer = R.drop(header.length + data.length, rows)
       data = R.join "\n", R.map(R.join("\t"), data)
-      clean = R.compose R.filter(R.I), R.flatten
+      clean = R.compose R.filter(R.identity), R.flatten
       [data, clean(header), clean(footer)]
 
     $scope.getStatistics = (src) ->

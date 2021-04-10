@@ -55,7 +55,7 @@ js_vendor = Bundle(
     'vendor/lodash/dist/lodash.js',
     'vendor/papaparse/papaparse.js',
     'vendor/humanize-plus/public/src/humanize.js',
-    'vendor/ramda/ramda.js',
+    'vendor/ramda/dist/ramda.js',
     'vendor/soundex-code/index.js',
     'vendor/tinycolor2/tinycolor.js',
     filters='rjsmin',

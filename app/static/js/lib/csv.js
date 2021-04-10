@@ -1,7 +1,7 @@
 import { parse } from 'papaparse'
 import {
     compose, filter, find, flatten, identity,
-    join, map, match, not, skip, takeWhile
+    join, map, match, not, drop, takeWhile
 } from 'ramda'
 
 const clean = compose(filter(identity), flatten)
@@ -23,8 +23,8 @@ function getRows (csv) {
 
 function splitHeaders (rows) {
     const header = takeWhile(not(isData), rows)
-    const content = takeWhile(isData, skip(header.length, rows))
-    const footer = skip(header.length + content.length, rows)
+    const content = takeWhile(isData, drop(header.length, rows))
+    const footer = drop(header.length + content.length, rows)
 
     return {
         content,
