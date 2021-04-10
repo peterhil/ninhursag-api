@@ -1,12 +1,12 @@
 import { parse } from 'papaparse'
 import {
     compose, filter, find, flatten, identity,
-    join, map, match, not, drop, takeWhile
+    join, map, complement, drop, takeWhile, test
 } from 'ramda'
 
 const clean = compose(filter(identity), flatten)
 
-const dataRegexp = match(RegExp("^(\\d{4}|Year)$"))
+const dataRegexp = test(RegExp("^(\\d{4}|Year)$"))
 
 function isData (row) {
     return !!find(dataRegexp, row)
@@ -22,7 +22,7 @@ function getRows (csv) {
 }
 
 function splitHeaders (rows) {
-    const header = takeWhile(not(isData), rows)
+    const header = takeWhile(complement(isData), rows)
     const content = takeWhile(isData, drop(header.length, rows))
     const footer = drop(header.length + content.length, rows)
 
