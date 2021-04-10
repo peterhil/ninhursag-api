@@ -47,7 +47,13 @@
                 >
         </figure>
 
-        <RawData></RawData>
+        <RawData let:data>
+            <pre>
+                {data.data}
+            </pre>
+            {data.header}
+            {data.footer}
+        </RawData>
     </div>
 
     <aside class="small-12 large-3 columns">
