@@ -17,14 +17,11 @@
         {caption}
     </figcaption>
     {/if}
-    <form name="logScaleForm">
-        <label for="logScale">
-            <input id="logScale"
-                   type="checkbox"
-                   checked="{scale === 'log'}"
-                   on:change="{onScaleToggle}">
-            Logarithmic y-axis scale
-        </label>
-    </form>
+    <label>
+        <input type="checkbox"
+               checked="{scale === 'log'}"
+               on:change="{onScaleToggle}">
+        Logarithmic y-axis scale
+    </label>
     <LoadingSpinner title="Loading chart..." />
 </figure>
