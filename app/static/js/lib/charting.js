@@ -42,3 +42,12 @@ export function seriesStyle (serie) {
     }
     return svgInlineStyle(style)
 }
+
+export function fixNaNs (path) {
+    const nanValues = path.split(/[A-Z](?:\d+|\d+\.\d+),NaN/)
+
+    return map(
+        i => i.replace(/^[A-Z]/, 'M'),
+        filter(identity, nanValues)
+    ).join('')
+}

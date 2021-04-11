@@ -1,7 +1,7 @@
 import { parse } from 'papaparse'
 import {
     compose, filter, find, flatten, identity,
-    join, map, complement, drop, takeWhile, test
+    join, map, complement, drop, takeWhile, test, without,
 } from 'ramda'
 
 const clean = compose(filter(identity), flatten)
@@ -42,7 +42,15 @@ export function cleanup (rawData) {
         header: true,
         dynamicTyping: true,
     })
-    const series = reparsed.meta.fields
+    const excludedSeries = [
+        'Year',
+        // 'Imports',
+        // 'Exports',
+        // 'Stocks',
+        'Unit value ($/t)',
+        'Unit value (98$/t)',
+    ]  // TODO Move filtering elsewhere
+    const series = without(excludedSeries, reparsed.meta.fields)
 
     if (reparsed.errors.length > 0) {
         console.error("Errors while parsing raw data:", reparsed.errors)

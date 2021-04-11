@@ -12,6 +12,8 @@ const minify = production
 const sourceMaps = !production
 const outputDir = (dir = '') => { return (production ? 'app/static/dist/' : 'app/static/dev/') + dir }
 const outputFormat = 'iife'
+// https://github.com/d3/d3-interpolate/issues/58
+const D3_WARNING = /Circular dependency.*d3-interpolate/
 
 const plugins = [
     // eslint({
@@ -63,6 +65,9 @@ export default [{
         sourcemap: sourceMaps,
     },
     plugins: plugins,
+    onwarn: (message) => {
+        if (D3_WARNING.test(message)) { return }
+    },
     watch: {
         chokidar: true,
         clearScreen: true,
