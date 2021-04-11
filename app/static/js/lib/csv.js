@@ -44,9 +44,9 @@ export function cleanup (rawData) {
     })
     const excludedSeries = [
         'Year',
-        // 'Imports',
-        // 'Exports',
-        // 'Stocks',
+        'Imports',
+        'Exports',
+        'Stocks',
         'Unit value ($/t)',
         'Unit value (98$/t)',
     ]  // TODO Move filtering elsewhere
