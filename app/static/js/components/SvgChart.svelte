@@ -12,6 +12,8 @@
         values
     } from 'ramda'
 
+    import GridLabels from './GridLabels.svelte'
+    import GridLines from './GridLines.svelte'
     import Legend from './Legend.svelte'
     import LineSeries from './LineSeries.svelte'
     import { scale } from '../stores/scale'
@@ -48,6 +50,8 @@
 </script>
 
 <svg {width} {height} {preserveAspectRatio} {viewBox}>
+    <GridLines {width} {height} {x} {y} />
     <LineSeries {data} {line} />
+    <GridLabels {height} {x} {y} />
     <Legend series={data.series} />
 </svg>
