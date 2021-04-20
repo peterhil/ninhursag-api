@@ -14,6 +14,7 @@
 
     import GridLabels from './GridLabels.svelte'
     import GridLines from './GridLines.svelte'
+    // import HoverTool from './HoverTool.svelte'
     import Legend from './Legend.svelte'
     import LineSeries from './LineSeries.svelte'
     import { scale } from '../stores/scale'
@@ -37,6 +38,7 @@
     $: x = scaleLinear()
                .range([0, width])
                .domain(extent(data.data, (row) => parseInt(row['Year'])))
+
     $: y = ($scale === 'log' ? scaleLog() : scaleLinear())
                .range([height, 0])
                .domain([yMin, yMax])
@@ -54,4 +56,5 @@
     <LineSeries {data} {line} />
     <GridLabels {height} {x} {y} />
     <Legend series={data.series} />
+    <!-- <HoverTool {width} {height} {x} {y} /> -->
 </svg>
