@@ -13,6 +13,6 @@ cssmin==0.2.0
 gunicorn==20.0.4
 nodeenv==0.7.0
 numpy==1.19.4
-py==1.4.15
+py==1.10.0
 scipy==1.5.4
 webassets>=2.0
