@@ -29,7 +29,7 @@
     export let viewBox = `0 -20 ${width} ${height + 40}`
 
     $: yMin = ($scale === 'log' ? 1 : 0)
-    $: yMax = dMax(data.data, (row) => {
+    $: yMax = dMax(values(data.data), (row) => {
         const yMaxExclude = ($scale === 'log' ? [] : ['Reserves'])
         const ys = values(omit(yMaxExclude, row))
 
@@ -37,7 +37,7 @@
     })
     $: x = scaleLinear()
                .range([0, width])
-               .domain(extent(data.data, (row) => parseInt(row['Year'])))
+               .domain(extent(values(data.data), (row) => parseInt(row['Year'])))
 
     $: y = ($scale === 'log' ? scaleLog() : scaleLinear())
                .range([height, 0])

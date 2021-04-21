@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { values } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
 
 import { errorHandler } from '../lib/api'
@@ -13,7 +14,7 @@ export const estimate = asyncable(async ($data, $fn) => {
 
         const params = {
             'function': fn,
-            ...dataForEstimate(data.data, data.selected, 'Year')
+            ...dataForEstimate(values(data.data), data.selected, 'Year')
         }
         console.debug(`Estimating with ${fn}`, data, params)
         const res = await axios.post('/api/v1/estimate', params)

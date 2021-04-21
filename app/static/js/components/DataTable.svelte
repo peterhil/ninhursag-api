@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-        {#each data.data as row}
+        {#each values(data.data) as row}
         <tr>
             {#each values(row) as cell}
             <td>{cell}</td>
