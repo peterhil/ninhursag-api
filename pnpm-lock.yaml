@@ -28,6 +28,7 @@ dependencies:
   mkdirp: 1.0.4
   papaparse: 5.3.0
   ramda: 0.27.1
+  sass: 1.32.8
   soundex-code: 0.1.2
   spin.js: 2.0.1
   tinycolor2: 1.1.2
@@ -41,7 +42,6 @@ devDependencies:
   rollup-plugin-styles: 3.14.1_rollup@2.44.0
   rollup-plugin-svelte: 7.1.0_rollup@2.44.0+svelte@3.37.0
   rollup-plugin-terser: 7.0.2_rollup@2.44.0
-  sass: 1.32.8
   svelte: 3.37.0
   svelte-asyncable: 2.0.2_svelte@3.37.0
   svelte-preprocess: 4.7.0_b171936799ddf024712d64d2ae5f4bd5
@@ -235,7 +235,6 @@ packages:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.2.2
-    dev: true
     engines:
       node: '>= 8'
     resolution:
@@ -262,7 +261,6 @@ packages:
     resolution:
       integrity: sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
   /binary-extensions/2.2.0:
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -280,7 +278,6 @@ packages:
   /braces/3.0.2:
     dependencies:
       fill-range: 7.0.1
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -375,7 +372,6 @@ packages:
       is-glob: 4.0.1
       normalize-path: 3.0.0
       readdirp: 3.5.0
-    dev: true
     engines:
       node: '>= 8.10.0'
     optionalDependencies:
@@ -828,7 +824,6 @@ packages:
   /fill-range/7.0.1:
     dependencies:
       to-regex-range: 5.0.1
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -870,7 +865,6 @@ packages:
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
   /fsevents/2.3.2:
-    dev: true
     engines:
       node: ^8.16.0 || ^10.6.0 || >=11.0.0
     optional: true
@@ -893,7 +887,6 @@ packages:
   /glob-parent/5.1.2:
     dependencies:
       is-glob: 4.0.1
-    dev: true
     engines:
       node: '>= 6'
     resolution:
@@ -1049,7 +1042,6 @@ packages:
   /is-binary-path/2.1.0:
     dependencies:
       binary-extensions: 2.2.0
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -1098,7 +1090,6 @@ packages:
     resolution:
       integrity: sha1-YTObbyR1/Hcv2cnYP1yFddwVSuE=
   /is-extglob/2.1.1:
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -1106,7 +1097,6 @@ packages:
   /is-glob/4.0.1:
     dependencies:
       is-extglob: 2.1.1
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -1128,7 +1118,6 @@ packages:
     resolution:
       integrity: sha512-zohwelOAur+5uXtk8O3GPQ1eAcu4ZX3UwxQhUlfFFMNpUd83gXgjbhJh6HmB6LUNV/ieOLQuDwJO3dWJosUeMw==
   /is-number/7.0.0:
-    dev: true
     engines:
       node: '>=0.12.0'
     resolution:
@@ -1380,7 +1369,6 @@ packages:
     resolution:
       integrity: sha512-zR6HoT6LrLCRBwukmrVbHv0EpEQjksO6GmFcZQQuCAy139BEsoVKPYnf3jongYW83fAa1torLGYwxxky/p28sg==
   /normalize-path/3.0.0:
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -1523,7 +1511,6 @@ packages:
     resolution:
       integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
   /picomatch/2.2.2:
-    dev: true
     engines:
       node: '>=8.6'
     resolution:
@@ -1937,7 +1924,6 @@ packages:
   /readdirp/3.5.0:
     dependencies:
       picomatch: 2.2.2
-    dev: true
     engines:
       node: '>=8.10.0'
     resolution:
@@ -2054,7 +2040,7 @@ packages:
   /sass/1.32.8:
     dependencies:
       chokidar: 3.5.1
-    dev: true
+    dev: false
     engines:
       node: '>=8.9.0'
     hasBin: true
@@ -2299,7 +2285,6 @@ packages:
   /to-regex-range/5.0.1:
     dependencies:
       is-number: 7.0.0
-    dev: true
     engines:
       node: '>=8.0'
     resolution:
