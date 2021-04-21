@@ -1,7 +1,7 @@
 import { parse } from 'papaparse'
 import {
-    allPass, compose, filter, find, findLast, flatten, identity,
-    join, map, complement, drop, takeWhile, sortBy, test, without,
+    allPass, compose, filter, find, findLast, flatten, identity, join,
+    map, complement, drop, takeWhile, sortBy, test, without,
 } from 'ramda'
 
 const clean = compose(filter(identity), flatten)
