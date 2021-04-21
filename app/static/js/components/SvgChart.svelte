@@ -5,9 +5,11 @@
     import {
         filter,
         identity,
+        is,
         map,
         max,
         omit,
+        pick,
         reduce,
         values
     } from 'ramda'
@@ -30,8 +32,9 @@
 
     $: yMin = ($scale === 'log' ? 1 : 0)
     $: yMax = dMax(values(data.data), (row) => {
-        const yMaxExclude = ($scale === 'log' ? [] : ['Reserves'])
-        const ys = values(omit(yMaxExclude, row))
+        const yMaxExclude = ($scale === 'log' ? ['Year'] : ['Year', 'Reserves'])
+        const selected = omit(yMaxExclude, pick(data.series, row))
+        const ys = filter(is(Number), values(selected))
 
         return reduce(max, yMin, ys)
     })
