@@ -1,6 +1,15 @@
 import { isFinite } from 'lodash'
 import {
-    fromPairs, identity, map, mapObjIndexed, max, zipObj,
+    all,
+    concat,
+    fromPairs,
+    identity,
+    is,
+    map,
+    mapObjIndexed,
+    mergeDeepWith,
+    max,
+    zipObj,
 } from 'ramda'
 
 // Transform chart data format into object with arrays for years and data
@@ -48,3 +57,13 @@ export function chartDataFromEstimate (estimate, selected) {
         covariance: estimate.covariance
     }
 }
+
+export function concatOrMerge (a, b) {
+    if (all(is(Array), [a, b])) {
+        return concat(a, b)
+    } else {
+        return b || a
+    }
+}
+
+export const mergeChartData = mergeDeepWith(concatOrMerge)
