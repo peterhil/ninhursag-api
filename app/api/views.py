@@ -82,16 +82,18 @@ class Estimate(Resource):
             function = obj['function'] if obj['function'] in list(scipy_functions('pdf').keys()) else ''
         except ValueError:
             abort(400, errors=["Request is not valid JSON."])
-        except KeyError as e:
-            abort(400, errors=["Expected to find property '{}' on the request data.".format(e.message)])
+        except KeyError as err:
+            abort(400, errors=["Expected to find property '{}' on the request data.".format(str(err))])
         if len(data) == 0 or len(years) == 0:
             abort(400, errors=["Empty data or years."])
         try:
             # result = estimate(analysis.logistic, data, years, 0, log=False)
             # result = estimate(analysis.wrap_scipy(stats.gamma.pdf), data, years, 100, log=False)
             result = estimate(scipy_functions('pdf').get(function), data, years, 100, log=False)
-        except Exception as e:
-            abort(400, errors=[e.message])
+        except RuntimeError as err:
+            abort(400, errors=[str(err)])
+        except Exception as err:
+            abort(500, errors=[str(err)])
 
         e_years, e_data, e_cov = result
         return {
