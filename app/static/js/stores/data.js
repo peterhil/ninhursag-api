@@ -1,12 +1,14 @@
 import { asyncable } from 'svelte-asyncable'
 import { errorHandler } from '../lib/api'
-import { cleanup } from '../lib/csv.js'
+import { cleanup, productionSeries } from '../lib/csv.js'
 import { data as raw } from './raw_data.js'
 
 export const data = asyncable(async ($raw) => {
     try {
         const raw = await $raw
         const parsed = cleanup(raw)
+
+        parsed.selected = productionSeries(parsed.series)
         console.debug('$data store:', parsed)
 
         return parsed
