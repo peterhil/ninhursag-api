@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie'
 import { writable } from 'svelte/store'
+import { currentPath } from '../lib/utils'
 
 // Store to read and persist a simple string valued cookie by key
 //
@@ -13,7 +14,10 @@ export function cookieStore (key, defaultValue = '') {
     return {
 		subscribe,
         set: (value) => {
-            Cookies.set(key, value)
+            Cookies.set(key, value, {
+                path: currentPath(document.location.pathname),
+                sameSite: 'strict',
+            })
             return set(value)
         },
         update,
