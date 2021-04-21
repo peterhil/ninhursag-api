@@ -145,9 +145,21 @@ angular.module('app')
         , cumulative)
 
         # $log.info "Reserves estimation:", mineral, latest, Humanize.compactInteger(reserveEstimate, 3), reserveNotes
-        # $log.info "Cumulative world production:", cumulative
-        # $log.info "Reserves:", reserves
 
+        # cumulativeIdx = Fx.indexBy scope.chart.index, (R.mapObj.idx (production, year) ->
+        #   amount = R.max [production, identity()]
+        #   {
+        #     Year: parseInt(year)
+        #     Cumulative: if _.isFinite(parseFloat(amount)) then parseFloat(amount) else null
+        #   }
+        # , cumulative)
+        # $log.info "Cumulative world production:", cumulativeIdx
+        # scope.chart.series.push "Cumulative"
+        # scope.chart.series = R.uniq scope.chart.series
+        # scope.chart.data = _.merge scope.chart.data, cumulativeIdx
+
+
+        # $log.info "Reserves:", reserves
         scope.chart.series.push "Reserves"
         scope.chart.series = R.uniq scope.chart.series
         scope.chart.data = _.merge scope.chart.data, reserves

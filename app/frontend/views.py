@@ -1,15 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import logging
 import os
 
 from flask import current_app, Blueprint, render_template
-from flask import jsonify, url_for, redirect, send_from_directory
+from flask import jsonify, redirect, send_from_directory
 
 from app.helpers import route
 from app.log import logger
-from ..deco import templated
 
 
 bp = Blueprint('front', __name__)
@@ -51,6 +49,7 @@ def data(filename):
         filename, mimetype='text/csv'
         )
 
+
 @route(bp, '/favicon.ico')
 def favicon():
     return send_from_directory(
@@ -58,29 +57,17 @@ def favicon():
         'favicon.ico', mimetype='image/vnd.microsoft.icon'
         )
 
+
 @route(bp, '/')
 def index():
     """Returns the index."""
-    # return render_template('index.html')
-    return redirect('/ng-mineral/statistics')
+    return redirect('/mineral/statistics')
 
-@route(bp, '/one')
-@templated('/one.html')
-def one():
-    return dict(greeting='hello')
-
-@route(bp, '/one/<greeting>')
-def one_with_greeting(greeting='hello'):
-    return render_template('/one.html', greeting=greeting)
-
-@route(bp, '/two')
-@templated('/two.html')
-def two():
-    return dict()
 
 @route(bp, '/mineral/<mineral>')
 def mineral(mineral='Aluminium'):
-    return render_template('/mineral.html', mineral=mineral)
+    return render_template('/ng-mineral.html', mineral=mineral)
+
 
 @route(bp, '/ng-mineral/<mineral>')
 def ng_mineral(mineral='Aluminium'):
