@@ -43,12 +43,12 @@
     "modernizr": "^3.11.6",
     "papaparse": "4.0.7",
     "ramda": "0.8.0",
+    "sass": "^1.32.8",
     "soundex-code": "0.1.2",
     "spin.js": "2.0.1",
     "tinycolor2": "1.1.2",
     "uglify-js": "^3.13.2"
   },
   "devDependencies": {
-    "sass": "^1.32.8"
   }
 }
