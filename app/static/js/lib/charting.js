@@ -30,16 +30,19 @@ export function fuzzyColor (str) {
 
 function svgInlineStyle (styleRules) {
     const toText = (decl) => decl.join(": ") + ";"
-    return map(toText, toPairs(styleRules)).join(' ')
+    const style = map(toText, toPairs(styleRules)).join(' ')
+
+    return style
 }
 
 export function seriesStyle (serie) {
     const style = {
         stroke: fuzzyColor(serie).toHexString(),
     }
-    if (test(/\(estimated\)/, serie)) {
-        style.strokeDasharray = '6, 2'
+    if (test(/\(estimated\)$/, serie)) {
+        style['stroke-dasharray'] = '6px, 2px'
     }
+
     return svgInlineStyle(style)
 }
 
