@@ -1,5 +1,5 @@
 <script>
-    import { data as dataStore } from '../stores/data'
+    import { chart as dataStore } from '../stores/chart'
     import LoadingSpinner from './LoadingSpinner.svelte'
 
     // Use slot props to pass the loaded data into components inside the slot
