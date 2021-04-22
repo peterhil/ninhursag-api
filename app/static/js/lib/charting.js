@@ -19,11 +19,9 @@ export function fuzzyColor (str) {
     }
 
     const sndx = soundexPhonetics(str || ' ')
-    // const hue = (sndx[0].charCodeAt() % 64)  * (360 / 64) // modulo is for unicode chars. Or 360?
-    // const hue = (((sndx[0].charCodeAt() - (65)) + 26) % 26) * (360 / 26)
-    const hue = (((sndx[0].charCodeAt())) % 26) * (360 / 26)
-    const sat = parseInt(sndx.slice(1, 3), 7) * (50 / 48) + 25    // 0...48 => 50...100
-    let lig = parseInt(sndx.slice(3, 4), 7) * (50 / 6) + 50   // 0..6 => 50...100 (minus word length)
+    const hue = (((sndx[0].charCodeAt())) % 26) * (360 / 26)  // modulo is for unicode chars
+    const sat = parseInt(sndx.slice(1, 3), 7) * (50 / 48) + 25  // 0...48 => 50...100
+    let lig = parseInt(sndx.slice(3, 4), 7) * (50 / 6) + 50  // 0..6 => 50...100 (minus word length)
     lig -= Math.min(50, str.length)
     return tinycolor({ h: hue, s: sat, l: lig })
 }
