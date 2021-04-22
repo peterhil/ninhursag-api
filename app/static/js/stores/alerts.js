@@ -34,8 +34,8 @@ function createAlerts () {
         secondary: add('secondary', __, 4000),
         success: add('success', __, 4000),
         info: add('info', __, 4000),
-        warning: add('warning', __, 8000),
-        error: add('alert', __, 8000),
+        warning: add('warning', __, 4000),
+        error: add('alert', __, 4000),
         remove,
         reset: () => set(new Map()),
     }
