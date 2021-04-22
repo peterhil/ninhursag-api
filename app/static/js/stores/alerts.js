@@ -12,7 +12,7 @@ function createAlerts () {
         },
     )
 
-    const add = curryN(3, (message, type, timeout) => {
+    const add = curryN(3, (type, message, timeout) => {
         update(
             (alerts) => {
                 const id = randomId()
@@ -29,12 +29,13 @@ function createAlerts () {
 
     return {
         subscribe,
-        add: add(__, '', 4000),
-        success: add(__, 'success', 4000),
-        secondary: add(__, 'secondary', 4000),
-        info: add(__, 'info', 4000),
-        warning: add(__, 'warning', 8000),
-        error: add(__, 'alert', 8000),
+        add,
+        message: add('', __, 4000),
+        secondary: add('secondary', __, 4000),
+        success: add('success', __, 4000),
+        info: add('info', __, 4000),
+        warning: add('warning', __, 8000),
+        error: add('alert', __, 8000),
         remove,
         reset: () => set(new Map()),
     }
