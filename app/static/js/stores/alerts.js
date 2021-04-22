@@ -1,15 +1,27 @@
-import { curry } from 'ramda'
+import { __, curryN } from 'ramda'
 import { writable } from 'svelte/store'
 import { randomId } from '../lib/utils'
 
 function createAlerts () {
     const { subscribe, set, update } = writable(new Map())
 
-    const add = curry((type, message) => {
+    const remove = (id) => update(
+        (alerts) => {
+            alerts.delete(id)
+            return alerts
+        },
+    )
+
+    const add = curryN(3, (message, type, timeout) => {
         update(
             (alerts) => {
                 const id = randomId()
                 alerts.set(id, {id, type, message})
+
+                if (timeout > 0) {
+                    setTimeout(remove, timeout, id)
+                }
+
                 return alerts
             },
         )
@@ -17,18 +29,13 @@ function createAlerts () {
 
     return {
         subscribe,
-        add: add(''),
-        success: add('success'),
-        secondary: add('secondary'),
-        info: add('info'),
-        warning: add('warning'),
-        error: add('alert'),
-        remove: (id) => update(
-            (alerts) => {
-                alerts.delete(id)
-                return alerts
-            },
-        ),
+        add: add(__, '', 4000),
+        success: add(__, 'success', 4000),
+        secondary: add(__, 'secondary', 4000),
+        info: add(__, 'info', 4000),
+        warning: add(__, 'warning', 8000),
+        error: add(__, 'alert', 8000),
+        remove,
         reset: () => set(new Map()),
     }
 }
