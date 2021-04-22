@@ -23,7 +23,15 @@ body {
     .growl-container > .growl-item {
         background-position: center;
     }
-    .alert-box .close {
+}
+
+.alert-box {
+    padding: 10px;
+    padding-right: 35px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    .close {
         right: 0;
         top: 0;
         margin: 0;

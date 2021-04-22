@@ -1,11 +1,17 @@
+import { alerts } from '../stores/alerts'
+
 // Handle axios errors from backend API so that they can be shown
 export function errorHandler (error) {
     if (error.response) {
+        const response = error.response
+
         // The request was made and the server responded with a status code
         // that falls out of the range of 2xx
-        console.error(error.response.data)
-        console.log(error.response.status)
-        console.log(error.response.headers)
+        console.error(response.data)
+        console.log(response.status)
+        console.log(response.headers)
+
+        alerts.error(response.data.errors.join('\n'))
 
         throw new Error(error.response.data.errors)
     } else if (error.request) {
