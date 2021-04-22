@@ -12,7 +12,7 @@ export const data = asyncable(async ($raw) => {
 
         parsed.data = indexBy(prop('Year'), parsed.data)
         parsed.selected = productionSeries(parsed.series)
-        console.debug('$data store:', parsed)
+        // console.debug('$data store:', parsed)
 
         return parsed
     } catch (error) {
