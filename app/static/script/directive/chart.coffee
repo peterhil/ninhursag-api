@@ -35,7 +35,7 @@ angular.module('app')
       scope.render = (chart) ->
         return unless chart.data
         data = R.values(chart.data)
-        # $log.info "Render:", data, chart.index, chart.series
+        # $log.debug "Render:", data, chart.index, chart.series
 
         # Workaround jQuery bug with camel cased attributes
         svg = element.find('svg')[0]
@@ -113,8 +113,8 @@ angular.module('app')
       scope.getReserves = ->
         mineral = scope.mineral
         data = scope.reserves.data[mineral]
-        # $log.info "getReserves():", mineral, data
-        return unless mineral and data
+        $log.debug "getReserves():", mineral, data
+        return unless data
 
         latest = R.last R.sort R.lt, R.filter(R.identity, R.map(parseInt, R.keys(data)))
         reserveEstimate = data?[latest]
@@ -129,10 +129,10 @@ angular.module('app')
             (last = scope.chart.data[year]["#{scope.chart.selectedSeries}"] or last) or
             scope.chart.data[year]["#{scope.chart.selectedSeries} (estimated)"]
           )
-          # $log.info "Last amount:", year, last, amount
           if amount == identity()
             amount = last
           total += amount if amount
+          # $log.debug "Last amount:", year, last, amount, total
           [year, total]
         , R.keys(scope.chart.data)
 
@@ -144,7 +144,7 @@ angular.module('app')
           }
         , cumulative)
 
-        # $log.info "Reserves estimation:", mineral, latest, Humanize.compactInteger(reserveEstimate, 3), reserveNotes
+        $log.debug "Reserves estimation:", mineral, latest, Humanize.compactInteger(reserveEstimate, 3), reserveNotes
 
         # cumulativeIdx = Fx.indexBy scope.chart.index, (R.mapObjIndexed (production, year) ->
         #   amount = R.max(production, identity())
@@ -159,7 +159,7 @@ angular.module('app')
         # scope.chart.data = _.merge scope.chart.data, cumulativeIdx
 
 
-        # $log.info "Reserves:", reserves
+        $log.debug "Reserves:", reserves
         scope.chart.series.push "Reserves"
         scope.chart.series = R.uniq scope.chart.series
         scope.chart.data = _.merge scope.chart.data, reserves
@@ -185,12 +185,12 @@ angular.module('app')
         scope.render(scope.chart)
 
       scope.$watchCollection 'chart.data', (val, old) ->
-        # $log.info "Watching chart.data:", val
+        # $log.debug "Watching chart.data:", val
         scope.estimate(scope.function)  # TODO makes double requests
         scope.render(scope.chart)
 
       scope.$watch 'function', (val, old) ->
-        # $log.info "Watching function:", val, old
+        # $log.debug "Watching function:", val, old
         return unless val
         $cookies['function'] = val
         scope.estimate(val)
