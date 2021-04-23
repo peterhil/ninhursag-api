@@ -10,6 +10,7 @@ import os
 from flask import current_app, request, Blueprint
 from flask_restful import abort, Api, Resource
 
+from app.log import logger
 from .analysis import estimate, scipy_functions
 
 import numpy as np
@@ -80,6 +81,7 @@ class Estimate(Resource):
             data = obj['data']
             years = obj['years']
             function = obj['function'] if obj['function'] in list(scipy_functions('pdf').keys()) else ''
+            logger.debug("Estimating with function: {}".format(function))
         except ValueError:
             abort(400, errors=["Request is not valid JSON."])
         except KeyError as err:
