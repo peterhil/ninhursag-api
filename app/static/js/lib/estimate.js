@@ -34,8 +34,8 @@ export function dataForEstimate (data, selected, index = 'Year') {
 }
 
 // Transform API estimate data to chart data format
-export function chartDataFromEstimate (estimate, selected) {
-    const series = `${selected} (estimated)`
+export function chartDataFromEstimate (estimate, selected, fn) {
+    const series = `${selected} (estimated with ${fn} function)`
     const toChartData = (data, year) => {
         // TODO Is this necessary?
         const value = (

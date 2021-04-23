@@ -37,7 +37,7 @@ export function seriesStyle (serie) {
     const style = {
         stroke: fuzzyColor(serie).toHexString(),
     }
-    if (test(/\(estimated\)$/, serie)) {
+    if (test(/estimated/, serie)) {
         style['stroke-dasharray'] = '6px, 2px'
     }
 

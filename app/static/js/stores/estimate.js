@@ -18,7 +18,7 @@ export const estimate = asyncable(async ($data, $fn) => {
         // console.debug(`Estimating with ${fn}`, data, params)
 
         const res = await axios.post('/api/v1/estimate', params)
-        const estimated = chartDataFromEstimate(res.data, data.selected)
+        const estimated = chartDataFromEstimate(res.data, data.selected, fn)
         // console.debug(`Estimated with ${fn}`, estimated)
 
         return estimated
