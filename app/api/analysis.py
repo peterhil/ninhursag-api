@@ -146,8 +146,11 @@ def estimate(func, data, years, until=0, log=False):
 
     logger.debug("""=============================================================================
 function: {function}
-error mean: {mean_error}
 error: {error}
+error mean: {mean_error}
+error median: {median_error}
+error max: {max_error}
+error min: {min_error}
 errmsg: {errmsg}
 ier: {ier}
 popt: {popt}
@@ -158,13 +161,16 @@ estd: {estd}
 """.format(
     function=func.__name__,
     error=std_err,
+    min_error=np.amin(std_err),
+    max_error=np.amax(std_err),
     mean_error=np.mean(std_err),
+    median_error=np.median(std_err),
     errmsg=errmsg,
     ier=ier,
     popt=popt,
     pcov=pcov,
     data=data[:50],
-    estd=estd[:50],
+    estd=np.round(estd[:50], 0),
     )
 )
 
