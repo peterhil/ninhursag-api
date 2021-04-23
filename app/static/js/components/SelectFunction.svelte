@@ -4,7 +4,7 @@
     export let selected
 </script>
 
-<label for="function">Select resource
+<label for="function">Select function
     {#await $functions }
     <p>Loading...</p>
     {:then $functions}
