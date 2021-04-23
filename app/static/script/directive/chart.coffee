@@ -26,6 +26,7 @@ angular.module('app')
       scope.preserveAspectRatio ||= "xMidYMin meet"
       scope.chart.src = attrs.src
       scope.logscale = true
+      scope.showCumulative = false
       scope['function'] = $cookies['function'] || scope['function']
       scope.mineral = $cookies.mineral || scope.mineral
 
@@ -47,6 +48,7 @@ angular.module('app')
 
         excludeFromYMax = []
         unless scope.logscale
+           excludeFromYMax.push 'Cumulative' if scope.showCumulative
            excludeFromYMax.push 'Reserves'
         yMaxColumns = R.filter R.complement((i) -> R.contains(i, excludeFromYMax))
 
@@ -144,20 +146,21 @@ angular.module('app')
           }
         , cumulative)
 
-        $log.debug "Reserves estimation:", mineral, latest, Humanize.compactInteger(reserveEstimate, 3), reserveNotes
+        $log.debug "Reserves estimation:", mineral, latest,
+            Humanize.compactInteger(reserveEstimate, 3), reserveNotes
 
-        # cumulativeIdx = Fx.indexBy scope.chart.index, (R.mapObjIndexed (production, year) ->
-        #   amount = R.max(production, identity())
-        #   {
-        #     Year: parseInt(year)
-        #     Cumulative: if _.isFinite(parseFloat(amount)) then parseFloat(amount) else null
-        #   }
-        # , cumulative)
-        # $log.info "Cumulative world production:", cumulativeIdx
-        # scope.chart.series.push "Cumulative"
-        # scope.chart.series = R.uniq scope.chart.series
-        # scope.chart.data = _.merge scope.chart.data, cumulativeIdx
-
+        if scope.showCumulative
+          cumulativeIdx = Fx.indexBy scope.chart.index, (R.mapObjIndexed (production, year) ->
+            amount = R.max(production, identity())
+            {
+              Year: parseInt(year)
+              Cumulative: if _.isFinite(parseFloat(amount)) then parseFloat(amount) else null
+            }
+          , cumulative)
+          $log.debug "Cumulative world production:", cumulativeIdx
+          scope.chart.series.push "Cumulative"
+          scope.chart.series = R.uniq scope.chart.series
+          scope.chart.data = _.merge scope.chart.data, cumulativeIdx
 
         $log.debug "Reserves:", reserves
         scope.chart.series.push "Reserves"
