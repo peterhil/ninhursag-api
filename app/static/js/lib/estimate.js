@@ -54,7 +54,8 @@ export function chartDataFromEstimate (estimate, selected, fn) {
     return {
         data: mapObjIndexed(toChartData, zipped),
         series: [series],
-        covariance: estimate.covariance
+        covariance: estimate.covariance,
+        estimate: series,
     }
 }
 
