@@ -10,26 +10,34 @@ notes:
     Cesium: Reserves for top 2 countries
     Chromium: Reserves for top 4 countries. The change in scale around 2012 is apparently caused by different definitions of what exactly is produced. Reserves units are thousand metric tons of shipping-grade chromite ore, which is deposit quantity and grade normalized to 45% Cr2O3. World production data from 2012 onwards is from MCS reports at https://www.usgs.gov/centers/nmic/mineral-commodity-summaries
     Diamond (industrial): Natural industrial diamond only. Note that synthetic diamond production far exceeds natural industrial diamond output. Worldwide production of manufactured industrial diamond totaled at least 4.4 billion carats in 2013; the leading producers included Belarus, China, Ireland, Japan, Russia, South Africa, Sweden, and the United States. Approximately 130,000,000 carats (26 tons) of diamonds are mined annually, with a total value of nearly US$9 billion, and about 500,000,000 carats (100 tons) are synthesized annually.
+    Diatomite: Large reserves
+    Feldspar: Large reserves
     Fluorspar: Measured as 100% calcium fluoride.
+    Garnet (industrial): Moderate to large reserves
     Gemstones: World reserves of diamond-bearing deposits are substantial. No reserve data are available for other gemstones.
-    Iron (direct reduced): Slag is not a mined material and thus the concept of reserves does not apply to this mineral commodity. Slag production data for the world are unavailable, but it is estimated that annual world iron slag output in 2013 was on the order of 260 to 320 million tons, and steel slag about 170 to 250 million tons, based on typical ratios of slag to crude iron and steel output.
+    Gypsum: Large reserves
+    Iron (direct reduced): Not applicable as slag is not a mined material and thus the concept of reserves does not apply to this mineral commodity. Slag production data for the world are unavailable, but it is estimated that annual world iron slag output in 2013 was on the order of 260 to 320 million tons, and steel slag about 170 to 250 million tons, based on typical ratios of slag to crude iron and steel output.
     Iron ore: Reserves in 2013 were 170,000 tons for crude iron ore and 81,000 tons for iron content.
-    Lime: Adequate for all countries listed.
-    Magnesium metal: Magnesium metal is derived from seawater, natural brines, dolomite, and other minerals. The reserves for this metal are sufficient to supply current and future requirements. To a limited degree, natural brines may be considered to be a renewable resource wherein any magnesium removed by humans may be renewed by nature in a short span of time.
+    Iron oxide pigments: Large reserves
+    Lime: Reserves are large and adequate for all countries listed.
+    Magnesium metal: Sufficient reserves. Magnesium metal is derived from seawater, natural brines, dolomite, and other minerals. The reserves for this metal are sufficient to supply current and future requirements. To a limited degree, natural brines may be considered to be a renewable resource wherein any magnesium removed by humans may be renewed by nature in a short span of time.
+    Mica (natural)_ scrap and flake: Large reserves
+    Mica (natural)_ sheet: Very large reserves
     Nickel: For Australia, Joint Ore Reserves Committee (JORC)-compliant reserves were about 7.5 million tons compared to 18 million in the estimate here.
     Nitrogen (Fixed)-Ammonia: Available atmospheric nitrogen and sources of natural gas for production of ammonia are considered adequate for all listed countries.
     Potash: Data in metric tons of K2O equivalent.
     Rare earths: Data in metric tons of rare-earth oxide (REO) content.
     Quartz crystal: This information is unavailable, but the global reserves for lascas are thought to be large.
     Rubidium: Reserves for Canada only. As for resources, in addition to several significant rubidium-bearing zoned pegmatites in Canada, pegmatite occurrences have been identified in Afghanistan, Namibia, Peru, Russia, the United States, and Zambia. Minor amounts of rubidium are reported in brines in northern Chile and China and in evaporites in France, Germany, and the United States (New Mexico and Utah).
-    Salt: Large. Economic and subeconomic deposits of salt are substantial in principal salt-producing countries. The oceans contain a virtually inexhaustible supply of salt.
+    Salt: Large reserves. Economic and subeconomic deposits of salt are substantial in principal salt-producing countries. The oceans contain a virtually inexhaustible supply of salt.
     Construction sand and gravel: Reserves are controlled largely by land use and/or environmental concerns.
-    Sand and gravel (industrial): Industrial sand and gravel deposits are widespread.
+    Sand and gravel (industrial): Large reserves. Industrial sand and gravel deposits are widespread.
     Scandium: No scandium was mined in the United States. Scandium was produced as byproduct material in China, Kazakhstan, Russia, and Ukraine. Foreign mine production data were not available. Scandium occurs in many ores in trace amounts, but has not been found in sufficient concentration to be mined as a primary product. As a result of its low concentration, scandium has been produced exclusively as a byproduct during processing of various ores or recovered from previously processed tailings or residues.
     Silicon: The reserves in most major producing countries are ample in relation to demand. Quantitative estimates are not available.
     Crushed stone: Adequate except where special types are needed or where local shortages exist.
     Dimension stone: Adequate except for certain special types and local shortages.
     Sulfur: Reserves of sulfur in crude oil, natural gas, and sulfide ores are large. Because most sulfur production is a result of the processing of fossil fuels, supplies should be adequate for the foreseeable future. Because petroleum and sulfide ores can be processed long distances from where they are produced, sulfur production may not be in the country to which the reserves were attributed. For instance, sulfur from Saudi Arabian oil may be recovered at refineries in the United States.
+    Talc and pyrophyllite: Large reserves
     Tantalum: For Australia, Joint Ore Reserves Committee (JORC)-compliant reserves were 29,000 tons.
     Thallium: There are only a few countries where thallium is obtained commercially as a byproduct in the roasting of copper, lead, and zinc ores or is collected from flue dust. Because most producers withhold thallium production data, estimating global production is challenging. In 2013, global production of thallium was estimated to be less than 10,000 kilograms. China, Kazakhstan, and Russia were believed to be leading producers of primary thallium. Since 2005, substantial thallium-rich deposits have been identified in China, Macedonia, and Russia.
     Thorium: Includes thorium contained in mineralized sands. Reserves for Brazil were under review pending new information from the Departamento Nacional de Producao Mineral. Data in metric tons of thorium oxide (ThO2) equivalent.
@@ -65,7 +73,6 @@ data:
         2013: 210_000_000
         2020: 1_243_000_000
     Bromine:
-        2013: Large
         2020: 12_300_000_000
     Cadmium:
         2013: 500_000
@@ -84,60 +91,38 @@ data:
     Diamond (industrial):
         2013: 150
         2020: 280
-    Diatomite:
-        2013: Large
-    Feldspar:
-        2013: Large
     Fluorspar:
         2013: 240_000_000
         2020: 320_000_000
-    Garnet (industrial):
-        2013: Moderate to large
     Gold:
         2013: 54_000
         2020: 53_000
     Graphite:
         2013: 130_000_000
-    Gypsum:
-        2013: Large
     Iodine:
         2013: 7_600_000
-    Iron (pig iron):  # Iron and steel
+    Iron (pig iron):
         2013: 170_000_000_000
-    Steel:  # Iron content
+    Steel:
         2013: 81_000_000_000
-    Iron (direct reduced):
-        2013: Not applicable
     Iron ore:
         2013: 81_000_000_000
-    Iron oxide pigments:
-        2013: Large
     Lead:
         2013: 89_000_000
-    Lime:
-        2013: Large
     Lithium:
         2013: 13_000_000
     Magnesium compounds:
         2013: 2_400_000_000
-    Magnesium metal:
-        2013: Sufficient
     Manganese:
         2013: 570_000_000
     Mercury:
         2013: 94_000
-    Mica (natural)_ scrap and flake:
-        2013: Large
-    Mica (natural)_ sheet:
-        2013: Very large
     Molybdenum:
         2013: 11_000_000
     Nickel:
         2013: 74_000_000
     Niobium:
         2013: 4_300_000
-    Nitrogen (Fixed)-Ammonia:
-        2013: Adequate
     Peat:
         2013: 12_000_000_000
     Phosphate rock:
@@ -152,26 +137,14 @@ data:
         2013: 2_500
     Rubidium:
         2013: 110_000
-    Salt:
-        2013: Large
-    Sand and gravel (industrial):
-        2013: Large
     Selenium:
         2013: 120_000
     Silver:
         2013: 520_000
     Soda ash:
         2013: 24_000_000_000
-    Crushed stone:
-        2013: Adequate
-    Dimension stone:
-        2013: Adequate
     Strontium:
         2013: 6_800_000
-    Sulfur:
-        2013: Large
-    Talc and pyrophyllite:
-        2013: Large
     Tantalum:
         2013: 100_000
     Tellurium:
@@ -200,8 +173,6 @@ data:
         2013: 90_000_000
     Yttrium:
         2013: 540_000
-    Zeolites:
-        2013: Large
     Zinc:
         2013: 250_000_000
     Zirconium:
