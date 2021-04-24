@@ -59,8 +59,6 @@ data:
     Bauxite:
         2013: 28_000_000_000
         2020: 30_000_000_000
-    Beryllium:
-        2013: NA
     Bismuth:
         2013: 320_000
     Boron:
@@ -93,14 +91,8 @@ data:
     Fluorspar:
         2013: 240_000_000
         2020: 320_000_000
-    Gallium:
-        2013: NA
     Garnet (industrial):
         2013: Moderate to large
-    Gemstones:
-        2013: NA
-    Germanium:
-        2013: NA
     Gold:
         2013: 54_000
         2020: 53_000
@@ -108,10 +100,6 @@ data:
         2013: 130_000_000
     Gypsum:
         2013: Large
-    Helium:
-        2013: NA
-    Indium:
-        2013: NA
     Iodine:
         2013: 7_600_000
     Iron (pig iron):  # Iron and steel
@@ -124,8 +112,6 @@ data:
         2013: 81_000_000_000
     Iron oxide pigments:
         2013: Large
-    Kyanite:
-        2013: NA
     Lead:
         2013: 89_000_000
     Lime:
@@ -154,18 +140,12 @@ data:
         2013: Adequate
     Peat:
         2013: 12_000_000_000
-    Perlite:
-        2013: NA
     Phosphate rock:
         2013: 67_000_000_000
     Platinum-group metals:
         2013: 66_000
     Potash:
         2013: 6_000_000_000
-    Pumice and pumicite:
-        2013: NA
-    Quartz crystal:
-        2013: NA
     Rare earths:
         2013: 140_000_000
     Rhenium:
@@ -174,16 +154,10 @@ data:
         2013: 110_000
     Salt:
         2013: Large
-    Construction sand and gravel:
-        2013: NA
     Sand and gravel (industrial):
         2013: Large
-    Scandium:
-        2013: NA
     Selenium:
         2013: 120_000
-    Silicon:
-        2013: NA
     Silver:
         2013: 520_000
     Soda ash:
@@ -202,8 +176,6 @@ data:
         2013: 100_000
     Tellurium:
         2013: 24_000
-    Thallium:
-        2013: NA
     Thorium:
         2013: 1_400_000
     Tin:
