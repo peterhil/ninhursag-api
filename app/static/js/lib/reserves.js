@@ -8,7 +8,7 @@ import {
     toPairs,
 } from 'ramda'
 
-export function calculateReserves(cumulative, reserves, mineral) {
+export function calculateReserves (cumulative, reserves, mineral) {
     if (isEmpty(cumulative.data)) {
         console.debug('No cumulative data yet')
         return
@@ -27,4 +27,8 @@ export function calculateReserves(cumulative, reserves, mineral) {
             }
         }, cumulative.data)
     }
+}
+
+export function hasReserves (reserves, mineral) {
+    return reserves.data && reserves.data[mineral]
 }

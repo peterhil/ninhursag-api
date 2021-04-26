@@ -2,15 +2,11 @@ import { derived } from 'svelte/store'
 import { errorHandler } from '../lib/api'
 import { mergeChartData } from '../lib/estimate'
 import { accumulateData } from '../lib/cumulative'
-import { calculateReserves } from '../lib/reserves'
+import { calculateReserves, hasReserves } from '../lib/reserves'
 import { cumulative } from './cumulative'
 import { estimate } from './estimate'
 import { reserves } from './reserves'
 import { mineral } from './mineral'
-
-function hasReserves (reserves, mineral) {
-    return reserves.data && reserves.data[mineral]
-}
 
 export const reserve_estimate = derived(
     [
