@@ -1,4 +1,5 @@
 import {
+    fromPairs,
     defaultTo,
     head,
     indexBy,
@@ -9,7 +10,7 @@ import {
     range,
 } from 'ramda'
 
-export function accumulateData (data, column, extraYears = 0) {
+export function accumulateData (data, column, series, extraYears = 0) {
     let currentYear
     let total = 0
 
@@ -30,9 +31,9 @@ export function accumulateData (data, column, extraYears = 0) {
         }
         total += currentYear
 
-        return {
-            Year: year,
-            Cumulative: total,
-        }
+        return fromPairs([
+            ['Year', year],
+            [series, total],
+        ])
     }, years))
 }

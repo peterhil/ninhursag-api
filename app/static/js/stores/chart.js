@@ -4,6 +4,7 @@ import { identity, sortBy, uniq } from 'ramda'
 import { errorHandler } from '../lib/api'
 import { mergeChartData } from '../lib/estimate'
 import { cumulative } from './cumulative'
+import { cumulative_fit } from './cumulative_fit'
 import { data } from './data'
 import { estimate } from './estimate'
 import { reserve_data } from './reserve_data'
@@ -13,6 +14,7 @@ export const chart = derived(
     [
         data,
         cumulative,
+        cumulative_fit,
         estimate,
         reserve_data,
         reserves
@@ -20,11 +22,12 @@ export const chart = derived(
     async ([
         $data,
         $cumulative,
+        $cumulative_fit,
         $estimate,
         $reserve_data,
         $reserves
     ], set) => {
-        const data = await $data
+        let data = await $data
         set(data)
 
         const reserve_data = await $reserve_data
@@ -32,19 +35,25 @@ export const chart = derived(
         set(data)
 
         const cumulative = await $cumulative
-        const with_cumulative = mergeChartData(data, cumulative)
-        console.debug('[Chart] With cumulative:', with_cumulative)
-        set(with_cumulative)
+        data = mergeChartData(data, cumulative)
+        console.debug('[Chart] With cumulative:', data)
+        set(data)
 
         const reserves = await $reserves
-        const with_reserves = mergeChartData(with_cumulative, reserves)
-        console.debug('[Chart] With reserves:', with_reserves)
-        set(with_reserves)
+        data = mergeChartData(data, reserves)
+        console.debug('[Chart] With reserves:', data)
+        set(data)
 
         const estimate = await $estimate
-        const merged = mergeChartData(with_reserves, estimate)
-        console.debug('[Chart] With estimate:', merged)
-        set(merged)
+
+        const cumulative_fit = await $cumulative_fit
+        data = mergeChartData(data, cumulative_fit)
+        console.debug('[Chart] With cumulative fit:', data)
+        set(data)
+
+        data = mergeChartData(data, estimate)
+        console.debug('[Chart] With estimate:', data)
+        set(data)
     },
     {data: {}, series: [], reserves: {}}
 )
