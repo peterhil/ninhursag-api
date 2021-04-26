@@ -3,7 +3,7 @@ import { asyncable } from 'svelte-asyncable'
 import { errorHandler } from '../lib/api'
 
 
-export const reserves = asyncable(async () => {
+export const reserve_data = asyncable(async () => {
     try {
         const res = await axios('/api/v1/reserves')
         console.debug('Reserves:', res.data)

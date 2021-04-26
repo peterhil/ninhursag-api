@@ -6,7 +6,7 @@ import { mergeChartData } from '../lib/estimate'
 import { cumulative } from './cumulative'
 import { data } from './data'
 import { estimate } from './estimate'
-import { reserves } from './reserves'
+import { reserve_data } from './reserve_data'
 import { reserve_estimate } from './reserve_estimate'
 
 export const chart = derived(
@@ -14,21 +14,21 @@ export const chart = derived(
         data,
         cumulative,
         estimate,
-        reserves,
+        reserve_data,
         reserve_estimate
     ],
     async ([
         $data,
         $cumulative,
         $estimate,
-        $reserves,
+        $reserve_data,
         $reserve_estimate
     ], set) => {
         const data = await $data
         set(data)
 
-        const reserves = await $reserves
-        data.reserves = reserves
+        const reserve_data = await $reserve_data
+        data.reserves = reserve_data
         set(data)
 
         const cumulative = await $cumulative

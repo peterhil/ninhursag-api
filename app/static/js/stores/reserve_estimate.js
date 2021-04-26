@@ -5,7 +5,7 @@ import { accumulateData } from '../lib/cumulative'
 import { calculateReserves, hasReserves } from '../lib/reserves'
 import { cumulative } from './cumulative'
 import { estimate } from './estimate'
-import { reserves } from './reserves'
+import { reserve_data } from './reserve_data'
 import { mineral } from './mineral'
 
 export const reserve_estimate = derived(
@@ -13,22 +13,22 @@ export const reserve_estimate = derived(
         cumulative,
         estimate,
         mineral,
-        reserves
+        reserve_data,
     ],
     async ([
         $cumulative,
         $estimate,
         $mineral,
-        $reserves
+        $reserve_data,
     ], set) => {
         const cumulative = await $cumulative
         const mineral = await $mineral
-        const reserves = await $reserves
+        const reserve_data = await $reserve_data
         const series = ['Reserves']
 
         // Reserves
-        if (hasReserves(reserves, mineral)) {
-            const calculated = calculateReserves(cumulative, reserves, mineral)
+        if (hasReserves(reserve_data, mineral)) {
+            const calculated = calculateReserves(cumulative, reserve_data, mineral)
             console.debug('[Reserves] Estimated:', calculated)
             set({data: calculated, series})
 
@@ -37,7 +37,7 @@ export const reserve_estimate = derived(
             const cumulative_estimate = await $cumulative
             console.debug('[Reserves] Got estimate:', estimate, cumulative_estimate)
 
-            const calculated_estimate = calculateReserves(cumulative_estimate, reserves, mineral)
+            const calculated_estimate = calculateReserves(cumulative_estimate, reserve_data, mineral)
             console.debug('[Reserves] Estimated fit:', calculated_estimate)
             set({data: calculated_estimate, series})
         }
