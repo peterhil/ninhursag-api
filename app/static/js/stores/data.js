@@ -1,4 +1,4 @@
-import { indexBy, last, prop } from 'ramda'
+import { head, indexBy, last, prop } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
 
 import { errorHandler } from '../lib/api'
@@ -11,6 +11,7 @@ export const data = asyncable(async ($raw) => {
         const parsed = cleanup(raw)
         const year = prop('Year')
 
+        parsed.first = year(head(parsed.data))
         parsed.latest = year(last(parsed.data))
         parsed.data = indexBy(year, parsed.data)
         parsed.selected = productionSeries(parsed.series)
