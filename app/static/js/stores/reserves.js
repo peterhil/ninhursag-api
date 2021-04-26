@@ -8,7 +8,7 @@ import { estimate } from './estimate'
 import { reserve_data } from './reserve_data'
 import { mineral } from './mineral'
 
-export const reserve_estimate = derived(
+export const reserves = derived(
     [
         cumulative,
         estimate,
