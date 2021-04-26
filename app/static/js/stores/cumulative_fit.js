@@ -1,5 +1,4 @@
 import { derived } from 'svelte/store'
-import { errorHandler } from '../lib/api'
 import { accumulateData } from '../lib/cumulative'
 import { data } from './data'
 import { estimate } from './estimate'

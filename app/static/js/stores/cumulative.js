@@ -1,8 +1,6 @@
 import { asyncable } from 'svelte-asyncable'
-import { errorHandler } from '../lib/api'
 import { accumulateData } from '../lib/cumulative'
 import { data } from './data'
-import { estimate } from './estimate'
 
 const initialValue = {data: {}, series: []}
 
