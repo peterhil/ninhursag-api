@@ -9,23 +9,26 @@ import { data } from './data'
 import { estimate } from './estimate'
 import { reserve_data } from './reserve_data'
 import { reserves } from './reserves'
+import { reserves_fit } from './reserves_fit'
 
 export const chart = derived(
     [
         data,
         cumulative,
-        cumulative_fit,
-        estimate,
         reserve_data,
-        reserves
+        reserves,
+        estimate,
+        cumulative_fit,
+        reserves_fit,
     ],
     async ([
         $data,
         $cumulative,
-        $cumulative_fit,
-        $estimate,
         $reserve_data,
-        $reserves
+        $reserves,
+        $estimate,
+        $cumulative_fit,
+        $reserves_fit,
     ], set) => {
         let data = await $data
         set(data)
@@ -36,23 +39,28 @@ export const chart = derived(
 
         const cumulative = await $cumulative
         data = mergeChartData(data, cumulative)
-        console.debug('[Chart] With cumulative:', data)
+        console.debug('[Chart] With cumulative:', cumulative)
         set(data)
 
         const reserves = await $reserves
         data = mergeChartData(data, reserves)
-        console.debug('[Chart] With reserves:', data)
+        console.debug('[Chart] With reserves:', reserves)
         set(data)
 
         const estimate = await $estimate
 
         const cumulative_fit = await $cumulative_fit
         data = mergeChartData(data, cumulative_fit)
-        console.debug('[Chart] With cumulative fit:', data)
+        console.debug('[Chart] With cumulative fit:', cumulative_fit)
+        set(data)
+
+        const reserves_fit = await $reserves_fit
+        data = mergeChartData(data, reserves_fit)
+        console.debug('[Chart] With reserves fit:', reserves_fit)
         set(data)
 
         data = mergeChartData(data, estimate)
-        console.debug('[Chart] With estimate:', data)
+        console.debug('[Chart] With estimate:', estimate)
         set(data)
     },
     {data: {}, series: [], reserves: {}}

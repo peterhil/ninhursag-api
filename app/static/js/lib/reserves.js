@@ -1,4 +1,5 @@
 import {
+    fromPairs,
     isEmpty,
     head,
     last,
@@ -8,7 +9,7 @@ import {
     toPairs,
 } from 'ramda'
 
-export function calculateReserves (cumulative, reserves, mineral) {
+export function calculateReserves (cumulative, reserves, mineral, column, series) {
     if (isEmpty(cumulative.data)) {
         console.debug('No cumulative data yet')
         return
@@ -18,13 +19,13 @@ export function calculateReserves (cumulative, reserves, mineral) {
         return
     } else {
         const [reserveYear, reserveAmount] = last(sortBy(head, toPairs(reserves.data[mineral])))
-        const cumulativeOnReserveYear = cumulative.data[reserveYear]['Cumulative']
+        const cumulativeOnReserveYear = cumulative.data[reserveYear][column]
 
         return mapObjIndexed((row, year) => {
-            return {
-                Year: year,
-                Reserves: max(1, reserveAmount - (row['Cumulative'] - cumulativeOnReserveYear))
-            }
+            return fromPairs([
+                ['Year', year],
+                [series, max(1, reserveAmount - (row[column] - cumulativeOnReserveYear))]
+            ])
         }, cumulative.data)
     }
 }
