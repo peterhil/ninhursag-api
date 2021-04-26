@@ -1,22 +1,26 @@
 import {
+    filter,
     fromPairs,
     defaultTo,
     head,
     indexBy,
+    is,
     keys,
     last,
     map,
     prop,
     range,
 } from 'ramda'
+import { productionSeries } from './csv'
 
 export function accumulateData (data, column, series, extraYears = 0) {
     let currentYear
     let total = 0
 
-    const dataYears = keys(data.data)
-    const first = parseInt(head(dataYears))
-    const latest = parseInt(last(dataYears))
+    const production = productionSeries(data.series)
+    const dataYears = filter((row) => is(Number, row[production]), data.data)
+    const first = parseInt(head(keys(dataYears)))
+    const latest = parseInt(last(keys(dataYears)))
     const years = range(first, latest + extraYears)
     const latestData = data.data[latest][column]
 
