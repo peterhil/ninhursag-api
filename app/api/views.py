@@ -98,6 +98,7 @@ class Estimate(Resource):
             abort(500, errors=[str(err)])
 
         e_years, e_data, e_cov = result
+
         return {
             'years': as_json(e_years),
             'data': as_json(e_data.astype(np.float64)),
