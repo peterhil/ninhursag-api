@@ -11,14 +11,12 @@ import {
     prop,
     range,
 } from 'ramda'
-import { productionSeries } from './csv'
 
 export function accumulateData (data, column, series, extraYears = 0) {
     let currentYear
     let total = 0
 
-    const production = productionSeries(data.series)
-    const dataYears = filter((row) => is(Number, row[production]), data.data)
+    const dataYears = filter((row) => is(Number, row[column]), data.data)
     const first = parseInt(head(keys(dataYears)))
     const latest = parseInt(last(keys(dataYears)))
     const years = range(first, latest + extraYears)
