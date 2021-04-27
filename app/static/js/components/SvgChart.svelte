@@ -20,6 +20,7 @@
     import Legend from './Legend.svelte'
     import LineSeries from './LineSeries.svelte'
     import { scale } from '../stores/scale'
+    import { showAll } from '../stores/showAll'
     import { fixNaNs, seriesStyle } from '../lib/charting'
 
     export let data
@@ -32,7 +33,16 @@
 
     $: yMin = ($scale === 'log' ? 1 : 0)
     $: yMax = dMax(values(data.data), (row) => {
-        const yMaxExclude = ($scale === 'log' ? ['Year'] : ['Year', 'Reserves'])
+        const yMaxExclude = (
+            $scale === 'log' || $showAll === 'yes' ?
+                ['Year', 'Reserves fit'] :
+                [
+                    'Year',
+                    'Reserves',
+                    'Cumulative',
+                    'Cumulative fit',
+                    'Reserves fit',
+                ])
         const selected = omit(yMaxExclude, pick(data.series, row))
         const ys = filter(is(Number), values(selected))
 

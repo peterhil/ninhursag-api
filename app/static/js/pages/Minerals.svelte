@@ -3,11 +3,13 @@
     import RawData from '../components/RawData.svelte'
     import SvgChart from '../components/SvgChart.svelte'
     import Images from '../components/Images.svelte'
+    import CheckboxShowAll from '../components/CheckboxShowAll.svelte'
     import LogScaleCheckbox from '../components/LogScaleCheckbox.svelte'
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
     import { fn } from '../stores/function'
     import { scale } from '../stores/scale'
+    import { showAll } from '../stores/showAll'
     import { mineral } from '../stores/mineral'
 
     let caption = 'U.S. Geological Survey statistics (Metric tons gross weight)'
@@ -30,7 +32,14 @@
             {#if caption}
             <figcaption>{caption}</figcaption>
             {/if}
-            <LogScaleCheckbox bind:scale="{$scale}"></LogScaleCheckbox>
+            <div class="row">
+                <div class="large-4 columns">
+                    <LogScaleCheckbox bind:scale="{$scale}" />
+                </div>
+                <div class="large-4 columns">
+                    <CheckboxShowAll bind:showAll="{$showAll}" />
+                </div>
+            </div>
             <RawData let:data>
                 <SvgChart {data}></SvgChart>
             </RawData>
