@@ -17,6 +17,8 @@ export const cumulative_fit = derived(
         const series = ['Cumulative fit']
         // console.debug('[Cumulative fit] Estimate and data:', estimate, data)
 
+        if (!estimate) { return }
+
         const cumulative_estimate = accumulateData(estimate, estimate.estimate, 'Cumulative fit', 0)
         console.debug('[Cumulative fit] Cumulative data:', cumulative_estimate)
 

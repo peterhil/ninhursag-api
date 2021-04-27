@@ -36,7 +36,7 @@ export const estimate = asyncable(async ($data, $fn) => {
             console.log('Request canceled');
         } else {
             errorHandler(error)
-            return error
         }
+        return error
     }
 }, undefined, [data, fn])
