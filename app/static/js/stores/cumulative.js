@@ -12,7 +12,7 @@ export const cumulative = asyncable(
 
         const series = ['Cumulative']
         const cumulative = accumulateData(interpolated, data.selected, 'Cumulative', 100)
-        console.debug('[Cumulative] Data:', data.selected, cumulative)
+        // console.debug('[Cumulative] Data:', data.selected, cumulative)
         return {data: cumulative, series}
     },
     initialValue,

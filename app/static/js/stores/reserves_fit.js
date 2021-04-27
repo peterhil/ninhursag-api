@@ -25,7 +25,7 @@ export const reserves_fit = derived(
         const series = ['Reserves fit']
 
         if (hasReserves(reserve_data, mineral)) {
-            console.debug('[Reserves fit] Got estimate:', estimate, cumulative_fit)
+            // console.debug('[Reserves fit] Got estimate:', estimate, cumulative_fit)
 
             const calculated = calculateReserves(
                 cumulative_fit,

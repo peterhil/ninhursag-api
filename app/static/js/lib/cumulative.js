@@ -22,7 +22,7 @@ export function accumulateData (data, column, series, extraYears = 0) {
     const years = range(first, latest + extraYears)
     const latestData = data.data[latest][column]
 
-    console.debug('Range:', first, latest, latestData, column, total, data)
+    console.debug('[AccumulateData] Range:', first, latest, latestData, column)
 
     // TODO Write separate function that uses world production data until the estimation continues!
     return indexBy(prop('Year'), map((year) => {

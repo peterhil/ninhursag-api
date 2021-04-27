@@ -11,7 +11,7 @@ export const interpolated = asyncable(
         const series = ['Interpolated']
 
         const interpolated = interpolateData(data, data.selected)
-        console.debug('[Interpolated] Data:', interpolated)
+        // console.debug('[Interpolated] Data:', interpolated)
 
         return {data: interpolated, series}
     },

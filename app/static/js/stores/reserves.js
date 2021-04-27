@@ -19,7 +19,7 @@ export const reserves = asyncable(
 
         if (hasReserves(reserve_data, mineral)) {
             const calculated = calculateReserves(cumulative, reserve_data, mineral, 'Cumulative', 'Reserves')
-            console.debug('[Reserves] Estimated:', calculated)
+            // console.debug('[Reserves] Estimated:', calculated)
             return {data: calculated, series, reserves: reserve_data}
         } else {
             return {...initialValue, reserves: reserve_data}

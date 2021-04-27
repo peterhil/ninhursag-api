@@ -33,10 +33,10 @@ export const chart = derived(
         const reserves = await $reserves
 
         data = mergeChartData(data, cumulative)
-        console.debug('[Chart] With cumulative:', data, cumulative)
+        // console.debug('[Chart] With cumulative:', cumulative)
 
         data = mergeChartData(data, reserves)
-        console.debug('[Chart] With reserves:', data, reserves)
+        console.debug('[Chart] With reserves:', data)
 
         set(data)
 
@@ -44,16 +44,16 @@ export const chart = derived(
 
         const cumulative_fit = await $cumulative_fit
         data = mergeChartData(data, cumulative_fit)
-        console.debug('[Chart] With cumulative fit:', cumulative_fit)
+        // console.debug('[Chart] With cumulative fit:', cumulative_fit)
         set(data)
 
         const reserves_fit = await $reserves_fit
         data = mergeChartData(data, reserves_fit)
-        console.debug('[Chart] With reserves fit:', reserves_fit)
+        // console.debug('[Chart] With reserves fit:', reserves_fit)
         set(data)
 
         data = mergeChartData(data, estimate)
-        console.debug('[Chart] With estimate:', estimate)
+        console.debug('[Chart] With estimate:', data)
         set(data)
     },
     {data: {}, series: [], reserves: {}}
