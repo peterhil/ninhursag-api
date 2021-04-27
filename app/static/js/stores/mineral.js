@@ -1,3 +1,3 @@
 import { cookieStore } from './cookieStore'
 
-export const mineral = cookieStore('mineral', 'Gold')
+export const mineral = cookieStore('mineral', 'Lead')
