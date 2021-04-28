@@ -10,6 +10,8 @@ import { data } from './data.js'
 
 let cancel
 
+const emptyData = {}
+
 export const estimate = asyncable(async ($data, $fn) => {
     try {
         const data = await $data
@@ -33,10 +35,13 @@ export const estimate = asyncable(async ($data, $fn) => {
         return estimated
     } catch (error) {
         if (axios.isCancel(error)) {
-            console.log('Request canceled');
+            console.log('Request canceled')
+
+            return emptyData
         } else {
             errorHandler(error)
+
+            return error
         }
-        return error
     }
-}, undefined, [data, fn])
+}, emptyData, [data, fn])

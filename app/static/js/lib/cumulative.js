@@ -16,6 +16,12 @@ export function accumulateData (data, column, series, extraYears = 0) {
     let currentYear
     let total = 0
 
+    // Check if request was canceled and thus column is undefined
+    if (!column) {
+        console.assert(column, 'Empty column for:', series, data)
+        return data
+    }
+
     const dataYears = filter((row) => is(Number, row[column]), data.data)
     const first = parseInt(head(keys(dataYears)))
     const latest = parseInt(last(keys(dataYears)))
