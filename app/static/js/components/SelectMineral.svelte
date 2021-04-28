@@ -1,14 +1,23 @@
 <script>
+    import { debounce } from 'lodash'
     import { minerals } from '../stores/minerals'
 
     export let selected
+
+    const onSelected = (event) => {
+        selected = event.target.value
+        console.info('Mineral:', selected)
+        return false
+    }
+
+    const onSelectedDebounced = debounce(onSelected, 500)
 </script>
 
 <label for="mineral">Select resource
     {#await $minerals }
     <p>Loading...</p>
     {:then $minerals}
-    <select id="mineral" bind:value={selected}>
+    <select id="mineral" on:change={onSelectedDebounced}>
         {#each [...Object.keys($minerals)] as mineral}
         <option value="{mineral}" selected="{mineral === selected}">{mineral}</option>
         {/each}
