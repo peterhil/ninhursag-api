@@ -19,7 +19,7 @@ angular.module('app')
     $http.get('/api/v1/minerals')
       .success (response) ->
         $scope.minerals = response
-        $scope.mineral = if ($cookies.mineral in R.keys($scope.minerals)) then $cookies.mineral else 'Bauxite'
+        $scope.mineral = if ($cookies.mineral in R.keys($scope.minerals)) then $cookies.mineral else 'Lead'
         $scope.chart.src = "/static/data/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
