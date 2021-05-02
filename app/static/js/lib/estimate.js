@@ -2,6 +2,7 @@ import { isFinite } from 'lodash'
 import {
     all,
     concat,
+    filter,
     fromPairs,
     identity,
     is,
@@ -9,28 +10,21 @@ import {
     mapObjIndexed,
     mergeDeepWith,
     max,
+    toPairs,
+    transpose,
     zipObj,
 } from 'ramda'
 
 // Transform chart data format into object with arrays for years and data
-export function dataForEstimate (data, selected, index = 'Year') {
-    // TODO Change request data structure?
-    let result = {
-        data: [],
-        years: [],
+export function dataForEstimate (series) {
+    const numbers = filter(is(Number), series)
+    const [years, data] = transpose(toPairs(numbers))
+
+    // TODO Change API to accept series data with years as indices
+    return {
+        years: map(parseInt, years),
+        data: map(parseFloat, data),
     }
-
-    map(row => {
-        const idx = parseInt(row[index])
-        const val = parseFloat(row[selected])
-
-        if (val && idx) {
-            result.years.push(idx)
-            result.data.push(val)
-        }
-    }, data)
-
-    return result
 }
 
 // Transform API estimate data to chart data format

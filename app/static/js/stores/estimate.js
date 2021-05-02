@@ -13,7 +13,7 @@ export const estimate = asyncable(async ($data, $fn) => {
         const fn = await $fn
         const params = {
             'function': fn,
-            ...dataForEstimate(values(data.data), data.selected, 'Year')
+            ...dataForEstimate(data.columns[data.selected])
         }
         // console.debug(`Estimating with ${fn}`, data, params)
 
