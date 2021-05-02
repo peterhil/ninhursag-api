@@ -4,6 +4,7 @@
     import { scaleLinear, scaleLog } from 'd3-scale'
     import {
         filter,
+        flatten,
         identity,
         is,
         map,
@@ -31,13 +32,9 @@
     export let viewBox = `0 -20 ${width} ${height + 40}`
 
     $: yMin = ($scale === 'log' ? 1 : 0)
-    $: yMax = dMax(values(data.data), (row) => {
-        const yMaxExclude = ($scale === 'log' ? ['Year'] : ['Year', 'Reserves'])
-        const selected = omit(yMaxExclude, pick(data.series, row))
-        const ys = filter(is(Number), values(selected))
-
-        return reduce(max, yMin, ys)
-    })
+    $: yMaxExclude = ($scale === 'log' ? ['Year'] : ['Year', 'Reserves'])
+    $: selectedSeries = omit(yMaxExclude, pick(data.series, data.columns))
+    $: yMax = reduce(max, yMin, flatten(map(values, values(selectedSeries))))
     $: x = scaleLinear()
                .range([0, width])
                .domain(extent(values(data.data), (row) => parseInt(row['Year'])))
