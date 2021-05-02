@@ -52,6 +52,7 @@ export function chartDataFromEstimate (estimate, selected, fn) {
     const zipped = zipObj(estimate['years'], estimate['data'])
 
     return {
+        columns: fromPairs([[series, zipped]]),
         data: mapObjIndexed(toChartData, zipped),
         series: [series],
         covariance: estimate.covariance,

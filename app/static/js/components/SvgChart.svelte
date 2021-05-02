@@ -48,8 +48,8 @@
 
     $: line = (data, column) => {
         const path = svgLine()
-               .x(d => x(d['Year']))
-               .y(d => y(parseFloat(d[column])))
+               .x(d => x(parseInt(d[0])))
+               .y(d => y(parseFloat(d[1])))
         return fixNaNs(path(data))
     }
 </script>

@@ -1,7 +1,8 @@
 import { parse } from 'papaparse'
 import {
-    allPass, compose, filter, find, findLast, flatten, identity, join,
-    map, complement, drop, takeWhile, sortBy, test, without,
+    allPass, compose, filter, find, findLast, flatten, forEach,
+    fromPairs, identity, join, map, complement, drop,
+    takeWhile, times, sortBy, test, without, zip,
 } from 'ramda'
 
 const clean = compose(filter(identity), flatten)
@@ -33,6 +34,18 @@ function splitHeaders (rows) {
     }
 }
 
+function transposeObj(rows, columns) {
+    let data = fromPairs(zip(columns, times(() => {return {}}, columns.length)))
+
+    forEach((row) => {
+        forEach((series) => {
+            data[series][parseInt(row['Year'])] = row[series]
+        }, columns)
+    }, rows)
+
+    return data
+}
+
 export function cleanup (rawData) {
     let {header, content, footer} = splitHeaders(getRows(rawData))
     const text = join('\n', map(join('\t'), content))
@@ -56,7 +69,9 @@ export function cleanup (rawData) {
         console.error("Errors while parsing raw data:", reparsed.errors)
     }
 
-    return Object.assign(reparsed, {header, footer, series})
+    const columns = transposeObj(reparsed.data, series)
+
+    return Object.assign(reparsed, {header, footer, series, columns})
 }
 
 export function productionSeries (series) {

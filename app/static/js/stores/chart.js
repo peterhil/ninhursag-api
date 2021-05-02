@@ -19,8 +19,8 @@ export const chart = derived(
 
         const estimate = await $estimate
         const merged = mergeChartData(data, estimate)
-        console.debug(`Merged chart data: `, merged)
+        console.debug('Merged chart data:', merged)
         set(merged)
     },
-    {data: {}, series: [], reserves: {}}
+    {data: {}, series: [], reserves: {}, columns: {}}
 )

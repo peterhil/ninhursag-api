@@ -1,5 +1,5 @@
 <script>
-    import { values } from 'ramda'
+    import { toPairs } from 'ramda'
     import { seriesStyle } from '../lib/charting'
 
     export let data
@@ -7,9 +7,9 @@
 </script>
 
 <g class="chart">
-    {#each data.series as serie, index}
+    {#each toPairs(data.columns) as [serie, column], index (serie)}
     <path class="line series-{index}"
-          d="{line(values(data.data), serie)}"
+          d="{line(toPairs(column), serie)}"
           style="{seriesStyle(serie)}">
         {serie}
     </path>
