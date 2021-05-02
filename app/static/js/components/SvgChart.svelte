@@ -3,11 +3,11 @@
     import { line as svgLine } from 'd3-shape'
     import { scaleLinear, scaleLog } from 'd3-scale'
     import {
+        chain,
         filter,
-        flatten,
         identity,
         is,
-        map,
+        keys,
         max,
         omit,
         pick,
@@ -34,10 +34,10 @@
     $: yMin = ($scale === 'log' ? 1 : 0)
     $: yMaxExclude = ($scale === 'log' ? ['Year'] : ['Year', 'Reserves'])
     $: selectedSeries = omit(yMaxExclude, pick(data.series, data.columns))
-    $: yMax = reduce(max, yMin, flatten(map(values, values(selectedSeries))))
+    $: yMax = reduce(max, yMin, chain(values, values(selectedSeries)))
     $: x = scaleLinear()
                .range([0, width])
-               .domain(extent(values(data.data), (row) => parseInt(row['Year'])))
+               .domain(extent(chain(keys, values(selectedSeries))))
 
     $: y = ($scale === 'log' ? scaleLog() : scaleLinear())
                .range([height, 0])
