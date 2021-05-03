@@ -1,6 +1,7 @@
 <script>
+    import DataTable from '../components/DataTable.svelte'
     import References from '../../../templates/_references.html'
-    import RawData from '../components/RawData.svelte'
+    import DataLoader from '../components/DataLoader.svelte'
     import SvgChart from '../components/SvgChart.svelte'
     import Images from '../components/Images.svelte'
     import LogScaleCheckbox from '../components/LogScaleCheckbox.svelte'
@@ -32,9 +33,9 @@
             <figcaption>{caption}</figcaption>
             {/if}
             <LogScaleCheckbox bind:scale="{$scale}"></LogScaleCheckbox>
-            <RawData let:data data="{chart}">
+            <DataLoader let:data data="{chart}">
                 <SvgChart {data}></SvgChart>
-            </RawData>
+            </DataLoader>
         </figure>
     </div>
 
