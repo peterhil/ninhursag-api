@@ -6,6 +6,7 @@
     import LogScaleCheckbox from '../components/LogScaleCheckbox.svelte'
     import SelectFunction from '../components/SelectFunction.svelte'
     import SelectMineral from '../components/SelectMineral.svelte'
+    import { chart } from '../stores/chart'
     import { fn } from '../stores/function'
     import { scale } from '../stores/scale'
     import { mineral } from '../stores/mineral'
@@ -31,7 +32,7 @@
             <figcaption>{caption}</figcaption>
             {/if}
             <LogScaleCheckbox bind:scale="{$scale}"></LogScaleCheckbox>
-            <RawData let:data>
+            <RawData let:data data="{chart}">
                 <SvgChart {data}></SvgChart>
             </RawData>
         </figure>

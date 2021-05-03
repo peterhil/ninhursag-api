@@ -1,18 +1,17 @@
 <script>
-    import { chart as dataStore } from '../stores/chart'
     import LoadingSpinner from './LoadingSpinner.svelte'
 
     // Use slot props to pass the loaded data into components inside the slot
     // https://svelte.dev/docs#slot_let
-    export const data = {}
+    export let data
 </script>
 
-{#await $dataStore}
+{#await $data}
 <LoadingSpinner title="Loading data..." />
-{:then $dataStore}
-<slot data={$dataStore}>
+{:then $data}
+<slot data={$data}>
     <pre>
-        {$dataStore.data}
+        {JSON.stringify($data, null, 4)}
     </pre>
 </slot>
 {:catch error}
