@@ -91,13 +91,14 @@ class Estimate(Resource):
         try:
             # result = estimate(analysis.logistic, data, years, 0, log=False)
             # result = estimate(analysis.wrap_scipy(stats.gamma.pdf), data, years, 100, log=False)
-            result = estimate(scipy_functions('pdf').get(function), data, years, 100, log=False)
+            result = estimate(scipy_functions('pdf').get(function), data, years, 100, log=True)
         except RuntimeError as err:
             abort(400, errors=[str(err)])
         except Exception as err:
             abort(500, errors=[str(err)])
 
         e_years, e_data, e_cov = result
+
         return {
             'years': as_json(e_years),
             'data': as_json(e_data.astype(np.float64)),

@@ -21,6 +21,7 @@
     import Legend from './Legend.svelte'
     import LineSeries from './LineSeries.svelte'
     import { scale } from '../stores/scale'
+    import { showAll } from '../stores/showAll'
     import { fixNaNs, seriesStyle } from '../lib/charting'
 
     export let data
@@ -32,7 +33,16 @@
     export let viewBox = `0 -20 ${width} ${height + 40}`
 
     $: yMin = ($scale === 'log' ? 1 : 0)
-    $: yMaxExclude = ($scale === 'log' ? ['Year'] : ['Year', 'Reserves'])
+    $: yMaxExclude = (
+        $scale === 'log' || $showAll === 'yes' ?
+                ['Year', 'Reserves fit'] :
+                [
+                    'Year',
+                    'Reserves',
+                    'Cumulative',
+                    'Cumulative fit',
+                    'Reserves fit',
+                ])
     $: selectedSeries = omit(yMaxExclude, pick(data.series, data.columns))
     $: yMax = reduce(max, yMin, chain(values, values(selectedSeries)))
     $: x = scaleLinear()

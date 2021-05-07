@@ -23,7 +23,7 @@ angular.module('app')
         $scope.chart.src = "/static/data/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
-    $scope.currentFunction = 'powerlognorm'
+    $scope.currentFunction = 'pearson3'
     $http.get('/api/v1/estimate')
       .success (response) ->
         $scope.functions = response

@@ -139,6 +139,14 @@ def estimate(func, data, years, until=0, log=False):
     popt, pcov, infodict, errmsg, ier = curve_fit(func, x, data, maxfev=10000, full_output=True, absolute_sigma=True)
     std_err = np.sqrt(np.diag(pcov))
 
+    error = dict(
+        std=list(std_err),
+        min=np.amin(std_err),
+        max=np.amax(std_err),
+        mean=np.mean(std_err),
+        median=np.median(std_err),
+    )
+
     estd = func(e_x, *popt)
     if log: estd = np.exp(estd)
 
@@ -160,11 +168,11 @@ estd: {estd}
 =============================================================================
 """.format(
     function=func.__name__,
-    error=std_err,
-    min_error=np.amin(std_err),
-    max_error=np.amax(std_err),
-    mean_error=np.mean(std_err),
-    median_error=np.median(std_err),
+    error=error['std'],
+    mean_error=error['mean'],
+    median_error=error['median'],
+    max_error=error['max'],
+    min_error=error['min'],
     errmsg=errmsg,
     ier=ier,
     popt=popt,
