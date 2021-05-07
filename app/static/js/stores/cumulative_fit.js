@@ -1,5 +1,7 @@
+import { fromPairs } from 'ramda'
 import { derived } from 'svelte/store'
 import { accumulateData } from '../lib/cumulative'
+import { toDataSeries } from '../lib/data'
 import { data } from './data'
 import { estimate } from './estimate'
 
@@ -14,15 +16,25 @@ export const cumulative_fit = derived(
     ], set) => {
         const data = await $data
         const estimate = await $estimate
-        const series = ['Cumulative fit']
+        const series = 'Cumulative fit'
         // console.debug('[Cumulative fit] Estimate and data:', estimate, data)
 
         if (!estimate) { return }
 
-        const cumulative_estimate = accumulateData(estimate, estimate.estimate, 'Cumulative fit', 0)
-        console.debug('[Cumulative fit] Cumulative data:', cumulative_estimate)
+        const cumulative_estimate = accumulateData(
+            estimate,
+            estimate.estimate,
+            series,
+            0,
+        )
+        const dataSeries = toDataSeries(series, cumulative_estimate)
+        console.debug('[Cumulative fit] Cumulative data:', cumulative_estimate, dataSeries)
 
-        set({data: cumulative_estimate, series})
+        set({
+            columns: fromPairs([[series, dataSeries]]),
+            data: cumulative_estimate,
+            series: [series],
+        })
     },
-    {data: {}, series: []}
+    {data: {}, series: [], columns: {}}
 )
