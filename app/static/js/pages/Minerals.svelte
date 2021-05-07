@@ -28,18 +28,19 @@
             </div>
         </div>
 
-        <figure>
-            {#if caption}
-            <figcaption>{caption}</figcaption>
-            {/if}
-            <div class="row">
-                <div class="large-4 medium-6 columns">
-                    <LogScaleCheckbox bind:scale="{$scale}" />
-                </div>
-                <div class="large-4 medium-6 columns">
-                    <CheckboxShowAll bind:showAll="{$showAll}" />
-                </div>
+        <div class="row">
+            <div class="large-4 medium-6 columns">
+                <LogScaleCheckbox bind:scale="{$scale}" />
             </div>
+            {#if $scale === 'linear' }
+            <div class="large-4 medium-6 columns">
+                <CheckboxShowAll bind:showAll="{$showAll}" />
+            </div>
+            {/if}
+        </div>
+
+        <figure>
+            <figcaption>{caption}</figcaption>
             <RawData let:data>
                 <SvgChart {data}></SvgChart>
             </RawData>
