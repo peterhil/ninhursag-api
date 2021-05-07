@@ -2,7 +2,7 @@ import { derived } from 'svelte/store'
 import { identity, sortBy, uniq } from 'ramda'
 
 import { errorHandler } from '../lib/api'
-import { mergeChartData } from '../lib/estimate'
+import { mergeChartData } from '../lib/data'
 import { cumulative } from './cumulative'
 import { cumulative_fit } from './cumulative_fit'
 import { data } from './data'
