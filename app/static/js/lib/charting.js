@@ -34,11 +34,20 @@ function svgInlineStyle (styleRules) {
 }
 
 export function seriesStyle (serie) {
-    const style = {
-        stroke: fuzzyColor(serie).toHexString(),
-    }
-    if (test(/estimated/, serie)) {
-        style['stroke-dasharray'] = '6px, 2px'
+    let style = {}
+
+    if (test(/interpolated/i, serie)) {
+        style = {
+            stroke: fuzzyColor(serie.replace(/ \(\w+\)$/, '')).toHexString(),
+            'stroke-dasharray': '2px, 6px',
+        }
+    } else {
+        style = {
+            stroke: fuzzyColor(serie).toHexString(),
+        }
+        if (test(/estimated/, serie)) {
+            style['stroke-dasharray'] = '6px, 2px'
+        }
     }
 
     return svgInlineStyle(style)
