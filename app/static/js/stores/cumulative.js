@@ -1,5 +1,7 @@
+import { fromPairs } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
 import { accumulateData } from '../lib/cumulative'
+import { toDataSeries } from '../lib/data'
 import { data } from './data'
 import { interpolated } from './interpolated'
 
@@ -10,10 +12,16 @@ export const cumulative = asyncable(
         const data = await $data
         const interpolated = await $interpolated
 
-        const series = ['Cumulative']
+        const series = 'Cumulative'
         const cumulative = accumulateData(interpolated, data.selected, 'Cumulative', 100)
-        // console.debug('[Cumulative] Data:', data.selected, cumulative)
-        return {data: cumulative, series}
+        const dataSeries = toDataSeries('Cumulative', cumulative)
+        // console.debug('[Cumulative] Data:', data.selected, cumulative, dataSeries)
+
+        return {
+            columns: fromPairs([[series, dataSeries]]),
+            data: cumulative,
+            series: [series],
+        }
     },
     initialValue,
     [data, interpolated]
