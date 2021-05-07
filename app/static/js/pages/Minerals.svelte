@@ -33,10 +33,10 @@
             <figcaption>{caption}</figcaption>
             {/if}
             <div class="row">
-                <div class="large-4 columns">
+                <div class="large-4 medium-6 columns">
                     <LogScaleCheckbox bind:scale="{$scale}" />
                 </div>
-                <div class="large-4 columns">
+                <div class="large-4 medium-6 columns">
                     <CheckboxShowAll bind:showAll="{$showAll}" />
                 </div>
             </div>
