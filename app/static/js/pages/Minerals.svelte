@@ -10,7 +10,7 @@
     import { scale } from '../stores/scale'
     import { mineral } from '../stores/mineral'
 
-    let caption = 'U.S. Geological Survey statistics (Metric tons gross weight)'
+    const caption = 'U.S. Geological Survey statistics (Metric tons gross weight)'
 </script>
 
 <div class="row">

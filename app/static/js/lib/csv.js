@@ -6,7 +6,7 @@ import {
 
 const clean = compose(filter(identity), flatten)
 
-const dataRegexp = match(RegExp("^(\\d{4}|Year)$"))
+const dataRegexp = match(RegExp('^(\\d{4}|Year)$'))
 
 function isData (row) {
     return !!find(dataRegexp, row)
@@ -34,7 +34,7 @@ function splitHeaders (rows) {
 }
 
 export function cleanup (rawData) {
-    let {header, content, footer} = splitHeaders(getRows(rawData))
+    const { header, content, footer } = splitHeaders(getRows(rawData))
     const text = join('\n', map(join('\t'), content))
 
     // Reparse data rows with dynamic typing
@@ -44,8 +44,8 @@ export function cleanup (rawData) {
     })
 
     if (reparsed.errors.length > 0) {
-        console.error("Errors while parsing raw data:", reparsed.errors)
+        console.error('Errors while parsing raw data:', reparsed.errors)
     }
 
-    return Object.assign(reparsed, {header, footer})
+    return Object.assign(reparsed, { header, footer })
 }

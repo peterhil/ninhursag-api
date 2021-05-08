@@ -11,11 +11,11 @@ export function cookieStore (key, defaultValue = '') {
     const { subscribe, set, update } = writable(saved)
 
     return {
-		subscribe,
+        subscribe,
         set: (value) => {
             Cookies.set(key, value)
             return set(value)
         },
         update,
-	};
+    }
 }
