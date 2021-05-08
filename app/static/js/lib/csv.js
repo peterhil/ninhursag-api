@@ -7,7 +7,7 @@ import {
 
 const clean = compose(filter(identity), flatten)
 
-const dataRegexp = test(/^(\\d{4}|Year)$/)
+const dataRegexp = test(/^(\d{4}|Year)/)
 
 function isData (row) {
     return !!find(dataRegexp, row)
