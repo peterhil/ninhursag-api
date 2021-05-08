@@ -1,12 +1,12 @@
 import { parse } from 'papaparse'
 import {
     compose, filter, find, flatten, identity,
-    join, map, match, not, skip, takeWhile
+    join, map, not, skip, takeWhile, test,
 } from 'ramda'
 
 const clean = compose(filter(identity), flatten)
 
-const dataRegexp = match(/^(\d{4}|Year)/)
+const dataRegexp = test(/^(\d{4}|Year)/)
 
 function isData (row) {
     return !!find(dataRegexp, row)
