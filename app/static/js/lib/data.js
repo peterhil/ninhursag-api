@@ -4,6 +4,7 @@ import {
     filter,
     fromPairs,
     is,
+    isEmpty,
     last,
     map,
     mapObjIndexed,
@@ -36,7 +37,10 @@ export function concatOrMerge (a, b) {
 }
 
 export function repeatLastValue (dataSeries, futureYears = 100) {
+    console.assert(!!dataSeries, 'Got empty data!')
     const numbers = finite(dataSeries)
+    if (isEmpty(numbers)) { return {} }
+
     const [lastYear, lastValue] = last(toPairs(numbers))
     const future = (fromYear, value, years) => {
         return zipObj(
