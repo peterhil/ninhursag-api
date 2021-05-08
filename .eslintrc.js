@@ -27,5 +27,9 @@ module.exports = {
         'comma-dangle': ['off', 'always'],
         'indent': ['error', 4],
         'no-console': ['warn', {}],
+    },
+    settings: {
+        // https://github.com/sveltejs/eslint-plugin-svelte3#svelte3ignore-styles
+        'svelte3/ignore-styles': () => true,
     }
 }
