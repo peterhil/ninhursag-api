@@ -25,7 +25,7 @@ export function accumulateData (data, column, series, extraYears = 0) {
     const dataYears = filter((row) => is(Number, row[column]), data.data)
     const first = parseInt(head(keys(dataYears)))
     const latest = parseInt(last(keys(dataYears)))
-    const years = range(first, latest + extraYears)
+    const years = range(first, latest + extraYears + 1)
 
     // console.debug('[AccumulateData] Range:', first, latest, column)
 
@@ -34,7 +34,7 @@ export function accumulateData (data, column, series, extraYears = 0) {
         if (year <= latest) {
             currentYear = defaultTo(0, parseFloat(data.data[year][column]))
         } else {
-            currentYear = latest
+            currentYear = data.data[latest][column]
         }
         total += currentYear
 
