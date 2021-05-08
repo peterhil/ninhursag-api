@@ -1,5 +1,4 @@
 <script>
-    import DataTable from '../components/DataTable.svelte'
     import References from '../../../templates/_references.html'
     import DataLoader from '../components/DataLoader.svelte'
     import SvgChart from '../components/SvgChart.svelte'
