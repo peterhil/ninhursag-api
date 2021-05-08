@@ -2,36 +2,36 @@ import { fromPairs } from 'ramda'
 import { derived } from 'svelte/store'
 import { toDataSeries } from '../lib/data'
 import { calculateReserves, hasReserves } from '../lib/reserves'
-import { cumulative_fit } from './cumulative_fit'
+import { cumulativeFit } from './cumulativeFit'
 import { estimate } from './estimate'
-import { reserve_data } from './reserve_data'
+import { reserveData } from './reserveData'
 import { mineral } from './mineral'
 
-export const reserves_fit = derived(
+export const reservesFit = derived(
     [
-        cumulative_fit,
+        cumulativeFit,
         estimate,
         mineral,
-        reserve_data,
+        reserveData,
     ],
     async ([
-        $cumulative_fit,
+        $cumulativeFit,
         $estimate,
         $mineral,
-        $reserve_data,
+        $reserveData,
     ], set) => {
         const estimate = await $estimate
-        const cumulative_fit = await $cumulative_fit
+        const cumulativeFit = await $cumulativeFit
         const mineral = await $mineral
-        const reserve_data = await $reserve_data
+        const reserveData = await $reserveData
         const series = 'Reserves fit'
 
-        if (hasReserves(reserve_data, mineral)) {
-            // console.debug('[Reserves fit] Got estimate:', estimate, cumulative_fit)
+        if (hasReserves(reserveData, mineral)) {
+            // console.debug('[Reserves fit] Got estimate:', estimate, cumulativeFit)
 
             const calculated = calculateReserves(
-                cumulative_fit,
-                reserve_data,
+                cumulativeFit,
+                reserveData,
                 mineral,
                 'Cumulative fit',
                 series,

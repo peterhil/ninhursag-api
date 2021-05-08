@@ -2,12 +2,12 @@ import { derived } from 'svelte/store'
 
 import { mergeChartData } from '../lib/data'
 import { cumulative } from './cumulative'
-import { cumulative_fit } from './cumulative_fit'
+import { cumulativeFit } from './cumulativeFit'
 import { data } from './data'
 import { estimate } from './estimate'
 import { interpolated } from './interpolated'
 import { reserves } from './reserves'
-import { reserves_fit } from './reserves_fit'
+import { reservesFit } from './reservesFit'
 
 export const chart = derived(
     [
@@ -16,8 +16,8 @@ export const chart = derived(
         interpolated,
         reserves,
         estimate,
-        cumulative_fit,
-        reserves_fit,
+        cumulativeFit,
+        reservesFit,
     ],
     async ([
         $data,
@@ -25,8 +25,8 @@ export const chart = derived(
         $interpolated,
         $reserves,
         $estimate,
-        $cumulative_fit,
-        $reserves_fit,
+        $cumulativeFit,
+        $reservesFit,
     ], set) => {
         let data = await $data
         const interpolated = await $interpolated
@@ -46,14 +46,14 @@ export const chart = derived(
 
         const estimate = await $estimate
 
-        const cumulative_fit = await $cumulative_fit
-        data = mergeChartData(data, cumulative_fit)
-        // console.debug('[Chart] With cumulative fit:', cumulative_fit)
+        const cumulativeFit = await $cumulativeFit
+        data = mergeChartData(data, cumulativeFit)
+        // console.debug('[Chart] With cumulative fit:', cumulativeFit)
         set(data)
 
-        const reserves_fit = await $reserves_fit
-        data = mergeChartData(data, reserves_fit)
-        // console.debug('[Chart] With reserves fit:', reserves_fit)
+        const reservesFit = await $reservesFit
+        data = mergeChartData(data, reservesFit)
+        // console.debug('[Chart] With reserves fit:', reservesFit)
         set(data)
 
         data = mergeChartData(data, estimate)

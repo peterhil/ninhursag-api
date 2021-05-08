@@ -5,7 +5,7 @@ import { toDataSeries } from '../lib/data'
 import { data } from './data'
 import { estimate } from './estimate'
 
-export const cumulative_fit = derived(
+export const cumulativeFit = derived(
     [
         data,
         estimate,
@@ -21,18 +21,18 @@ export const cumulative_fit = derived(
 
         if (!estimate) { return }
 
-        const cumulative_estimate = accumulateData(
+        const cumulative = accumulateData(
             estimate,
             estimate.estimate,
             series,
             0,
         )
-        const dataSeries = toDataSeries(series, cumulative_estimate)
-        console.debug('[Cumulative fit] Cumulative data:', cumulative_estimate, dataSeries)
+        const dataSeries = toDataSeries(series, cumulative)
+        console.debug('[Cumulative fit] Cumulative data:', cumulative, dataSeries)
 
         set({
             columns: fromPairs([[series, dataSeries]]),
-            data: cumulative_estimate,
+            data: cumulative,
             series: [series],
         })
     },

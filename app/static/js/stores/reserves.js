@@ -3,7 +3,7 @@ import { asyncable } from 'svelte-asyncable'
 import { toDataSeries } from '../lib/data'
 import { calculateReserves, hasReserves } from '../lib/reserves'
 import { cumulative } from './cumulative'
-import { reserve_data } from './reserve_data'
+import { reserveData } from './reserveData'
 import { mineral } from './mineral'
 
 const initialValue = { data: {}, series: [], reserves: {} }
@@ -12,15 +12,15 @@ export const reserves = asyncable(
     async (
         $cumulative,
         $mineral,
-        $reserve_data,
+        $reserveData,
     ) => {
         const cumulative = await $cumulative
         const mineral = await $mineral
-        const reserve_data = await $reserve_data
+        const reserveData = await $reserveData
         const series = 'Reserves'
 
-        if (hasReserves(reserve_data, mineral)) {
-            const calculated = calculateReserves(cumulative, reserve_data, mineral, 'Cumulative', 'Reserves')
+        if (hasReserves(reserveData, mineral)) {
+            const calculated = calculateReserves(cumulative, reserveData, mineral, 'Cumulative', 'Reserves')
             const dataSeries = toDataSeries(series, calculated)
             // console.debug('[Reserves] Estimated:', calculated, dataSeries)
 
@@ -28,12 +28,12 @@ export const reserves = asyncable(
                 columns: fromPairs([[series, dataSeries]]),
                 data: calculated,
                 series: [series],
-                reserves: reserve_data,
+                reserves: reserveData,
             }
         } else {
             return {
                 ...initialValue,
-                reserves: reserve_data,
+                reserves: reserveData,
             }
         }
     },
@@ -41,6 +41,6 @@ export const reserves = asyncable(
     [
         cumulative,
         mineral,
-        reserve_data,
+        reserveData,
     ]
 )
