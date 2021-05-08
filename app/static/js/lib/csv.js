@@ -34,12 +34,12 @@ function splitHeaders (rows) {
     }
 }
 
-function transposeObj(rows, columns) {
-    let data = fromPairs(zip(columns, times(() => {return {}}, columns.length)))
+function transposeObj (rows, columns) {
+    const data = fromPairs(zip(columns, times(() => { return {} }, columns.length)))
 
     forEach((row) => {
         forEach((series) => {
-            data[series][parseInt(row['Year'])] = row[series]
+            data[series][parseInt(row.Year)] = row[series]
         }, columns)
     }, rows)
 
@@ -62,7 +62,7 @@ export function cleanup (rawData) {
         'Stocks',
         'Unit value ($/t)',
         'Unit value (98$/t)',
-    ]  // TODO Move filtering elsewhere
+    ] // TODO Move filtering elsewhere
     const series = without(excludedSeries, reparsed.meta.fields)
 
     if (reparsed.errors.length > 0) {

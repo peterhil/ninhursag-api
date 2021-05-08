@@ -30,7 +30,7 @@ export function toChartData (series, data) {
     const indexer = (value, year) => {
         return fromPairs([
             ['Year', parseInt(year)],
-            [series, parseFloat(value)],  // TODO Maybe check with isFinite?
+            [series, parseFloat(value)], // TODO Maybe check with isFinite?
         ])
     }
 

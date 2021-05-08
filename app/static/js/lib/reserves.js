@@ -16,7 +16,6 @@ export function calculateReserves (cumulative, reserves, mineral, column, series
     }
     if (!(reserves.data && reserves.data[mineral])) {
         console.debug('No reserves!')
-        return
     } else {
         const [reserveYear, reserveAmount] = last(sortBy(head, toPairs(reserves.data[mineral])))
         const cumulativeOnReserveYear = cumulative.data[reserveYear][column]
