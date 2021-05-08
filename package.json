@@ -14,6 +14,7 @@
   "homepage": "https://github.com/peterhil/skeleton",
   "author": "Peter Hillerström <peter.hillerstrom@gmail.com>",
   "scripts": {
+    "dev": "rollup -cw",
     "build": "rollup -c",
     "lint": "eslint app/static/js",
     "start": "source ./activate && python run.py"
