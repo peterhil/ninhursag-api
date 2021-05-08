@@ -6,7 +6,7 @@ import { cumulative } from './cumulative'
 import { reserve_data } from './reserve_data'
 import { mineral } from './mineral'
 
-const initialValue = {data: {}, series: [], reserves: {}}
+const initialValue = { data: {}, series: [], reserves: {} }
 
 export const reserves = asyncable(
     async (

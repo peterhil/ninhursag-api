@@ -5,7 +5,7 @@ import { toDataSeries } from '../lib/data'
 import { data } from './data'
 import { interpolated } from './interpolated'
 
-const initialValue = {data: {}, series: []}
+const initialValue = { data: {}, series: [] }
 
 export const cumulative = asyncable(
     async ($data, $interpolated) => {

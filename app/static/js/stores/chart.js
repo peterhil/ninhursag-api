@@ -1,14 +1,11 @@
 import { derived } from 'svelte/store'
-import { identity, sortBy, uniq } from 'ramda'
 
-import { errorHandler } from '../lib/api'
 import { mergeChartData } from '../lib/data'
 import { cumulative } from './cumulative'
 import { cumulative_fit } from './cumulative_fit'
 import { data } from './data'
 import { estimate } from './estimate'
 import { interpolated } from './interpolated'
-import { reserve_data } from './reserve_data'
 import { reserves } from './reserves'
 import { reserves_fit } from './reserves_fit'
 
@@ -63,5 +60,5 @@ export const chart = derived(
         console.debug('[Chart] With estimate:', data)
         set(data)
     },
-    {data: {}, series: [], reserves: {}, columns: {}}
+    { data: {}, series: [], reserves: {}, columns: {} }
 )

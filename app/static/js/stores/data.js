@@ -1,4 +1,4 @@
-import { head, indexBy, last, prop } from 'ramda'
+import { indexBy, prop } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
 
 import { errorHandler } from '../lib/api'

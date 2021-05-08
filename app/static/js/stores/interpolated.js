@@ -3,9 +3,8 @@ import { asyncable } from 'svelte-asyncable'
 import { data } from './data'
 import { toDataSeries } from '../lib/data'
 import { interpolateData } from '../lib/interpolate'
-import { productionSeries } from '../lib/csv'
 
-const initialValue = {data: {}, series: []}
+const initialValue = { data: {}, series: [] }
 
 export const interpolated = asyncable(
     async ($data) => {

@@ -36,5 +36,5 @@ export const cumulative_fit = derived(
             series: [series],
         })
     },
-    {data: {}, series: [], columns: {}}
+    { data: {}, series: [], columns: {} }
 )

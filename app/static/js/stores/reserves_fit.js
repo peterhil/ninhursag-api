@@ -46,5 +46,5 @@ export const reserves_fit = derived(
             })
         }
     },
-    {data: {}, series: [], columns: {}}
+    { data: {}, series: [], columns: {} }
 )

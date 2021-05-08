@@ -14,7 +14,7 @@ export function cookieStore (key, defaultValue = '') {
         subscribe,
         set: (value) => {
             Cookies.set(key, value, {
-                path: '',  // Current path
+                path: '', // Current path
                 sameSite: 'strict',
             })
             return set(value)

@@ -1,6 +1,4 @@
-import axios from 'axios'
-import { CancelToken } from 'axios'
-import { values } from 'ramda'
+import axios, { CancelToken } from 'axios'
 import { asyncable } from 'svelte-asyncable'
 
 import { errorHandler } from '../lib/api'
@@ -17,7 +15,7 @@ export const estimate = asyncable(async ($data, $fn) => {
         const data = await $data
         const fn = await $fn
         const params = {
-            'function': fn,
+            function: fn,
             ...dataForEstimate(data.columns[data.selected])
         }
         // console.debug(`Estimating with ${fn}`, params)
@@ -25,7 +23,7 @@ export const estimate = asyncable(async ($data, $fn) => {
         if (cancel) { cancel() }
 
         const res = await axios.post('/api/v1/estimate', params, {
-            cancelToken: new CancelToken(function executor(c) {
+            cancelToken: new CancelToken(function executor (c) {
                 cancel = c
             }),
         })

@@ -16,7 +16,7 @@ function createAlerts () {
         update(
             (alerts) => {
                 const id = randomId()
-                alerts.set(id, {id, type, message})
+                alerts.set(id, { id, type, message })
 
                 if (timeout > 0) {
                     setTimeout(remove, timeout, id)
