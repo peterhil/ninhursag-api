@@ -24,6 +24,8 @@ module.exports = {
         },
     ],
     rules: {
-        indent: ['error', 4],
+        'comma-dangle': ['off', 'always'],
+        'indent': ['error', 4],
+        'no-console': ['warn', {}],
     }
 }
