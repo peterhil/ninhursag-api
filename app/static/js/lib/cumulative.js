@@ -26,16 +26,15 @@ export function accumulateData (data, column, series, extraYears = 0) {
     const first = parseInt(head(keys(dataYears)))
     const latest = parseInt(last(keys(dataYears)))
     const years = range(first, latest + extraYears)
-    const latestData = data.data[latest][column]
 
-    // console.debug('[AccumulateData] Range:', first, latest, latestData, column)
+    // console.debug('[AccumulateData] Range:', first, latest, column)
 
     // TODO Write separate function that uses world production data until the estimation continues!
     return indexBy(prop('Year'), map((year) => {
         if (year <= latest) {
             currentYear = defaultTo(0, parseFloat(data.data[year][column]))
         } else {
-            currentYear = latestData
+            currentYear = latest
         }
         total += currentYear
 
