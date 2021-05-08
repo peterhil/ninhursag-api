@@ -21,7 +21,7 @@ export const reserves = asyncable(
 
         if (hasReserves(reserve_data, mineral)) {
             const calculated = calculateReserves(cumulative, reserve_data, mineral, 'Cumulative', 'Reserves')
-            const dataSeries = toDataSeries('Reserves', calculated)
+            const dataSeries = toDataSeries(series, calculated)
             // console.debug('[Reserves] Estimated:', calculated, dataSeries)
 
             return {

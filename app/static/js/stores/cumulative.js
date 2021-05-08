@@ -13,8 +13,13 @@ export const cumulative = asyncable(
         const interpolated = await $interpolated
 
         const series = 'Cumulative'
-        const cumulative = accumulateData(interpolated, data.selected, 'Cumulative', 100)
-        const dataSeries = toDataSeries('Cumulative', cumulative)
+        const cumulative = accumulateData(
+            interpolated,
+            data.selected,
+            series,
+            100
+        )
+        const dataSeries = toDataSeries(series, cumulative)
         // console.debug('[Cumulative] Data:', data.selected, cumulative, dataSeries)
 
         return {
