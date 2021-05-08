@@ -8,9 +8,18 @@ import {
     keys,
     last,
     map,
+    mapObjIndexed,
     prop,
     range,
 } from 'ramda'
+import { accumulator, finite } from './data'
+
+export function accumulateDataSeries (dataSeries) {
+    const numbers = finite(dataSeries)
+    const cumulative = mapObjIndexed(accumulator(), numbers)
+
+    return cumulative
+}
 
 export function accumulateData (data, column, series, extraYears = 0) {
     let currentYear

@@ -1,7 +1,11 @@
-import { fromPairs } from 'ramda'
+import {
+    fromPairs,
+    lensPath,
+    view,
+} from 'ramda'
 import { asyncable } from 'svelte-asyncable'
-import { accumulateData } from '../lib/cumulative'
-import { toDataSeries } from '../lib/data'
+import { accumulateDataSeries } from '../lib/cumulative'
+import { repeatLastValue, toChartData } from '../lib/data'
 import { data } from './data'
 import { interpolated } from './interpolated'
 
@@ -11,20 +15,29 @@ export const cumulative = asyncable(
     async ($data, $interpolated) => {
         const data = await $data
         const interpolated = await $interpolated
-
         const series = 'Cumulative'
-        const cumulative = accumulateData(
-            interpolated,
-            data.selected,
-            series,
-            100
-        )
-        const dataSeries = toDataSeries(series, cumulative)
-        // console.debug('[Cumulative] Data:', data.selected, cumulative, dataSeries)
+        // console.debug('[Cumulative] Data and interpolated:', data, interpolated)
+
+        if (!data.selected) {
+            return initialValue
+        }
+
+        // TODO Change all column data handling to use {year: value}
+        // format, starting with interpolated!
+        const productionSeries = view(lensPath([
+            'columns',
+            data.selected + ' (interpolated)',
+        ]), interpolated)
+        const extendedYears = {
+            ...productionSeries,
+            ...repeatLastValue(productionSeries, 100)
+        }
+        const cumulativeSeries = accumulateDataSeries(extendedYears)
+        // console.debug('[Cumulative] Series:', cumulativeSeries)
 
         return {
-            columns: fromPairs([[series, dataSeries]]),
-            data: cumulative,
+            columns: fromPairs([[series, cumulativeSeries]]),
+            data: toChartData(series, cumulativeSeries),
             series: [series],
         }
     },

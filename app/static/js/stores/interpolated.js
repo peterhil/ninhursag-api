@@ -11,9 +11,13 @@ export const interpolated = asyncable(
         const data = await $data
         const series = 'World production (interpolated)'
 
+        if (!data.selected) {
+            return initialValue
+        }
+
         const interpolated = interpolateData(data, data.selected)
-        const dataSeries = toDataSeries('World production', interpolated)
-        // console.debug('[Interpolated] Data:', interpolated, dataSeries)
+        const dataSeries = toDataSeries(data.selected, interpolated)
+        console.debug('[Interpolated] Data:', interpolated, dataSeries)
 
         return {
             columns: fromPairs([[series, dataSeries]]),

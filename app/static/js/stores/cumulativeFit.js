@@ -1,8 +1,13 @@
-import { fromPairs } from 'ramda'
+import {
+    fromPairs,
+    lensPath,
+    view,
+} from 'ramda'
 import { derived } from 'svelte/store'
-import { accumulateData } from '../lib/cumulative'
-import { toDataSeries } from '../lib/data'
+import { accumulateDataSeries } from '../lib/cumulative'
+import { toChartData } from '../lib/data'
 import { data } from './data'
+
 import { estimate } from './estimate'
 
 export const cumulativeFit = derived(
@@ -21,18 +26,18 @@ export const cumulativeFit = derived(
 
         if (!estimate.data) { return }
 
-        const cumulative = accumulateData(
-            estimate,
+        // TODO Change all column data handling to use {year: value}
+        // format, starting with interpolated!
+        const productionSeries = view(lensPath([
+            'columns',
             estimate.estimate,
-            series,
-            0,
-        )
-        const dataSeries = toDataSeries(series, cumulative)
-        console.debug('[Cumulative fit] Cumulative data:', cumulative, dataSeries)
+        ]), estimate)
+        const cumulativeSeries = accumulateDataSeries(productionSeries)
+        // console.debug('[Cumulative fit] Cumulative data:', cumulativeSeries)
 
         set({
-            columns: fromPairs([[series, dataSeries]]),
-            data: cumulative,
+            columns: fromPairs([[series, cumulativeSeries]]),
+            data: toChartData(series, cumulativeSeries),
             series: [series],
         })
     },
