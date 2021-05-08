@@ -2,22 +2,18 @@ import { fromPairs } from 'ramda'
 import { derived } from 'svelte/store'
 import { accumulateData } from '../lib/cumulative'
 import { toDataSeries } from '../lib/data'
-import { data } from './data'
 import { estimate } from './estimate'
 
 export const cumulative_fit = derived(
     [
-        data,
         estimate,
     ],
     async ([
-        $data,
         $estimate,
     ], set) => {
-        const data = await $data
         const estimate = await $estimate
         const series = 'Cumulative fit'
-        // console.debug('[Cumulative fit] Estimate and data:', estimate, data)
+        // console.debug('[Cumulative fit] Estimate:', estimate)
 
         if (!estimate) { return }
 
