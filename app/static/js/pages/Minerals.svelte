@@ -22,10 +22,10 @@
         <h1>{$mineral}</h1>
 
         <div class="row">
-            <div class="large-4 columns">
+            <div class="large-4 medium-6 columns">
                 <SelectMineral bind:selected="{$mineral}" />
             </div>
-            <div class="large-4 columns">
+            <div class="large-4 medium-6 columns">
                 <SelectFunction bind:selected="{$fn}" />
             </div>
         </div>
