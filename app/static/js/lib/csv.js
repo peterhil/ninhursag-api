@@ -7,7 +7,7 @@ import {
 
 const clean = compose(filter(identity), flatten)
 
-const dataRegexp = test(RegExp("^(\\d{4}|Year)$"))
+const dataRegexp = test(/^(\\d{4}|Year)$/)
 
 function isData (row) {
     return !!find(dataRegexp, row)
@@ -47,7 +47,7 @@ function transposeObj(rows, columns) {
 }
 
 export function cleanup (rawData) {
-    let {header, content, footer} = splitHeaders(getRows(rawData))
+    const { header, content, footer } = splitHeaders(getRows(rawData))
     const text = join('\n', map(join('\t'), content))
 
     // Reparse data rows with dynamic typing
@@ -66,12 +66,12 @@ export function cleanup (rawData) {
     const series = without(excludedSeries, reparsed.meta.fields)
 
     if (reparsed.errors.length > 0) {
-        console.error("Errors while parsing raw data:", reparsed.errors)
+        console.error('Errors while parsing raw data:', reparsed.errors)
     }
 
     const columns = transposeObj(reparsed.data, series)
 
-    return Object.assign(reparsed, {header, footer, series, columns})
+    return Object.assign(reparsed, { header, footer, series, columns })
 }
 
 export function productionSeries (series) {
