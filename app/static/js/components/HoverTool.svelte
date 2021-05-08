@@ -1,10 +1,10 @@
 <script>
     export let width, height, x, y
 
-    let point = {x: 0, y: 0}
+    const point = { x: 0, y: 0 }
 
     // Get point in global SVG space
-    function cursorPoint(event){
+    function cursorPoint (event) {
         const svg = document.querySelector('svg')
         const pt = svg.createSVGPoint()
 

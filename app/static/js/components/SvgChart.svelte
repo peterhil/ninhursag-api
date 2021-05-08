@@ -1,12 +1,9 @@
 <script>
-    import { extent, max as dMax} from 'd3-array'
+    import { extent } from 'd3-array'
     import { line as svgLine } from 'd3-shape'
     import { scaleLinear, scaleLog } from 'd3-scale'
     import {
         chain,
-        filter,
-        identity,
-        is,
         keys,
         max,
         omit,
@@ -22,41 +19,41 @@
     import LineSeries from './LineSeries.svelte'
     import { scale } from '../stores/scale'
     import { showAll } from '../stores/showAll'
-    import { fixNaNs, seriesStyle } from '../lib/charting'
+    import { fixNaNs } from '../lib/charting'
 
     export let data
 
     // SVG attributes
     export let width = 960
     export let height = 660
-    export let preserveAspectRatio = "xMidYMin meet"
+    export let preserveAspectRatio = 'xMidYMin meet'
     export let viewBox = `0 -20 ${width} ${height + 40}`
 
     $: yMin = ($scale === 'log' ? 1 : 0)
     $: yMaxExclude = (
-        $scale === 'log' || $showAll === 'yes' ?
-                ['Year', 'Reserves fit'] :
-                [
-                    'Year',
-                    'Reserves',
-                    'Cumulative',
-                    'Cumulative fit',
-                    'Reserves fit',
-                ])
+        $scale === 'log' || $showAll === 'yes'
+            ? ['Year', 'Reserves fit']
+            : [
+                'Year',
+                'Reserves',
+                'Cumulative',
+                'Cumulative fit',
+                'Reserves fit',
+            ])
     $: selectedSeries = omit(yMaxExclude, pick(data.series, data.columns))
     $: yMax = reduce(max, yMin, chain(values, values(selectedSeries)))
     $: x = scaleLinear()
-               .range([0, width])
-               .domain(extent(chain(keys, values(selectedSeries))))
+        .range([0, width])
+        .domain(extent(chain(keys, values(selectedSeries))))
 
     $: y = ($scale === 'log' ? scaleLog() : scaleLinear())
-               .range([height, 0])
-               .domain([yMin, yMax])
+        .range([height, 0])
+        .domain([yMin, yMax])
 
     $: line = (data, column) => {
         const path = svgLine()
-               .x(d => x(parseInt(d[0])))
-               .y(d => y(parseFloat(d[1])))
+            .x(d => x(parseInt(d[0])))
+            .y(d => y(parseFloat(d[1])))
         return fixNaNs(path(data))
     }
 </script>
