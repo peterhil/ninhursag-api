@@ -4,7 +4,7 @@ import { errorHandler } from '../lib/api'
 import { mineral } from './mineral.js'
 import { minerals } from './minerals.js'
 
-export const data = asyncable(async ($mineral, $minerals) => {
+export const rawData = asyncable(async ($mineral, $minerals) => {
     try {
         const mineral = await $mineral
         const minerals = await $minerals

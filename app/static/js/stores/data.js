@@ -3,12 +3,12 @@ import { asyncable } from 'svelte-asyncable'
 
 import { errorHandler } from '../lib/api'
 import { cleanup, productionSeries } from '../lib/csv.js'
-import { data as raw } from './raw_data.js'
+import { rawData } from './rawData.js'
 
-export const data = asyncable(async ($raw) => {
+export const data = asyncable(async ($rawData) => {
     try {
-        const raw = await $raw
-        const parsed = cleanup(raw)
+        const rawData = await $rawData
+        const parsed = cleanup(rawData)
         const year = prop('Year')
 
         parsed.data = indexBy(year, parsed.data)
@@ -20,4 +20,4 @@ export const data = asyncable(async ($raw) => {
         errorHandler(error)
         return error
     }
-}, undefined, [raw])
+}, undefined, [rawData])
