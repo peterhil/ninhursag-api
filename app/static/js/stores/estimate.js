@@ -10,10 +10,12 @@ import { data } from './data.js'
 
 let cancel
 
-const emptyData = {}
+const initialValue = { columns: {} }
 
 export const estimate = asyncable(async ($data, $fn) => {
     try {
+        if (cancel) { cancel() }
+
         const data = await $data
         const fn = await $fn
 
@@ -23,8 +25,6 @@ export const estimate = asyncable(async ($data, $fn) => {
             ...dataForEstimate(production)
         }
         // console.debug(`Estimating with ${fn}`, params)
-
-        if (cancel) { cancel() }
 
         const res = await axios.post('/api/v1/estimate', params, {
             cancelToken: new CancelToken(function executor (c) {
@@ -43,11 +43,11 @@ export const estimate = asyncable(async ($data, $fn) => {
         if (axios.isCancel(error)) {
             console.log('Request canceled')
 
-            return emptyData
+            return initialValue
         } else {
             errorHandler(error)
 
             return error
         }
     }
-}, emptyData, [data, fn])
+}, initialValue, [data, fn])
