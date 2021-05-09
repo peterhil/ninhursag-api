@@ -18,10 +18,6 @@ export const cumulative = asyncable(
         const series = 'Cumulative'
         // console.debug('[Cumulative] Data and interpolated:', data, interpolated)
 
-        if (!data.selected) {
-            return initialValue
-        }
-
         // TODO Change all column data handling to use {year: value}
         // format, starting with interpolated!
         const productionSeries = view(lensPath([
