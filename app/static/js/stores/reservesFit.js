@@ -37,7 +37,7 @@ export const reservesFit = derived(
                 series,
             )
             const dataSeries = toDataSeries(series, calculated)
-            console.debug('[Reserves fit] Estimated fit:', calculated, dataSeries)
+            // console.debug('[Reserves fit] Estimated fit:', calculated, dataSeries)
 
             set({
                 columns: fromPairs([[series, dataSeries]]),

@@ -40,7 +40,7 @@ export const chart = derived(
         // console.debug('[Chart] With cumulative:', cumulative)
 
         data = mergeChartData(data, reserves)
-        console.debug('[Chart] With reserves:', data)
+        // console.debug('[Chart] With reserves:', data)
 
         set(data)
 
@@ -57,7 +57,7 @@ export const chart = derived(
         set(data)
 
         data = mergeChartData(data, estimate)
-        console.debug('[Chart] With estimate:', data)
+        // console.debug('[Chart] With estimate:', data)
         set(data)
     },
     { data: {}, series: [], reserves: {}, columns: {} }

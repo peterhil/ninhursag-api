@@ -11,11 +11,12 @@ import {
 
 export function calculateReserves (cumulative, reserves, mineral, column, series) {
     if (isEmpty(cumulative.data)) {
-        console.debug('No cumulative data yet')
-        return
+        // console.debug('No cumulative data yet')
+        return {}
     }
-    if (!(reserves.data && reserves.data[mineral])) {
-        console.debug('No reserves!')
+    if (!(hasReserves(reserves, mineral))) {
+        // console.debug('No reserves!')
+        return {}
     } else {
         const [reserveYear, reserveAmount] = last(sortBy(head, toPairs(reserves.data[mineral])))
         const cumulativeOnReserveYear = cumulative.data[reserveYear][column]

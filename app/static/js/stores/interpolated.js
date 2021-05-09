@@ -17,7 +17,7 @@ export const interpolated = asyncable(
 
         const interpolated = interpolateData(data, data.selected)
         const dataSeries = toDataSeries(data.selected, interpolated)
-        console.debug('[Interpolated] Data:', interpolated, dataSeries)
+        // console.debug('[Interpolated] Data:', interpolated, dataSeries)
 
         return {
             columns: fromPairs([[series, dataSeries]]),

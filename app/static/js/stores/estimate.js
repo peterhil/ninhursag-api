@@ -28,7 +28,7 @@ export const estimate = asyncable(async ($data, $fn) => {
             }),
         })
         const estimated = chartDataFromEstimate(res.data, data.selected, fn)
-        console.debug(`[Estimate] With ${fn}:`, estimated)
+        // console.debug(`[Estimate] With ${fn}:`, estimated)
 
         return estimated
     } catch (error) {

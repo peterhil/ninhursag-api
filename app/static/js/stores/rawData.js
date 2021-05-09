@@ -8,13 +8,14 @@ export const rawData = asyncable(async ($mineral, $minerals) => {
     try {
         const mineral = await $mineral
         const minerals = await $minerals
-        // if (!mineral) {
-        //     return []
-        // }
+        if (!mineral) {
+            return []
+        }
         const src = minerals[mineral]
         const url = `/static/data/tsv/${src}`
-        console.debug('Fetching data:', url)
+        // console.debug('Fetching data:', url)
         const res = await axios(url)
+
         return res.data
     } catch (error) {
         errorHandler(error)
