@@ -9,7 +9,9 @@ import {
     identity,
     is,
     isEmpty,
+    keys,
     last,
+    lensProp,
     map,
     mapObjIndexed,
     mergeDeepWith,
@@ -19,6 +21,7 @@ import {
     times,
     toPairs,
     values,
+    view,
     zipObj,
 } from 'ramda'
 
@@ -42,7 +45,7 @@ export function concatOrMerge (a, b) {
     }
 }
 
-export function productionSeries (series) {
+export function productionSeriesName (series) {
     const production = test(/^(World production|World mine production)/)
     const estimated = test(/(estimated|interpolated)/)
     const selected = findLast(
@@ -51,6 +54,14 @@ export function productionSeries (series) {
     )
 
     return selected
+}
+
+export function productionSeries (seriesData) {
+    const productionData = lensProp(
+        productionSeriesName(keys(seriesData))
+    )
+
+    return view(productionData, seriesData)
 }
 
 export function repeatLastValue (dataSeries, futureYears = 100) {

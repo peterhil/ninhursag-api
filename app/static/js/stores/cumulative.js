@@ -26,7 +26,7 @@ export const cumulative = asyncable(
         // format, starting with interpolated!
         const productionSeries = view(lensPath([
             'columns',
-            data.selected + ' (interpolated)',
+            'World production (interpolated)',
         ]), interpolated)
         const extendedYears = {
             ...productionSeries,
