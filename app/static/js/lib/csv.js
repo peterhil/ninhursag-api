@@ -38,8 +38,8 @@ function transposeObj (rows, columns) {
     const data = fromPairs(zip(columns, times(() => { return {} }, columns.length)))
 
     forEach((row) => {
-        forEach((series) => {
-            data[series][parseInt(row.Year)] = row[series]
+        forEach((column) => {
+            data[column][parseInt(row.Year)] = row[series]
         }, columns)
     }, rows)
 

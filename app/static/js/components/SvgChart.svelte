@@ -40,7 +40,7 @@
                 'Cumulative fit',
                 'Reserves fit',
             ])
-    $: selectedSeries = omit(yMaxExclude, pick(data.series, data.columns))
+    $: selectedSeries = omit(yMaxExclude, data.columns)
     $: yMax = reduce(max, yMin, chain(values, values(selectedSeries)))
     $: x = scaleLinear()
         .range([0, width])
@@ -62,6 +62,6 @@
     <GridLines {width} {height} {x} {y} />
     <LineSeries {data} {line} />
     <GridLabels {height} {x} {y} />
-    <Legend series={data.series} />
+    <Legend series={keys(data.columns)} />
     <!-- <HoverTool {width} {height} {x} {y} /> -->
 </svg>
