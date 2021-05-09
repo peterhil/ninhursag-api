@@ -76,9 +76,11 @@ export function cleanup (rawData) {
 
 export function productionSeries (series) {
     const production = test(/^(World production|World mine production)/)
-    const estimated = test(/estimated/)
-    return findLast(
+    const estimated = test(/\((estimated|interpolated)\)$/)
+    const selected = findLast(
         allPass([production, complement(estimated)]),
         sortBy(identity, series)
     )
+
+    return selected
 }
