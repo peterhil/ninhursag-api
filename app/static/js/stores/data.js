@@ -3,7 +3,6 @@ import { asyncable } from 'svelte-asyncable'
 
 import { errorHandler } from '../lib/api'
 import { cleanup } from '../lib/csv'
-import { productionSeriesName } from '../lib/data'
 import { rawData } from './rawData.js'
 
 export const data = asyncable(async ($rawData) => {
@@ -13,7 +12,6 @@ export const data = asyncable(async ($rawData) => {
         const year = prop('Year')
 
         parsed.data = indexBy(year, parsed.data)
-        parsed.selected = productionSeriesName(parsed.series)
         // console.debug('$data store:', parsed)
 
         return parsed

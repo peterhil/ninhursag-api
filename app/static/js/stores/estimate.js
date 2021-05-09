@@ -1,7 +1,9 @@
 import axios, { CancelToken } from 'axios'
+import { keys } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
 
 import { errorHandler } from '../lib/api'
+import { productionSeries, productionSeriesName } from '../lib/data'
 import { chartDataFromEstimate, dataForEstimate } from '../lib/estimate'
 import { fn } from './function.js'
 import { data } from './data.js'
@@ -14,9 +16,11 @@ export const estimate = asyncable(async ($data, $fn) => {
     try {
         const data = await $data
         const fn = await $fn
+
+        const production = productionSeries(data.columns)
         const params = {
             function: fn,
-            ...dataForEstimate(data.columns[data.selected])
+            ...dataForEstimate(production)
         }
         // console.debug(`Estimating with ${fn}`, params)
 
@@ -27,7 +31,11 @@ export const estimate = asyncable(async ($data, $fn) => {
                 cancel = c
             }),
         })
-        const estimated = chartDataFromEstimate(res.data, data.selected, fn)
+        const estimated = chartDataFromEstimate(
+            res.data,
+            productionSeriesName(keys(data.columns)),
+            fn,
+        )
         // console.debug(`[Estimate] With ${fn}:`, estimated)
 
         return estimated
