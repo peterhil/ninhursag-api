@@ -9,6 +9,8 @@ import { interpolated } from './interpolated'
 import { reserves } from './reserves'
 import { reservesFit } from './reservesFit'
 
+const initialValue = { data: {}, series: [], reserves: {}, columns: {} }
+
 export const chart = derived(
     [
         data,
@@ -28,37 +30,38 @@ export const chart = derived(
         $cumulativeFit,
         $reservesFit,
     ], set) => {
-        let data = await $data
+        const data = await $data
         const interpolated = await $interpolated
         const cumulative = await $cumulative
         const reserves = await $reserves
 
-        data = mergeChartData(data, interpolated)
-        // console.debug('[Chart] With interpolated:', interpolated)
-
-        data = mergeChartData(data, cumulative)
-        // console.debug('[Chart] With cumulative:', cumulative)
-
-        data = mergeChartData(data, reserves)
-        // console.debug('[Chart] With reserves:', data)
-
-        set(data)
+        const calculated = {
+            ...data,
+            columns: {
+                ...data.columns,
+                ...interpolated.columns,
+                ...cumulative.columns,
+                ...reserves.columns,
+            }
+        }
+        // console.debug('[Chart] Calculated data:', calculated)
+        set(calculated)
 
         const estimate = await $estimate
-
         const cumulativeFit = await $cumulativeFit
-        data = mergeChartData(data, cumulativeFit)
-        // console.debug('[Chart] With cumulative fit:', cumulativeFit)
-        set(data)
-
         const reservesFit = await $reservesFit
-        data = mergeChartData(data, reservesFit)
-        // console.debug('[Chart] With reserves fit:', reservesFit)
-        set(data)
 
-        data = mergeChartData(data, estimate)
-        // console.debug('[Chart] With estimate:', data)
-        set(data)
+        const estimated = {
+            ...calculated,
+            columns: {
+                ...calculated.columns,
+                ...cumulativeFit.columns,
+                ...reservesFit.columns,
+                ...estimate.columns,
+            }
+        }
+        // console.debug('[Chart] Estimated data:', estimated)
+        set(estimated)
     },
-    { data: {}, series: [], reserves: {}, columns: {} }
+    initialValue,
 )
