@@ -22,7 +22,7 @@ export function calculateReserves (cumulative, reserveData, mineral, column, ser
     return mapObjIndexed((row, year) => {
         return fromPairs([
             ['Year', year],
-            [series, max(0, reserveAmount - (row[column] - cumulativeOnReserveYear))]
+            [series, max(1, reserveAmount - (row[column] - cumulativeOnReserveYear))]
         ])
     }, cumulative.data)
 }
