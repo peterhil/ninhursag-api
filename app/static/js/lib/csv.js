@@ -72,6 +72,7 @@ export function cleanup (rawData) {
         'Year',
         'Imports',
         'Exports',
+        'Production value ($)',
         'Stocks',
         'Unit value ($/t)',
         'Unit value (98$/t)',
