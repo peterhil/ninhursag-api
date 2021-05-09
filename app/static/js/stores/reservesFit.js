@@ -51,7 +51,11 @@ export const reservesFit = derived(
                 data: calculated,
                 series: [series],
             })
+        } else {
+            set(initialValue)
         }
+
+        return
     },
     initialValue,
 )
