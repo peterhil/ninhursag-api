@@ -39,7 +39,7 @@ function transposeObj (rows, columns) {
 
     forEach((row) => {
         forEach((column) => {
-            data[column][parseInt(row.Year)] = row[series]
+            data[column][parseInt(row.Year)] = row[column]
         }, columns)
     }, rows)
 
