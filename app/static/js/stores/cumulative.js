@@ -9,7 +9,7 @@ import { repeatLastValue, toChartData } from '../lib/data'
 import { data } from './data'
 import { interpolated } from './interpolated'
 
-const initialValue = { columns: {}, data: {} }
+const initialValue = { columns: {} }
 
 export const cumulative = asyncable(
     async ($data, $interpolated) => {
@@ -33,7 +33,6 @@ export const cumulative = asyncable(
 
         return {
             columns: fromPairs([[series, cumulativeSeries]]),
-            data: toChartData(series, cumulativeSeries),
         }
     },
     initialValue,
