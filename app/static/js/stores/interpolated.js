@@ -1,7 +1,7 @@
 import { fromPairs } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
 import { data } from './data'
-import { toDataSeries } from '../lib/data'
+import { toChartData } from '../lib/data'
 import { interpolateData } from '../lib/interpolate'
 
 const initialValue = { data: {}, series: [] }
@@ -14,14 +14,13 @@ export const interpolated = asyncable(
         if (!data.selected) {
             return initialValue
         }
-
-        const interpolated = interpolateData(data, data.selected)
-        const dataSeries = toDataSeries(data.selected, interpolated)
-        // console.debug('[Interpolated] Data:', interpolated, dataSeries)
+        const production = data.columns[data.selected]
+        const interpolated = interpolateData(production)
+        // console.debug('[Interpolated] Data:', interpolated)
 
         return {
-            columns: fromPairs([[series, dataSeries]]),
-            data: interpolated,
+            columns: fromPairs([[series, interpolated]]),
+            data: toChartData(series, interpolated),
             series: [series]
         }
     },

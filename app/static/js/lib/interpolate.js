@@ -1,4 +1,6 @@
 import {
+    all,
+    chain,
     compose,
     concat,
     dropWhile,
@@ -9,6 +11,7 @@ import {
     identity,
     indexBy,
     init,
+    is,
     last,
     map,
     pick,
@@ -16,19 +19,26 @@ import {
     range,
     tail,
     takeWhile,
+    toPairs,
+    unnest,
     values,
     zip,
 } from 'ramda'
+import { finite } from './data'
 
 function eitherNaN (a, b) {
     return isNaN(parseFloat(a)) || isNaN(parseFloat(b))
 }
 
-function interpolate (dataPoints, column, row) {
-    const stops = zip(init(dataPoints), tail(dataPoints))
-    const y = prop(column)
-    const x = prop(row)
+function interpolate (dataPoints) {
+    if (dataPoints.length < 2) {
+        return dataPoints
+    }
+    const stops = dataPoints
+    const y = prop(1)
+    const x = (p) => parseInt(prop(0, p))  // TODO Use Maps?
 
+    // Takes an array of two pairs and interpolate data linearly between them
     const linear = (piece) => {
         const from = piece[0]
         const to = piece[1]
@@ -38,39 +48,30 @@ function interpolate (dataPoints, column, row) {
         const step = dy / dx
         const indices = range(0, dx)
 
+        // TODO use R.times with n argument?
         return map((index) => {
-            return fromPairs([
-                [row, x(from) + index],
-                [column, y(from) + index * step],
-            ])
+            return [
+                (x(from) + index).toString(),
+                y(from) + index * step,
+            ]
         }, indices)
     }
-    const result = map(linear, stops)
+    const result = concat(linear(stops), [last(dataPoints)])
 
-    return flatten(concat(result, [last(dataPoints)]))
+    return result
 }
 
-export function interpolateData (data, column) {
-    const production = map(pick(['Year', column]), values(data.data))
-    const col = prop(column)
-
+export function interpolateData (dataSeries, column) {
+    const value = prop(1)
     const groups = groupWith(
-        (a, b) => eitherNaN(col(a), col(b)),
-        filter(identity, production)
+        (a, b) => {
+            return eitherNaN(value(a), value(b))
+        },
+        toPairs(dataSeries)
     )
+    const dataPoints = map(compose(toPairs, finite, fromPairs), groups)
+    const result = fromPairs(unnest(map(interpolate, dataPoints)))
+    // console.debug('[Interpolate] interpolateData: result, groups, dataPoints', result, groups, dataPoints)
 
-    const noData = (row) => isNaN(parseFloat(col(row)))
-    const result = map((group) => {
-        if (group.length > 1) {
-            const nans = takeWhile(noData, group)
-            const rows = dropWhile(noData, group)
-            const dataPoints = filter(compose(isFinite, col), rows)
-            const linear = interpolate(dataPoints, column, 'Year')
-            return flatten([nans, linear])
-        } else {
-            return group
-        }
-    }, groups)
-
-    return indexBy(prop('Year'), flatten(result))
+    return result
 }
