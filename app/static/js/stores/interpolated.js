@@ -1,12 +1,9 @@
 import { fromPairs } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
-import { data } from './data'
-import {
-    productionSeries,
-    productionSeriesName,
-    toChartData
-} from '../lib/data'
+
+import { productionSeries } from '../lib/data'
 import { interpolateData } from '../lib/interpolate'
+import { data } from './data'
 
 const initialValue = { columns: {} }
 
@@ -21,7 +18,7 @@ export const interpolated = asyncable(
 
         return {
             columns: fromPairs([[series, interpolated]]),
-         }
+        }
     },
     initialValue,
     [data]

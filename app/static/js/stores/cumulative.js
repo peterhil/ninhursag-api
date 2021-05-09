@@ -5,15 +5,13 @@ import {
 } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
 import { accumulateDataSeries } from '../lib/cumulative'
-import { repeatLastValue, toChartData } from '../lib/data'
-import { data } from './data'
+import { repeatLastValue } from '../lib/data'
 import { interpolated } from './interpolated'
 
 const initialValue = { columns: {} }
 
 export const cumulative = asyncable(
-    async ($data, $interpolated) => {
-        const data = await $data
+    async ($interpolated) => {
         const interpolated = await $interpolated
         const series = 'Cumulative'
         // console.debug('[Cumulative] Data and interpolated:', data, interpolated)
@@ -36,5 +34,5 @@ export const cumulative = asyncable(
         }
     },
     initialValue,
-    [data, interpolated]
+    [interpolated]
 )

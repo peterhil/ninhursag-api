@@ -1,6 +1,5 @@
 import { derived } from 'svelte/store'
 
-import { mergeChartData } from '../lib/data'
 import { cumulative } from './cumulative'
 import { cumulativeFit } from './cumulativeFit'
 import { data } from './data'

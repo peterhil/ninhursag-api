@@ -1,5 +1,4 @@
 import {
-    fromPairs,
     head,
     last,
     max,

@@ -1,6 +1,5 @@
-import { fromPairs, isEmpty } from 'ramda'
+import { fromPairs } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
-import { toDataSeries } from '../lib/data'
 import { calculateReserves, getReserves } from '../lib/reserves'
 import { cumulative } from './cumulative'
 import { reserveData } from './reserveData'
