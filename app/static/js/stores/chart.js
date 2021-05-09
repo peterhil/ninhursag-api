@@ -9,7 +9,7 @@ import { interpolated } from './interpolated'
 import { reserves } from './reserves'
 import { reservesFit } from './reservesFit'
 
-const initialValue = { data: {}, series: [], reserves: {}, columns: {} }
+const initialValue = { data: {}, reserves: {}, columns: {} }
 
 export const chart = derived(
     [

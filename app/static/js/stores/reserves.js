@@ -6,7 +6,7 @@ import { cumulative } from './cumulative'
 import { reserveData } from './reserveData'
 import { mineral } from './mineral'
 
-const initialValue = { data: {}, series: [], reserves: {} }
+const initialValue = { columns: {}, data: {} }
 
 export const reserves = asyncable(
     async (
@@ -32,8 +32,6 @@ export const reserves = asyncable(
             return {
                 columns: fromPairs([[series, dataSeries]]),
                 data: calculated,
-                series: [series],
-                reserves: reserveData,
             }
         } else {
             return {

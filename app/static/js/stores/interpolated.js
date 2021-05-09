@@ -8,7 +8,7 @@ import {
 } from '../lib/data'
 import { interpolateData } from '../lib/interpolate'
 
-const initialValue = { data: {}, series: [] }
+const initialValue = { columns: {}, data: {} }
 
 export const interpolated = asyncable(
     async ($data) => {
@@ -22,8 +22,7 @@ export const interpolated = asyncable(
         return {
             columns: fromPairs([[series, interpolated]]),
             data: toChartData(series, interpolated),
-            series: [series]
-        }
+         }
     },
     initialValue,
     [data]

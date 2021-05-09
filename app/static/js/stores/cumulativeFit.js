@@ -10,6 +10,8 @@ import { data } from './data'
 
 import { estimate } from './estimate'
 
+const initialValue = { data: {}, columns: {} }
+
 export const cumulativeFit = derived(
     [
         data,
@@ -38,8 +40,7 @@ export const cumulativeFit = derived(
         set({
             columns: fromPairs([[series, cumulativeSeries]]),
             data: toChartData(series, cumulativeSeries),
-            series: [series],
         })
     },
-    { data: {}, series: [], columns: {} }
+    initialValue,
 )

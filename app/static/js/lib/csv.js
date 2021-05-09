@@ -84,5 +84,5 @@ export function cleanup (rawData) {
 
     const columns = transposeObj(reparsed.data, series)
 
-    return Object.assign(reparsed, { header, footer, series, columns })
+    return Object.assign(reparsed, { header, footer, columns })
 }

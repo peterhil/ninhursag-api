@@ -7,7 +7,7 @@ import { estimate } from './estimate'
 import { reserveData } from './reserveData'
 import { mineral } from './mineral'
 
-const initialValue = { data: {}, series: [], columns: {} }
+const initialValue = { columns: {}, data: {} }
 
 export const reservesFit = derived(
     [
@@ -49,7 +49,6 @@ export const reservesFit = derived(
             set({
                 columns: fromPairs([[series, dataSeries]]),
                 data: calculated,
-                series: [series],
             })
         } else {
             set(initialValue)

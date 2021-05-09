@@ -29,7 +29,6 @@ export function chartDataFromEstimate (estimate, selected, fn) {
     return {
         columns: fromPairs([[series, zipped]]),
         data: toChartData(series, zipped),
-        series: [series],
         covariance: estimate.covariance,
         estimate: series,
     }
