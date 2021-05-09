@@ -54,8 +54,6 @@ export const reservesFit = derived(
         } else {
             set(initialValue)
         }
-
-        return
     },
     initialValue,
 )

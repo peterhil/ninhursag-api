@@ -1,28 +1,14 @@
 import {
-    all,
-    chain,
     compose,
     concat,
-    dropWhile,
-    filter,
-    flatten,
     fromPairs,
     groupWith,
-    identity,
-    indexBy,
-    init,
-    is,
     last,
     map,
-    pick,
     prop,
     range,
-    tail,
-    takeWhile,
     toPairs,
     unnest,
-    values,
-    zip,
 } from 'ramda'
 import { finite } from './data'
 
@@ -36,7 +22,7 @@ function interpolate (dataPoints) {
     }
     const stops = dataPoints
     const y = prop(1)
-    const x = (p) => parseInt(prop(0, p))  // TODO Use Maps?
+    const x = (p) => parseInt(prop(0, p)) // TODO Use Maps?
 
     // Takes an array of two pairs and interpolate data linearly between them
     const linear = (piece) => {

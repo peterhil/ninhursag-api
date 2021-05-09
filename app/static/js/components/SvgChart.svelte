@@ -7,7 +7,6 @@
         keys,
         max,
         omit,
-        pick,
         reduce,
         values
     } from 'ramda'
