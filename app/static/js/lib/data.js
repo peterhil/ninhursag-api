@@ -44,7 +44,7 @@ export function concatOrMerge (a, b) {
 
 export function productionSeries (series) {
     const production = test(/^(World production|World mine production)/)
-    const estimated = test(/\((estimated|interpolated)\)$/)
+    const estimated = test(/(estimated|interpolated)/)
     const selected = findLast(
         allPass([production, complement(estimated)]),
         sortBy(identity, series)
