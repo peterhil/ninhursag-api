@@ -185,4 +185,14 @@ estd: {estd}
     if ier not in [1, 2, 3, 4]:
         raise RuntimeError(errmsg)
 
+    if not np.isfinite(error['mean']):
+        msg = 'Function is not suitable for this series'
+        raise RuntimeWarning(msg)
+
+    # if error['mean'] > 100:
+    #     msg = 'Mean error is over tolerance: {mean_error}'
+    #     raise RuntimeWarning(msg.format(
+    #         mean_error=np.round(error['mean'], 2),
+    #     ))
+
     return (e_years, estd, pcov)
