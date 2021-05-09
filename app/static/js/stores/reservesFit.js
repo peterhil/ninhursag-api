@@ -7,7 +7,7 @@ import { estimate } from './estimate'
 import { reserveData } from './reserveData'
 import { mineral } from './mineral'
 
-const initialValue = { columns: {}, data: {} }
+const initialValue = { columns: {} }
 
 export const reservesFit = derived(
     [
@@ -26,9 +26,11 @@ export const reservesFit = derived(
         const cumulativeFit = await $cumulativeFit
         const mineral = await $mineral
         const reserveData = await $reserveData
-        const series = 'Reserves fit'
 
-        if (isEmpty(cumulativeFit.data)) {
+        const series = 'Reserves fit'
+        const cumulativeSeries = cumulativeFit.columns['Cumulative fit']
+
+        if (!cumulativeSeries) {
             // console.debug('No cumulative data yet')
             return
         }
@@ -43,12 +45,10 @@ export const reservesFit = derived(
                 'Cumulative fit',
                 series,
             )
-            const dataSeries = toDataSeries(series, calculated)
-            // console.debug('[Reserves fit] Estimated fit:', calculated, dataSeries)
+            // console.debug('[Reserves fit] Estimated fit:', calculated)
 
             set({
-                columns: fromPairs([[series, dataSeries]]),
-                data: calculated,
+                columns: fromPairs([[series, calculated]]),
             })
         } else {
             set(initialValue)

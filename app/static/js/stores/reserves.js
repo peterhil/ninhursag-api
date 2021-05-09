@@ -6,7 +6,7 @@ import { cumulative } from './cumulative'
 import { reserveData } from './reserveData'
 import { mineral } from './mineral'
 
-const initialValue = { columns: {}, data: {} }
+const initialValue = { columns: {} }
 
 export const reserves = asyncable(
     async (
@@ -19,19 +19,13 @@ export const reserves = asyncable(
         const reserveData = await $reserveData
         const series = 'Reserves'
 
-        if (isEmpty(cumulative.data)) {
-            // console.debug('No cumulative data yet')
-            return initialValue
-        }
-
         if (getReserves(reserveData, mineral)) {
             const calculated = calculateReserves(cumulative, reserveData, mineral, 'Cumulative', 'Reserves')
-            const dataSeries = toDataSeries(series, calculated)
-            // console.debug('[Reserves] Estimated:', calculated, dataSeries)
+            // console.debug('[Reserves] Calculated:', calculated)
 
             return {
-                columns: fromPairs([[series, dataSeries]]),
-                data: calculated,
+                columns: fromPairs([[series, calculated]]),
+                reserves: reserveData,
             }
         } else {
             return {

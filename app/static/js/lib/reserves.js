@@ -15,16 +15,16 @@ export function calculateReserves (cumulative, reserveData, mineral, column, ser
         // console.debug('No reserves!')
         return {}
     }
-
     const [reserveYear, reserveAmount] = last(sortBy(head, toPairs(reserves)))
-    const cumulativeOnReserveYear = cumulative.data[reserveYear][column]
+    const cumulativeSeries = cumulative.columns[column]
+    const cumulativeOnReserveYear = cumulativeSeries[reserveYear]
 
-    return mapObjIndexed((row, year) => {
-        return fromPairs([
-            ['Year', year],
-            [series, max(1, reserveAmount - (row[column] - cumulativeOnReserveYear))]
-        ])
-    }, cumulative.data)
+    return mapObjIndexed(
+        (value, year) => {
+            return max(1, reserveAmount - (value - cumulativeOnReserveYear))
+        },
+        cumulativeSeries
+    )
 }
 
 export function getReserves (reserves, mineral) {
