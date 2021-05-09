@@ -1,7 +1,7 @@
-import { fromPairs } from 'ramda'
+import { fromPairs, isEmpty } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
 import { toDataSeries } from '../lib/data'
-import { calculateReserves, hasReserves } from '../lib/reserves'
+import { calculateReserves, getReserves } from '../lib/reserves'
 import { cumulative } from './cumulative'
 import { reserveData } from './reserveData'
 import { mineral } from './mineral'
@@ -19,7 +19,12 @@ export const reserves = asyncable(
         const reserveData = await $reserveData
         const series = 'Reserves'
 
-        if (hasReserves(reserveData, mineral)) {
+        if (isEmpty(cumulative.data)) {
+            // console.debug('No cumulative data yet')
+            return initialValue
+        }
+
+        if (getReserves(reserveData, mineral)) {
             const calculated = calculateReserves(cumulative, reserveData, mineral, 'Cumulative', 'Reserves')
             const dataSeries = toDataSeries(series, calculated)
             // console.debug('[Reserves] Estimated:', calculated, dataSeries)
