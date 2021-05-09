@@ -1,8 +1,21 @@
 import { parse } from 'papaparse'
 import {
-    allPass, compose, filter, find, findLast, flatten, forEach,
-    fromPairs, identity, join, map, complement, drop,
-    takeWhile, times, sortBy, test, without, zip,
+    compose,
+    filter,
+    find,
+    flatten,
+    forEach,
+    fromPairs,
+    identity,
+    join,
+    map,
+    complement,
+    drop,
+    takeWhile,
+    times,
+    test,
+    without,
+    zip,
 } from 'ramda'
 
 const clean = compose(filter(identity), flatten)
@@ -72,15 +85,4 @@ export function cleanup (rawData) {
     const columns = transposeObj(reparsed.data, series)
 
     return Object.assign(reparsed, { header, footer, series, columns })
-}
-
-export function productionSeries (series) {
-    const production = test(/^(World production|World mine production)/)
-    const estimated = test(/\((estimated|interpolated)\)$/)
-    const selected = findLast(
-        allPass([production, complement(estimated)]),
-        sortBy(identity, series)
-    )
-
-    return selected
 }

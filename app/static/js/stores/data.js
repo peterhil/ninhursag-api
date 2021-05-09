@@ -2,7 +2,8 @@ import { indexBy, prop } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
 
 import { errorHandler } from '../lib/api'
-import { cleanup, productionSeries } from '../lib/csv.js'
+import { cleanup } from '../lib/csv'
+import { productionSeries } from '../lib/data'
 import { rawData } from './rawData.js'
 
 export const data = asyncable(async ($rawData) => {

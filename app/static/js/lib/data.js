@@ -1,8 +1,12 @@
 import {
     all,
+    allPass,
+    complement,
     concat,
     filter,
+    findLast,
     fromPairs,
+    identity,
     is,
     isEmpty,
     last,
@@ -10,6 +14,8 @@ import {
     mapObjIndexed,
     mergeDeepWith,
     props,
+    sortBy,
+    test,
     times,
     toPairs,
     values,
@@ -34,6 +40,17 @@ export function concatOrMerge (a, b) {
     } else {
         return b || a
     }
+}
+
+export function productionSeries (series) {
+    const production = test(/^(World production|World mine production)/)
+    const estimated = test(/\((estimated|interpolated)\)$/)
+    const selected = findLast(
+        allPass([production, complement(estimated)]),
+        sortBy(identity, series)
+    )
+
+    return selected
 }
 
 export function repeatLastValue (dataSeries, futureYears = 100) {
