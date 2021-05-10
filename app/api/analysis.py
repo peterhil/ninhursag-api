@@ -6,8 +6,8 @@ import numpy as np
 import scipy
 import scipy.stats as stats
 
-from app.log import logger
 from scipy.optimize import curve_fit
+from app.log import logger
 
 
 def exponential_est(x, a, b, c):
