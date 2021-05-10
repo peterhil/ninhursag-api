@@ -134,7 +134,7 @@ def sanitize(data, years):
     return data, years
 
 
-def estimate(func, data, years, until=0, log=False):
+def estimate(func, data, years, until=0, log=False, norm=False):
     data, years = sanitize(data, years)
 
     if len(data) == 0 or len(years) == 0:
@@ -146,8 +146,24 @@ def estimate(func, data, years, until=0, log=False):
     e_years = e_x + start
 
     orig_data = data
+    scale = 1
     if log:
         data = np.log(data)
+        logger.debug("Describe logarithic data: {stats}".format(
+            stats=(stats.describe(data, nan_policy='omit')),
+        ))
+    if norm:
+        scale = np.amax(data)
+        data = data / scale
+        logger.debug("Describe normalised data: {stats} (min: {min}, max: {max})".format(
+            min=np.amin(data),
+            max=np.amax(data),
+            stats=(stats.describe(data / np.amax(data), nan_policy='omit')),
+        ))
+    else:
+        logger.debug("Describe original data:   {stats}".format(
+            stats=(stats.describe(data, nan_policy='omit')),
+        ))
 
     popt, pcov, infodict, errmsg, ier = curve_fit(
         func, x, data, maxfev=10000, full_output=True, absolute_sigma=False
@@ -162,6 +178,8 @@ def estimate(func, data, years, until=0, log=False):
     )
     estd = func(e_x, *popt)
 
+    if norm:
+        estd = estd * scale
     if log:
         estd = np.exp(estd)
 

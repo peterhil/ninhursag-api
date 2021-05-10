@@ -104,7 +104,7 @@ class Estimate(Resource):
             # result = estimate(analysis.logistic, data, years, 0, log=False)
             # result = estimate(analysis.wrap_scipy(stats.gamma.pdf), data, years, 100, log=False)
             result = estimate(
-                scipy_functions("pdf").get(function), data, years, 100, log=True
+                scipy_functions("pdf").get(function), data, years, 100, log=True, norm=True
             )
         except RuntimeError as err:
             abort(400, errors=[str(err)])
