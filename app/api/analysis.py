@@ -158,6 +158,7 @@ def estimate(func, data, years, until=0, log=False):
     e_x = np.arange(until - start + 1)
     e_years = e_x + start
 
+    orig_data = data
     if log:
         data = np.log(data)
 
@@ -176,8 +177,6 @@ def estimate(func, data, years, until=0, log=False):
 
     if log:
         estd = np.exp(estd)
-
-    # deriv = normalize(np.ediff1d(estd)) * np.max(estd) / 2
 
     msg = """
 =============================================================================
@@ -206,7 +205,7 @@ estd: {estd}
         ier=ier,
         popt=popt,
         pcov=pcov,
-        data=data[:50],
+        data=orig_data[:50],
         estd=np.round(estd[:50], 0),
     )
     logger.debug(msg.format(**params))
