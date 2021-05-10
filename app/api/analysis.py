@@ -209,7 +209,7 @@ estd: {estd}
         data=data[:50],
         estd=np.round(estd[:50], 0),
     )
-    logger.debug(msg.format(params))
+    logger.debug(msg.format(**params))
 
     if ier not in [1, 2, 3, 4]:
         raise RuntimeError(errmsg)
