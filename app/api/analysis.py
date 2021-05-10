@@ -58,7 +58,7 @@ def getargspec(func):
         return inspect.getargspec(func)
 
 
-def wrap_scipy(func):
+def wrap_scipy(func, name):
     argspec = getargspec(func)
     arity = len(argspec.args) - 1
 
@@ -116,7 +116,8 @@ def wrap_scipy(func):
 
     wrapped.func = func
     wrapped.__doc__ = func.__doc__
-    # wrapped.__name__ = "{}.{}".format(func.__self__.__class__.__name__, func.__name__)
+    wrapped.__name__ = name
+
     return wrapped
 
 
@@ -130,7 +131,7 @@ def scipy_functions(self, kind="pdf"):
 
     return dict(
         [
-            (f[0], wrap_scipy(f[1]))
+            (f[0], wrap_scipy(f[1], f[0]))
             for f in [x for x in statistical_functions if x[1] is not None]
         ]
     )
