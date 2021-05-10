@@ -63,20 +63,6 @@ def wrap_scipy(func, name):
     argspec = getargspec(func)
     arity = len(argspec.args) - 1
 
-    # def args_for(arity):
-    #     abc = [x for x in 'abcdefghijklmnopqrstruvwxyz']
-    #     args = ['data']
-    #     args.extend(abc[:arity])
-    #     return args
-    # args=', '.join(args_for(arity))
-    # fntemplate = """def wrapped({args}):\n    return fn({scipy_args}) * zy + zz"""
-    # code = fntemplate.format(
-    #     n=arity,
-    #     args=', '.join([args, 'zy, zz']),
-    #     scipy_args=args,
-    #     )
-    # exec code in globals(), dict(fn=locals()['func'])
-
     def adjust(result, ys):
         return result * ys
 
