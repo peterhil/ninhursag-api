@@ -153,10 +153,9 @@ def estimate(func, data, years, until=0, log=False):
     if len(data) == 0 or len(years) == 0:
         raise ValueError("Empty data or years")
 
-    until = np.max(years) + until
-    (start, end) = (np.min(years), np.max(years))
+    (start, end) = (np.min(years), np.max(years) + until)
     x = years - start
-    e_x = np.arange(until - start + 1)
+    e_x = np.arange(end - start + 1)
     e_years = e_x + start
 
     orig_data = data
