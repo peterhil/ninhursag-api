@@ -30,6 +30,7 @@ export function chartDataFromEstimate (estimate, selected, fn) {
         columns: fromPairs([[series, zipped]]),
         data: toChartData(series, zipped),
         covariance: estimate.covariance,
+        stderr: estimate.stderr,
         estimate: series,
     }
 }

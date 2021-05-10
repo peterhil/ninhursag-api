@@ -136,7 +136,7 @@ def estimate(func, data, years, until=0, log=False):
     e_years = e_x + start
 
     if log: data = np.log(data)
-    popt, pcov, infodict, errmsg, ier = curve_fit(func, x, data, maxfev=10000, full_output=True, absolute_sigma=True)
+    popt, pcov, infodict, errmsg, ier = curve_fit(func, x, data, maxfev=10000, full_output=True, absolute_sigma=False)
     std_err = np.sqrt(np.diag(pcov))
 
     error = dict(
@@ -195,4 +195,4 @@ estd: {estd}
     #         mean_error=np.round(error['mean'], 2),
     #     ))
 
-    return (e_years, estd, pcov)
+    return (e_years, estd, pcov, error)

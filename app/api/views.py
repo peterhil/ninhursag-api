@@ -97,12 +97,13 @@ class Estimate(Resource):
         except Exception as err:
             abort(500, errors=[str(err)])
 
-        e_years, e_data, e_cov = result
+        e_years, e_data, e_cov, e_stderr = result
 
         return {
             'years': as_json(e_years),
             'data': as_json(e_data.astype(np.float64)),
             'covariance': as_json(e_cov),
+            'stderr': e_stderr,
             }, 200
 
 

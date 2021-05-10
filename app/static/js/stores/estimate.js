@@ -36,7 +36,25 @@ export const estimate = asyncable(async ($data, $fn) => {
             productionSeriesName(keys(data.columns)),
             fn,
         )
+        const stdErr = estimated.stderr
+        const medianOverMean = stdErr.median / stdErr.mean
         // console.debug(`[Estimate] With ${fn}:`, estimated)
+        console.dir(
+            `[Estimate] Std error ${fn}:`,
+            stdErr,
+            medianOverMean,
+        )
+
+        if (stdErr.min < 0.001 && medianOverMean < 0.32) {
+            console.info(
+                `%c[Std err] Excellent fit for ${fn}!`,
+                'background-color: #3c5; color: #153'
+            )
+        } else if (stdErr.min < 0.05 && medianOverMean < 1) {
+            console.warn(`[Std err] Ok fit for ${fn}!`)
+        } else {
+            console.warn(`[Std err] Bad fit for ${fn}!`)
+        }
 
         return estimated
     } catch (error) {
