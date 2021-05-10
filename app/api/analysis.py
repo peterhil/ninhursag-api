@@ -181,6 +181,7 @@ def estimate(func, data, years, until=0, log=False):
     msg = """
 =============================================================================
 function: {function}
+nfev: {nfev}
 error: {error}
 error mean: {mean_error}
 error median: {median_error}
@@ -201,6 +202,7 @@ estd: {estd}
         median_error=error["median"],
         max_error=error["max"],
         min_error=error["min"],
+        nfev=infodict["nfev"],
         errmsg=errmsg,
         ier=ier,
         popt=popt,
