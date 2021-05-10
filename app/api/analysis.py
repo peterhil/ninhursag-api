@@ -1,5 +1,6 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
+# pylint: disable=invalid-name
 
 import inspect
 import numpy as np
