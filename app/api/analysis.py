@@ -10,23 +10,6 @@ from app.log import logger
 from scipy.optimize import curve_fit
 
 
-def normalize(signal):
-    max = np.max(np.abs(signal))
-
-    if not np.all(np.isfinite(signal)):  # np.isnan(max) or np.isinf(max):
-        logger.debug("Normalize() substituting non-numeric max: %s" % max)
-        signal = np.ma.masked_invalid(signal).filled(0)
-        max = np.max(np.abs(signal))
-        logger.debug("Normalize() substituted max: %s" % max)
-
-    if max == 0:
-        logger.debug("Normalize() got silence!" % max)
-        return signal
-    # logger.debug("Normalize() by a factor: %s" % max)
-
-    return signal / max
-
-
 def exponential_est(x, a, b, c):
     return a * np.exp(b * x) + c
 
