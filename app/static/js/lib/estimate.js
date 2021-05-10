@@ -41,8 +41,10 @@ export function reportFitQuality (estimate, fn) {
 
     console.dir(
         `[Estimate] Std error ${fn}:`,
-        stdErr,
-        medianOverMean,
+        {
+            ...stdErr,
+            ...{medianOverMean},
+        }
     )
 
     if (stdErr.min < 0.001 && medianOverMean < 0.32) {
