@@ -7,9 +7,10 @@ export function errorHandler (error) {
 
         // The request was made and the server responded with a status code
         // that falls out of the range of 2xx
-        console.error(response.data)
-        console.log(response.status)
-        console.log(response.headers)
+
+        // console.error(response.data)
+        // console.log(response.status)
+        // console.log(response.headers)
 
         alerts.error(response.data.errors.join('\n'))
 
@@ -24,6 +25,6 @@ export function errorHandler (error) {
         console.log('Error', error.message)
     }
 
-    console.log(error.config)
+    // console.log(error.config)
     throw error
 }
