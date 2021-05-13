@@ -1,19 +1,21 @@
 import { parse } from 'papaparse'
 import {
+    complement,
     compose,
+    drop,
     filter,
     find,
     flatten,
     forEach,
     fromPairs,
     identity,
+    indexBy,
     join,
     map,
-    complement,
-    drop,
+    prop,
     takeWhile,
-    times,
     test,
+    times,
     without,
     zip,
 } from 'ramda'
@@ -68,6 +70,10 @@ export function cleanup (rawData) {
         header: true,
         dynamicTyping: true,
     })
+    if (reparsed.errors.length > 0) {
+        console.error('Errors while parsing raw data:', reparsed.errors)
+    }
+
     const excludedSeries = [
         'Year',
         'Imports',
@@ -79,11 +85,8 @@ export function cleanup (rawData) {
     ] // TODO Move filtering elsewhere
     const series = without(excludedSeries, reparsed.meta.fields)
 
-    if (reparsed.errors.length > 0) {
-        console.error('Errors while parsing raw data:', reparsed.errors)
-    }
-
     const columns = transposeObj(reparsed.data, series)
+    reparsed.data = indexBy(prop('Year'), reparsed.data)
 
     return Object.assign(reparsed, { header, footer, columns })
 }

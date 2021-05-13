@@ -1,4 +1,3 @@
-import { indexBy, prop } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
 
 import { errorHandler } from '../lib/api'
@@ -9,9 +8,6 @@ export const data = asyncable(async ($rawData) => {
     try {
         const rawData = await $rawData
         const parsed = cleanup(rawData)
-        const year = prop('Year')
-
-        parsed.data = indexBy(year, parsed.data)
         // console.debug('$data store:', parsed)
 
         return parsed
