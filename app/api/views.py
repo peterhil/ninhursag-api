@@ -7,7 +7,7 @@
 import json
 import os
 
-from flask import current_app, request, Blueprint
+from flask import current_app, request, safe_join, send_from_directory, Blueprint
 from flask_restful import abort, Api, Resource
 
 from app.log import logger
@@ -121,14 +121,34 @@ class Estimate(Resource):
         }, 200
 
 
-class Minerals(Resource):
-    def get(self):
-        index = os.path.join(
+class Mineral(Resource):
+    def get(self, name):
+        # TODO Move elsewhere to keep dry and this code still within Flask application context
+        minerals_index = os.path.join(
             current_app.root_path, current_app.config["DATA_DIR"], "tsv", "index.json"
         )
-        with open(index, "rb") as f:
-            response = json.load(f)
-        return response
+        with open(minerals_index, "rb") as f:
+            minerals = json.load(f)
+
+        filename = minerals.get(name)
+
+        if filename:
+            data_dir = safe_join(current_app.config["DATA_DIR"], "tsv")
+            return send_from_directory(data_dir, filename)
+        else:
+            return 'Mineral not found!', 404
+
+
+class Minerals(Resource):
+    def get(self):
+        # TODO Move elsewhere to keep dry and this code still within Flask application context
+        minerals_index = os.path.join(
+            current_app.root_path, current_app.config["DATA_DIR"], "tsv", "index.json"
+        )
+        with open(minerals_index, "rb") as f:
+            minerals = json.load(f)
+
+        return minerals
 
 
 class Reserves(Resource):
@@ -152,6 +172,7 @@ class Images(Resource):
 
 
 rest.add_resource(Estimate, "/estimate")
+rest.add_resource(Mineral, "/mineral/<path:name>")
 rest.add_resource(Minerals, "/minerals")
 rest.add_resource(Reserves, "/reserves")
 rest.add_resource(Images, "/images")

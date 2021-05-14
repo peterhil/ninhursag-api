@@ -65,6 +65,8 @@ export function cleanup (rawData) {
     const { header, content, footer } = splitHeaders(getRows(rawData))
     const text = join('\n', map(join('\t'), content))
 
+    // console.debug('[Data cleanup] Raw data:', rawData)
+
     // Reparse data rows with dynamic typing
     const reparsed = parse(text, {
         header: true,
