@@ -38,29 +38,33 @@ function failure (error) {
     return initialValue
 }
 
-export const estimate = asyncable(async ($data, $fn) => {
-    const data = await $data
-    const fn = await $fn
+export const estimate = asyncable(
+    async ($data, $fn) => {
+        const data = await $data
+        const fn = await $fn
 
-    const production = productionSeries(data.columns)
-    const params = {
-        function: fn,
-        ...dataForEstimate(production)
-    }
-    // console.debug(`Estimating with ${fn}`, params)
+        const production = productionSeries(data.columns)
+        const params = {
+            function: fn,
+            ...dataForEstimate(production)
+        }
+        // console.debug(`Estimating with ${fn}`, params)
 
-    controller = new AbortController()
-    const signal = controller.signal
-    const estimated = await api.post(
-        '/api/v1/estimate',
-        {
-            body: params,
-            signal,
-        },
-        success(fn),
-        failure,
-    )
-    controller = null
+        controller = new AbortController()
+        const signal = controller.signal
+        const estimated = await api.post(
+            '/api/v1/estimate',
+            {
+                body: params,
+                signal,
+            },
+            success(fn),
+            failure,
+        )
+        controller = null
 
-    return estimated
-}, initialValue, [data, fn])
+        return estimated
+    },
+    initialValue,
+    [data, fn]
+)
