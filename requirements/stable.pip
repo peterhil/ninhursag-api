@@ -1,4 +1,5 @@
 Flask-Assets==0.10
+Flask_CLI==0.4.0
 Flask-FlatPages==0.5
 Flask-RESTful==0.2.12
 Flask==0.10.1
