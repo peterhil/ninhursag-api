@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .controller 'MineralCtrl', ['$cookies', '$log', '$scope', 'Functional', ($cookies, $log, $scope, Fx) ->
+  .controller 'MineralCtrl', ['$log', '$scope', 'Functional', ($log, $scope, Fx) ->
     $scope.chart =
       src: ''
       data: []
@@ -19,7 +19,7 @@ angular.module('app')
     $.getJSON('/api/v1/minerals')
       .done (response) ->
         $scope.minerals = response
-        $scope.mineral = if ($cookies.mineral in R.keys($scope.minerals)) then $cookies.mineral else 'Gold'
+        $scope.mineral = if (Cookies.get('mineral') in R.keys($scope.minerals)) then Cookies.get('mineral') else 'Gold'
         $scope.chart.src = "/static/data/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
@@ -82,7 +82,10 @@ angular.module('app')
       src = $scope.minerals[val]
       # $log.info "Watching mineral:", val, old
       return unless src
-      $cookies['mineral'] = val
+      Cookies.set('mineral', val, {
+        path: '', # Current path
+        sameSite: 'lax',
+      })
       $scope.chart.src = "/static/data/tsv/#{src}"
 
     $scope.$watch 'chart.series', (val, old) ->

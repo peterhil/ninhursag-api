@@ -6,7 +6,6 @@ angular
   .module('app', [
     'ngAnimate',
     # 'ngAria',
-    'ngCookies',
     'ngMessages',
     'ngResource',
     'ngRoute',
@@ -17,18 +16,23 @@ angular
   ])
   .config [
     '$routeProvider',
+    '$locationProvider',
     '$httpProvider',
     '$logProvider',
     'growlProvider',
     (
       $routeProvider,
+      $locationProvider,
       $httpProvider,
       $logProvider,
       growlProvider,
     ) ->
+      # $locationProvider.html5Mode
+      #   enabled: true
+      #   requireBase: false
       $logProvider.debugEnabled false
       $routeProvider
-        .when '/',
+        .when '/listing',
           templateUrl: '/static/view/listing.html'
           controller: 'ListingCtrl'
         .otherwise

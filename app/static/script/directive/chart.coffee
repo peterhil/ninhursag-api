@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .directive 'chart', ['$cookies', '$log', 'Functional', 'api', 'growl', ($cookies, $log, Fx, api, growl) ->
+  .directive 'chart', ['$log', 'Functional', 'api', 'growl', ($log, Fx, api, growl) ->
     restrict: 'AE'
     require: 'ngModel'
     replace: true
@@ -26,8 +26,8 @@ angular.module('app')
       scope.preserveAspectRatio ||= "xMidYMin meet"
       scope.chart.src = attrs.src
       scope.logscale = true
-      scope['function'] = $cookies['function'] || scope['function']
-      scope.mineral = $cookies.mineral || scope.mineral
+      scope['function'] = Cookies.get('function') || scope['function']
+      scope.mineral = Cookies.get('mineral') || scope.mineral
 
       identity = ->
         if scope.logscale then 1 else 0
@@ -190,7 +190,10 @@ angular.module('app')
       scope.$watch 'function', (val, old) ->
         # $log.info "Watching function:", val, old
         return unless val
-        $cookies['function'] = val
+        Cookies.set('function', val, {
+          path: '', # Current path
+          sameSite: 'lax',
+        })
         scope.estimate(val)
         scope.render(scope.chart)
   ]
