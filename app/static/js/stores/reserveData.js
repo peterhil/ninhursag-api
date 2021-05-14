@@ -1,15 +1,6 @@
-import axios from 'axios'
 import { asyncable } from 'svelte-asyncable'
-import { errorHandler } from '../lib/api'
+import api from '../lib/api'
 
 export const reserveData = asyncable(async () => {
-    try {
-        const res = await axios('/api/v1/reserves')
-        // console.debug('Reserves:', res.data)
-
-        return res.data
-    } catch (error) {
-        errorHandler(error)
-        return error
-    }
+    return await api.get('/api/v1/reserves')
 })
