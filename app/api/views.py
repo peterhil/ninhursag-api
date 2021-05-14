@@ -4,23 +4,17 @@
 # See http://flask-restful.readthedocs.org/en/latest/
 # on how to properly implement an REST API with Flask
 
+import flask_restful
 import json
+import numpy as np
 import os
+# import scipy.stats as stats
+import yaml
 
 from flask import current_app, request, Blueprint
-
-
-# https://stackoverflow.com/a/67523704/470560
-import flask.scaffold
-flask.helpers._endpoint_from_view_func = flask.scaffold._endpoint_from_view_func
-import flask_restful
 from flask_restful import abort, Api, Resource
 
 from .analysis import estimate, scipy_functions
-
-import numpy as np
-# import scipy.stats as stats
-import yaml
 
 
 API_VERSION = 1

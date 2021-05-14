@@ -66,7 +66,7 @@ Build zurb-foundation:
 
     cd skeleton-git
     source ./activate  # <-- Adds some node components into the path and activates the virtualenv
-    python run.py
+    FLASK_ENV=development DEBUG=true ASSETS_DEBUG=true flask run  # or python run.py
     open http://localhost:5000/  # or: open http://skeleton.dev/ if using nginx and have set hosts
 
 
