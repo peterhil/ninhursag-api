@@ -1,17 +1,21 @@
-Flask-Assets==0.10
-Flask-FlatPages==0.5
-Flask-RESTful==0.2.12
-Flask==0.10.1
-Jinja2==2.7.1
-Markdown==2.5.2
-MarkupSafe==1.1.1
+Flask==2.0.0
+# Jinja2==3.0.0
+# MarkupSafe==2.0.0
+# Werkzeug==2.0.0
+
+Flask-Assets==2.0
+# webassets>=2.0 # From Flask-Assets
+
+# Flask-RESTful==0.3.8
+-e git+https://github.com/flask-restful/flask-restful.git@master#egg=Flask-RESTful
+
+Flask-FlatPages==0.7.3
+
+# Other
+Markdown==3.3.4
 Unidecode==0.04.14
-Werkzeug<1
 cssmin==0.2.0
-# excelsior==0.0.5
-gunicorn==18.0
+gunicorn==20.1.0
 nodeenv==0.7.0
-numpy==1.19.5
-# py==1.4.15
+numpy==1.20.3
 scipy==1.6.3
-webassets==0.10.1

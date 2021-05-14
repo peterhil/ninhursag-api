@@ -4,17 +4,17 @@
 # See http://flask-restful.readthedocs.org/en/latest/
 # on how to properly implement an REST API with Flask
 
+import flask_restful
 import json
+import numpy as np
 import os
+# import scipy.stats as stats
+import yaml
 
 from flask import current_app, request, Blueprint
 from flask_restful import abort, Api, Resource
 
 from .analysis import estimate, scipy_functions
-
-import numpy as np
-# import scipy.stats as stats
-import yaml
 
 
 API_VERSION = 1
@@ -92,6 +92,8 @@ class Estimate(Resource):
             result = estimate(scipy_functions('pdf').get(function), data, years, 100, log=False)
         except RuntimeError as err:
             abort(400, errors=[str(err)])
+        except ValueError as err:
+            abort(400, errors=[str(err)])
         except Exception as err:
             abort(500, errors=[str(err)])
 
@@ -115,7 +117,7 @@ class Reserves(Resource):
     def get(self):
         path = os.path.join(current_app.root_path, current_app.config['DATA_DIR'], 'reserves.yml')
         with open(path, 'rb') as f:
-            response = yaml.load(f)
+            response = yaml.safe_load(f)
         return response
 
 
@@ -123,7 +125,7 @@ class Images(Resource):
     def get(self):
         path = os.path.join(current_app.root_path, current_app.config['DATA_DIR'], 'images.yml')
         with open(path, 'rb') as f:
-            response = yaml.load(f)
+            response = yaml.safe_load(f)
         return response
 
 
