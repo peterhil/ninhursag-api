@@ -103,8 +103,8 @@ angular.module('app')
             scope.chart.data = _.merge scope.chart.data, estimate
             scope.getReserves()
           .fail (response) ->
-            if response.data?.errors?
-              growl.error response.data.errors.join("\n")
+            if response.responseJSON?.errors?
+              growl.error response.responseJSON.errors.join("\n")
             else
               growl.error "#{response.status} #{response.statusText}"
 
