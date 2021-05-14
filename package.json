@@ -41,7 +41,7 @@
     "minimatch": "^3.0.4",
     "mkdirp": "^1.0.4",
     "modernizr": "^3.11.6",
-    "papaparse": "4.0.7",
+    "papaparse": "^5.2.0",
     "ramda": "0.8.0",
     "sass": "^1.32.8",
     "soundex-code": "0.1.2",

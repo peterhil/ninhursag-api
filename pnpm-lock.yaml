@@ -24,7 +24,7 @@ specifiers:
   minimatch: ^3.0.4
   mkdirp: ^1.0.4
   modernizr: ^3.11.6
-  papaparse: 4.0.7
+  papaparse: ^5.2.0
   ramda: 0.8.0
   sass: ^1.32.8
   soundex-code: 0.1.2
@@ -56,7 +56,7 @@ dependencies:
   minimatch: 3.0.4
   mkdirp: 1.0.4
   modernizr: 3.11.6
-  papaparse: 4.0.7
+  papaparse: 5.3.0
   ramda: 0.8.0
   sass: 1.32.11
   soundex-code: 0.1.2
@@ -510,8 +510,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /papaparse/4.0.7:
-    resolution: {integrity: sha1-KmDrcH0lTFTVHhJ+8EB3V2VLfdE=}
+  /papaparse/5.3.0:
+    resolution: {integrity: sha512-Lb7jN/4bTpiuGPrYy4tkKoUS8sTki8zacB5ke1p5zolhcSE4TlWgrlsxjrDTbG/dFVh07ck7X36hUf/b5V68pg==}
     dev: false
 
   /parse-node-version/1.0.1:
