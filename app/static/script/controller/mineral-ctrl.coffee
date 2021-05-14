@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .controller 'MineralCtrl', ['$cookies', '$http', '$log', '$scope', 'Functional', ($cookies, $http, $log, $scope, Fx) ->
+  .controller 'MineralCtrl', ['$cookies', '$log', '$scope', 'Functional', ($cookies, $log, $scope, Fx) ->
     $scope.chart =
       src: ''
       data: []
@@ -16,24 +16,24 @@ angular.module('app')
 
     $scope.minerals = {}
     $scope.mineral = ''
-    $http.get('/api/v1/minerals')
-      .success (response) ->
+    $.getJSON('/api/v1/minerals')
+      .done (response) ->
         $scope.minerals = response
         $scope.mineral = if ($cookies.mineral in R.keys($scope.minerals)) then $cookies.mineral else 'Gold'
         $scope.chart.src = "/static/data/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
     $scope.currentFunction = 'powerlognorm'
-    $http.get('/api/v1/estimate')
-      .success (response) ->
+    $.getJSON('/api/v1/estimate')
+      .done (response) ->
         $scope.functions = response
 
-    $http.get('/api/v1/reserves')
-      .success (response) ->
+    $.getJSON('/api/v1/reserves')
+      .done (response) ->
         $scope.reserves = response
 
-    $http.get('/api/v1/images')
-      .success (response) ->
+    $.getJSON('/api/v1/images')
+      .done (response) ->
         $scope.images = response
 
     productionSeries = (series) ->
@@ -64,8 +64,8 @@ angular.module('app')
 
     $scope.getStatistics = (src) ->
       # $scope.chart.loading = true
-      $http.get(src)
-        .success (csv) ->
+      $.getJSON(src)
+        .done (csv) ->
           [csv, header, footer] = dataRows(csv)  # TODO Do this on backend
           result = Papa.parse csv,
             header: true
