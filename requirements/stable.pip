@@ -11,8 +11,7 @@ cssmin==0.2.0
 # excelsior==0.0.5
 gunicorn==18.0
 nodeenv==0.7.0
-numpy==1.9.1
+numpy==1.20.3
 py==1.4.15
-scipy==0.14.0
+scipy==1.6.3
 webassets==0.10.1
-wsgiref==0.1.2
