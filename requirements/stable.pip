@@ -7,12 +7,12 @@ Jinja2==2.7.1
 Markdown==3.3.4
 MarkupSafe==1.1.1
 Unidecode==0.04.14
-Werkzeug==0.9.4
+Werkzeug<1
 cssmin==0.2.0
 # excelsior==0.0.5
 gunicorn==18.0
 nodeenv==0.7.0
 numpy==1.20.3
-py==1.4.15
+# py==1.4.15
 scipy==1.6.3
 webassets==0.10.1
