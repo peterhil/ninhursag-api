@@ -12,7 +12,6 @@ css_application = Bundle(
 )
 
 css_foundation = Bundle(
-    'vendor/foundation-sites/scss/normalize.scss',
     'vendor/foundation-sites/scss/foundation.scss',
     filters='scss',
     output='gen/foundation.css'
@@ -43,8 +42,9 @@ js_vendor = Bundle(
     'vendor/lodash/lodash.js',
     'vendor/papaparse/papaparse.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
-    'vendor/foundation-sites/js/foundation/foundation.js',
-    'vendor/foundation-sites/js/foundation/foundation.topbar.js',
+    'vendor/foundation-sites/dist/js/foundation.js',
+    # 'vendor/foundation-sites/js/foundation.js',
+    # 'vendor/foundation-sites/js/foundation.topbar.js',
     'vendor/humanize-plus/public/src/humanize.js',
     'vendor/ramda/ramda.js',
     'vendor/soundex-code/index.js',

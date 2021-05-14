@@ -32,10 +32,10 @@
     "coffeescript": "^2.5.1",
     "d3": "3.5.17",
     "es5-shim": "4.5.15",
-    "foundation-sites": "5.5.3",
+    "foundation-sites": "6.6.3",
     "graceful-fs": "^4.2.6",
     "humanize-plus": "1.5.0",
-    "jquery": "2.1.4",
+    "jquery": "^3.6.0",
     "less": "^4.1.1",
     "lodash": "^4.17.21",
     "minimatch": "^3.0.4",
@@ -47,6 +47,7 @@
     "soundex-code": "0.1.2",
     "spin.js": "2.0.1",
     "tinycolor2": "1.1.2",
-    "uglify-js": "^3.13.2"
+    "uglify-js": "^3.13.2",
+    "what-input": "4.1.0"
   }
 }
