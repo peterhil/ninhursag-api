@@ -1,17 +1,17 @@
 lockfileVersion: 5.3
 
 specifiers:
-  angular: 1.3.20
-  angular-animate: 1.3.20
-  angular-aria: 1.3.20
-  angular-cookies: 1.3.20
+  angular: 1.8.2
+  angular-animate: 1.8.2
+  angular-aria: 1.8.2
+  angular-cookies: 1.8.2
   angular-growl-v2: github:Jacq/angular-growl-2
-  angular-messages: 1.3.20
-  angular-resource: 1.3.20
-  angular-route: 1.3.20
-  angular-sanitize: 1.3.20
+  angular-messages: 1.8.2
+  angular-resource: 1.8.2
+  angular-route: 1.8.2
+  angular-sanitize: 1.8.2
   angular-spinner: 0.6.2
-  angular-touch: 1.3.20
+  angular-touch: 1.8.2
   coffeescript: ^2.5.1
   d3: 3.5.17
   es5-shim: 4.5.15
@@ -33,17 +33,17 @@ specifiers:
   uglify-js: ^3.13.2
 
 dependencies:
-  angular: 1.3.20
-  angular-animate: 1.3.20
-  angular-aria: 1.3.20
-  angular-cookies: 1.3.20
+  angular: 1.8.2
+  angular-animate: 1.8.2
+  angular-aria: 1.8.2
+  angular-cookies: 1.8.2
   angular-growl-v2: github.com/Jacq/angular-growl-2/8ef35967afa04e179050fb169072f51cbf6cf312
-  angular-messages: 1.3.20
-  angular-resource: 1.3.20
-  angular-route: 1.3.20
-  angular-sanitize: 1.3.20
+  angular-messages: 1.8.2
+  angular-resource: 1.8.2
+  angular-route: 1.8.2
+  angular-sanitize: 1.8.2
   angular-spinner: 0.6.2
-  angular-touch: 1.3.20
+  angular-touch: 1.8.2
   coffeescript: 2.5.1
   d3: 3.5.17
   es5-shim: 4.5.15
@@ -66,32 +66,32 @@ dependencies:
 
 packages:
 
-  /angular-animate/1.3.20:
-    resolution: {integrity: sha1-0XB8cn+K0N8hxKLewgzX/ElFtSo=}
+  /angular-animate/1.8.2:
+    resolution: {integrity: sha512-Jbr9+grNMs9Kj57xuBU3Ju3NOPAjS1+g2UAwwDv7su1lt0/PLDy+9zEwDiu8C8xJceoTbmBNKiWGPJGBdCQLlA==}
     dev: false
 
-  /angular-aria/1.3.20:
-    resolution: {integrity: sha1-LaPMHFGOtJwfM1ou0TkyqX7JTeA=}
+  /angular-aria/1.8.2:
+    resolution: {integrity: sha512-xWT1Lm+Xug2GM6nGNMioBP4hXt3sj2eGaExa4cVCZUYSVWezgyuD1RiLgzJzwTkBGYplHQUzQaz3yDY8jVI6yQ==}
     dev: false
 
-  /angular-cookies/1.3.20:
-    resolution: {integrity: sha1-WQ7RhQGBWniYqnNOQR1AnvOQNIs=}
+  /angular-cookies/1.8.2:
+    resolution: {integrity: sha512-M6fCnsnw1pj1+nXuO28ilJ+h6pFCIXQKSEgy9/PIoN0sZr5FqsE9BK18PdBQa8dif+fnHCAYpPU8MgDzT/sZSg==}
     dev: false
 
-  /angular-messages/1.3.20:
-    resolution: {integrity: sha1-99N6RAsbWUL+1rLzvPv6L/4dKlg=}
+  /angular-messages/1.8.2:
+    resolution: {integrity: sha512-M1qNh/30cLJi4yJJ+3YB8saPonRcavz5Dquqz0T/aUySKJhIkUoeCkmF+BcLH4SJ5PBp04yy4CZUUeNRVi7jZA==}
     dev: false
 
-  /angular-resource/1.3.20:
-    resolution: {integrity: sha1-VBVzEHRDnv/1q60N2dTFG2PZUbg=}
+  /angular-resource/1.8.2:
+    resolution: {integrity: sha512-CbTu8ypkVZMBLm+Wd+jI9xR7QEVCeUgN8WXsr9Yi9l0s/8ZQa5kEIuYX3F/75Ej8Xs1Jp9DoKjAyvACI6Q8IJA==}
     dev: false
 
-  /angular-route/1.3.20:
-    resolution: {integrity: sha1-E6dc/+16Snh+rXdQI2CPO94G4ZQ=}
+  /angular-route/1.8.2:
+    resolution: {integrity: sha512-49LJYxuaQ/ZDiu9dD2xo1LkazqObkGjw0a7dUF7UKCT8EELgBsMd6QrI6aEVGtI62ppkiFkxqmiV8fcwYdXpug==}
     dev: false
 
-  /angular-sanitize/1.3.20:
-    resolution: {integrity: sha1-WxyqQXa42yA519HBUnU3phvjzWc=}
+  /angular-sanitize/1.8.2:
+    resolution: {integrity: sha512-OB6Goa+QN3byf5asQ7XRl7DKZejm/F/ZOqa9z1skqYVOWA2hoBxoCmt9E7+i7T/TbxZP5zYzKxNZVVJNu860Hg==}
     dev: false
 
   /angular-spinner/0.6.2:
@@ -99,12 +99,12 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /angular-touch/1.3.20:
-    resolution: {integrity: sha1-M2PSj+kJH6smadUkoLmp0kfYFKQ=}
+  /angular-touch/1.8.2:
+    resolution: {integrity: sha512-tGoFNsONm/VHFcBW8gySVZvpCIYAvsAlEuHpJDugGn+3ENLxSDhpZ4ikev4KXfWr8ZNsYGoVSfsvJegkiC+9Ig==}
     dev: false
 
-  /angular/1.3.20:
-    resolution: {integrity: sha1-sjo9fF5/mffZW5tNSbmsNVJpuu4=}
+  /angular/1.8.2:
+    resolution: {integrity: sha512-IauMOej2xEe7/7Ennahkbb5qd/HFADiNuLSESz9Q27inmi32zB0lnAsFeLEWcox3Gd1F6YhNd1CP7/9IukJ0Gw==}
     dev: false
 
   /ansi-regex/5.0.0:
