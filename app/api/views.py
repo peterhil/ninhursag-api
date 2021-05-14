@@ -92,6 +92,8 @@ class Estimate(Resource):
             result = estimate(scipy_functions('pdf').get(function), data, years, 100, log=False)
         except RuntimeError as err:
             abort(400, errors=[str(err)])
+        except ValueError as err:
+            abort(400, errors=[str(err)])
         except Exception as err:
             abort(500, errors=[str(err)])
 
