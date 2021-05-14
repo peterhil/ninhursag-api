@@ -43,7 +43,7 @@ export function reportFitQuality (estimate, fn) {
         `[Estimate] Std error ${fn}:`,
         {
             ...stdErr,
-            ...{medianOverMean},
+            ...{ medianOverMean },
         }
     )
 

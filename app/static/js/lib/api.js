@@ -1,7 +1,5 @@
 import { identity } from 'ramda'
 
-import { alerts } from '../stores/alerts'
-
 function isJson (response) {
     return response.headers.get('Content-Type') === 'application/json'
 }
