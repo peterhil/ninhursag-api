@@ -8,12 +8,6 @@ import json
 import os
 
 from flask import current_app, request, Blueprint
-
-
-# https://stackoverflow.com/a/67523704/470560
-import flask.scaffold
-flask.helpers._endpoint_from_view_func = flask.scaffold._endpoint_from_view_func
-import flask_restful
 from flask_restful import abort, Api, Resource
 
 from .analysis import estimate, scipy_functions
