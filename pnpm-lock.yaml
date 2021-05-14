@@ -20,7 +20,7 @@ specifiers:
   humanize-plus: 1.5.0
   jquery: 2.1.4
   less: ^4.1.1
-  lodash: 2.4.2
+  lodash: ^4.17.21
   minimatch: ^3.0.4
   mkdirp: ^1.0.4
   modernizr: ^3.11.6
@@ -52,7 +52,7 @@ dependencies:
   humanize-plus: 1.5.0
   jquery: 2.1.4
   less: 4.1.1
-  lodash: 2.4.2
+  lodash: 4.17.21
   minimatch: 3.0.4
   mkdirp: 1.0.4
   modernizr: 3.11.6
@@ -392,11 +392,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       p-locate: 4.1.0
-    dev: false
-
-  /lodash/2.4.2:
-    resolution: {integrity: sha1-+t2DS5aDBz2hebPq5tnA0VBT9z4=}
-    engines: {'0': node, '1': rhino}
     dev: false
 
   /lodash/4.17.21:

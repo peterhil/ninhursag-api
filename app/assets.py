@@ -40,7 +40,7 @@ js_vendor = Bundle(
     'vendor/angular-touch/angular-touch.js',
     'vendor/angular-growl-v2/build/angular-growl.js',
     'vendor/angular-spinner/angular-spinner.js',
-    'vendor/lodash/dist/lodash.js',
+    'vendor/lodash/lodash.js',
     'vendor/papaparse/papaparse.js',
     # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
     'vendor/foundation-sites/js/foundation/foundation.js',
