@@ -47,7 +47,7 @@ angular.module('app')
     $scope.chart.selectedSeries = productionSeries($scope.chart.series)
 
     isData = (row) ->
-      isIndex = R.match RegExp("^(\\d{4}|#{$scope.chart.index})$")
+      isIndex = R.match RegExp("^(\\d{4}|#{$scope.chart.index})")
       !! R.find(isIndex, row)
 
     dataRows = (csv) ->

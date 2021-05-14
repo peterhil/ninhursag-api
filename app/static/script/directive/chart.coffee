@@ -87,7 +87,7 @@ angular.module('app')
         , R.values(scope.chart.data))
 
         api.estimate(request_data)
-          .success (response) ->
+          .done (response) ->
             key = "#{scope.chart.selectedSeries} (estimated)"
             estimate = Fx.indexBy(scope.chart.index,
               R.mapObj.idx(
@@ -102,10 +102,8 @@ angular.module('app')
             scope.chart.series = R.uniq scope.chart.series
             scope.chart.data = _.merge scope.chart.data, estimate
             scope.getReserves()
-          # .error (response) ->
-          #   growl.warning response.errors.join("\n")
-          .catch (response) ->
-            if response.data.errors?
+          .fail (response) ->
+            if response.data?.errors?
               growl.error response.data.errors.join("\n")
             else
               growl.error "#{response.status} #{response.statusText}"
