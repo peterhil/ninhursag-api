@@ -64,7 +64,7 @@ angular.module('app')
 
     $scope.getStatistics = (src) ->
       # $scope.chart.loading = true
-      $.getJSON(src)
+      $.get(src)
         .done (csv) ->
           [csv, header, footer] = dataRows(csv)  # TODO Do this on backend
           result = Papa.parse csv,
