@@ -1,12 +1,19 @@
 <script>
     import { debounce } from 'lodash'
+
     import { functions } from '../stores/functions'
+    import { controller } from '../stores/estimate'
 
     export let selected
 
     const onSelected = (event) => {
         selected = event.target.value
         console.info('Function:', selected)
+
+        if (controller) {
+            controller.abort() // Cancel previous request
+        }
+
         return false
     }
 

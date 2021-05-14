@@ -36,20 +36,14 @@ function isJson (response) {
 }
 
 async function handleResponse (response) {
+    const method = isJson(response) ? 'json' : 'text'
+    const body = await response[method]()
+
     if (response.ok) {
-        const method = isJson(response) ? 'json' : 'text'
-        const res = await response[method]()
-
-        return res
+        return body
     } else {
-        const text = await response.text()
-        const status = [
-            'HTTP',
-            response.status,
-            response.statusText,
-        ].join(' ')
-
-        throw new Error(status + ': ' + text)
+        const msg = (method === 'json' ? body.errors : body)
+        throw new Error(msg)
     }
 }
 
@@ -64,9 +58,28 @@ export async function get (
         .catch(failure)
 }
 
+export async function post (
+    url,
+    data = {},
+    success = identity,
+    failure = console.error,
+) {
+    return await fetch(url, {
+        ...data,
+        // Force these parameters (override data parameters):
+        method: 'POST',
+        mode: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data.body),
+    })
+        .then(handleResponse)
+        .then(success)
+        .catch(failure)
+}
+
 const api = {
     get,
-    // post,
+    post,
 }
 
 export default api
