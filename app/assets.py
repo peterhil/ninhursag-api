@@ -37,7 +37,7 @@ js_vendor = Bundle(
     'vendor/angular-sanitize/angular-sanitize.js',
     # 'vendor/angular-touch/angular-touch.js',
     'vendor/angular-growl-v2/build/angular-growl.js',
-    'vendor/angular-spinner/angular-spinner.js',
+    'vendor/angular-spinner/dist/angular-spinner.js',
     'vendor/js-cookie/src/js.cookie.js',
     'vendor/lodash/lodash.js',
     'vendor/papaparse/papaparse.js',
