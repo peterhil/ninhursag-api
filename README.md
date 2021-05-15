@@ -1,12 +1,28 @@
-# Ninhursag is a visual mineral resource index based on US Geologic Survey statistics
+# Ninhursag is visualisation of mineral reserves
 
-See [it running on Heroku](https://ninhursag.herokuapp.com/).
-The code is based on [Skeleton](https://github.com/peterhil/skeleton), which is a Python Flask template.
+The data is from US Geologic Survey and includes data for world
+production of all commonly mined minerals starting from year 1900.
 
-## Installation
+You can try to fit various functions to world production data of
+the selected mineral by choosing a statistical distribution function.
+
+See the visualisations at:  
+[https://ninhursag.herokuapp.com/](https://ninhursag.herokuapp.com/)
+
+The app is running on free tier of Heroku, so please be patient as
+starting the dyno takes a few seconds!
+
+## About
+
+Read [why I started this project](./pages/flat/About.md).
+
+## Develop
 
 See [INSTALL.md](./docs/INSTALL.md) for instructions on installing
 Ninhursag for development.
+
+The code is based on [Skeleton](https://github.com/peterhil/skeleton),
+which is a Python Flask template that is now completely outdated.
 
 ## Contact
 
