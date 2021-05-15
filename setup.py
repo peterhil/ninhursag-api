@@ -11,8 +11,8 @@
 from pip.req import parse_requirements
 from setuptools import setup, Command
 
-PACKAGE_NAME = 'skeleton'
-PACKAGE_VERSION = '0.1.0'
+PACKAGE_NAME = 'ninhursag'
+PACKAGE_VERSION = '0.9.0'
 PACKAGES = ['app']
 INSTALL_REQS = [str(ir.req) for ir in parse_requirements('requirements/stable.pip')]
 TEST_REQS = [str(ir.req) for ir in parse_requirements('requirements/dev.pip')]
@@ -41,12 +41,12 @@ setup(
     name=PACKAGE_NAME,
     version=PACKAGE_VERSION,
     packages=PACKAGES,
-    description="""Skeleton is a Python Flask template.""",
+    description="""Ninhursag is visualisation of mineral reserves""",
     long_description=README_TEXT,
     author='Peter Hillerström',
     author_email='peter.hillerstrom@gmail.com',
     license='MIT License',
-    url='https://github.com/peterhil/skeleton',
+    url='https://github.com/peterhil/ninhursag',
     requires=[
     ],
     install_requires=INSTALL_REQS,
@@ -55,13 +55,25 @@ setup(
     entry_points={'app': '.test = test'},
     scripts=[],
     classifiers = [
-            'Intended Audience :: Developers',
-            'Intended Audience :: Information Technology',
-            'License :: OSI Approved :: MIT License',
-            'Operating System :: OS Independent',
-            'Programming Language :: Python',
-            'Programming Language :: Python :: 2',
-            'Topic :: Software Development',
+        'Development Status :: 4 - Beta',
+        'Environment :: Web Environment',
+        'Framework :: Flask',
+        'Intended Audience :: Education',
+        'Intended Audience :: End Users/Desktop',
+        'Intended Audience :: Science/Research',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Operating System :: MacOS :: MacOS X',
+        'Operating System :: POSIX',
+        'Operating System :: POSIX :: Linux',
+        'Programming Language :: JavaScript',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
+        'Topic :: Education',
+        'Topic :: Scientific/Engineering :: Atmospheric Science',
+        'Topic :: Scientific/Engineering :: Information Analysis',
+        'Topic :: Scientific/Engineering :: Mathematics',
+        'Topic :: Scientific/Engineering :: Visualization',
     ],
     cmdclass = {
         'test': PyTest
