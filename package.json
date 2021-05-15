@@ -1,7 +1,7 @@
 {
   "name": "ninhursag",
   "description": "Ninhursag is a visualisation of US Geologic Survey statistics from year 1900 onwards of world production of various minerals, and fitting functions for estimating how long our reserves will last.",
-  "version": "0.0.0",
+  "version": "0.9.0",
   "engines": {
     "node": "v16.1.0",
     "npm": "7.6.3"
