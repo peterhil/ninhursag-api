@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .controller 'MineralCtrl', ['$cookies', '$http', '$log', '$scope', 'Functional', ($cookies, $http, $log, $scope, Fx) ->
+  .controller 'MineralCtrl', ['$log', '$scope', 'Functional', ($log, $scope, Fx) ->
     $scope.chart =
       src: ''
       data: []
@@ -16,24 +16,24 @@ angular.module('app')
 
     $scope.minerals = {}
     $scope.mineral = ''
-    $http.get('/api/v1/minerals')
-      .success (response) ->
+    $.getJSON('/api/v1/minerals')
+      .done (response) ->
         $scope.minerals = response
-        $scope.mineral = if ($cookies.mineral in R.keys($scope.minerals)) then $cookies.mineral else 'Gold'
+        $scope.mineral = if (Cookies.get('mineral') in R.keys($scope.minerals)) then Cookies.get('mineral') else 'Gold'
         $scope.chart.src = "/static/data/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
     $scope.currentFunction = 'powerlognorm'
-    $http.get('/api/v1/estimate')
-      .success (response) ->
+    $.getJSON('/api/v1/estimate')
+      .done (response) ->
         $scope.functions = response
 
-    $http.get('/api/v1/reserves')
-      .success (response) ->
+    $.getJSON('/api/v1/reserves')
+      .done (response) ->
         $scope.reserves = response
 
-    $http.get('/api/v1/images')
-      .success (response) ->
+    $.getJSON('/api/v1/images')
+      .done (response) ->
         $scope.images = response
 
     productionSeries = (series) ->
@@ -47,7 +47,7 @@ angular.module('app')
     $scope.chart.selectedSeries = productionSeries($scope.chart.series)
 
     isData = (row) ->
-      isIndex = R.match RegExp("^(\\d{4}|#{$scope.chart.index})$")
+      isIndex = R.match RegExp("^(\\d{4}|#{$scope.chart.index})")
       !! R.find(isIndex, row)
 
     dataRows = (csv) ->
@@ -64,8 +64,8 @@ angular.module('app')
 
     $scope.getStatistics = (src) ->
       # $scope.chart.loading = true
-      $http.get(src)
-        .success (csv) ->
+      $.get(src)
+        .done (csv) ->
           [csv, header, footer] = dataRows(csv)  # TODO Do this on backend
           result = Papa.parse csv,
             header: true
@@ -82,7 +82,10 @@ angular.module('app')
       src = $scope.minerals[val]
       # $log.info "Watching mineral:", val, old
       return unless src
-      $cookies['mineral'] = val
+      Cookies.set('mineral', val, {
+        path: '', # Current path
+        sameSite: 'lax',
+      })
       $scope.chart.src = "/static/data/tsv/#{src}"
 
     $scope.$watch 'chart.series', (val, old) ->
