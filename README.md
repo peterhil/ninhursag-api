@@ -7,7 +7,7 @@ You can try to fit various functions to world production data of the
 selected mineral by choosing a
 [statistical distribution function][scipy-functions].
 
-See the visualisations at:  
+See the interactive visualisation at:  
 https://ninhursag.herokuapp.com/
 
 
