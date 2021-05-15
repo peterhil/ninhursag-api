@@ -16,7 +16,7 @@ starting the dyno takes a few seconds!
 
 ## About
 
-Read about [why I started this project](./pages/flat/About.md).
+Read about [why I started this project](./app/pages/flat/about.md).
 
 ## Develop
 
