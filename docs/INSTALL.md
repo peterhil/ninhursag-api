@@ -11,31 +11,33 @@ otherwise noted.
 ### 2. Make sure a Python version greater than or equal to 3.8 is installed
 
 Most Linux distributions come with Python already installed, if not
-see [the Python documentation](https://docs.python.org/3/using/index.html) for
+see the [Python 3 documentation](https://docs.python.org/3/using/index.html) for
 instructions on how to install Python.
 
 ### 3. Install the system requirements
 
-#### Install the dependencies:
+Install node and pnpm:
 
-Command `port` refers to using Macports on Mac OS X. If you are using
-a different operating system, replace the `port` command with your
-system’s package manager (for example `brew`, `pacman`, `apt-get` or `yum`):
+    brew install node
+    brew install pnpm
 
-    sudo easy_install pip  # or some other method to install pip
-    sudo port install node  # <-- replace port with the command for your package manager
-    sudo pnpm install -g less
+If you are using a different operating system, replace the `brew`
+command with your system’s package manager – for example `pacman` or
+`apt-get`.
 
 ### 4. Install Python and dependencies
 
-Install Python [into virtualenv](http://www.virtualenv.org/en/latest/virtualenv.html)
-and Python dependencies with [pip](http://www.pip-installer.org/en/latest/):
+Install Python into virtualenv:
 
     python -m venv --prompt ninhursag-py38 venv/py38
     source ./venv/py38/bin/activate
 
-    # Install the application's Python package and dependencies with pip
+Install Python dependencies with pip:
+
     pip install -r requirements/dev.pip
+
+Pip should be install automatically with a virtualenv. If not, install
+it with your system's package manager of `easy_install`.
 
 ### 5. Install the node components
 
@@ -62,7 +64,6 @@ Or preferably if you have set /etc/hosts entry:
 Cookies may not work without a dot in the domain name, so the latter
 method it preferred.
 
-
 ###  7. Configuration
 
 The application’s default settings can be found on `app/settings.py`.
@@ -83,8 +84,7 @@ Some of these settings are exported to front end from the route
 `/config.json` at `app/frontend/views.py` and are available from
 Javascript at `app.config` with the keys lower cased.
 
-
-## Nginx as a reverse proxy
+#### Nginx as a reverse proxy
 
 On production and maybe even on development, you should set up Nginx
 as a reverse proxy to your application or use some other
