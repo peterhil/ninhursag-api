@@ -11,7 +11,7 @@
     "minerals",
     "reserves"
   ],
-  "homepage": "https://github.com/peterhil/skeleton",
+  "homepage": "https://github.com/peterhil/ninhursag",
   "author": "Peter Hillerström <peter.hillerstrom@gmail.com>",
   "scripts": {
     "start": "source ./activate && python run.py"
