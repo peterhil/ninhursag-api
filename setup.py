@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 #
 # Copyright (c) 2014, Peter Hillerström <peter.hillerstrom@gmail.com>
@@ -7,15 +7,54 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 
+import os
+import re
+import pprint
 
-from pip.req import parse_requirements
+from pathlib import Path
 from setuptools import setup, Command
+
+
+# Solution to parse requirements by users Scrotch, Karsus and
+# sh0rtcircuit: https://stackoverflow.com/a/57191701/470560
+try:  # pip >=20
+    from pip._internal.network.session import PipSession
+    from pip._internal.req import parse_requirements
+except ImportError:
+    try:  # 10 <= pip <= 19.3.1
+        from pip._internal.req import parse_requirements
+        from pip._internal.download import PipSession
+    except ImportError:  # pip <= 9.0.3
+        from pip.req import parse_requirements
+        from pip.download import PipSession
+
+
+def clean(require):
+    """
+    Replace git requirements with just the requirement name
+    """
+    cleaned = re.sub(r'^git\+[^#]+#egg=', '', require)
+
+    return str(cleaned)
+
+
+def requires(filename):
+    path = Path(os.path.join(os.path.dirname(__file__), filename))
+    requires = [
+        clean(req.requirement)
+        for req
+        in parse_requirements(str(path), session=PipSession())
+    ]
+
+    return requires
+
 
 PACKAGE_NAME = 'ninhursag'
 PACKAGE_VERSION = '0.9.0'
 PACKAGES = ['app']
-INSTALL_REQS = [str(ir.req) for ir in parse_requirements('requirements/stable.pip')]
-TEST_REQS = [str(ir.req) for ir in parse_requirements('requirements/dev.pip')]
+INSTALL_REQS = requires('requirements/stable.pip')
+TEST_REQS = requires('requirements/dev.pip')
+
 
 with open('README.md', 'r') as readme:
     README_TEXT = readme.read()
@@ -41,17 +80,15 @@ setup(
     name=PACKAGE_NAME,
     version=PACKAGE_VERSION,
     packages=PACKAGES,
-    description="""Ninhursag is visualisation of mineral reserves""",
+    description="Ninhursag is visualisation of mineral reserves",
     long_description=README_TEXT,
     author='Peter Hillerström',
     author_email='peter.hillerstrom@gmail.com',
     license='MIT License',
     url='https://github.com/peterhil/ninhursag',
-    requires=[
-    ],
+    requires=[],
     install_requires=INSTALL_REQS,
     tests_require=TEST_REQS,
-    extras_require={'test': TEST_REQS},
     entry_points={'app': '.test = test'},
     scripts=[],
     classifiers = [
