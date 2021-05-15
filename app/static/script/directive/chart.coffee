@@ -13,7 +13,7 @@ angular.module('app')
       preserveAspectRatio: '@preserveaspectratio'
       viewBox: '@viewbox'
       chart: '=ngModel'
-      function: '='
+      fn: '='
       estimate: '='
       minerals: '='
       mineral: '='
@@ -26,7 +26,7 @@ angular.module('app')
       scope.preserveAspectRatio ||= "xMidYMin meet"
       scope.chart.src = attrs.src
       scope.logscale = true
-      scope['function'] = Cookies.get('function') || scope['function']
+      scope.fn = Cookies.get('function') || scope.fn
       scope.mineral = Cookies.get('mineral') || scope.mineral
 
       identity = ->
@@ -184,10 +184,10 @@ angular.module('app')
 
       scope.$watchCollection 'chart.data', (val, old) ->
         # $log.info "Watching chart.data:", val
-        scope.estimate(scope.function)  # TODO makes double requests
+        scope.estimate(scope.fn)  # TODO makes double requests
         scope.render(scope.chart)
 
-      scope.$watch 'function', (val, old) ->
+      scope.$watch 'fn', (val, old) ->
         # $log.info "Watching function:", val, old
         return unless val
         Cookies.set('function', val, {
