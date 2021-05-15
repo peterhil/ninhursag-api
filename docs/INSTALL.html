@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>INSTALL.html</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+</head>
+
+<body>
+
+<h2>Installation of Ninhursag for development</h2>
+
+<h3>1. Checkout this repository from git</h3>
+
+<pre><code>git clone https://github.com/peterhil/ninhursag ninhursag-git
+cd ninhursag-git
+</code></pre>
+
+<p>All commands should be executed on project&rsquo;s root directory unless
+otherwise noted.</p>
+
+<h3>2. Make sure a Python version greater than or equal to 3.8 is installed</h3>
+
+<p>Most Linux distributions come with Python already installed, if not
+see <a href="https://docs.python.org/3/using/index.html">the Python documentation</a> for
+instructions on how to install Python.</p>
+
+<h3>3. Install the system requirements</h3>
+
+<h4>Install the dependencies:</h4>
+
+<p>Command <code>port</code> refers to using Macports on Mac OS X. If you are using
+a different operating system, replace the <code>port</code> command with your
+system’s package manager (for example <code>apt-get</code> or <code>yum</code>) on all
+commands below:</p>
+
+<pre><code>sudo easy_install pip  # or some other method to install pip
+sudo port install node  # &lt;-- replace port with the command for your package manager
+sudo pnpm install -g less
+</code></pre>
+
+<h3>4. Install Python and dependencies</h3>
+
+<p>Install Python <a href="http://www.virtualenv.org/en/latest/virtualenv.html">into virtualenv</a>
+and Python dependencies with <a href="http://www.pip-installer.org/en/latest/">pip</a>:</p>
+
+<pre><code>python -m venv --prompt ninhursag-py38 venv/py38
+source ./venv/py38/bin/activate
+
+# Install the application's Python package and dependencies with pip
+pip install -r requirements/dev.pip
+</code></pre>
+
+<h3>5. Install the node components</h3>
+
+<pre><code>pnpm install
+</code></pre>
+
+<h3>6. Start the app</h3>
+
+<pre><code>source activate
+pnpm start
+</code></pre>
+
+<p>For setting Flask options use:</p>
+
+<pre><code>source activate
+FLASK_ENV=development DEBUG=true ASSETS_DEBUG=true flask run
+</code></pre>
+
+<p>Open the visualisation in a web browser:</p>
+
+<pre><code>open http://localhost:5000/  # or: open http://ninhursag.dev/ if using nginx and have set hosts
+</code></pre>
+
+<h3>7. Configuration</h3>
+
+<p>The application’s default settings can be found on <code>app/settings.py</code>.</p>
+
+<p>These can be overridden by copying the defaut settings file to <code>instance/settings.py</code>. Edit that file to suit your needs, and drop unmodified values to prevent shadowing the default settings.</p>
+
+<p>At minimum you should set <code>SECRET_KEY</code> to some unguessable and randomish value. You might also want to set <code>SERVER_NAME</code> to match your development server address (possibly with a port number).</p>
+
+<p>For a more fine detailed configuration, see the <a href="http://flask.pocoo.org/docs/config/#builtin-configuration-values">list of built-in settings</a> on <a href="http://flask.pocoo.org/docs/">Flask documentation</a>.</p>
+
+<p>Some of these settings are exported to front end from the route <code>/config.json</code> at <code>app/frontend/views.py</code> and are available from Javascript at <code>app.config</code> with the keys lower cased.</p>
+
+<h2>Nginx as a reverse proxy</h2>
+
+<p>On production and maybe even on development, you should set up Nginx
+as a reverse proxy to your application or use some other
+<a href="http://flask.pocoo.org/docs/deploying/">Flask production deployment option</a>.</p>
+
+<p>See <a href="docs/nginx.md">docs/nginx.md</a> on how to do that.</p>
+
+</body>
+</html>
