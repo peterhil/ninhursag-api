@@ -5,11 +5,15 @@ angular.module('app').controller 'MineralCtrl', [
   '$log',
   '$scope',
   'Functional',
+  '$routeParams',
+  '$location',
   (
     $http,
     $log,
     $scope,
     Fx,
+    $routeParams,
+    $location,
   ) ->
     $scope.chart =
       src: ''
@@ -28,7 +32,16 @@ angular.module('app').controller 'MineralCtrl', [
     $http.get('/api/v1/minerals')
       .then (response) ->
         $scope.minerals = response.data
-        $scope.mineral = if (Cookies.get('mineral') in R.keys($scope.minerals)) then Cookies.get('mineral') else 'Gold'
+        if ($routeParams.mineral == 'statistics') and (Cookies.get('mineral') in R.keys($scope.minerals))
+          mineral = Cookies.get('mineral')
+          $log.info 'Using cookies for mineral:', mineral
+        else if $routeParams.mineral in R.keys($scope.minerals)
+          mineral = $routeParams.mineral
+          $log.info 'Using route params for mineral:', mineral
+        else
+          mineral = 'Silver'
+          $log.info 'Using default mineral:', mineral
+        $scope.mineral = mineral
         $scope.chart.src = "/static/data/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
@@ -89,21 +102,23 @@ angular.module('app').controller 'MineralCtrl', [
           $scope.chart.loading = false
 
     $scope.$watch 'mineral', (val, old) ->
-      return unless val
       src = $scope.minerals[val]
-      $log.info "Watching mineral:", val, src, old, typeof val, $scope.minerals
-      return unless src
+      guard = not val or not src or (val is old)
+      return if guard
+
+      $log.info "Mineral:", val
+      $scope.chart.src = "/static/data/tsv/#{src}"
+      $location.url('/mineral/' + encodeURI(val))
       Cookies.set('mineral', val, {
         path: '', # Current path
         sameSite: 'strict',
       })
-      $scope.chart.src = "/static/data/tsv/#{src}"
 
     $scope.$watch 'chart.series', (val, old) ->
       $scope.chart.selectedSeries = productionSeries(val)
 
     $scope.$watch 'chart.src', (src, old) ->
-      # $log.info "Watching chart.src:", src, old
-      return unless src
+      return if not src or src is old
+      $log.info "Chart source:", src
       $scope.getStatistics(src)
 ]

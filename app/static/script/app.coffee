@@ -36,8 +36,10 @@ angular
         .when '/listing',
           templateUrl: '/static/view/listing.html'
           controller: 'ListingCtrl'
+        .when '/mineral/:mineral',
+          controller: 'MineralCtrl'
         .otherwise
-          redirectTo: '/ng-mineral/statistics'
+          redirectTo: '/'
       growlProvider.globalPosition 'top-center'
       growlProvider.globalInlineMessages true
       growlProvider.globalTimeToLive

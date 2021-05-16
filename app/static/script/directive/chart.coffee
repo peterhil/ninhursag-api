@@ -183,17 +183,24 @@ angular.module('app')
         scope.render(scope.chart)
 
       scope.$watchCollection 'chart.data', (val, old) ->
-        # $log.info "Watching chart.data:", val
-        scope.estimate(scope.function)  # TODO makes double requests
+        return if not val
+        # any = R.reduce(
+        #   (a, b) ->
+        #     return a or b
+        #   false
+        # )
+        # estimated = if any(R.map(R.match(/estimated/), scope.chart.series)) then ' estimated' else ''
+        # $log.info "Chart data#{estimated}:", val
+        scope.estimate(scope.function)
         scope.render(scope.chart)
 
       scope.$watch 'function', (val, old) ->
-        # $log.info "Watching function:", val, old
-        return unless val
+        return if not val or val is old
+        $log.info "Function:", val
+        scope.estimate(val)
+        scope.render(scope.chart)
         Cookies.set('function', val, {
           path: '', # Current path
           sameSite: 'strict',
         })
-        scope.estimate(val)
-        scope.render(scope.chart)
   ]
