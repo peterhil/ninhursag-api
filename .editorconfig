@@ -3,5 +3,5 @@
 # https://EditorConfig.org
 #
 
-[*.coffee]
+[*.{coffee,html}]
 indent_size = 2
