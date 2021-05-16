@@ -3,96 +3,89 @@
 {% block title %}{{ mineral | capitalize }} &ndash; world production{% endblock %}
 
 {% block head %}
-  {{ super() }}
+{{ super() }}
 {% endblock %}
 
 {% block content %}
-  <div class="row" data-ng-controller="MineralCtrl">
-    <div class="small-12 large-9 columns">
+<div class="row" data-ng-controller="MineralCtrl">
+  <div class="small-12 large-9 columns">
+    <h1 data-ng-bind="mineral">{{ mineral | capitalize }}</h1>
 
-      <h1 data-ng-bind="mineral">{{ mineral | capitalize }}</h1>
-
-      {# <p class="description">Bauxite is an aluminium ore and is the main source of aluminium.</p> #}
-
-      <div>
-        <div class="row">
-          <div class="large-4 columns">
-            <label>Select resource
-              <select data-ng-options="name as name for (name, src) in minerals"
-                      data-ng-model="mineral">
-              </select>
-            </label>
-          </div>
-          <div class="large-4 columns">
-            <label>Select function
-              <select data-ng-options="fn as fn for fn in functions.pdf track by fn"
-                      data-ng-model="currentFunction">
-                <option value=""></option>
-              </select>
-            </label>
-          </div>
-        </div>
-        <figure data-chart="true"
-                data-ng-model="chart"
-                data-function="currentFunction"
-                data-estimate="estimate"
-                data-mineral="mineral"
-                data-minerals="minerals"
-                data-reserves="reserves"
-                data-src=""
-                data-width="960"
-                data-height="660"
-                data-caption="U.S. Geological Survey statistics (Metric tons gross weight)"
-                data-legend="true"
-                >
-        </figure>
+    <div class="row">
+      <div class="large-4 columns">
+        <label>Select resource
+          <select data-ng-options="name as name for (name, src) in minerals"
+                  data-ng-model="mineral">
+          </select>
+        </label>
       </div>
 
+      <div class="large-4 columns">
+        <label>Select function
+          <select data-ng-options="fn as fn for fn in functions.pdf track by fn"
+                  data-ng-model="currentFunction">
+            <option value=""></option>
+          </select>
+        </label>
+      </div>
     </div>
-    <aside class="small-12 large-3 columns">
 
-      <figure data-resource="true"
-              data-image="image"
-              data-ng-repeat="image in images[mineral]"></figure>
-
-      <div>
-        <h3>Data sources and references</h3>
-        <ul>
-            <li>
-                <a href="https://www.usgs.gov/centers/nmic/historical-statistics-mineral-and-material-commodities-united-states">
-                    U.S. Geological Survey Data Series 140 (in XLSX format)
-                </a>
-            </li>
-            <li>
-                <a href="https://www.usgs.gov/centers/nmic/mineral-commodity-summaries">
-                    USGS Mineral Commodity Summaries
-                </a>
-            </li>
-        </ul>
-
-        <h4>Other info</h4>
-        <ul>
-            <li>
-                <a href="https://en.wikipedia.org/wiki/List_of_top_international_rankings_by_country">
-                    Wikipedia – List of top international rankings by country
-                </a>
-            </li>
-            <li>
-                <a href="https://docs.scipy.org/doc/scipy/reference/stats.html#continuous-distributions">
-                    Scientific Python statistical functions – continuous distributions
-                </a>
-            </li>
-        </ul>
-      </div>
-
-    </aside>
+    <figure data-chart="true"
+            data-ng-model="chart"
+            data-function="currentFunction"
+            data-estimate="estimate"
+            data-mineral="mineral"
+            data-minerals="minerals"
+            data-reserves="reserves"
+            data-src=""
+            data-width="960"
+            data-height="660"
+            data-caption="U.S. Geological Survey statistics (Metric tons gross weight)"
+            data-legend="true"
+            >
+    </figure>
   </div>
 
+  <aside class="small-12 large-3 columns">
+    <figure data-resource="true"
+            data-image="image"
+            data-ng-repeat="image in images[mineral]"></figure>
+
+    <h3>Data sources and references</h3>
+    <ul>
+      <li>
+        <a href="https://www.usgs.gov/centers/nmic/historical-statistics-mineral-and-material-commodities-united-states">
+          U.S. Geological Survey Data Series 140 (in XLSX format)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.usgs.gov/centers/nmic/mineral-commodity-summaries">
+          USGS Mineral Commodity Summaries
+        </a>
+      </li>
+    </ul>
+
+    <h4>Other info</h4>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/List_of_top_international_rankings_by_country">
+          Wikipedia – List of top international rankings by country
+        </a>
+      </li>
+      <li>
+        <a href="https://docs.scipy.org/doc/scipy/reference/stats.html#continuous-distributions">
+          Scientific Python statistical functions – continuous distributions
+        </a>
+      </li>
+    </ul>
+
+  </aside>
+</div>
 {% endblock %}
 
 {%- block scripts %}
-  {%- assets "js_d3" %}
-  <script src="{{ ASSET_URL }}" charset="utf-8"></script>
-  {%- endassets -%}
-  {{ super() }}
+{%- assets "js_d3" %}
+<script src="{{ ASSET_URL }}" charset="utf-8"></script>
+{%- endassets -%}
+{{ super() }}
 {%- endblock %}
