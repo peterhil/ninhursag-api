@@ -4,7 +4,6 @@ specifiers:
   angular: 1.7.9
   angular-animate: 1.7.9
   angular-aria: 1.7.9
-  angular-cookies: 1.7.9
   angular-growl-v2: github:Jacq/angular-growl-2
   angular-messages: 1.7.9
   angular-resource: 1.7.9
@@ -20,6 +19,7 @@ specifiers:
   graceful-fs: ^4.2.6
   humanize-plus: 1.5.0
   jquery: 2.1.4
+  js-cookie: ^2.2.1
   less: ^4.1.1
   lodash: ^4.17.21
   minimatch: ^3.0.4
@@ -37,7 +37,6 @@ dependencies:
   angular: 1.7.9
   angular-animate: 1.7.9
   angular-aria: 1.7.9
-  angular-cookies: 1.7.9
   angular-growl-v2: github.com/Jacq/angular-growl-2/8ef35967afa04e179050fb169072f51cbf6cf312
   angular-messages: 1.7.9
   angular-resource: 1.7.9
@@ -52,6 +51,7 @@ dependencies:
   graceful-fs: 4.2.6
   humanize-plus: 1.5.0
   jquery: 2.1.4
+  js-cookie: 2.2.1
   less: 4.1.1
   lodash: 4.17.21
   minimatch: 3.0.4
@@ -76,10 +76,6 @@ packages:
 
   /angular-aria/1.7.9:
     resolution: {integrity: sha512-luI3Jemd1AbOQW0krdzfEG3fM0IFtLY0bSSqIDEx3POE0XjKIC1MkrO8Csyq9PPgueLphyAPofzUwZ8YeZ88SA==}
-    dev: false
-
-  /angular-cookies/1.7.9:
-    resolution: {integrity: sha512-3eRq/aPrtCZKDWQnc3nW3sFoMbLiHkCkyDF2O9u7VXnqvVsUPaipk5R1ZqahgcSQHQrN/F5IU4T4nrz52qAZmA==}
     dev: false
 
   /angular-messages/1.7.9:
@@ -404,6 +400,10 @@ packages:
 
   /jquery/2.1.4:
     resolution: {integrity: sha1-IoveaYoMYUMdwmMKahVPFYkNIxc=}
+    dev: false
+
+  /js-cookie/2.2.1:
+    resolution: {integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==}
     dev: false
 
   /less/4.1.1:
