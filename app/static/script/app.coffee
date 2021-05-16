@@ -27,16 +27,17 @@ angular
       $logProvider,
       growlProvider,
     ) ->
-      # $locationProvider.html5Mode
-      #   enabled: true
-      #   requireBase: false
+      $locationProvider.html5Mode
+        enabled: true
+        requireBase: true
+        rewriteLinks: true
       $logProvider.debugEnabled false
       $routeProvider
         .when '/listing',
           templateUrl: '/static/view/listing.html'
           controller: 'ListingCtrl'
         .otherwise
-          redirectTo: '/'
+          redirectTo: '/ng-mineral/statistics'
       growlProvider.globalPosition 'top-center'
       growlProvider.globalInlineMessages true
       growlProvider.globalTimeToLive
