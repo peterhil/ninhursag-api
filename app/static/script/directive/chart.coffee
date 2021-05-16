@@ -87,7 +87,7 @@ angular.module('app')
         , R.values(scope.chart.data))
 
         api.estimate(request_data)
-          .success (response) ->
+          .then (response) ->
             key = "#{scope.chart.selectedSeries} (estimated)"
             estimate = Fx.indexBy(scope.chart.index,
               R.mapObj.idx(
@@ -96,14 +96,12 @@ angular.module('app')
                     'Year': parseInt(k)
                   r[key] = if _.isFinite(parseFloat(v)) then R.max [parseFloat(v), identity()] else null
                   r
-                , R.zipObj(response['years'], response['data']))
+                , R.zipObj(response.data['years'], response.data['data']))
               )
             scope.chart.series.push(key)
             scope.chart.series = R.uniq scope.chart.series
             scope.chart.data = _.merge scope.chart.data, estimate
             scope.getReserves()
-          # .error (response) ->
-          #   growl.warning response.errors.join("\n")
           .catch (response) ->
             if response.data.errors?
               growl.error response.data.errors.join("\n")

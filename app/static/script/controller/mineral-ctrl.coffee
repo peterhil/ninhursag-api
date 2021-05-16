@@ -17,24 +17,24 @@ angular.module('app')
     $scope.minerals = {}
     $scope.mineral = ''
     $http.get('/api/v1/minerals')
-      .success (response) ->
-        $scope.minerals = response
+      .then (response) ->
+        $scope.minerals = response.data
         $scope.mineral = if ($cookies.mineral in R.keys($scope.minerals)) then $cookies.mineral else 'Gold'
         $scope.chart.src = "/static/data/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
     $scope.currentFunction = 'powerlognorm'
     $http.get('/api/v1/estimate')
-      .success (response) ->
-        $scope.functions = response
+      .then (response) ->
+        $scope.functions = response.data
 
     $http.get('/api/v1/reserves')
-      .success (response) ->
-        $scope.reserves = response
+      .then (response) ->
+        $scope.reserves = response.data
 
     $http.get('/api/v1/images')
-      .success (response) ->
-        $scope.images = response
+      .then (response) ->
+        $scope.images = response.data
 
     productionSeries = (series) ->
       production = R.match /(World.+production|(P|p)roduction|Total)/
@@ -65,7 +65,8 @@ angular.module('app')
     $scope.getStatistics = (src) ->
       # $scope.chart.loading = true
       $http.get(src)
-        .success (csv) ->
+        .then (response) ->
+          csv = response.data
           [csv, header, footer] = dataRows(csv)  # TODO Do this on backend
           result = Papa.parse csv,
             header: true
@@ -79,8 +80,9 @@ angular.module('app')
           $scope.chart.loading = false
 
     $scope.$watch 'mineral', (val, old) ->
+      return unless val
       src = $scope.minerals[val]
-      # $log.info "Watching mineral:", val, old
+      $log.info "Watching mineral:", val, src, old, typeof val, $scope.minerals
       return unless src
       $cookies['mineral'] = val
       $scope.chart.src = "/static/data/tsv/#{src}"
