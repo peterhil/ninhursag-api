@@ -1,7 +1,16 @@
 'use strict'
 
-angular.module('app')
-  .controller 'MineralCtrl', ['$http', '$log', '$scope', 'Functional', ($http, $log, $scope, Fx) ->
+angular.module('app').controller 'MineralCtrl', [
+  '$http',
+  '$log',
+  '$scope',
+  'Functional',
+  (
+    $http,
+    $log,
+    $scope,
+    Fx,
+  ) ->
     $scope.chart =
       src: ''
       data: []
@@ -97,4 +106,4 @@ angular.module('app')
       # $log.info "Watching chart.src:", src, old
       return unless src
       $scope.getStatistics(src)
-  ]
+]
