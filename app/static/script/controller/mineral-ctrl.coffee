@@ -46,6 +46,7 @@ angular.module('app').controller 'MineralCtrl', [
 
     $scope.functions = {}
     $scope.currentFunction = 'powerlognorm'
+    $scope.fn = 'powerlognorm'
     $http.get('/api/v1/estimate')
       .then (response) ->
         $scope.functions = response.data

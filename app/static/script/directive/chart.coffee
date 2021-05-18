@@ -13,7 +13,7 @@ angular.module('app')
       preserveAspectRatio: '@preserveaspectratio'
       viewBox: '@viewbox'
       chart: '=ngModel'
-      function: '='
+      fn: '='
       estimate: '='
       minerals: '='
       mineral: '='
@@ -26,7 +26,7 @@ angular.module('app')
       scope.preserveAspectRatio ||= "xMidYMin meet"
       scope.chart.src = attrs.src
       scope.logscale = true
-      scope['function'] = Cookies.get('function') || scope['function']
+      scope.fn = Cookies.get('function') || scope.fn
       scope.mineral = Cookies.get('mineral') || scope.mineral
 
       identity = ->
@@ -191,10 +191,10 @@ angular.module('app')
         # )
         # estimated = if any(R.map(R.match(/estimated/), scope.chart.series)) then ' estimated' else ''
         # $log.info "Chart data#{estimated}:", val
-        scope.estimate(scope.function)
+        scope.estimate(scope.fn)
         scope.render(scope.chart)
 
-      scope.$watch 'function', (val, old) ->
+      scope.$watch 'fn', (val, old) ->
         return if not val or val is old
         $log.info "Function:", val
         scope.estimate(val)
