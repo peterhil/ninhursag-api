@@ -183,15 +183,16 @@ angular.module('app')
         scope.render(scope.chart)
 
       scope.$watchCollection 'chart.data', (val, old) ->
-        return if not val
-        # any = R.reduce(
-        #   (a, b) ->
-        #     return a or b
-        #   false
-        # )
-        # estimated = if any(R.map(R.match(/estimated/), scope.chart.series)) then ' estimated' else ''
-        # $log.info "Chart data#{estimated}:", val
-        scope.estimate(scope.fn)
+        return if not val or val is old
+        any = R.reduce(
+          (a, b) ->
+            return a or b
+          false
+        )
+        estimated = if any(R.map(R.match(/estimated/), scope.chart.series)) then ' estimated' else ''
+        $log.info "Chart data#{estimated}"
+        if not estimated
+          scope.estimate(scope.fn)
         scope.render(scope.chart)
 
       scope.$watch 'fn', (val, old) ->
