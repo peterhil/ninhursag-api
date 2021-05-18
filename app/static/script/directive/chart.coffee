@@ -13,7 +13,7 @@ angular.module('app')
       preserveAspectRatio: '@preserveaspectratio'
       viewBox: '@viewbox'
       chart: '=ngModel'
-      function: '='
+      fn: '='
       estimate: '='
       minerals: '='
       mineral: '='
@@ -26,7 +26,7 @@ angular.module('app')
       scope.preserveAspectRatio ||= "xMidYMin meet"
       scope.chart.src = attrs.src
       scope.logscale = true
-      scope['function'] = Cookies.get('function') || scope['function']
+      scope.fn = Cookies.get('function') || scope.fn
       scope.mineral = Cookies.get('mineral') || scope.mineral
 
       identity = ->
@@ -87,7 +87,7 @@ angular.module('app')
         , R.values(scope.chart.data))
 
         api.estimate(request_data)
-          .done (response) ->
+          .then (response) ->
             key = "#{scope.chart.selectedSeries} (estimated)"
             estimate = Fx.indexBy(scope.chart.index,
               R.mapObj.idx(
@@ -96,15 +96,15 @@ angular.module('app')
                     'Year': parseInt(k)
                   r[key] = if _.isFinite(parseFloat(v)) then R.max [parseFloat(v), identity()] else null
                   r
-                , R.zipObj(response['years'], response['data']))
+                , R.zipObj(response.data['years'], response.data['data']))
               )
             scope.chart.series.push(key)
             scope.chart.series = R.uniq scope.chart.series
             scope.chart.data = _.merge scope.chart.data, estimate
             scope.getReserves()
-          .fail (response) ->
-            if response.responseJSON?.errors?
-              growl.error response.responseJSON.errors.join("\n")
+          .catch (response) ->
+            if response.data.errors?
+              growl.error response.data.errors.join("\n")
             else
               growl.error "#{response.status} #{response.statusText}"
 
@@ -183,17 +183,24 @@ angular.module('app')
         scope.render(scope.chart)
 
       scope.$watchCollection 'chart.data', (val, old) ->
-        # $log.info "Watching chart.data:", val
-        scope.estimate(scope.function)  # TODO makes double requests
+        return if not val
+        # any = R.reduce(
+        #   (a, b) ->
+        #     return a or b
+        #   false
+        # )
+        # estimated = if any(R.map(R.match(/estimated/), scope.chart.series)) then ' estimated' else ''
+        # $log.info "Chart data#{estimated}:", val
+        scope.estimate(scope.fn)
         scope.render(scope.chart)
 
-      scope.$watch 'function', (val, old) ->
-        # $log.info "Watching function:", val, old
-        return unless val
-        Cookies.set('function', val, {
-          path: '', # Current path
-          sameSite: 'lax',
-        })
+      scope.$watch 'fn', (val, old) ->
+        return if not val or val is old
+        $log.info "Function:", val
         scope.estimate(val)
         scope.render(scope.chart)
+        Cookies.set('function', val, {
+          path: '', # Current path
+          sameSite: 'strict',
+        })
   ]

@@ -1,33 +1,33 @@
 {
-  "name": "skeleton",
-  "description": "Skeleton.",
-  "version": "0.0.0",
+  "name": "ninhursag",
+  "description": "Ninhursag is a visualisation of US Geologic Survey statistics from year 1900 onwards of world production of various minerals, and fitting functions for estimating how long our reserves will last.",
+  "version": "0.9.0",
   "engines": {
     "node": "v16.1.0",
     "npm": "7.6.3"
   },
   "keywords": [
-    "python",
-    "flask",
-    "app template"
+    "data visualisation",
+    "minerals",
+    "reserves"
   ],
-  "homepage": "https://github.com/peterhil/skeleton",
+  "homepage": "https://github.com/peterhil/ninhursag",
   "author": "Peter Hillerström <peter.hillerstrom@gmail.com>",
   "scripts": {
     "start": "source ./activate && python run.py"
   },
   "private": true,
   "dependencies": {
-    "angular": "1.8.2",
-    "angular-animate": "1.8.2",
-    "angular-aria": "1.8.2",
+    "angular": "1.7.9",
+    "angular-animate": "1.7.9",
+    "angular-aria": "1.7.9",
     "angular-growl-v2": "github:Jacq/angular-growl-2",
-    "angular-messages": "1.8.2",
-    "angular-resource": "1.8.2",
-    "angular-route": "1.8.2",
-    "angular-sanitize": "1.8.2",
+    "angular-messages": "1.7.9",
+    "angular-resource": "1.7.9",
+    "angular-route": "1.7.9",
+    "angular-sanitize": "1.7.9",
     "angular-spinner": "0.6.2",
-    "angular-touch": "1.8.2",
+    "angular-touch": "1.7.9",
     "coffeescript": "^2.5.1",
     "d3": "3.5.17",
     "es5-shim": "4.5.15",
@@ -36,7 +36,6 @@
     "humanize-plus": "1.5.0",
     "jquery": "2.1.4",
     "js-cookie": "^2.2.1",
-    "less": "^4.1.1",
     "lodash": "^4.17.21",
     "minimatch": "^3.0.4",
     "mkdirp": "^1.0.4",
@@ -48,5 +47,8 @@
     "spin.js": "2.0.1",
     "tinycolor2": "1.1.2",
     "uglify-js": "^3.13.2"
+  },
+  "devDependencies": {
+    "coffeelint": "^2.1.0"
   }
 }
