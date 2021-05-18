@@ -203,5 +203,6 @@ angular.module('app')
         Cookies.set('function', val, {
           path: '', # Current path
           sameSite: 'strict',
+          secure: location.protocol is 'https:',
         })
   ]

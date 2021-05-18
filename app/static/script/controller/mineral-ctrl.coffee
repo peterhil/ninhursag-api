@@ -113,6 +113,7 @@ angular.module('app').controller 'MineralCtrl', [
       Cookies.set('mineral', val, {
         path: '', # Current path
         sameSite: 'strict',
+        secure: location.protocol is 'https:',
       })
 
     $scope.$watchCollection 'chart.series', (val, old) ->
