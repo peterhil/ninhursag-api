@@ -17,7 +17,7 @@ angular.module('app').controller 'MineralCtrl', [
   ) ->
     $scope.chart =
       src: ''
-      data: []
+      data: null
       loading: true
       index: "Year"
       series: []
@@ -95,7 +95,7 @@ angular.module('app').controller 'MineralCtrl', [
             header: true
             dynamicTyping: true
           series = Fx.filterItems R.append($scope.chart.index, $scope.chart.exclude), result.meta.fields
-          # series.push("Scipy Estimated")
+          $scope.chart.selectedSeries = productionSeries(series)
           $scope.chart.series = series
           $scope.chart.header = header or []
           $scope.chart.footer = footer or []
@@ -115,11 +115,13 @@ angular.module('app').controller 'MineralCtrl', [
         sameSite: 'strict',
       })
 
-    $scope.$watch 'chart.series', (val, old) ->
+    $scope.$watchCollection 'chart.series', (val, old) ->
+      return if not val or val is old
+      # $log.info "Chart series:", val
       $scope.chart.selectedSeries = productionSeries(val)
 
     $scope.$watch 'chart.src', (src, old) ->
       return if not src or src is old
-      $log.info "Chart source:", src
+      # $log.info "Chart source:", src
       $scope.getStatistics(src)
 ]
