@@ -115,7 +115,9 @@ angular.module('app').controller 'MineralCtrl', [
         sameSite: 'strict',
       })
 
-    $scope.$watch 'chart.series', (val, old) ->
+    $scope.$watchCollection 'chart.series', (val, old) ->
+      return if not val or val is old
+      # $log.info "Chart series:", val
       $scope.chart.selectedSeries = productionSeries(val)
 
     $scope.$watch 'chart.src', (src, old) ->
