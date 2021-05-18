@@ -9,7 +9,7 @@ specifiers:
   angular-resource: 1.7.9
   angular-route: 1.7.9
   angular-sanitize: 1.7.9
-  angular-spinner: 0.6.2
+  angular-spinner: ^1.0.1
   angular-touch: 1.7.9
   coffeelint: ^2.1.0
   coffeescript: ^2.5.1
@@ -28,7 +28,7 @@ specifiers:
   ramda: 0.8.0
   sass: ^1.32.8
   soundex-code: 0.1.2
-  spin.js: 2.0.1
+  spin.js: 2.3.2
   tinycolor2: 1.1.2
   uglify-js: ^3.13.2
 
@@ -41,7 +41,7 @@ dependencies:
   angular-resource: 1.7.9
   angular-route: 1.7.9
   angular-sanitize: 1.7.9
-  angular-spinner: 0.6.2
+  angular-spinner: 1.0.1
   angular-touch: 1.7.9
   coffeescript: 2.5.1
   d3: 3.5.17
@@ -59,7 +59,7 @@ dependencies:
   ramda: 0.8.0
   sass: 1.32.11
   soundex-code: 0.1.2
-  spin.js: 2.0.1
+  spin.js: 2.3.2
   tinycolor2: 1.1.2
   uglify-js: 3.13.3
 
@@ -92,9 +92,11 @@ packages:
     resolution: {integrity: sha512-nB/xe7JQWF9nLvhHommAICQ3eWrfRETo0EVGFESi952CDzDa+GAJ/2BFBNw44QqQPxj1Xua/uYKrbLsOGWZdbQ==}
     dev: false
 
-  /angular-spinner/0.6.2:
-    resolution: {integrity: sha1-hBn8glDUcp2OM/uS9zlMk7ZK9Ls=}
+  /angular-spinner/1.0.1:
+    resolution: {integrity: sha1-ChWSl5UdFGLgYVul4aAf1G3iwco=}
     engines: {node: '>=0.10.0'}
+    dependencies:
+      spin.js: 2.3.2
     dev: false
 
   /angular-touch/1.7.9:
@@ -538,8 +540,8 @@ packages:
     hasBin: true
     dev: false
 
-  /spin.js/2.0.1:
-    resolution: {integrity: sha1-GhWKmsCTBgTT+flyZuiztlGcVp8=}
+  /spin.js/2.3.2:
+    resolution: {integrity: sha1-bKpW1SBnNFD9XPvGlx5tB3LDeho=}
     dev: false
 
   /sprintf-js/1.0.3:
