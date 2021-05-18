@@ -17,7 +17,7 @@ angular.module('app').controller 'MineralCtrl', [
   ) ->
     $scope.chart =
       src: ''
-      data: []
+      data: null
       loading: true
       index: "Year"
       series: []
