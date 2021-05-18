@@ -122,6 +122,6 @@ angular.module('app').controller 'MineralCtrl', [
 
     $scope.$watch 'chart.src', (src, old) ->
       return if not src or src is old
-      $log.info "Chart source:", src
+      # $log.info "Chart source:", src
       $scope.getStatistics(src)
 ]
