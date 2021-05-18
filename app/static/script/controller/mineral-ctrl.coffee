@@ -95,7 +95,7 @@ angular.module('app').controller 'MineralCtrl', [
             header: true
             dynamicTyping: true
           series = Fx.filterItems R.append($scope.chart.index, $scope.chart.exclude), result.meta.fields
-          # series.push("Scipy Estimated")
+          $scope.chart.selectedSeries = productionSeries(series)
           $scope.chart.series = series
           $scope.chart.header = header or []
           $scope.chart.footer = footer or []
