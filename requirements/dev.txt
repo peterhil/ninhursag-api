@@ -1,6 +1,6 @@
 # Pip requirements for dev and testing
 
--r stable.pip
+-r stable.txt
 
 Flask-Testing>=0.4.1
 bpython==0.13.1
