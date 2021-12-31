@@ -98,7 +98,7 @@ To import YAML data, do `import YAML` on views.py and use like this:
     @templated()
     def example():
         with file('app/data/example.yml', 'r') as stream:
-            data = yaml.load(stream)
+            data = yaml.safe_load(stream)
         return dict(examplelist=data)
 
 

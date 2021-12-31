@@ -157,7 +157,7 @@ class Reserves(Resource):
             current_app.root_path, current_app.config["DATA_DIR"], "reserves.yml"
         )
         with open(path, "rb") as f:
-            response = yaml.load(f)
+            response = yaml.safe_load(f)
         return response
 
 
@@ -167,7 +167,7 @@ class Images(Resource):
             current_app.root_path, current_app.config["DATA_DIR"], "images.yml"
         )
         with open(path, "rb") as f:
-            response = yaml.load(f)
+            response = yaml.safe_load(f)
         return response
 
 
