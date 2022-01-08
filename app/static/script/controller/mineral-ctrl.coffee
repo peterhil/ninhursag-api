@@ -1,10 +1,23 @@
 'use strict'
 
-angular.module('app')
-  .controller 'MineralCtrl', ['$cookies', '$http', '$log', '$scope', 'Functional', ($cookies, $http, $log, $scope, Fx) ->
+angular.module('app').controller 'MineralCtrl', [
+  '$http',
+  '$log',
+  '$scope',
+  'Functional',
+  '$routeParams',
+  '$location',
+  (
+    $http,
+    $log,
+    $scope,
+    Fx,
+    $routeParams,
+    $location,
+  ) ->
     $scope.chart =
       src: ''
-      data: []
+      data: null
       loading: true
       index: "Year"
       series: []
@@ -17,24 +30,33 @@ angular.module('app')
     $scope.minerals = {}
     $scope.mineral = ''
     $http.get('/api/v1/minerals')
-      .success (response) ->
-        $scope.minerals = response
-        $scope.mineral = if ($cookies.mineral in R.keys($scope.minerals)) then $cookies.mineral else 'Gold'
+      .then (response) ->
+        $scope.minerals = response.data
+        if ($routeParams.mineral == 'statistics') and (Cookies.get('mineral') in R.keys($scope.minerals))
+          mineral = Cookies.get('mineral')
+          $log.info 'Using cookies for mineral:', mineral
+        else if $routeParams.mineral in R.keys($scope.minerals)
+          mineral = $routeParams.mineral
+          $log.info 'Using route params for mineral:', mineral
+        else
+          mineral = 'Silver'
+          $log.info 'Using default mineral:', mineral
+        $scope.mineral = mineral
         $scope.chart.src = "/static/data/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
-    $scope.currentFunction = 'pearson3'
+    $scope.fn = 'pearson3'
     $http.get('/api/v1/estimate')
-      .success (response) ->
-        $scope.functions = response
+      .then (response) ->
+        $scope.functions = response.data
 
     $http.get('/api/v1/reserves')
-      .success (response) ->
-        $scope.reserves = response
+      .then (response) ->
+        $scope.reserves = response.data
 
     $http.get('/api/v1/images')
-      .success (response) ->
-        $scope.images = response
+      .then (response) ->
+        $scope.images = response.data
 
     productionSeries = (series) ->
       production = R.test /(World.+production|(P|p)roduction|Total)/
@@ -65,14 +87,14 @@ angular.module('app')
     $scope.getStatistics = (src) ->
       # $scope.chart.loading = true
       $http.get(src)
-        .success (csv) ->
+        .then (response) ->
+          csv = response.data
           [csv, header, footer] = dataRows(csv)  # TODO Do this on backend
           result = Papa.parse csv,
             header: true
             dynamicTyping: true
           series = Fx.filterItems R.append($scope.chart.index, $scope.chart.exclude), result.meta.fields
-          # series.push("Scipy Estimated")
-          # $log.info('Data:', series, result, header, footer)
+          $scope.chart.selectedSeries = productionSeries(series)
           $scope.chart.series = series
           $scope.chart.header = header or []
           $scope.chart.footer = footer or []
@@ -81,16 +103,25 @@ angular.module('app')
 
     $scope.$watch 'mineral', (val, old) ->
       src = $scope.minerals[val]
-      # $log.info "Watching mineral:", val, old
-      return unless src
-      $cookies['mineral'] = val
-      $scope.chart.src = "/static/data/tsv/#{src}"
+      guard = not val or not src or (val is old)
+      return if guard
 
-    $scope.$watch 'chart.series', (val, old) ->
+      $log.info "Mineral:", val
+      $scope.chart.src = "/static/data/tsv/#{src}"
+      $location.url('/mineral/' + encodeURI(val))
+      Cookies.set('mineral', val, {
+        path: '', # Current path
+        sameSite: 'strict',
+        secure: location.protocol is 'https:',
+      })
+
+    $scope.$watchCollection 'chart.series', (val, old) ->
+      return if not val or val is old
+      # $log.info "Chart series:", val
       $scope.chart.selectedSeries = productionSeries(val)
 
     $scope.$watch 'chart.src', (src, old) ->
-      # $log.info "Watching chart.src:", src, old
-      return unless src
+      return if not src or src is old
+      # $log.info "Chart source:", src
       $scope.getStatistics(src)
-  ]
+]

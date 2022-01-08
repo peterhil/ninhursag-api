@@ -7,7 +7,6 @@ from flask_assets import Environment, Bundle
 css_application = Bundle(
     'style/main.scss',
     filters='scss',
-    debug=False,
     output='gen/app.css'
 )
 
@@ -30,20 +29,22 @@ js_angular = Bundle(
     'vendor/angular/angular.js',
     'vendor/angular-animate/angular-animate.js',
     # 'vendor/angular-aria/angular-aria.js',
-    'vendor/angular-cookies/angular-cookies.js',
     'vendor/angular-messages/angular-messages.js',
     'vendor/angular-resource/angular-resource.js',
     'vendor/angular-route/angular-route.js',
     'vendor/angular-sanitize/angular-sanitize.js',
     # 'vendor/angular-touch/angular-touch.js',
     'vendor/angular-growl-v2/build/angular-growl.js',
-    'vendor/angular-spinner/angular-spinner.js',
+    'vendor/angular-spinner/dist/angular-spinner.js',
     filters='rjsmin',
     output='gen/angular.min.js',
 )
 
 js_foundation = Bundle(
     'vendor/jquery/dist/jquery.js',
+    'vendor/js-cookie/src/js.cookie.js',
+    'vendor/lodash/lodash.js',
+    # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
     'vendor/foundation-sites/js/foundation/foundation.js',
     'vendor/foundation-sites/js/foundation/foundation.topbar.js',
     filters='rjsmin',
@@ -52,7 +53,6 @@ js_foundation = Bundle(
 
 js_vendor = Bundle(
     'vendor/spin.js/spin.js',
-    'vendor/lodash/dist/lodash.js',
     'vendor/papaparse/papaparse.js',
     'vendor/humanize-plus/public/src/humanize.js',
     'vendor/ramda/dist/ramda.js',

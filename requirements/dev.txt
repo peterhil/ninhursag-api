@@ -2,6 +2,7 @@
 
 -r stable.txt
 
-Flask-Testing>=0.4.1
-bpython==0.13.1
-pytest==6.2.4
+Flask-Testing>=0.8.1
+ipython>=7.23.1
+pytest>=6.2.4
+# excelsior>=0.0.5

@@ -33,6 +33,7 @@ class Default(object):
 
 class Dev(Default):
     APP_NAME = project_name + ' (dev)'
+    SERVER_NAME = 'localhost:5000'
     DEBUG = True
 
 

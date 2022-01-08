@@ -4,7 +4,6 @@ angular
   .module('app', [
     'ngAnimate',
     # 'ngAria',
-    'ngCookies',
     'ngMessages',
     'ngResource',
     'ngRoute',
@@ -15,20 +14,28 @@ angular
   ])
   .config [
     '$routeProvider',
+    '$locationProvider',
     '$httpProvider',
     '$logProvider',
     'growlProvider',
     (
       $routeProvider,
+      $locationProvider,
       $httpProvider,
       $logProvider,
       growlProvider,
     ) ->
+      $locationProvider.html5Mode
+        enabled: true
+        requireBase: true
+        rewriteLinks: true
       $logProvider.debugEnabled false
       $routeProvider
-        .when '/',
-          templateUrl: 'static/view/listing.html'
+        .when '/listing',
+          templateUrl: '/static/view/listing.html'
           controller: 'ListingCtrl'
+        .when '/mineral/:mineral',
+          controller: 'MineralCtrl'
         .otherwise
           redirectTo: '/'
       growlProvider.globalPosition 'top-center'

@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('app')
-  .directive 'chart', ['$cookies', '$log', 'Functional', 'api', 'growl', ($cookies, $log, Fx, api, growl) ->
+  .directive 'chart', ['$log', 'Functional', 'api', 'growl', ($log, Fx, api, growl) ->
     restrict: 'AE'
     require: 'ngModel'
     replace: true
@@ -13,7 +13,7 @@ angular.module('app')
       preserveAspectRatio: '@preserveaspectratio'
       viewBox: '@viewbox'
       chart: '=ngModel'
-      function: '='
+      fn: '='
       estimate: '='
       minerals: '='
       mineral: '='
@@ -27,8 +27,8 @@ angular.module('app')
       scope.chart.src = attrs.src
       scope.logscale = true
       scope.showCumulative = false
-      scope['function'] = $cookies['function'] || scope['function']
-      scope.mineral = $cookies.mineral || scope.mineral
+      scope.fn = Cookies.get('function') || scope.fn
+      scope.mineral = Cookies.get('mineral') || scope.mineral
 
       identity = ->
         if scope.logscale then 1 else 0
@@ -89,7 +89,7 @@ angular.module('app')
         , R.values(scope.chart.data))
 
         api.estimate(request_data)
-          .success (response) ->
+          .then (response) ->
             key = "#{scope.chart.selectedSeries} (estimated)"
             estimate = Fx.indexBy(scope.chart.index,
               R.mapObjIndexed(
@@ -98,14 +98,12 @@ angular.module('app')
                     'Year': parseInt(k)
                   r[key] = if _.isFinite(parseFloat(v)) then R.max(parseFloat(v), identity()) else null
                   r
-                , R.zipObj(response['years'], response['data']))
+                , R.zipObj(response.data['years'], response.data['data']))
               )
             scope.chart.series.push(key)
             scope.chart.series = R.uniq scope.chart.series
             scope.chart.data = _.merge scope.chart.data, estimate
             scope.getReserves()
-          # .error (response) ->
-          #   growl.warning response.errors.join("\n")
           .catch (response) ->
             if response.data.errors?
               growl.error response.data.errors.join("\n")
@@ -188,14 +186,26 @@ angular.module('app')
         scope.render(scope.chart)
 
       scope.$watchCollection 'chart.data', (val, old) ->
-        # $log.debug "Watching chart.data:", val
-        scope.estimate(scope.function)  # TODO makes double requests
+        return if not val or val is old
+        any = R.reduce(
+          (a, b) ->
+            return a or b
+          false
+        )
+        estimated = if any(R.map(R.match(/estimated/), scope.chart.series)) then ' estimated' else ''
+        $log.info "Chart data#{estimated}"
+        if not estimated
+          scope.estimate(scope.fn)
         scope.render(scope.chart)
 
-      scope.$watch 'function', (val, old) ->
-        # $log.debug "Watching function:", val, old
-        return unless val
-        $cookies['function'] = val
+      scope.$watch 'fn', (val, old) ->
+        return if not val or val is old
+        $log.info "Function:", val
         scope.estimate(val)
         scope.render(scope.chart)
+        Cookies.set('function', val, {
+          path: '', # Current path
+          sameSite: 'strict',
+          secure: location.protocol is 'https:',
+        })
   ]
