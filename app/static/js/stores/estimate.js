@@ -16,7 +16,7 @@ export let controller
 
 const initialValue = { columns: {} }
 
-const success = curry((fn, estimate) => {
+const success = curry((data, fn, estimate) => {
     const estimated = chartDataFromEstimate(
         estimate,
         productionSeriesName(keys(data.columns)),
@@ -58,7 +58,7 @@ export const estimate = asyncable(
                 body: params,
                 signal,
             },
-            success(fn),
+            success(data, fn),
             failure,
         )
         controller = null
