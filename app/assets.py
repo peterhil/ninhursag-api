@@ -6,6 +6,7 @@ from flask_assets import Environment, Bundle
 
 css_application = Bundle(
     'style/main.scss',
+    debug=False,
     filters='scss',
     output='gen/app.css'
 )
