@@ -52,8 +52,8 @@ def requires(filename):
 PACKAGE_NAME = 'ninhursag'
 PACKAGE_VERSION = '0.9.0'
 PACKAGES = ['app']
-INSTALL_REQS = requires('requirements/stable.pip')
-TEST_REQS = requires('requirements/dev.pip')
+INSTALL_REQS = requires('requirements/stable.txt')
+TEST_REQS = requires('requirements/dev.txt')
 
 
 with open('README.md', 'r') as readme:
