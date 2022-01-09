@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ mineral | capitalize }} &ndash; world production{% endblock %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div id="app"></div>
+{% endblock %}
+
+{%- block scripts %}
+<script type="module" src="{{ asset_dir }}/main.js"></script>
+{{ super() }}
+{%- endblock %}

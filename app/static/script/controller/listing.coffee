@@ -5,12 +5,14 @@ angular.module('app')
     $scope.loading = true
 
     $http.get('/api/v1/items')
-      .success (response) ->
-        $scope.loading = false
-        growl.info("<strong>Success</strong> Items loaded.")
-        $scope.things = response.items
-      .error (response) ->
-        $scope.loading = false
-        growl.error("Failed loading items!")
-        $scope.error = true
+      .then(
+        (response) ->
+          $scope.loading = false
+          growl.info("<strong>Success</strong> Items loaded.")
+          $scope.things = response.data.items
+        (error) ->
+          $scope.loading = false
+          growl.error("Failed loading items!")
+          $scope.error = true
+      )
   ]

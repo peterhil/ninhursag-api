@@ -1,16 +1,19 @@
-{% extends "base.html" %}
+{% extends "old.html" %}
 {% block title %}Article{% endblock %}
 {% block head %}
-  {{ super() }}
+{{ super() }}
 {% endblock %}
 {% block content %}
-  <div>
-	{% for article in articles %}
+<div class="container" role="main">
+  <div class="columns">
+	  {% for article in articles %}
 	  {{ article }}
-	{% else %}
+    <hr>
+	  {% else %}
 	  <div class="listing">
-		<p>No articles yet.</p>
+		  <p>No articles yet.</p>
 	  </div>
-	{% endfor %}
+	  {% endfor %}
   </div>
+</div>
 {% endblock %}

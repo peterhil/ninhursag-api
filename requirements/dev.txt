@@ -1,6 +1,6 @@
 # Pip requirements for dev and testing
 
--r stable.pip
+-r stable.txt
 
 Flask-Testing>=0.8.1
 ipython>=7.23.1

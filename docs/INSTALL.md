@@ -34,7 +34,7 @@ Install Python into virtualenv:
 
 Install Python dependencies with pip:
 
-    pip install -r requirements/dev.pip
+    pip install -r requirements/dev.txt
 
 Pip should be install automatically with a virtualenv. If not, install
 it with your system's package manager of `easy_install`.

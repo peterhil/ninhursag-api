@@ -1,7 +1,5 @@
 'use strict'
 
-$(document).foundation()
-
 angular
   .module('app', [
     'ngAnimate',
@@ -27,14 +25,17 @@ angular
       $logProvider,
       growlProvider,
     ) ->
-      # $locationProvider.html5Mode
-      #   enabled: true
-      #   requireBase: false
+      $locationProvider.html5Mode
+        enabled: true
+        requireBase: true
+        rewriteLinks: true
       $logProvider.debugEnabled false
       $routeProvider
         .when '/listing',
           templateUrl: '/static/view/listing.html'
           controller: 'ListingCtrl'
+        .when '/mineral/:mineral',
+          controller: 'MineralCtrl'
         .otherwise
           redirectTo: '/'
       growlProvider.globalPosition 'top-center'

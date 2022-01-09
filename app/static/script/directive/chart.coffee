@@ -13,7 +13,7 @@ angular.module('app')
       preserveAspectRatio: '@preserveaspectratio'
       viewBox: '@viewbox'
       chart: '=ngModel'
-      function: '='
+      fn: '='
       estimate: '='
       minerals: '='
       mineral: '='
@@ -26,7 +26,8 @@ angular.module('app')
       scope.preserveAspectRatio ||= "xMidYMin meet"
       scope.chart.src = attrs.src
       scope.logscale = true
-      scope['function'] = Cookies.get('function') || scope['function']
+      scope.showCumulative = false
+      scope.fn = Cookies.get('function') || scope.fn
       scope.mineral = Cookies.get('mineral') || scope.mineral
 
       identity = ->
@@ -35,7 +36,7 @@ angular.module('app')
       scope.render = (chart) ->
         return unless chart.data
         data = R.values(chart.data)
-        # $log.info "Render:", data, chart.index, chart.series
+        # $log.debug "Render:", data, chart.index, chart.series
 
         # Workaround jQuery bug with camel cased attributes
         svg = element.find('svg')[0]
@@ -47,21 +48,22 @@ angular.module('app')
 
         excludeFromYMax = []
         unless scope.logscale
+           excludeFromYMax.push 'Cumulative' if scope.showCumulative
            excludeFromYMax.push 'Reserves'
-        yMaxColumns = R.filter R.not((i) -> R.contains(i, excludeFromYMax))
+        yMaxColumns = R.filter R.complement((i) -> R.contains(i, excludeFromYMax))
 
         scope.x = x = d3.scale.linear().range([0, scope.width])
         scope.y = y = (if scope.logscale then d3.scale.log() else d3.scale.linear()).range([scope.height, 0])
 
         x.domain(d3.extent(data, (row) -> parseInt(row[chart.index])))
-        y.domain([identity(), d3.max(data, (row) -> R.max(R.values(R.pick(yMaxColumns(chart.series), row))))])
+        y.domain([identity(), d3.max(data, (row) -> R.reduce(R.max, identity(), (R.values(R.pick(yMaxColumns(chart.series), row)))))])
 
         scope.yLabel = (d) -> Humanize.compactInteger(d, 1)
 
         fixNaNs = (path) ->
           R.map(
             ((i) -> i.replace(/^[A-Z]/, 'M')),
-            R.filter(R.I, path.split(/[A-Z](?:\d+|\d+\.\d+),NaN/))
+            R.filter(R.identity, path.split(/[A-Z](?:\d+|\d+\.\d+),NaN/))
           ).join('')
 
         line = (column) ->
@@ -87,34 +89,34 @@ angular.module('app')
         , R.values(scope.chart.data))
 
         api.estimate(request_data)
-          .done (response) ->
+          .then (response) ->
             key = "#{scope.chart.selectedSeries} (estimated)"
             estimate = Fx.indexBy(scope.chart.index,
-              R.mapObj.idx(
+              R.mapObjIndexed(
                 (v, k) ->
                   r =
                     'Year': parseInt(k)
-                  r[key] = if _.isFinite(parseFloat(v)) then R.max [parseFloat(v), identity()] else null
+                  r[key] = if _.isFinite(parseFloat(v)) then R.max(parseFloat(v), identity()) else null
                   r
-                , R.zipObj(response['years'], response['data']))
+                , R.zipObj(response.data['years'], response.data['data']))
               )
             scope.chart.series.push(key)
             scope.chart.series = R.uniq scope.chart.series
             scope.chart.data = _.merge scope.chart.data, estimate
             scope.getReserves()
-          .fail (response) ->
-            if response.responseJSON?.errors?
-              growl.error response.responseJSON.errors.join("\n")
+          .catch (response) ->
+            if response.data.errors?
+              growl.error response.data.errors.join("\n")
             else
               growl.error "#{response.status} #{response.statusText}"
 
       scope.getReserves = ->
         mineral = scope.mineral
         data = scope.reserves.data[mineral]
-        # $log.info "getReserves():", mineral, data
-        return unless mineral and data
+        $log.debug "getReserves():", mineral, data
+        return unless data
 
-        latest = R.last R.sort R.lt, R.filter(R.I, R.map(parseInt, R.keys(data)))
+        latest = R.last R.sort R.lt, R.filter(R.identity, R.map(parseInt, R.keys(data)))
         reserveEstimate = data?[latest]
         reserveNotes = scope.reserves.notes[mineral]
 
@@ -127,44 +129,45 @@ angular.module('app')
             (last = scope.chart.data[year]["#{scope.chart.selectedSeries}"] or last) or
             scope.chart.data[year]["#{scope.chart.selectedSeries} (estimated)"]
           )
-          # $log.info "Last amount:", year, last, amount
           if amount == identity()
             amount = last
           total += amount if amount
+          # $log.debug "Last amount:", year, last, amount, total
           [year, total]
         , R.keys(scope.chart.data)
 
-        reserves = Fx.indexBy scope.chart.index, (R.mapObj.idx (production, year) ->
-          amount = R.max [reserveEstimate - (production - cumulative[latest]), identity()]
+        reserves = Fx.indexBy scope.chart.index, (R.mapObjIndexed (production, year) ->
+          amount = R.max(reserveEstimate - (production - cumulative[latest]), identity())
           {
             Year: parseInt(year)
             Reserves: if _.isFinite(parseFloat(amount)) then parseFloat(amount) else null
           }
         , cumulative)
 
-        # $log.info "Reserves estimation:", mineral, latest, Humanize.compactInteger(reserveEstimate, 3), reserveNotes
+        $log.debug "Reserves estimation:", mineral, latest,
+            Humanize.compactInteger(reserveEstimate, 3), reserveNotes
 
-        # cumulativeIdx = Fx.indexBy scope.chart.index, (R.mapObj.idx (production, year) ->
-        #   amount = R.max [production, identity()]
-        #   {
-        #     Year: parseInt(year)
-        #     Cumulative: if _.isFinite(parseFloat(amount)) then parseFloat(amount) else null
-        #   }
-        # , cumulative)
-        # $log.info "Cumulative world production:", cumulativeIdx
-        # scope.chart.series.push "Cumulative"
-        # scope.chart.series = R.uniq scope.chart.series
-        # scope.chart.data = _.merge scope.chart.data, cumulativeIdx
+        if scope.showCumulative
+          cumulativeIdx = Fx.indexBy scope.chart.index, (R.mapObjIndexed (production, year) ->
+            amount = R.max(production, identity())
+            {
+              Year: parseInt(year)
+              Cumulative: if _.isFinite(parseFloat(amount)) then parseFloat(amount) else null
+            }
+          , cumulative)
+          $log.debug "Cumulative world production:", cumulativeIdx
+          scope.chart.series.push "Cumulative"
+          scope.chart.series = R.uniq scope.chart.series
+          scope.chart.data = _.merge scope.chart.data, cumulativeIdx
 
-
-        # $log.info "Reserves:", reserves
+        $log.debug "Reserves:", reserves
         scope.chart.series.push "Reserves"
         scope.chart.series = R.uniq scope.chart.series
         scope.chart.data = _.merge scope.chart.data, reserves
 
       fuzzyColor = (str) ->
         if (words = str.split(' ')).length > 1
-          colors = R.map fuzzyColor, R.filter(R.I, words)
+          colors = R.map fuzzyColor, R.filter(R.identity, words)
           return R.reduce tinycolor.mix, R.head(colors), R.tail(colors)
         sndx = soundexPhonetics(str or ' ')
         # hue = (sndx[0].charCodeAt() % 64)  * (360 / 64) # modulo is for unicode chars. Or 360?
@@ -183,17 +186,26 @@ angular.module('app')
         scope.render(scope.chart)
 
       scope.$watchCollection 'chart.data', (val, old) ->
-        # $log.info "Watching chart.data:", val
-        scope.estimate(scope.function)  # TODO makes double requests
+        return if not val or val is old
+        any = R.reduce(
+          (a, b) ->
+            return a or b
+          false
+        )
+        estimated = if any(R.map(R.match(/estimated/), scope.chart.series)) then ' estimated' else ''
+        $log.info "Chart data#{estimated}"
+        if not estimated
+          scope.estimate(scope.fn)
         scope.render(scope.chart)
 
-      scope.$watch 'function', (val, old) ->
-        # $log.info "Watching function:", val, old
-        return unless val
-        Cookies.set('function', val, {
-          path: '', # Current path
-          sameSite: 'lax',
-        })
+      scope.$watch 'fn', (val, old) ->
+        return if not val or val is old
+        $log.info "Function:", val
         scope.estimate(val)
         scope.render(scope.chart)
+        Cookies.set('function', val, {
+          path: '', # Current path
+          sameSite: 'strict',
+          secure: location.protocol is 'https:',
+        })
   ]

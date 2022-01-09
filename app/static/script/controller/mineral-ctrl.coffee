@@ -1,10 +1,23 @@
 'use strict'
 
-angular.module('app')
-  .controller 'MineralCtrl', ['$log', '$scope', 'Functional', ($log, $scope, Fx) ->
+angular.module('app').controller 'MineralCtrl', [
+  '$http',
+  '$log',
+  '$scope',
+  'Functional',
+  '$routeParams',
+  '$location',
+  (
+    $http,
+    $log,
+    $scope,
+    Fx,
+    $routeParams,
+    $location,
+  ) ->
     $scope.chart =
       src: ''
-      data: []
+      data: null
       loading: true
       index: "Year"
       series: []
@@ -16,38 +29,47 @@ angular.module('app')
 
     $scope.minerals = {}
     $scope.mineral = ''
-    $.getJSON('/api/v1/minerals')
-      .done (response) ->
-        $scope.minerals = response
-        $scope.mineral = if (Cookies.get('mineral') in R.keys($scope.minerals)) then Cookies.get('mineral') else 'Gold'
+    $http.get('/api/v1/minerals')
+      .then (response) ->
+        $scope.minerals = response.data
+        if ($routeParams.mineral == 'statistics') and (Cookies.get('mineral') in R.keys($scope.minerals))
+          mineral = Cookies.get('mineral')
+          $log.info 'Using cookies for mineral:', mineral
+        else if $routeParams.mineral in R.keys($scope.minerals)
+          mineral = $routeParams.mineral
+          $log.info 'Using route params for mineral:', mineral
+        else
+          mineral = 'Silver'
+          $log.info 'Using default mineral:', mineral
+        $scope.mineral = mineral
         $scope.chart.src = "/static/data/tsv/#{$scope.minerals[$scope.mineral]}"
 
     $scope.functions = {}
-    $scope.currentFunction = 'powerlognorm'
-    $.getJSON('/api/v1/estimate')
-      .done (response) ->
-        $scope.functions = response
+    $scope.fn = 'pearson3'
+    $http.get('/api/v1/estimate')
+      .then (response) ->
+        $scope.functions = response.data
 
-    $.getJSON('/api/v1/reserves')
-      .done (response) ->
-        $scope.reserves = response
+    $http.get('/api/v1/reserves')
+      .then (response) ->
+        $scope.reserves = response.data
 
-    $.getJSON('/api/v1/images')
-      .done (response) ->
-        $scope.images = response
+    $http.get('/api/v1/images')
+      .then (response) ->
+        $scope.images = response.data
 
     productionSeries = (series) ->
-      production = R.match /(World.+production|(P|p)roduction|Total)/
-      estimated = R.match /\(estimated\)$/
+      production = R.test /(World.+production|(P|p)roduction|Total)/
+      estimated = R.test /\(estimated\)$/
       R.findLast(
-        R.allPredicates([production, R.not(estimated)])
-        R.sortBy(R.I, series)
+        R.allPass([production, R.complement(estimated)])
+        R.sortBy(R.identity, series)
       )
 
     $scope.chart.selectedSeries = productionSeries($scope.chart.series)
 
     isData = (row) ->
-      isIndex = R.match RegExp("^(\\d{4}|#{$scope.chart.index})")
+      isIndex = R.test RegExp("^(\\d{4}|#{$scope.chart.index})$")
       !! R.find(isIndex, row)
 
     dataRows = (csv) ->
@@ -55,23 +77,24 @@ angular.module('app')
           header: false
           dynamicTyping: false
       rows = parsed.data
-      header = R.takeWhile R.not(isData), rows
-      data = R.takeWhile isData, R.skip(header.length, rows)
-      footer = R.skip(header.length + data.length, rows)
+      header = R.takeWhile R.complement(isData), rows
+      data = R.takeWhile isData, R.drop(header.length, rows)
+      footer = R.drop(header.length + data.length, rows)
       data = R.join "\n", R.map(R.join("\t"), data)
-      clean = R.compose R.filter(R.I), R.flatten
+      clean = R.compose R.filter(R.identity), R.flatten
       [data, clean(header), clean(footer)]
 
     $scope.getStatistics = (src) ->
       # $scope.chart.loading = true
-      $.get(src)
-        .done (csv) ->
+      $http.get(src)
+        .then (response) ->
+          csv = response.data
           [csv, header, footer] = dataRows(csv)  # TODO Do this on backend
           result = Papa.parse csv,
             header: true
             dynamicTyping: true
           series = Fx.filterItems R.append($scope.chart.index, $scope.chart.exclude), result.meta.fields
-          # series.push("Scipy Estimated")
+          $scope.chart.selectedSeries = productionSeries(series)
           $scope.chart.series = series
           $scope.chart.header = header or []
           $scope.chart.footer = footer or []
@@ -80,19 +103,25 @@ angular.module('app')
 
     $scope.$watch 'mineral', (val, old) ->
       src = $scope.minerals[val]
-      # $log.info "Watching mineral:", val, old
-      return unless src
+      guard = not val or not src or (val is old)
+      return if guard
+
+      $log.info "Mineral:", val
+      $scope.chart.src = "/static/data/tsv/#{src}"
+      $location.url('/mineral/' + encodeURI(val))
       Cookies.set('mineral', val, {
         path: '', # Current path
-        sameSite: 'lax',
+        sameSite: 'strict',
+        secure: location.protocol is 'https:',
       })
-      $scope.chart.src = "/static/data/tsv/#{src}"
 
-    $scope.$watch 'chart.series', (val, old) ->
+    $scope.$watchCollection 'chart.series', (val, old) ->
+      return if not val or val is old
+      # $log.info "Chart series:", val
       $scope.chart.selectedSeries = productionSeries(val)
 
     $scope.$watch 'chart.src', (src, old) ->
-      # $log.info "Watching chart.src:", src, old
-      return unless src
+      return if not src or src is old
+      # $log.info "Chart source:", src
       $scope.getStatistics(src)
-  ]
+]

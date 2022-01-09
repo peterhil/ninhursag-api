@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% block head -%}
+    {%- block head %}
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
 
     <title>{% block title %}{% endblock %} &ndash; {{ config.APP_NAME }}</title>
 
     <link rel="shortcut icon" href="/favicon.ico">
-    {% assets "css_all" -%}
+
+    {%- block styles %}
     <link href="https://fonts.googleapis.com/css?family=Kameron%7CLora%7CQuattrocento&amp;v2" rel="stylesheet" type="text/css">
+    {%- assets "css_all" %}
     <link rel="stylesheet" type="text/css" media="all" href="{{ ASSET_URL }}" />
     {%- endassets %}
-
-    <!--[if lt IE 9]>
-    {% assets "js_ie" -%}
-    <script src="{{ ASSET_URL }}"></script>
-    {% endassets -%}
-    <![endif]-->
+    {%- endblock %}
     {%- endblock %}
   </head>
-  <body data-ng-app="app" data-ng-strict-di>
-    {% block navigation %}
-      {% include "_menu.html" %}
-    {% endblock %}
-    <div data-growl="true" data-foundation="true" id="notifications" class="container in-page"></div>
-    <div id="content" class="container" role="main">
-      {% block content %}{% endblock %}
-    </div>
+  <body>
+    {%- block navigation %}
+    {% include "_menu.html" %}
+    {%- endblock %}
+
+    {% block content %}{% endblock %}
+
     {%- block scripts %}
-      {%- assets "js_vendor" %}
-      <script src="{{ ASSET_URL }}"></script>
-      {%- endassets -%}
-      {%- assets "js_main" %}
-      <script src="{{ ASSET_URL }}"></script>
-      {%- endassets -%}
+    {%- assets "js_foundation" %}
+    <script src="{{ ASSET_URL }}"></script>
+    {%- endassets %}
+    <script>
+      $(document).foundation();
+    </script>
     {%- endblock %}
   </body>
 </html>
