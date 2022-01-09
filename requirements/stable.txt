@@ -14,8 +14,10 @@ Flask-FlatPages==0.7.3
 # Other
 Markdown==3.3.4
 Unidecode==0.04.14
+beautifulsoup4==4.9.3
 cssmin==0.2.0
 gunicorn==20.1.0
 nodeenv==0.7.0
 numpy==1.20.3
+# py==1.4.15
 scipy==1.6.3
