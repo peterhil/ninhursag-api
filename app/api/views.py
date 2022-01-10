@@ -50,24 +50,6 @@ class ApiIndex(Resource):
         }
 
 
-class HelloWorld(Resource):
-    def get(self):
-        return {
-            "hello": "world",
-            "version": API_VERSION,
-        }
-
-
-class Items(Resource):
-    def get(self):
-        return {
-            "items": [
-                {"url": "/one"},
-                {"url": "/two"},
-            ]
-        }
-
-
 class Estimate(Resource):
     def get(self):
         return {
@@ -180,5 +162,3 @@ rest.add_resource(Minerals, "/minerals")
 rest.add_resource(Reserves, "/reserves")
 rest.add_resource(Images, "/images")
 rest.add_resource(ApiIndex, "/")
-rest.add_resource(HelloWorld, "/hello")
-rest.add_resource(Items, "/items")

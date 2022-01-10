@@ -31,9 +31,6 @@ angular
         rewriteLinks: true
       $logProvider.debugEnabled false
       $routeProvider
-        .when '/listing',
-          templateUrl: '/static/view/listing.html'
-          controller: 'ListingCtrl'
         .when '/mineral/:mineral',
           controller: 'MineralCtrl'
         .otherwise
