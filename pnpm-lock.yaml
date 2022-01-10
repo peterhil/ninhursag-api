@@ -4,20 +4,7 @@ specifiers:
   '@rollup/plugin-commonjs': ^18.0.0
   '@rollup/plugin-image': ^2.0.6
   '@rollup/plugin-node-resolve': ^11.2.1
-  angular: 1.7.9
-  angular-animate: 1.7.9
-  angular-aria: 1.7.9
-  angular-growl-v2: github:Jacq/angular-growl-2
-  angular-messages: 1.7.9
-  angular-resource: 1.7.9
-  angular-route: 1.7.9
-  angular-sanitize: 1.7.9
-  angular-spinner: ^1.0.1
-  angular-touch: 1.7.9
   chokidar: ^3.5.1
-  coffeelint: ^2.1.0
-  coffeescript: ^2.5.1
-  d3: 3.5.17
   d3-array: ^2.12.1
   d3-scale: ^3.2.4
   d3-shape: ^2.1.0
@@ -55,18 +42,6 @@ specifiers:
   uglify-js: ^3.13.2
 
 dependencies:
-  angular: 1.7.9
-  angular-animate: 1.7.9
-  angular-aria: 1.7.9
-  angular-growl-v2: github.com/Jacq/angular-growl-2/8ef35967afa04e179050fb169072f51cbf6cf312
-  angular-messages: 1.7.9
-  angular-resource: 1.7.9
-  angular-route: 1.7.9
-  angular-sanitize: 1.7.9
-  angular-spinner: 1.0.1
-  angular-touch: 1.7.9
-  coffeescript: 2.5.1
-  d3: 3.5.17
   d3-array: 2.12.1
   d3-scale: 3.3.0
   d3-shape: 2.1.0
@@ -94,7 +69,6 @@ devDependencies:
   '@rollup/plugin-image': 2.0.6_rollup@2.44.0
   '@rollup/plugin-node-resolve': 11.2.1_rollup@2.44.0
   chokidar: 3.5.1
-  coffeelint: 2.1.0
   eslint: 7.26.0
   eslint-config-standard: 16.0.2_a9de41b956fd906bcc0b2bed9b365818
   eslint-plugin-import: 2.22.1_eslint@7.26.0
@@ -108,7 +82,7 @@ devDependencies:
   rollup-plugin-terser: 7.0.2_rollup@2.44.0
   svelte: 3.37.0
   svelte-asyncable: 2.0.2_svelte@3.37.0
-  svelte-preprocess: 4.7.3_965236a0772fac8346bfe656dd6891e8
+  svelte-preprocess: 4.7.3_13326dada721b4765ebc7615a3ac6ea3
 
 packages:
 
@@ -299,45 +273,6 @@ packages:
   /alphanum-sort/1.0.2:
     resolution: {integrity: sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=}
     dev: true
-
-  /angular-animate/1.7.9:
-    resolution: {integrity: sha512-fV+AISy/HTzurQH2ngsJg+lLIvfu0ahc1h4AYKauaXVw97rZc2k4iUA1bMstiEyClsdayQX568kjQc1NK+oYhw==}
-    dev: false
-
-  /angular-aria/1.7.9:
-    resolution: {integrity: sha512-luI3Jemd1AbOQW0krdzfEG3fM0IFtLY0bSSqIDEx3POE0XjKIC1MkrO8Csyq9PPgueLphyAPofzUwZ8YeZ88SA==}
-    dev: false
-
-  /angular-messages/1.7.9:
-    resolution: {integrity: sha512-OdJihuO6AW+m1/r9OdW5riCwacn3dL1agQvgu6Cww3a7OARXXN0vxOpsZCNk4yg4CuD7Et3tiz4DymhvZkydvw==}
-    dev: false
-
-  /angular-resource/1.7.9:
-    resolution: {integrity: sha512-rXXhCE2qT31Pn4Sl+2XL+ntv4zxnA2OzY+clCl8/pOp/s/gIzxpQlEtXipo3QK8Qur3glbIkeF/bJw+gjVAdUw==}
-    dev: false
-
-  /angular-route/1.7.9:
-    resolution: {integrity: sha512-vRoj5hzdQtWbODhWJqDzD1iNOEfCKshO6GFBuPVV7RHlPjzIc4R2dHCc7Qiv/8F3LDxJDohc6vSnTDMLHuaqeA==}
-    dev: false
-
-  /angular-sanitize/1.7.9:
-    resolution: {integrity: sha512-nB/xe7JQWF9nLvhHommAICQ3eWrfRETo0EVGFESi952CDzDa+GAJ/2BFBNw44QqQPxj1Xua/uYKrbLsOGWZdbQ==}
-    dev: false
-
-  /angular-spinner/1.0.1:
-    resolution: {integrity: sha1-ChWSl5UdFGLgYVul4aAf1G3iwco=}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      spin.js: 2.3.2
-    dev: false
-
-  /angular-touch/1.7.9:
-    resolution: {integrity: sha512-qNKWUnecfah4mZxG7GM96AemhXyOVcE03kg3SrWExfmyO/hQNPE50Qqyszb+1UE8GO7WiWOYn1Y5wn9CtOInqA==}
-    dev: false
-
-  /angular/1.7.9:
-    resolution: {integrity: sha512-5se7ZpcOtu0MBFlzGv5dsM1quQDoDeUTwZrWjGtTNA7O88cD8TEk5IEKCTDa3uECV9XnvKREVUr7du1ACiWGFQ==}
-    dev: false
 
   /ansi-colors/4.1.1:
     resolution: {integrity: sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA==}
@@ -576,24 +511,6 @@ packages:
       chalk: 2.4.2
       q: 1.5.1
     dev: true
-
-  /coffeelint/2.1.0:
-    resolution: {integrity: sha1-r2XfNjTpmdmsAUgHNsNtPNL12tg=}
-    engines: {node: '>=6.9.1', npm: '>=1.3.7'}
-    hasBin: true
-    dependencies:
-      coffeescript: 2.5.1
-      glob: 7.1.7
-      ignore: 3.3.10
-      optimist: 0.6.1
-      resolve: 0.6.3
-      strip-json-comments: 1.0.4
-    dev: true
-
-  /coffeescript/2.5.1:
-    resolution: {integrity: sha512-J2jRPX0eeFh5VKyVnoLrfVFgLZtnnmp96WQSLAS8OrLm2wtQLcnikYKe1gViJKDH7vucjuhHvBKKBP3rKcD1tQ==}
-    engines: {node: '>=6'}
-    hasBin: true
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
@@ -872,10 +789,6 @@ packages:
     resolution: {integrity: sha512-/eIQe/eR4kCQwq7yxi7z4c6qEXf2IYGcjoWB5OOQy4Tq9Uv39/947qlDcN2TLkiTzQWzvnsuYPB9TrWaNfipKQ==}
     dependencies:
       d3-array: 2.12.1
-    dev: false
-
-  /d3/3.5.17:
-    resolution: {integrity: sha1-vEZ0gAQ3iyGjYMn8fPUjF5B2L7g=}
     dev: false
 
   /debug/2.6.9:
@@ -1597,10 +1510,6 @@ packages:
       postcss: 8.2.9
     dev: true
 
-  /ignore/3.3.10:
-    resolution: {integrity: sha512-Pgs951kaMm5GXP7MOvxERINe3gsaVjUWFm+UZPSq9xYriQAksyhg0csnS0KXSNRD5NmNdapXEpjxG49+AKh/ug==}
-    dev: true
-
   /ignore/4.0.6:
     resolution: {integrity: sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==}
     engines: {node: '>= 4'}
@@ -2075,10 +1984,6 @@ packages:
     dependencies:
       brace-expansion: 1.1.11
 
-  /minimist/0.0.10:
-    resolution: {integrity: sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=}
-    dev: true
-
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
 
@@ -2217,13 +2122,6 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       mimic-fn: 2.1.0
-    dev: true
-
-  /optimist/0.6.1:
-    resolution: {integrity: sha1-2j6nRob6IaGaERwybpDrFaAZZoY=}
-    dependencies:
-      minimist: 0.0.10
-      wordwrap: 0.0.3
     dev: true
 
   /optionator/0.8.3:
@@ -2861,10 +2759,6 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /resolve/0.6.3:
-    resolution: {integrity: sha1-3ZV5gufnNt699TtYpN2RdUV13UY=}
-    dev: true
-
   /resolve/1.20.0:
     resolution: {integrity: sha512-wENBPt4ySzg4ybFQW2TT1zMQucPK95HSh/nq2CFTZVOGut2+pQvSsgtda4d26YrYcr067wjbmzOG8byDPBX63A==}
     dependencies:
@@ -3219,12 +3113,6 @@ packages:
       min-indent: 1.0.1
     dev: true
 
-  /strip-json-comments/1.0.4:
-    resolution: {integrity: sha1-HhX7ysl9Pumb8tc7TGVrCCu6+5E=}
-    engines: {node: '>=0.8.0'}
-    hasBin: true
-    dev: true
-
   /strip-json-comments/3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
@@ -3269,7 +3157,7 @@ packages:
       svelte: 3.37.0
     dev: true
 
-  /svelte-preprocess/4.7.3_965236a0772fac8346bfe656dd6891e8:
+  /svelte-preprocess/4.7.3_13326dada721b4765ebc7615a3ac6ea3:
     resolution: {integrity: sha512-Zx1/xLeGOIBlZMGPRCaXtlMe4ZA0faato5Dc3CosEqwu75MIEPuOstdkH6cy+RYTUYynoxzNaDxkPX4DbrPwRA==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -3312,7 +3200,6 @@ packages:
     dependencies:
       '@types/pug': 2.0.4
       '@types/sass': 1.16.0
-      coffeescript: 2.5.1
       detect-indent: 6.0.0
       less: 3.13.1
       sass: 1.47.0
@@ -3555,11 +3442,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /wordwrap/0.0.3:
-    resolution: {integrity: sha1-o9XabNXAvAAI03I0u68b7WMFkQc=}
-    engines: {node: '>=0.4.0'}
-    dev: true
-
   /wrap-ansi/6.2.0:
     resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}
     engines: {node: '>=8'}
@@ -3616,10 +3498,4 @@ packages:
       which-module: 2.0.0
       y18n: 4.0.3
       yargs-parser: 18.1.3
-    dev: false
-
-  github.com/Jacq/angular-growl-2/8ef35967afa04e179050fb169072f51cbf6cf312:
-    resolution: {tarball: https://codeload.github.com/Jacq/angular-growl-2/tar.gz/8ef35967afa04e179050fb169072f51cbf6cf312}
-    name: angular-growl-v2
-    version: 0.7.1
     dev: false
