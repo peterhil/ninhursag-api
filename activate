@@ -6,7 +6,4 @@ export NODE_MODULES_BIN="$NODE_MODULES_PATH/.bin"
 
 export PATH="$NODE_MODULES_BIN:$PATH"
 
-export LESS_BIN='lessc'
-export UGLIFYJS_BIN='uglifyjs'
-
 source ./venv/py38/bin/activate

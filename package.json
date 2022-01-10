@@ -55,7 +55,6 @@
     "sass": "^1.47.0",
     "svelte": "^3.45.0",
     "svelte-asyncable": "^2.0.4",
-    "svelte-preprocess": "^4.10.1",
-    "uglify-js": "^3.13.3"
+    "svelte-preprocess": "^4.10.1"
   }
 }

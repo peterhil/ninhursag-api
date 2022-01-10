@@ -34,7 +34,6 @@ specifiers:
   svelte-asyncable: ^2.0.4
   svelte-preprocess: ^4.10.1
   tinycolor2: 1.1.2
-  uglify-js: ^3.13.3
 
 dependencies:
   d3-array: 2.12.1
@@ -72,7 +71,6 @@ devDependencies:
   svelte: 3.45.0
   svelte-asyncable: 2.0.4_svelte@3.45.0
   svelte-preprocess: 4.10.1_sass@1.47.0+svelte@3.45.0
-  uglify-js: 3.13.3
 
 packages:
 
@@ -3266,12 +3264,6 @@ packages:
   /type-fest/0.8.1:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
-    dev: true
-
-  /uglify-js/3.13.3:
-    resolution: {integrity: sha512-otIc7O9LyxpUcQoXzj2hL4LPWKklO6LJWoJUzNa8A17Xgi4fOeDC8FBDOLHnC/Slo1CQgsZMcM6as0M76BZaig==}
-    engines: {node: '>=0.8.0'}
-    hasBin: true
     dev: true
 
   /unbox-primitive/1.0.1:
