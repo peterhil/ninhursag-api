@@ -29,7 +29,6 @@ js_foundation = Bundle(
     'vendor/jquery/dist/jquery.js',
     'vendor/js-cookie/src/js.cookie.js',
     'vendor/lodash/lodash.js',
-    # 'vendor/modernizr/dist/modernizr-build.js', # TODO Customize this
     'vendor/foundation-sites/js/foundation/foundation.js',
     'vendor/foundation-sites/js/foundation/foundation.topbar.js',
     filters='rjsmin',

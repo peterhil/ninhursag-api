@@ -34,7 +34,6 @@
     "lodash": "^4.17.21",
     "minimatch": "^3.0.4",
     "mkdirp": "^1.0.4",
-    "modernizr": "^3.11.6",
     "papaparse": "^5.3.0",
     "ramda": "0.27.1",
     "sass": "^1.47.0",
