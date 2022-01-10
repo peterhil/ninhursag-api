@@ -107,6 +107,8 @@ class Estimate(Resource):
             )
         except RuntimeError as err:
             abort(400, errors=[str(err)])
+        except RuntimeWarning as err:
+            abort(400, errors=[str(err)])
         except ValueError as err:
             abort(400, errors=[str(err)])
         except Exception as err:
