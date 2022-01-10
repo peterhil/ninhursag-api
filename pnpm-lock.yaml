@@ -16,14 +16,11 @@ specifiers:
   eslint-plugin-svelte3: ^3.2.0
   events: ^3.3.0
   foundation-sites: 5.5.3
-  graceful-fs: ^4.2.6
   humanize-plus: 1.5.0
   jquery: 2.1.4
   js-cookie: ^2.2.1
   less: ^3.11.3
   lodash: ^4.17.21
-  minimatch: ^3.0.4
-  mkdirp: ^1.0.4
   papaparse: ^5.3.0
   ramda: 0.27.1
   rollup: ^2.44.0
@@ -46,14 +43,11 @@ dependencies:
   d3-shape: 2.1.0
   events: 3.3.0
   foundation-sites: 5.5.3
-  graceful-fs: 4.2.6
   humanize-plus: 1.5.0
   jquery: 2.1.4
   js-cookie: 2.2.1
   less: 3.13.1
   lodash: 4.17.21
-  minimatch: 3.0.4
-  mkdirp: 1.0.4
   papaparse: 5.3.0
   ramda: 0.27.1
   sass: 1.47.0
@@ -358,6 +352,7 @@ packages:
 
   /balanced-match/1.0.0:
     resolution: {integrity: sha1-ibTRmasr7kneFk6gK4nORi1xt2c=}
+    dev: true
 
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
@@ -372,6 +367,7 @@ packages:
     dependencies:
       balanced-match: 1.0.0
       concat-map: 0.0.1
+    dev: true
 
   /braces/3.0.2:
     resolution: {integrity: sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==}
@@ -549,6 +545,7 @@ packages:
 
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    dev: true
 
   /contains-path/0.1.0:
     resolution: {integrity: sha1-/ozxhP9mcLa67wGp1IYaXL7EEgo=}
@@ -1923,6 +1920,7 @@ packages:
     resolution: {integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==}
     dependencies:
       brace-expansion: 1.1.11
+    dev: true
 
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
@@ -1934,12 +1932,6 @@ packages:
     dependencies:
       minimist: 1.2.5
     dev: true
-
-  /mkdirp/1.0.4:
-    resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dev: false
 
   /ms/2.0.0:
     resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
