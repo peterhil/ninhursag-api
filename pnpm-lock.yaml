@@ -8,6 +8,7 @@ specifiers:
   d3-array: ^2.12.1
   d3-scale: ^3.3.0
   d3-shape: ^2.1.0
+  debounce: ^1.2.1
   eslint: ^7.26.0
   eslint-config-standard: ^16.0.2
   eslint-plugin-import: ^2.22.1
@@ -19,7 +20,6 @@ specifiers:
   humanize-plus: 1.5.0
   jquery: 2.1.4
   js-cookie: ^2.2.1
-  lodash: ^4.17.21
   papaparse: ^5.3.0
   ramda: 0.27.1
   rollup: ^2.44.0
@@ -40,12 +40,12 @@ dependencies:
   d3-array: 2.12.1
   d3-scale: 3.3.0
   d3-shape: 2.1.0
+  debounce: 1.2.1
   events: 3.3.0
   foundation-sites: 5.5.3
   humanize-plus: 1.5.0
   jquery: 2.1.4
   js-cookie: 2.2.1
-  lodash: 4.17.21
   papaparse: 5.3.0
   ramda: 0.27.1
   soundex-code: 0.1.2
@@ -772,6 +772,10 @@ packages:
     resolution: {integrity: sha512-/eIQe/eR4kCQwq7yxi7z4c6qEXf2IYGcjoWB5OOQy4Tq9Uv39/947qlDcN2TLkiTzQWzvnsuYPB9TrWaNfipKQ==}
     dependencies:
       d3-array: 2.12.1
+    dev: false
+
+  /debounce/1.2.1:
+    resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
     dev: false
 
   /debug/2.6.9:
@@ -1812,6 +1816,7 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: true
 
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
