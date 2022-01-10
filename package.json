@@ -22,14 +22,14 @@
   "private": true,
   "dependencies": {
     "d3-array": "^2.12.1",
-    "d3-scale": "^3.2.4",
+    "d3-scale": "^3.3.0",
     "d3-shape": "^2.1.0",
     "events": "^3.3.0",
     "foundation-sites": "5.5.3",
     "humanize-plus": "1.5.0",
     "jquery": "2.1.4",
     "js-cookie": "^2.2.1",
-    "less": "^3.11.3",
+    "less": "^3.13.1",
     "lodash": "^4.17.21",
     "papaparse": "^5.3.0",
     "ramda": "0.27.1",
@@ -37,7 +37,7 @@
     "soundex-code": "0.1.2",
     "spin.js": "2.3.2",
     "tinycolor2": "1.1.2",
-    "uglify-js": "^3.13.2"
+    "uglify-js": "^3.13.3"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^18.0.0",
@@ -48,7 +48,7 @@
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-svelte3": "^3.2.0",
     "rollup": "^2.44.0",
     "rollup-plugin-eslint": "^7.0.0",
