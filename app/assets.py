@@ -4,35 +4,29 @@
 from flask_assets import Environment, Bundle
 
 
-css_main = Bundle(
+css_app = Bundle(
     'style/main.scss',
     debug=False,
-    filters='scss',
+    filters=[
+        'scss',
+        'cssmin'
+    ],
     output='gen/app.css'
 )
 
-css_all = Bundle(
-    css_main,
-    filters='cssmin',
-    output='gen/app.min.css'
-)
-
-js_vendor = Bundle(
-    'vendor/humanize-plus/public/src/humanize.js',
-    'vendor/js-cookie/src/js.cookie.js',
-    'vendor/papaparse/papaparse.js',
-    'vendor/ramda/dist/ramda.js',
-    'vendor/soundex-code/index.js',
-    'vendor/spin.js/spin.js',
-    'vendor/tinycolor2/tinycolor.js',
-    filters='rjsmin',
-    output='gen/vendor.min.js'
+css_vendor = Bundle(
+    'vendor/milligram/src/milligram.sass',
+    filters=[
+        'sass',
+        'cssmin'
+    ],
+    output='gen/vendor.css'
 )
 
 def init_app(app):
     webassets = Environment(app)
-    webassets.register('css_all', css_all)
-    webassets.register('js_vendor', js_vendor)
+    webassets.register('css_app', css_app)
+    webassets.register('css_vendor', css_vendor)
     webassets.manifest = 'cache' if not app.debug else False
     webassets.cache = not app.debug
     webassets.debug = app.debug
