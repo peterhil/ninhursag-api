@@ -1,5 +1,5 @@
 <script>
-    import { debounce } from 'lodash'
+    import { debounce } from 'debounce'
 
     import { functions } from '../stores/functions'
     import { controller } from '../stores/estimate'

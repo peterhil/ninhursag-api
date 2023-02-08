@@ -1,5 +1,5 @@
 <script>
-    import { debounce } from 'lodash'
+    import { debounce } from 'debounce'
     import { minerals } from '../stores/minerals'
 
     export let selected

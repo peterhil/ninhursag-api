@@ -68,8 +68,3 @@ def index():
 def mineral(mineral='Aluminium'):
     asset_dir = '/static/dev' if current_app.config['DEBUG'] else '/static/dist'
     return render_template('/mineral.html', mineral=mineral, asset_dir=asset_dir)
-
-
-@route(bp, '/ng-mineral/<mineral>')
-def ng_mineral(mineral='Aluminium'):
-    return render_template('/ng-mineral.html', mineral=mineral)
