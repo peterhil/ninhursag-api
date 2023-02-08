@@ -16,9 +16,7 @@ specifiers:
   eslint-plugin-promise: ^4.3.1
   eslint-plugin-svelte3: ^3.3.0
   events: ^3.3.0
-  foundation-sites: 5.5.3
   humanize-plus: 1.5.0
-  jquery: 2.1.4
   js-cookie: ^2.2.1
   papaparse: ^5.3.0
   ramda: 0.27.1
@@ -41,9 +39,7 @@ dependencies:
   d3-shape: 2.1.0
   debounce: 1.2.1
   events: 3.3.0
-  foundation-sites: 5.5.3
   humanize-plus: 1.5.0
-  jquery: 2.1.4
   js-cookie: 2.2.1
   papaparse: 5.3.0
   ramda: 0.27.1
@@ -1376,10 +1372,6 @@ packages:
     resolution: {integrity: sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==}
     dev: true
 
-  /foundation-sites/5.5.3:
-    resolution: {integrity: sha1-ZVbrKzHN47ImYwEWvSFdldBWwKc=}
-    dev: false
-
   /fs-extra/9.1.0:
     resolution: {integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==}
     engines: {node: '>=10'}
@@ -1810,10 +1802,6 @@ packages:
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
-
-  /jquery/2.1.4:
-    resolution: {integrity: sha1-IoveaYoMYUMdwmMKahVPFYkNIxc=}
-    dev: false
 
   /js-cookie/2.2.1:
     resolution: {integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==}

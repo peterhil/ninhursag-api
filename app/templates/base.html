@@ -29,12 +29,6 @@
     {% block content %}{% endblock %}
 
     {%- block scripts %}
-    {%- assets "js_foundation" %}
-    <script src="{{ ASSET_URL }}"></script>
-    {%- endassets %}
-    <script>
-      $(document).foundation();
-    </script>
     {%- endblock %}
   </body>
 </html>
