@@ -6,4 +6,4 @@ export NODE_MODULES_BIN="$NODE_MODULES_PATH/.bin"
 
 export PATH="$NODE_MODULES_BIN:$PATH"
 
-source ./venv/py39/bin/activate
+. ./venv/py39/bin/activate

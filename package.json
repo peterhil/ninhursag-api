@@ -17,7 +17,7 @@
     "dev": "rollup -cw",
     "build": "rollup -c",
     "lint": "eslint app/static/js",
-    "start": "source ./activate && python run.py"
+    "start": ". ./activate && python run.py"
   },
   "private": true,
   "dependencies": {
