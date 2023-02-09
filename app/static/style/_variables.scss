@@ -1,7 +1,14 @@
-$primary-color: #008cba;
+$turquoise-color: #008cba;
+$grey-color: #606c76;
+$neon-yellow: #f9ffce;
+$light-color: #f4f5f6;
+$white-color: #f9f9f9;
+
+$primary-color: $turquoise-color;
+$text-color: $grey-color;
 
 $loading-color: $primary-color;
-$loading-bg: #fff;
+$loading-bg: $light-color;
 $loading-ratio: 62%;
 
 $padding-lg: 2rem;

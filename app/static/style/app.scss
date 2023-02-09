@@ -13,12 +13,25 @@ body {
     text-rendering: optimizeLegibility;
     margin: 0;
     padding: 0;
+    background-color: $white-color;
+    color: $text-color;
+}
+
+nav.top-bar {
+    padding: $padding-lg;
+    background-color: $light-color;
+    color: $light-color;
+
+    a {
+        color: $primary-color;
+    }
 }
 
 h1, h2, h3, h4, h5, h6,
 nav.top-bar {
     font-family: Vesper Libre, Quattrocento, Lora, serif;
     font-weight: 500;
+    margin-block: 0.62em .38em;
 }
 
 h1 {
@@ -39,16 +52,6 @@ img {
 ul {
     margin-left: 0;
     list-style: none;
-}
-
-@media only screen and (min-width: 40.063em) {
-    nav.top-bar {
-        padding: 0 $padding-lg;
-    }
-
-    .container {
-        padding: 0.5rem $padding-lg;
-    }
 }
 
 #notifications {
