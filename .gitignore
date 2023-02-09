@@ -45,3 +45,4 @@ bower_components
 **/static/gen
 instance/
 *.patch
+stats.html

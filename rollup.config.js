@@ -6,6 +6,7 @@ import styles from 'rollup-plugin-styles'
 import svelte from 'rollup-plugin-svelte'
 // import { eslint } from 'rollup-plugin-eslint'
 import { terser } from 'rollup-plugin-terser'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 const production = !process.env.ROLLUP_WATCH;
 const minify = production
@@ -53,6 +54,9 @@ const plugins = [
 
     // Minify on production
     minify && terser(),
+
+    // Visualise bundle size
+    !production && visualizer(),
 ]
 
 export default [{
