@@ -18,7 +18,7 @@
 
 <div class="row">
     <div class="small-12 large-9 columns">
-        <h1>{$mineral}</h1>
+        <h2>{$mineral}</h2>
 
         <div class="row">
             <div class="large-4 medium-6 columns">

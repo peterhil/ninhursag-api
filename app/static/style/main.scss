@@ -5,7 +5,7 @@
 // Typography
 
 body {
-    font-family: Lora, Georgia, serif;
+    font-family: Quattrocento, Lora, serif;
     font-weight: normal;
     text-rendering: optimizeLegibility;
 }
@@ -40,10 +40,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6,
-.top-bar-section ul li > a,
-figcaption {
-    font-family: Lora, Georgia, serif;
-    font-family: Quattrocento, Lora, Georgia, serif;
+nav {
+    font-family: Vesper Libre, Quattrocento, Lora, serif;
+    font-weight: 500;
+}
+
+h1 {
     font-weight: 700;
 }
 
