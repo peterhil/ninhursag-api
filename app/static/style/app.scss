@@ -2,6 +2,7 @@
 // Styles
 // --------------------------------------------------
 
+@import 'variables';
 @import 'octocat';
 
 // Typography
@@ -10,6 +11,44 @@ body {
     font-family: Quattrocento, Lora, serif;
     font-weight: normal;
     text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+nav.top-bar {
+    font-family: Vesper Libre, Quattrocento, Lora, serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+a {
+    color: $primary-color;
+}
+
+img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+ul {
+    margin-left: 0;
+    list-style: none;
+}
+
+@media only screen and (min-width: 40.063em) {
+    nav.top-bar {
+        padding: 0 $padding-lg;
+    }
+
+    .container {
+        padding: 0.5rem $padding-lg;
+    }
 }
 
 #notifications {
@@ -40,41 +79,6 @@ body {
         padding: 10px;
     }
 }
-
-h1, h2, h3, h4, h5, h6,
-nav {
-    font-family: Vesper Libre, Quattrocento, Lora, serif;
-    font-weight: 500;
-}
-
-h1 {
-    font-weight: 700;
-}
-
-.row {
-    max-width: none;
-}
-
-@media only screen and (min-width: 40.063em) {
-    nav:not(.expanded) {
-        padding: 0 30px;
-    }
-    .container {
-        padding: 10px 30px;
-    }
-}
-
-img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-// ul {
-//     margin-left: 0;
-//     list-style: none;
-// }
 
 figure {
     margin: 0;

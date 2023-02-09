@@ -1,3 +1,7 @@
-$loading-color: #008CBA;
+$primary-color: #008cba;
+
+$loading-color: $primary-color;
 $loading-bg: #fff;
 $loading-ratio: 62%;
+
+$padding-lg: 2rem;
