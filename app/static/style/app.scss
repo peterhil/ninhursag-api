@@ -71,6 +71,11 @@ ul {
     list-style: none;
 }
 
+// Override milligram style
+fieldset, input, select, textarea {
+    margin-bottom: 0.5rem;
+}
+
 #notifications {
     .growl {
         z-index: 3000;
