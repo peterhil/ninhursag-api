@@ -3,7 +3,7 @@
     import Minerals from './pages/Minerals.svelte'
 </script>
 
-<main class="container" role="main">
+<main>
     <Notifications />
     <Minerals />
 </main>

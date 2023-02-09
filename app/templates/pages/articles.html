@@ -4,16 +4,12 @@
 {{ super() }}
 {% endblock %}
 {% block content %}
-<div class="container" role="main">
-  <div class="columns">
-	  {% for article in articles %}
+<main>
+	{% for article in articles %}
 	  {{ article }}
     <hr>
-	  {% else %}
-	  <div class="listing">
-		  <p>No articles yet.</p>
-	  </div>
-	  {% endfor %}
-  </div>
-</div>
+	{% else %}
+		<p>No articles yet.</p>
+	{% endfor %}
+</main>
 {% endblock %}
