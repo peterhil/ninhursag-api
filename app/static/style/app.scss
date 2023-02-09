@@ -17,19 +17,30 @@ body {
     color: $text-color;
 }
 
-nav.top-bar {
-    padding: $padding-lg;
-    padding-bottom: 0;
+#app {
+    padding: 0 $padding-inline;
+}
+
+nav.navigation {
     font-family: Vesper Libre, Quattrocento, Lora, serif;
     font-weight: 500;
     background-color: $light-color;
-    color: $light-color;
+    color: $text-color;
+    border: clamp(20px, 4vw, 70px) solid $primary-color;
+    border-block-color: $white-color;
+    border-top: 3vh solid $white-color;
+
+    section {
+        padding-inline: $padding-inline;
+    }
 
     a {
         color: $primary-color;
     }
 
     h1 {
+        display: inline-block;
+        padding: 1rem 0;
         font-size: clamp(18px, 6vw, 4rem);
     }
 }

@@ -1,14 +1,15 @@
-$turquoise-color: #008cba;
+$ninhursag-color: #008cba;
+$turquoise-color: #34d5e6;
 $grey-color: #606c76;
 $neon-yellow: #f9ffce;
 $light-color: #f4f5f6;
 $white-color: #f9f9f9;
 
-$primary-color: $turquoise-color;
+$primary-color: $ninhursag-color;
 $text-color: $grey-color;
 
 $loading-color: $primary-color;
 $loading-bg: $light-color;
 $loading-ratio: 62%;
 
-$padding-lg: 2rem;
+$padding-inline: clamp(20px, 5vw, 50px);
