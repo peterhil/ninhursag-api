@@ -5,7 +5,7 @@ from flask_assets import Environment, Bundle
 
 
 css_app = Bundle(
-    'style/main.scss',
+    'style/app.scss',
     debug=False,
     filters=[
         'scss',
