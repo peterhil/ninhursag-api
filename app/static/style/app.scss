@@ -19,16 +19,22 @@ body {
 
 nav.top-bar {
     padding: $padding-lg;
+    padding-bottom: 0;
+    font-family: Vesper Libre, Quattrocento, Lora, serif;
+    font-weight: 500;
     background-color: $light-color;
     color: $light-color;
 
     a {
         color: $primary-color;
     }
+
+    h1 {
+        font-size: clamp(18px, 6vw, 4rem);
+    }
 }
 
-h1, h2, h3, h4, h5, h6,
-nav.top-bar {
+h1, h2, h3, h4, h5, h6 {
     font-family: Vesper Libre, Quattrocento, Lora, serif;
     font-weight: 500;
     margin-block: 0.62em .38em;
