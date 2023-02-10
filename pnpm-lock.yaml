@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify/icons-carbon': ^1.2.15
+  '@iconify/svelte': ^3.1.0
   '@rollup/plugin-commonjs': ^18.0.0
   '@rollup/plugin-image': ^2.0.6
   '@rollup/plugin-node-resolve': ^11.2.1
@@ -51,6 +53,8 @@ dependencies:
   tinycolor2: 1.1.2
 
 devDependencies:
+  '@iconify/icons-carbon': 1.2.15
+  '@iconify/svelte': 3.1.0_svelte@3.45.0
   '@rollup/plugin-commonjs': 18.0.0_rollup@2.44.0
   '@rollup/plugin-image': 2.0.6_rollup@2.44.0
   '@rollup/plugin-node-resolve': 11.2.1_rollup@2.44.0
@@ -113,6 +117,25 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@iconify/icons-carbon/1.2.15:
+    resolution: {integrity: sha512-eTuylQU2M9u2DWCQsLHA40mESCZ6ck69/RIcqsXw7LCAWX1MiYnmr1BbdXcJ18d2ba24w3UNwxAFNvVIIVtHRg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify/svelte/3.1.0_svelte@3.45.0:
+    resolution: {integrity: sha512-G1w1dcO7eiD+JmQJNwNW4qnAn86oQxKLe1P/iAPjJ0qYYuF7Pb60TPrlcj4+2gu4SXe3a0Jrv++8YmceG+gX/g==}
+    peerDependencies:
+      svelte: '>=3'
+    dependencies:
+      '@iconify/types': 2.0.0
+      svelte: 3.45.0
+    dev: true
+
+  /@iconify/types/2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: true
 
   /@rollup/plugin-commonjs/18.0.0_rollup@2.44.0:
