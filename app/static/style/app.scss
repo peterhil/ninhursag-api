@@ -17,6 +17,8 @@ body {
     padding: 0;
     background-color: $color-white;
     color: $color-text;
+    hyphens: auto;
+    text-overflow: ellipsis;
 }
 
 main {
@@ -55,6 +57,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3 {
     line-height: 1.2;
+}
+
+@media (min-width: 40rem) {
+    h1, h2, h3 {
+        hyphens: none;
+    }
 }
 
 h1 {
