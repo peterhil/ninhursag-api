@@ -3,18 +3,3 @@
 fieldset, input, select, textarea {
     margin-bottom: 0.5rem;
 }
-
-.container {
-    padding: 0;
-}
-
-.row {
-    gap: 2rem;
-}
-
-@media (min-width: 40rem) {
-    .row {
-        margin-left: 0;
-        width: 100%;
-    }
-}
