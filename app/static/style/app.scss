@@ -86,7 +86,12 @@ img {
 
 ul {
     margin-left: 0;
-    list-style: none;
+    list-style: '💎';
+    padding-left: 1em;
+}
+
+li {
+    padding-left: 1rem;
 }
 
 #notifications {
@@ -219,7 +224,7 @@ figure {
 
 @media (min-width: 40rem) {
     aside {
-        max-width: 320px;
+        // max-width: 320px;
     }
 }
 
