@@ -27,6 +27,7 @@ specifiers:
   rollup-plugin-eslint: ^7.0.0
   rollup-plugin-styles: ^3.14.1
   rollup-plugin-svelte: ^7.1.0
+  rollup-plugin-svg: ^2.0.0
   rollup-plugin-terser: ^7.0.2
   rollup-plugin-visualizer: ^5.9.0
   sass: ^1.47.0
@@ -69,6 +70,7 @@ devDependencies:
   rollup-plugin-eslint: 7.0.0
   rollup-plugin-styles: 3.14.1_rollup@2.44.0
   rollup-plugin-svelte: 7.1.0_63pmeaqihsmjelglo6lb3jbpcq
+  rollup-plugin-svg: 2.0.0
   rollup-plugin-terser: 7.0.2_rollup@2.44.0
   rollup-plugin-visualizer: 5.9.0_rollup@2.44.0
   sass: 1.47.0
@@ -1304,6 +1306,10 @@ packages:
   /estraverse/5.2.0:
     resolution: {integrity: sha512-BxbNGGNm0RyRYvUdHpIwv9IWzeM9XClbOxwoATuFdOE7ZE6wHL+HQ5T8hoPM+zHvmKzzsEqhgy0GrQ5X13afiQ==}
     engines: {node: '>=4.0'}
+    dev: true
+
+  /estree-walker/0.2.1:
+    resolution: {integrity: sha512-6/I1dwNKk0N9iGOU3ydzAAurz4NPo/ttxZNCqgIVbWFvWyzWBSNonRrJ5CpjDuyBfmM7ENN7WCzUi9aT/UPXXQ==}
     dev: true
 
   /estree-walker/0.6.1:
@@ -2867,6 +2873,12 @@ packages:
       svelte: 3.45.0
     dev: true
 
+  /rollup-plugin-svg/2.0.0:
+    resolution: {integrity: sha512-DmE7dSQHo1SC5L2uH2qul3Mjyd5oV6U1aVVkyvTLX/mUsRink7f1b1zaIm+32GEBA6EHu8H/JJi3DdWqM53ySQ==}
+    dependencies:
+      rollup-pluginutils: 1.5.2
+    dev: true
+
   /rollup-plugin-terser/7.0.2_rollup@2.44.0:
     resolution: {integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==}
     peerDependencies:
@@ -2894,6 +2906,13 @@ packages:
       rollup: 2.44.0
       source-map: 0.7.4
       yargs: 17.6.2
+    dev: true
+
+  /rollup-pluginutils/1.5.2:
+    resolution: {integrity: sha512-SjdWWWO/CUoMpDy8RUbZ/pSpG68YHmhk5ROKNIoi2En9bJ8bTt3IhYi254RWiTclQmL7Awmrq+rZFOhZkJAHmQ==}
+    dependencies:
+      estree-walker: 0.2.1
+      minimatch: 3.0.4
     dev: true
 
   /rollup-pluginutils/2.8.2:
