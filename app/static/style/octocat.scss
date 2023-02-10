@@ -4,15 +4,15 @@
 // Copyright (c) 2020 CJ Patoilo - https://milligram.io/
 
 .octocat {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 56px;
+    height: auto;
     border: 0;
     color: $color-light;
     fill: #0a0a0a;
-    height: 5.2rem;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 5.2rem;
-    z-index: 2;
 }
 
 .octocat:hover .octocat-arm {
