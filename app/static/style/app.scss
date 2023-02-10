@@ -208,6 +208,12 @@ figure {
     }
 }
 
+@media (min-width: 40rem) {
+    aside {
+        max-width: 320px;
+    }
+}
+
 img.mineral {
     width: 100%;
     height: auto;
