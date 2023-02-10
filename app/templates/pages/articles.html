@@ -5,11 +5,11 @@
 {% endblock %}
 {% block content %}
 <main>
-	{% for article in articles %}
-	  {{ article }}
-    <hr>
-	{% else %}
-		<p>No articles yet.</p>
-	{% endfor %}
+{% for article in articles %}
+  {{ article }}
+  <hr>
+{% else %}
+  <p>No articles yet.</p>
+{% endfor %}
 </main>
 {% endblock %}
