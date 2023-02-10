@@ -5,7 +5,7 @@
 
 .octocat {
     border: 0;
-    color: $light-color;
+    color: $color-light;
     fill: #0a0a0a;
     height: 5.2rem;
     position: fixed;
@@ -22,7 +22,7 @@
 
 .octocat .octocat-arm,
 .octocat .octocat-body {
-    fill: $light-color;
+    fill: $color-light;
 }
 
 @keyframes b {

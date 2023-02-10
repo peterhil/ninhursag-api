@@ -27,11 +27,11 @@
         bottom: 0;
         right: 0;
         border-radius: 50%;
-        background-color: $loading-color;
+        background-color: $color-loading;
         background: linear-gradient(
             to right,
-            $loading-color 10%,
-            color.change($loading-color, $alpha: 0) 42%
+            $color-loading 10%,
+            color.change($color-loading, $alpha: 0) 42%
         );
         animation: loading 1.4s infinite linear;
         transform: translateZ(0);
@@ -45,7 +45,7 @@
         width: 50%;
         height: 50%;
         border-radius: 100% 0 0 0;
-        background: $loading-color;
+        background: $color-loading;
     }
 
     .loading .spinner:after {

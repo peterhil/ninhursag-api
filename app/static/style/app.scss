@@ -15,8 +15,8 @@ body {
     text-rendering: optimizeLegibility;
     margin: 0;
     padding: 0;
-    background-color: $white-color;
-    color: $text-color;
+    background-color: $color-white;
+    color: $color-text;
 }
 
 main {
@@ -26,18 +26,18 @@ main {
 nav.navigation {
     font-family: Vesper Libre, Quattrocento, Lora, serif;
     font-weight: 500;
-    background-color: $light-color;
-    color: $text-color;
-    border: clamp(20px, 4vw, 70px) solid $primary-color;
-    border-block-color: $white-color;
-    border-top: 3vh solid $white-color;
+    background-color: $color-light;
+    color: $color-text;
+    border: clamp(20px, 4vw, 70px) solid $color-primary;
+    border-block-color: $color-white;
+    border-top: 3vh solid $color-white;
 
     section {
         padding-inline: $padding-inline;
     }
 
     a {
-        color: $primary-color;
+        color: $color-primary;
     }
 
     h1 {
@@ -62,11 +62,11 @@ h1 {
 }
 
 a {
-    color: $primary-color;
+    color: $color-primary;
 }
 
 hr {
-    border: 10px solid $primary-color;
+    border: 10px solid $color-primary;
 }
 
 img {
