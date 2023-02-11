@@ -32,7 +32,9 @@
 # SOFTWARE.
 
 from flask import Flask
+from flask_cors import CORS
 from os import environ
+
 from .helpers import project_name, register_blueprints, slugify
 
 
@@ -51,6 +53,9 @@ def create_app(package_name, package_path, settings_override=None):
     :param settings_override: a dictionary of settings to override
     """
     app = Flask(package_name, instance_relative_config=True)
+
+    # TODO Stricter origins
+    cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     def env_settings(module):
         return '.'.join([module, environment().capitalize()])

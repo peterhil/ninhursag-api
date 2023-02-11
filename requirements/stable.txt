@@ -1,14 +1,10 @@
 Flask==2.0.0
-# Jinja2==3.0.0
-# MarkupSafe==2.0.0
-# Werkzeug==2.0.0
-
-Flask-Assets==2.0
-# webassets>=2.0 # From Flask-Assets
+Flask-CORS==3.0.10
 
 # Flask-RESTful==0.3.8
 -e git+https://github.com/flask-restful/flask-restful.git@master#egg=Flask-RESTful
 
+Flask-Assets==2.0
 Flask-FlatPages==0.7.3
 
 # Other
@@ -19,5 +15,4 @@ cssmin==0.2.0
 gunicorn==20.1.0
 nodeenv==0.7.0
 numpy==1.22.0
-# py==1.4.15
 scipy==1.6.3
