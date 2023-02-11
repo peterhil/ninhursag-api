@@ -13,7 +13,7 @@ const production = !process.env.ROLLUP_WATCH;
 const minify = production
 const sourceMaps = !production
 const outputDir = (dir = '') => { return (production ? 'app/static/dist/' : 'app/static/dev/') + dir }
-const outputFormat = 'iife'
+const outputFormat = 'es'
 // https://github.com/d3/d3-interpolate/issues/58
 const D3_WARNING = /Circular dependency.*d3-interpolate/
 
@@ -48,7 +48,7 @@ const plugins = [
                 './node_modules/'
             ],
         },
-        preferBuiltins: false,
+        preferBuiltins: true,
     }),
 
     // Convert CommonJS libraries to ES6
