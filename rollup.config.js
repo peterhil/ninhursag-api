@@ -1,12 +1,12 @@
 import commonjs from '@rollup/plugin-commonjs'
+import eslint from '@rollup/plugin-eslint'
 import image from '@rollup/plugin-image'
 import resolve from '@rollup/plugin-node-resolve'
-import sveltePreprocess from 'svelte-preprocess'
 import styles from 'rollup-plugin-styles'
 import svelte from 'rollup-plugin-svelte'
+import sveltePreprocess from 'svelte-preprocess'
 import svg from 'rollup-plugin-svg'
-import terser from '@rollup/plugin-terser';
-// import { eslint } from 'rollup-plugin-eslint'
+import terser from '@rollup/plugin-terser'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 const production = !process.env.ROLLUP_WATCH;
@@ -18,11 +18,11 @@ const outputFormat = 'es'
 const D3_WARNING = /Circular dependency.*d3-interpolate/
 
 const plugins = [
-    // eslint({
-    //     exclude: [
-    //         'src/**/*.{css,sass}',
-    //     ]
-    // }),
+    eslint({
+        exclude: [
+            'src/**/*.{css,sass}',
+        ]
+    }),
 
     svelte({
         extensions: ['.svelte', '.html'],
