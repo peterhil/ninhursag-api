@@ -37,6 +37,7 @@ specifiers:
   svelte-asyncable: ^2.0.4
   svelte-preprocess: ^5.0.1
   tinycolor2: 1.1.2
+  typescript: ^4.9.5
 
 dependencies:
   d3-array: 2.12.1
@@ -76,7 +77,8 @@ devDependencies:
   sass: 1.47.0
   svelte: 3.55.1
   svelte-asyncable: 2.0.4_svelte@3.55.1
-  svelte-preprocess: 5.0.1_sass@1.47.0+svelte@3.55.1
+  svelte-preprocess: 5.0.1_n3gt4uaorfvcrnicputgwvucyi
+  typescript: 4.9.5
 
 packages:
 
@@ -3135,7 +3137,7 @@ packages:
       svelte: 3.55.1
     dev: true
 
-  /svelte-preprocess/5.0.1_sass@1.47.0+svelte@3.55.1:
+  /svelte-preprocess/5.0.1_n3gt4uaorfvcrnicputgwvucyi:
     resolution: {integrity: sha512-0HXyhCoc9rsW4zGOgtInylC6qj259E1hpFnJMJWTf+aIfeqh4O/QHT31KT2hvPEqQfdjmqBR/kO2JDkkciBLrQ==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -3181,6 +3183,7 @@ packages:
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 3.55.1
+      typescript: 4.9.5
     dev: true
 
   /svelte/3.55.1:
@@ -3312,6 +3315,12 @@ packages:
       call-bind: 1.0.2
       for-each: 0.3.3
       is-typed-array: 1.1.10
+    dev: true
+
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
     dev: true
 
   /unbox-primitive/1.0.2:
