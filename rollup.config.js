@@ -5,8 +5,8 @@ import sveltePreprocess from 'svelte-preprocess'
 import styles from 'rollup-plugin-styles'
 import svelte from 'rollup-plugin-svelte'
 import svg from 'rollup-plugin-svg'
+import terser from '@rollup/plugin-terser';
 // import { eslint } from 'rollup-plugin-eslint'
-import { terser } from '@rollup/plugin-terser'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 const production = !process.env.ROLLUP_WATCH;
