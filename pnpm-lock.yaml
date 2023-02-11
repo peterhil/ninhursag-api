@@ -7,6 +7,7 @@ specifiers:
   '@rollup/plugin-image': ^2.0.6
   '@rollup/plugin-node-resolve': ^11.2.1
   '@rollup/plugin-terser': ^0.4.0
+  carbon-icons-svelte: ^11.4.0
   chokidar: ^3.5.1
   d3-array: ^2.12.1
   d3-scale: ^3.3.0
@@ -61,6 +62,7 @@ devDependencies:
   '@rollup/plugin-image': 2.0.6_rollup@2.79.1
   '@rollup/plugin-node-resolve': 11.2.1_rollup@2.79.1
   '@rollup/plugin-terser': 0.4.0_rollup@2.79.1
+  carbon-icons-svelte: 11.4.0
   chokidar: 3.5.1
   eslint: 7.32.0
   eslint-config-standard: 16.0.3_s3p4dyzitdtgac5nictnavtxa4
@@ -536,6 +538,10 @@ packages:
 
   /caniuse-lite/1.0.30001451:
     resolution: {integrity: sha512-XY7UbUpGRatZzoRft//5xOa69/1iGJRBlrieH6QYrkKLIFn3m7OVEJ81dSrKoy2BnKsdbX5cLrOispZNYo9v2w==}
+    dev: true
+
+  /carbon-icons-svelte/11.4.0:
+    resolution: {integrity: sha512-p/llZde2kP2BI9SOqM+QFKGfQnYrW+4dVxF1rAYriEADXDsjt9EYlh+KpQ5qf4JpXAq+e2+TB/r/lIG1xdUbAQ==}
     dev: true
 
   /chalk/2.4.2:
