@@ -77,7 +77,10 @@ export default [{
     watch: {
         chokidar: true,
         clearScreen: true,
-        exclude: ['node_modules/**'],
+        exclude: [
+            'node_modules/**/*',
+            'app/static/vendor/**/*',
+        ],
         include: [
             'app/static/js/**/*',
             'app/static/style/**/*',
