@@ -20,7 +20,7 @@ const D3_WARNING = /Circular dependency.*d3-interpolate/
 const plugins = [
     eslint({
         exclude: [
-            'src/**/*.{css,sass}',
+            'app/**/*.{css,sass}',
         ]
     }),
 
