@@ -1,6 +1,6 @@
 <script>
-    import References from '../../../templates/_references.html'
     import DataLoader from '../components/DataLoader.svelte'
+    import References from '../components/References.svelte'
     import SvgChart from '../components/SvgChart.svelte'
     import Images from '../components/Images.svelte'
     import CheckboxShowAll from '../components/CheckboxShowAll.svelte'
