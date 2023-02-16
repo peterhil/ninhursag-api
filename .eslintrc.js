@@ -15,7 +15,7 @@ module.exports = {
     ],
     overrides: [
         {
-            files: ['**/*.svelte'],
+            files: ['app/static/js/**/*.svelte'],
             processor: 'svelte3/svelte3',
             rules: {
                 'import/first': ['off', 'always'],
