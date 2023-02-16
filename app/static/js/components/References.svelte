@@ -1,7 +1,7 @@
 <section>
     <h3>Data sources and references</h3>
     <p>
-        Data is provided in public domain by the U.S. Geological Survey’s (USGS)
+        Data is provided <i>in the public domain</i> by the U.S. Geological Survey’s (USGS)
         National Minerals Information Center (NMIC)
     </p>
     <ul>

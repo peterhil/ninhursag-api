@@ -10,8 +10,8 @@
 // Typography
 
 body {
-    font-family: Quattrocento, Lora, serif;
-    font-weight: normal;
+    font-family: $font-set-body;
+    font-weight: 400;
     text-rendering: optimizeLegibility;
     margin: 0;
     padding: 0;
@@ -25,8 +25,13 @@ main {
     padding: 0 $padding-inline;
 }
 
+i {
+    font-family: $font-set-italic;
+    font-style: italic,
+}
+
 nav.navigation {
-    font-family: Vesper Libre, Quattrocento, Lora, serif;
+    font-family: $font-set-headings;
     font-weight: 500;
     background-color: $color-light;
     color: $color-text;
@@ -50,7 +55,7 @@ nav.navigation {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Vesper Libre, Quattrocento, Lora, serif;
+    font-family: $font-set-headings;
     font-weight: 500;
     margin-block: 1.62rem 1.38rem;
 }
@@ -126,6 +131,7 @@ li {
 }
 
 figure {
+    font-family: $font-set-figures;
     margin: 0;
 
     figcaption {
