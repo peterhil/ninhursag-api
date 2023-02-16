@@ -15,6 +15,7 @@ specifiers:
   d3-shape: ^2.1.0
   debounce: ^1.2.1
   eslint: ^7.32.0
+  eslint-config-prettier: ^8.6.0
   eslint-config-standard: ^16.0.3
   eslint-plugin-import: ^2.27.5
   eslint-plugin-node: ^11.1.0
@@ -25,6 +26,7 @@ specifiers:
   js-cookie: ^2.2.1
   milligram: ^1.4.1
   papaparse: ^5.3.0
+  prettier: ^2.2.1
   ramda: 0.27.1
   rollup: ^2.79.1
   rollup-plugin-styles: ^4.0.0
@@ -66,11 +68,13 @@ devDependencies:
   carbon-icons-svelte: 11.4.0
   chokidar: 3.5.3
   eslint: 7.32.0
+  eslint-config-prettier: 8.6.0_eslint@7.32.0
   eslint-config-standard: 16.0.3_s3p4dyzitdtgac5nictnavtxa4
   eslint-plugin-import: 2.27.5_eslint@7.32.0
   eslint-plugin-node: 11.1.0_eslint@7.32.0
   eslint-plugin-promise: 5.2.0_eslint@7.32.0
   eslint-plugin-svelte3: 3.4.1_ky47wof2jags4esujrawigm3eq
+  prettier: 2.8.4
   rollup: 2.79.1
   rollup-plugin-styles: 4.0.0_rollup@2.79.1
   rollup-plugin-svelte: 7.1.2_wqqnxzvosiw4srqlri2xb7asou
@@ -1092,6 +1096,15 @@ packages:
   /escape-string-regexp/4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
+    dev: true
+
+  /eslint-config-prettier/8.6.0_eslint@7.32.0:
+    resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      eslint: 7.32.0
     dev: true
 
   /eslint-config-standard/16.0.3_s3p4dyzitdtgac5nictnavtxa4:
@@ -2625,6 +2638,12 @@ packages:
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /progress/2.0.3:
