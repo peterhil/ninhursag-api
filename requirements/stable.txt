@@ -15,4 +15,4 @@ cssmin==0.2.0
 gunicorn==20.1.0
 nodeenv==0.7.0
 numpy==1.22.0
-scipy==1.6.3
+scipy==1.10.0
