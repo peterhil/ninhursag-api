@@ -11,8 +11,9 @@ import os
 # import scipy.stats as stats
 import yaml
 
-from flask import current_app, request, safe_join, send_from_directory, Blueprint
+from flask import current_app, request, send_from_directory, Blueprint
 from flask_restful import abort, Api, Resource
+from werkzeug.utils import safe_join
 
 from app.log import logger
 from .analysis import estimate, scipy_functions
