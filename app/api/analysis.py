@@ -52,11 +52,7 @@ def log_logistic(x, a, b, c):
     return a * c / (a * np.exp(-b * np.log(x)) + c)
 
 
-def getargspec(func, name, verbose=False):
-    try:
-        argspec = inspect.getargspec(func.__self__._parse_args)
-    except AttributeError:
-        argspec = inspect.getargspec(func)
+def getsignature(func, name, verbose=False):
     try:
         signature = inspect.signature(func.__self__._parse_args)
     except AttributeError:
@@ -65,24 +61,22 @@ def getargspec(func, name, verbose=False):
     if verbose:
         msg = """
 Function: {name} ({arity})
-Arg spec: {argspec}
 Signature: {signature}
 Args: {args}
 """
         logger.debug(msg.format(
             name=name,
-            arity=len(argspec.args) - 1,
-            argspec=argspec,
+            arity=len(signature.parameters),
             signature=signature,
             args=inspect.signature(func),
         ))
 
-    return argspec
+    return signature
 
 
 def wrap_scipy(func, name):
-    argspec = getargspec(func, name)
-    arity = len(argspec.args) - 1
+    signature = getsignature(func, name)
+    arity = len(signature.parameters)
 
     def adjust(result, ys):
         return result * ys
