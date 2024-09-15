@@ -49,7 +49,7 @@ ninhursag:
 Optionally edit `/etc/hosts` to match the server names to localhost by
 adding following lines:
 
-    127.0.0.1  ninhursag.localdomain
+    127.0.0.1  ninhursag.dev
 
 On Mac OS X, you should issue the command `sudo dscacheutil
 -flushcache` afterwards to reload the hosts file.

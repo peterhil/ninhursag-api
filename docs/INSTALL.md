@@ -57,13 +57,6 @@ Open the visualisation in a web browser:
 
     open http://localhost:5000/
 
-Or preferably if you have set /etc/hosts entry:
-
-    open http://ninhursag.localdomain:5000/
-
-Cookies may not work without a dot in the domain name, so the latter
-method it preferred.
-
 ###  7. Configuration
 
 The application’s default settings can be found on `app/settings.py`.
