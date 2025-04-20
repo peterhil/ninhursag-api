@@ -1,29 +1,29 @@
 {
   "name": "ninhursag",
   "description": "Ninhursag is a visualisation of US Geologic Survey statistics from year 1900 onwards of world production of various minerals, and fitting functions for estimating how long our reserves will last.",
-  "version": "0.10.0",
-  "engines": {
-    "node": "v20.14.0",
-    "pnpm": "10.7.0"
-  },
   "keywords": [
     "data visualisation",
     "minerals",
     "reserves"
   ],
-  "homepage": "https://github.com/peterhil/ninhursag",
+  "version": "0.10.0",
+  "engines": {
+    "node": "v20.14.0",
+    "pnpm": "10.7.0"
+  },
   "author": "Peter Hillerström <peter.hillerstrom@gmail.com>",
+  "homepage": "https://github.com/peterhil/ninhursag",
+  "pnpm": {
+    "overrides": {
+      "@rollup/plugin-eslint>eslint": "$eslint"
+    }
+  },
+  "private": true,
   "scripts": {
     "dev": "rollup -cw",
     "build": "rollup -c",
     "lint": "eslint .",
     "start": ". ./activate && python run.py"
-  },
-  "private": true,
-  "overrides": {
-    "@rollup/plugin-eslint": {
-      "eslint": "^9.25.0"
-    }
   },
   "dependencies": {
     "@eslint/compat": "^1.2.8",
