@@ -13,7 +13,7 @@ Markdown==3.3.4
 Unidecode==0.04.14
 beautifulsoup4==4.9.3
 cssmin==0.2.0
-gunicorn==22.0.0
+gunicorn==23.0.0
 nodeenv==0.7.0
 numpy==1.26.4
 scipy==1.12.0
