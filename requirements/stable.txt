@@ -9,7 +9,7 @@ Flask-FlatPages==0.7.3
 Werkzeug>=2.2.2,<3  # Flask 2 does not work with Werkzeug 3
 
 # Other
-Markdown==3.3.4
+Markdown==3.8
 Unidecode==0.04.14
 beautifulsoup4==4.9.3
 cssmin==0.2.0
