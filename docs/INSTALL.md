@@ -18,26 +18,26 @@ instructions on how to install Python.
 
 Install node and pnpm:
 
-    brew install node
-    brew install pnpm
+    sudo port install node
+    sudo port install pnpm
 
-If you are using a different operating system, replace the `brew`
-command with your system’s package manager – for example `pacman` or
-`apt-get`.
+If you are using a different operating system and package manager, replace 
+the `sudo port` command with your system’s package manager – for example 
+`pacman` or `apt-get`.
 
 ### 4. Install Python and dependencies
 
 Install Python into virtualenv:
 
-    python -m venv --prompt ninhursag-py38 venv/py38
-    source ./venv/py38/bin/activate
+    python -m venv --prompt ninhursag-py310 venv/py310
+    source ./venv/py310/bin/activate
 
-Install Python dependencies with pip:
+Install Python dependencies with pip and pdm:
 
-    pip install -r requirements/dev.txt
+    pip install pdm
+    pdm install
 
-Pip should be install automatically with a virtualenv. If not, install
-it with your system's package manager of `easy_install`.
+Pip should be install automatically with a virtualenv.
 
 ### 5. Install the node components
 
