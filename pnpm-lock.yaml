@@ -106,8 +106,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(rollup@2.79.2)
       rollup-plugin-svelte:
-        specifier: ^7.1.2
-        version: 7.1.2(rollup@2.79.2)(svelte@4.2.19)
+        specifier: ^7.2.2
+        version: 7.2.2(rollup@2.79.2)(svelte@4.2.19)
       rollup-plugin-svg:
         specifier: ^2.0.0
         version: 2.0.0
@@ -1640,6 +1640,10 @@ packages:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
 
+  resolve.exports@2.0.3:
+    resolution: {integrity: sha512-OcXjMsGdhL4XnbShKpAcSqPMzQoYkYyhbEaeSko47MjRP9NfEQMhZkXL1DoFlt9LWQn4YttrdnV6X2OiyzBi+A==}
+    engines: {node: '>=10'}
+
   resolve@1.20.0:
     resolution: {integrity: sha512-wENBPt4ySzg4ybFQW2TT1zMQucPK95HSh/nq2CFTZVOGut2+pQvSsgtda4d26YrYcr067wjbmzOG8byDPBX63A==}
 
@@ -1667,8 +1671,8 @@ packages:
     peerDependencies:
       rollup: ^2.63.0
 
-  rollup-plugin-svelte@7.1.2:
-    resolution: {integrity: sha512-CfU5C4lhVyN80GqtNod4IvsN1nYrcWS3C/T9+gWF+O31e4QwBPo6ubHlLnuQKYVBzC3qIGdERuyrbrvljLfN/A==}
+  rollup-plugin-svelte@7.2.2:
+    resolution: {integrity: sha512-hgnIblTRewaBEVQD6N0Q43o+y6q1TmDRhBjaEzQCi50bs8TXqjc+d1zFZyE8tsfgcfNHZQzclh4RxlFUB85H8Q==}
     engines: {node: '>=10'}
     peerDependencies:
       rollup: '>=2.0.0'
@@ -3600,6 +3604,8 @@ snapshots:
 
   resolve-from@4.0.0: {}
 
+  resolve.exports@2.0.3: {}
+
   resolve@1.20.0:
     dependencies:
       is-core-module: 2.2.0
@@ -3643,9 +3649,10 @@ snapshots:
       source-map-js: 1.0.2
       tslib: 2.5.0
 
-  rollup-plugin-svelte@7.1.2(rollup@2.79.2)(svelte@4.2.19):
+  rollup-plugin-svelte@7.2.2(rollup@2.79.2)(svelte@4.2.19):
     dependencies:
       '@rollup/pluginutils': 4.2.1
+      resolve.exports: 2.0.3
       rollup: 2.79.2
       svelte: 4.2.19
 
