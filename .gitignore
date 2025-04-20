@@ -46,3 +46,4 @@ bower_components
 instance/
 *.patch
 stats.html
+.pdm-python
