@@ -54,3 +54,13 @@ Homepage = "https://github.com/peterhil/ninhursag"
 ".test" = "test"
 [tool.pdm]
 distribution = false
+
+[dependency-groups]
+test = [
+    "pytest>=8.3.5",
+    "Flask-Testing>=0.8.1",
+]
+dev = [
+    "ipython>=8.35.0",
+    # "excelsior>=0.0.5",
+]
