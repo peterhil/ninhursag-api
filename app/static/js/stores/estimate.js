@@ -31,7 +31,8 @@ const success = curry((data, fn, estimate) => {
 function failure (error) {
     if (error.name === 'AbortError') {
         console.info('Request canceled')
-    } else {
+    }
+    else {
         alerts.error(error.message)
     }
 

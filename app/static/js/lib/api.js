@@ -10,7 +10,8 @@ async function handleResponse (response) {
 
     if (response.ok) {
         return body
-    } else {
+    }
+    else {
         const msg = (method === 'json' ? body.errors : body)
         throw new Error(msg)
     }

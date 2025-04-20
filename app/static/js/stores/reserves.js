@@ -26,7 +26,8 @@ export const reserves = asyncable(
                 columns: fromPairs([[series, calculated]]),
                 reserves: reserveData,
             }
-        } else {
+        }
+        else {
             return {
                 ...initialValue,
                 reserves: reserveData,

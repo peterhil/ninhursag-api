@@ -46,7 +46,8 @@ export const reservesFit = derived(
             set({
                 columns: fromPairs([[series, calculated]]),
             })
-        } else {
+        }
+        else {
             set(initialValue)
         }
     },

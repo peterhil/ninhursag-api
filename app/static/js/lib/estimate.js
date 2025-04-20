@@ -52,9 +52,11 @@ export function reportFitQuality (estimate, fn) {
             `%c[Std err] Excellent fit for ${fn}!`,
             'background-color: #3c5; color: #153'
         )
-    } else if (stdErr.min < 0.05 && medianOverMean < 1) {
+    }
+    else if (stdErr.min < 0.05 && medianOverMean < 1) {
         console.warn(`[Std err] Ok fit for ${fn}!`)
-    } else {
+    }
+    else {
         console.warn(`[Std err] Bad fit for ${fn}!`)
     }
 

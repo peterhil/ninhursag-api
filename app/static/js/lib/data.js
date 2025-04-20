@@ -40,7 +40,8 @@ export function accumulator (start = 0) {
 export function concatOrMerge (a, b) {
     if (all(is(Array), [a, b])) {
         return concat(a, b)
-    } else {
+    }
+    else {
         return b || a
     }
 }

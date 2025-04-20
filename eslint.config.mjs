@@ -21,6 +21,9 @@ export default [
             },
         },
         rules: {
+            'brace-style': ['error', 'stroustrup', {
+                allowSingleLine: true,
+            }],
             'comma-dangle': ['off', 'always'],
             'indent': ['error', 4],
             'no-console': ['off', 'always'],
