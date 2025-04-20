@@ -1,0 +1,56 @@
+[project]
+name = "ninhursag"
+version = "0.10.0"
+description = "Ninhursag is visualisation of mineral reserves"
+authors = [
+    {name = "Peter Hillerström", email = "peter.hillerstrom@gmail.com"},
+]
+dependencies = [
+    "Flask-Assets==2.1.0",
+    "Flask-CORS==3.0.10",
+    "Flask-FlatPages==0.7.3",
+    "Flask-RESTful==0.3.10",
+    "Flask==2.3.3",
+    "Markdown==3.8",
+    "Unidecode==0.04.14",
+    "Werkzeug>=2.2.2,<3",
+    "beautifulsoup4==4.9.3",
+    "cssmin==0.2.0",
+    "gunicorn==22.0.0",
+    "nodeenv==0.7.0",
+    "numpy==1.26.4",
+    "scipy==1.12.0",
+]
+requires-python = "==3.10.*"
+readme = "README.md"
+license = {text = "MIT License"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: Flask",
+    "Intended Audience :: Education",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: JavaScript",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Education",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+
+
+[project.urls]
+Homepage = "https://github.com/peterhil/ninhursag"
+
+[project.entry-points.app]
+".test" = "test"
+[tool.pdm]
+distribution = false
