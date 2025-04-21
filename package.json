@@ -44,7 +44,7 @@
   "devDependencies": {
     "@eslint/compat": "^1.2.8",
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.25.0",
+    "@eslint/js": "^9.25.1",
     "@iconify/icons-carbon": "^1.2.20",
     "@iconify/svelte": "^3.1.6",
     "@rollup/plugin-commonjs": "^28.0.3",
@@ -55,7 +55,7 @@
     "@tsconfig/svelte": "^5.0.4",
     "carbon-icons-svelte": "^11.4.0",
     "chokidar": "^3.6.0",
-    "eslint": "^9.25.0",
+    "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-node": "^11.1.0",
@@ -74,6 +74,6 @@
     "svelte-asyncable": "^2.2.1",
     "svelte-check": "^4.1.6",
     "svelte-preprocess": "^6.0.3",
-    "typescript": "^5.0.0"
+    "typescript": "^5.8.3"
   }
 }
