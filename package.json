@@ -54,7 +54,6 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@tsconfig/svelte": "^5.0.4",
     "carbon-icons-svelte": "^11.4.0",
-    "chokidar": "^3.6.0",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-import": "^2.31.0",
