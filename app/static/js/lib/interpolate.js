@@ -47,7 +47,7 @@ function interpolate (dataPoints) {
     return result
 }
 
-export function interpolateData (dataSeries, column) {
+export function interpolateData (dataSeries) {
     const value = prop(1)
     const groups = groupWith(
         (a, b) => {

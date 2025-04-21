@@ -7,7 +7,7 @@ import {
     toPairs,
 } from 'ramda'
 
-export function calculateReserves (cumulative, reserveData, mineral, column, series) {
+export function calculateReserves (cumulative, reserveData, mineral, column) {
     const reserves = getReserves(reserveData, mineral)
 
     if (!reserves) {
@@ -19,7 +19,7 @@ export function calculateReserves (cumulative, reserveData, mineral, column, ser
     const cumulativeOnReserveYear = cumulativeSeries[reserveYear]
 
     return mapObjIndexed(
-        (value, year) => {
+        (value) => {
             return max(1, reserveAmount - (value - cumulativeOnReserveYear))
         },
         cumulativeSeries

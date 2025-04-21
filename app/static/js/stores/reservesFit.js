@@ -4,8 +4,8 @@ import { asyncable } from 'svelte-asyncable'
 import { calculateReserves, getReserves } from '../lib/reserves'
 
 import { cumulativeFit } from './cumulativeFit'
-import { reserveData } from './reserveData'
 import { mineral } from './mineral'
+import { reserveData } from './reserveData'
 
 const initialValue = { columns: {} }
 
@@ -35,7 +35,6 @@ export const reservesFit = asyncable(
                 reserveData,
                 mineral,
                 'Cumulative fit',
-                series,
             )
             // console.debug('[Reserves fit] Calculated:', calculated)
 
