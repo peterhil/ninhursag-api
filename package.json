@@ -10,7 +10,7 @@
     "reserves"
   ],
   "engines": {
-    "node": "v20.14.0",
+    "node": "v22.14.0",
     "pnpm": "10.7.0"
   },
   "pnpm": {
