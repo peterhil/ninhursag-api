@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 #
 # ---
 # Flask app helpers https://github.com/mattupstate/overholt/blob/master/overholt/helpers.py
@@ -42,7 +41,7 @@ def register_blueprints(app, package_name, package_path):
     """
     rv = []
     for _, name, _ in pkgutil.iter_modules(package_path):
-        m = importlib.import_module('%s.%s' % (package_name, name))
+        m = importlib.import_module('{}.{}'.format(package_name, name))
         for item in dir(m):
             item = getattr(m, item)
             if isinstance(item, Blueprint):

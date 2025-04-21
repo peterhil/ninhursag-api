@@ -41,7 +41,8 @@ export function seriesStyle (serie) {
             stroke: fuzzyColor(serie.replace(/ \(\w+\)$/, '')).toHexString(),
             'stroke-dasharray': '2px, 6px',
         }
-    } else {
+    }
+    else {
         style = {
             stroke: fuzzyColor(serie).toHexString(),
         }

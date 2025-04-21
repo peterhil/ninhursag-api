@@ -9,8 +9,8 @@
      tabindex="-1"
      aria-live="assertive"
      role="alertdialog"
-     in:fade="{{ duration: 100 }}"
-     out:fade="{{ duration: 500 }}">
+     in:fade|global="{{ duration: 100 }}"
+     out:fade|global="{{ duration: 500 }}">
     <slot>{message}</slot>
     <button class="close"
             on:click

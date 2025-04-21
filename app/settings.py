@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 #
 # Flask application default config:
 # http://flask.pocoo.org/docs/config/#configuring-from-files
@@ -9,7 +8,7 @@
 project_name = 'Ninhursag'
 
 
-class Default(object):
+class Default:
     APP_NAME = project_name
 
     DEBUG = False
