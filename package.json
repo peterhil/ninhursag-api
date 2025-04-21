@@ -38,7 +38,7 @@
     "papaparse": "^5.5.2",
     "ramda": "0.27.1",
     "soundex-code": "0.1.2",
-    "spin.js": "2.3.2",
+    "spin.js": "4.1.2",
     "tinycolor2": "1.1.2"
   },
   "devDependencies": {
