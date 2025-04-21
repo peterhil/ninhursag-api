@@ -7,7 +7,7 @@ import svelte from 'rollup-plugin-svelte'
 import sveltePreprocess from 'svelte-preprocess'
 import svg from 'rollup-plugin-svg'
 import terser from '@rollup/plugin-terser'
-import { visualizer } from 'rollup-plugin-visualizer'
+// import { visualizer } from 'rollup-plugin-visualizer'
 
 const production = !process.env.ROLLUP_WATCH;
 const minify = production
@@ -63,7 +63,7 @@ const plugins = [
     minify && terser(),
 
     // Visualise bundle size
-    !production && visualizer(),
+    // !production && visualizer(),
 ]
 
 export default [{
