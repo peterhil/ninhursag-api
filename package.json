@@ -39,7 +39,7 @@
     "ramda": "0.27.1",
     "soundex-code": "0.1.2",
     "spin.js": "4.1.2",
-    "tinycolor2": "1.1.2"
+    "tinycolor2": "1.6.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.8",
