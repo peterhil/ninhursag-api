@@ -1,0 +1,21 @@
+{
+  // TODO Update whole tsconfig.json when merging with SvelteKit code
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,  // for rollup-plugin-sass
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "resolveJsonModule": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "verbatimModuleSyntax": true,
+  },
+  "include": [
+    "app/static/**/*.ts",
+    "app/static/**/*.js",
+    "app/static/**/*.svelte"
+  ]
+}
