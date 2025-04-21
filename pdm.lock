@@ -5,7 +5,7 @@
 groups = ["default", "dev", "test"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:88e92cf0101a2ef778497d7c609a19be252b7c1dbf00866ff4028fe823f5b36c"
+content_hash = "sha256:dfabaa9d002c9093c3c6cc380728b6c3ac043c7d81b4f140912098bde7961774"
 
 [[metadata.targets]]
 requires_python = "==3.10.*"
@@ -174,22 +174,21 @@ files = [
 
 [[package]]
 name = "flask-flatpages"
-version = "0.7.3"
-requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
+version = "0.8.3"
+requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 summary = "Provides flat static pages to a Flask application"
 groups = ["default"]
 dependencies = [
     "Flask>1.0",
     "Jinja2>=2.10.2",
     "Markdown>=2.5",
-    "PyYAML==5.3.1; python_version == \"3.5\"",
-    "PyYAML>5.3.1; python_version != \"3.5\"",
+    "PyYAML>5.3.1",
     "pytz; python_version == \"2.7\"",
     "six",
 ]
 files = [
-    {file = "Flask-FlatPages-0.7.3.tar.gz", hash = "sha256:18b6305e367a3423c9b12a4dbca0900d18ed401c2f301e983790b4d023767d6f"},
-    {file = "Flask_FlatPages-0.7.3-py2.py3-none-any.whl", hash = "sha256:b8d7a88b6e75ea11ce4ada3b7d1ec723ba5b5ddc26458e82925e66f43e9dbe3f"},
+    {file = "Flask_FlatPages-0.8.3-py3-none-any.whl", hash = "sha256:1a135c66a68531beaa7257927f0e7314888fd3bd206a27fa14e777db6cba31b5"},
+    {file = "flask_flatpages-0.8.3.tar.gz", hash = "sha256:615a33fb526fbd4773ec832ae325b6581361299ad48d70cd35f686315f57a263"},
 ]
 
 [[package]]
@@ -526,7 +525,6 @@ version = "6.0.2"
 requires_python = ">=3.8"
 summary = "YAML parser and emitter for Python"
 groups = ["default"]
-marker = "python_version != \"3.5\""
 files = [
     {file = "PyYAML-6.0.2-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:0a9a2848a5b7feac301353437eb7d5957887edbf81d56e903999a75a3d743086"},
     {file = "PyYAML-6.0.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:29717114e51c84ddfba879543fb232a6ed60086602313ca38cce623c1d62cfbf"},
