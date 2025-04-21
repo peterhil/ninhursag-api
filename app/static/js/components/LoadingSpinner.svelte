@@ -8,8 +8,7 @@
 
 <style lang="scss">
     @use 'sass:color';
-
-    @import '../../style/variables';
+    @use '../../style/variables' as *;
 
     .loading {
         position: relative;
