@@ -62,5 +62,5 @@ test = [
 ]
 dev = [
     "ipython>=8.35.0",
-    # "excelsior>=0.0.5",
+    "pyupgrade>=3.19.1",
 ]
