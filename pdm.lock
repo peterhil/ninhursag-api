@@ -5,7 +5,7 @@
 groups = ["default", "dev", "test"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:dfabaa9d002c9093c3c6cc380728b6c3ac043c7d81b4f140912098bde7961774"
+content_hash = "sha256:21e89d4bf013647acca267987c6ae8c51b4d4df4aabcd6b64281bd1f302192e3"
 
 [[metadata.targets]]
 requires_python = "==3.10.*"
@@ -354,15 +354,6 @@ dependencies = [
 files = [
     {file = "matplotlib_inline-0.1.7-py3-none-any.whl", hash = "sha256:df192d39a4ff8f21b1895d72e6a13f5fcc5099f00fa84384e0ea28c2cc0653ca"},
     {file = "matplotlib_inline-0.1.7.tar.gz", hash = "sha256:8423b23ec666be3d16e16b60bdd8ac4e86e840ebd1dd11a30b9f117f2fa0ab90"},
-]
-
-[[package]]
-name = "nodeenv"
-version = "0.7.0"
-summary = "Node.js virtual environment builder"
-groups = ["default"]
-files = [
-    {file = "nodeenv-0.7.0.tar.gz", hash = "sha256:5e619bced19bee9e475090775bdb44f3588dbd71c93ec9f31e58f5b689235d42"},
 ]
 
 [[package]]
