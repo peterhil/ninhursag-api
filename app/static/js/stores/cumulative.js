@@ -1,9 +1,6 @@
-import {
-    fromPairs,
-    lensPath,
-    view,
-} from 'ramda'
+import { fromPairs, lensPath, view } from 'ramda'
 import { asyncable } from 'svelte-asyncable'
+
 import { accumulateDataSeries } from '../lib/cumulative'
 import { repeatLastValue } from '../lib/data'
 import { interpolated } from './interpolated'
