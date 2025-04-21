@@ -1,24 +1,20 @@
 import { fromPairs } from 'ramda'
-import { derived } from 'svelte/store'
+import { asyncable } from 'svelte-asyncable'
 
 import { calculateReserves, getReserves } from '../lib/reserves'
+
 import { cumulativeFit } from './cumulativeFit'
-import { reserveData } from './reserveData'
 import { mineral } from './mineral'
+import { reserveData } from './reserveData'
 
 const initialValue = { columns: {} }
 
-export const reservesFit = derived(
-    [
-        cumulativeFit,
-        mineral,
-        reserveData,
-    ],
-    async ([
+export const reservesFit = asyncable(
+    async (
         $cumulativeFit,
         $mineral,
         $reserveData,
-    ], set) => {
+    ) => {
         const cumulativeFit = await $cumulativeFit
         const mineral = await $mineral
         const reserveData = await $reserveData
@@ -28,7 +24,7 @@ export const reservesFit = derived(
 
         if (!cumulativeSeries) {
             // console.debug('No cumulative data yet')
-            return
+            return initialValue
         }
 
         if (getReserves(reserveData, mineral)) {
@@ -39,17 +35,20 @@ export const reservesFit = derived(
                 reserveData,
                 mineral,
                 'Cumulative fit',
-                series,
             )
             // console.debug('[Reserves fit] Calculated:', calculated)
 
-            set({
+            return {
                 columns: fromPairs([[series, calculated]]),
-            })
+            }
         }
-        else {
-            set(initialValue)
-        }
+
+        return initialValue
     },
     initialValue,
+    [
+        cumulativeFit,
+        mineral,
+        reserveData,
+    ],
 )
