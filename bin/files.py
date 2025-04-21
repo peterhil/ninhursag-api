@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import os
 import sys
@@ -22,7 +21,7 @@ if __name__ == '__main__':
         xls = xlrd.open_workbook(os.path.join(path, excel_file))
         multisheet = len(xls.sheets()) > 1
         for sheet in xls.sheets():
-            suffix = '-{}'.format(sheet.name) if multisheet else ''
+            suffix = f'-{sheet.name}' if multisheet else ''
             if ext is not None:
                 filename = os.path.splitext(excel_file)[0] + suffix + '.' + ext
             else:

@@ -1,12 +1,11 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import pytest
 
 from app.helpers import slugify
 
 
-class TestSlugify(object):
+class TestSlugify:
     def test_slugify(self):
         assert slugify('My slug') == 'my-slug'
 

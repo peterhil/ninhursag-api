@@ -1,5 +1,4 @@
 #!/usr/local/bin/python
-# -*- coding: utf-8 -*-
 # pylint: disable=invalid-name
 
 import inspect
@@ -131,12 +130,10 @@ def scipy_functions(self, kind="pdf"):
         (f, getattr(getattr(stats, f, None), kind, None)) for f in dir(stats)
     ]
 
-    return dict(
-        [
-            (f[0], wrap_scipy(f[1], f[0]))
+    return {
+            f[0]: wrap_scipy(f[1], f[0])
             for f in [x for x in statistical_functions if x[1] is not None]
-        ]
-    )
+    }
 
 
 def sanitize(data, years):

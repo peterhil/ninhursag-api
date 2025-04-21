@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 #
 # See http://flask-restful.readthedocs.org/en/latest/
 # on how to properly implement an REST API with Flask
@@ -68,7 +67,7 @@ class Estimate(Resource):
                 if obj["function"] in list(scipy_functions("pdf").keys())
                 else ""
             )
-            logger.debug("Estimating with function: {}".format(function))
+            logger.debug(f"Estimating with function: {function}")
         except ValueError:
             abort(400, errors=["Request is not valid JSON."])
         except KeyError as err:

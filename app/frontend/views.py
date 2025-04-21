@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import os
 
@@ -33,15 +32,15 @@ def config():
         'SERVER_NAME',
         'TESTING',
     ]
-    return jsonify(dict([
-        (k.lower(), v) for k, v in list(current_app.config.items()) if k in exposed_config
-    ]))
+    return jsonify({
+        k.lower(): v for k, v in list(current_app.config.items()) if k in exposed_config
+    })
 
 
 @route(bp, '/data/<filename>')
 def data(filename):
     data_dir = os.path.join(current_app.root_path, 'static/data')
-    logger.debug("Data asked for %s from directory %s" % (filename, data_dir))
+    logger.debug("Data asked for {} from directory {}".format(filename, data_dir))
     if os.path.splitext(filename)[1][1:].strip().lower() != 'csv':
         return False  # TODO return 404 error
     return send_from_directory(
