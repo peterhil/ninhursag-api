@@ -27,8 +27,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       humanize-plus:
-        specifier: 1.5.0
-        version: 1.5.0
+        specifier: 1.8.2
+        version: 1.8.2
       js-cookie:
         specifier: ^2.2.1
         version: 2.2.1
@@ -1059,8 +1059,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  humanize-plus@1.5.0:
-    resolution: {integrity: sha512-4s3nHyGvBM93nlR4OcXbAKgsvz0xYKefDhsvSRM3KE6noq4UDnWHjGpt1CDs3v1U62zAMxG+Wc8EqY0t21Dtgg==}
+  humanize-plus@1.8.2:
+    resolution: {integrity: sha512-jaLeQyyzjjINGv7O9JJegjsaUcWjSj/1dcXvLEgU3pGdqCdP1PiC/uwr+saJXhTNBHZtmKnmpXyazgh+eceRxA==}
     engines: {node: '>= 0.8.0'}
 
   ignore@5.3.2:
@@ -2753,7 +2753,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  humanize-plus@1.5.0: {}
+  humanize-plus@1.8.2: {}
 
   ignore@5.3.2: {}
 
