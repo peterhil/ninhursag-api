@@ -9,7 +9,7 @@
 
 <label>
     <input type="checkbox"
-           checked="{showAll === 'yes'}"
-           on:change="{onToggle}">
+           checked={showAll === 'yes'}
+           on:change={onToggle}>
     Show all
 </label>

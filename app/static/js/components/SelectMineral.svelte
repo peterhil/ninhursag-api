@@ -15,14 +15,14 @@
 
 <label for="mineral">Select resource
     {#await $minerals }
-    <p>Loading...</p>
+        <p>Loading...</p>
     {:then $minerals}
-    <select id="mineral" on:change={onSelectedDebounced}>
-        {#each [...Object.keys($minerals)] as mineral (mineral)}
-        <option value={mineral} selected={mineral === selected}>{mineral}</option>
-        {/each}
-    </select>
+        <select id="mineral" on:change={onSelectedDebounced}>
+            {#each [...Object.keys($minerals)] as mineral (mineral)}
+                <option value={mineral} selected={mineral === selected}>{mineral}</option>
+            {/each}
+        </select>
     {:catch error}
-    <p class="text-error">Problem loading mineral data: {error}</p>
+        <p class="text-error">Problem loading mineral data: {error}</p>
     {/await}
 </label>
