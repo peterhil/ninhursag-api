@@ -16,7 +16,11 @@
   "pnpm": {
     "overrides": {
       "@rollup/plugin-eslint>eslint": "$eslint"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "svelte-preprocess"
+    ]
   },
   "private": true,
   "scripts": {
