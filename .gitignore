@@ -47,3 +47,6 @@ venv/
 *~
 .\#*
 \#*\#
+
+# Environment
+.env
