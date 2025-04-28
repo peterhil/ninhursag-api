@@ -65,8 +65,6 @@ def create_app(package_name, package_path, settings_override=None):
         return '.'.join([module, environment().capitalize()])
 
     app.config.from_object(env_settings('app.settings'))
-    try: app.config.from_object(env_settings('instance.settings'))
-    except ImportError: pass
     app.config.from_object(settings_override)
 
     app.register_blueprint(api)
