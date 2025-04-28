@@ -4,8 +4,6 @@ import os
 
 from flask import current_app, Blueprint, render_template
 
-from app.helpers import route
-
 
 bp = Blueprint('pages', __name__, url_prefix='/pages')
 
