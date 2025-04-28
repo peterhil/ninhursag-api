@@ -1,24 +1,18 @@
-# Temporary files
-*~
-.\#*
-\#*\#
-*.py[cod]
-
 # C extensions
 *.so
 
 # Packages
 *.egg
 *.egg-info
-dev
-dist
+.installed.cfg
 build
+dev
+develop-eggs
+dist
 eggs
 parts
-var
 sdist
-develop-eggs
-.installed.cfg
+var
 
 # Installer logs
 pip-log.txt
@@ -37,13 +31,22 @@ nosetests.xml
 .pydevproject
 
 # Other
-.DS_Store
-venv/
-node_modules
-bower_components
-.webassets-cache
 **/static/gen
-instance/
 *.patch
-stats.html
+.DS_Store
 .pdm-python
+.webassets-cache
+bower_components
+instance/
+node_modules
+stats.html
+venv/
+
+# Temporary files
+*.py[cod]
+*~
+.\#*
+\#*\#
+
+# Environment
+.env

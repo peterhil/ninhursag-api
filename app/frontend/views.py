@@ -5,14 +5,13 @@ import os
 from flask import current_app, Blueprint, render_template
 from flask import jsonify, redirect, send_from_directory
 
-from app.helpers import route
 from app.log import logger
 
 
 bp = Blueprint('front', __name__)
 
 
-@route(bp, '/config.json')
+@bp.route('/config.json')
 def config():
     """
     Expose some of the application config into the front end.
@@ -37,7 +36,7 @@ def config():
     })
 
 
-@route(bp, '/data/<filename>')
+@bp.route('/data/<filename>')
 def data(filename):
     data_dir = os.path.join(current_app.root_path, 'static/data')
     logger.debug("Data asked for {} from directory {}".format(filename, data_dir))
@@ -49,7 +48,7 @@ def data(filename):
         )
 
 
-@route(bp, '/favicon.ico')
+@bp.route('/favicon.ico')
 def favicon():
     return send_from_directory(
         os.path.join(current_app.root_path, 'static/img/icon'),
@@ -57,13 +56,13 @@ def favicon():
         )
 
 
-@route(bp, '/')
+@bp.route('/')
 def index():
     """Returns the index."""
     return redirect('/mineral/statistics')
 
 
-@route(bp, '/mineral/<mineral>')
+@bp.route('/mineral/<mineral>')
 def mineral(mineral='Aluminium'):
     asset_dir = '/static/dev' if current_app.config['DEBUG'] else '/static/dist'
     return render_template('/mineral.html', mineral=mineral, asset_dir=asset_dir)

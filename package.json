@@ -23,7 +23,7 @@
     "dev": "rollup -cw",
     "build": "rollup -c",
     "lint": "eslint .",
-    "start": ". ./activate && python run.py"
+    "start": ". ./venv/py310/bin/activate && python run.py"
   },
   "type": "module",
   "dependencies": {
