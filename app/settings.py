@@ -8,13 +8,12 @@ from decouple import Csv, config
 
 config.encoding = 'utf-8'
 
-project_name = 'Ninhursag'
 
-
-class Default:
+class Config:
     # Flask env variables
     DEBUG = config('FLASK_DEBUG', default=False, cast=bool)
     SECRET_KEY = config('FLASK_SECRET_KEY')  # To generate: import os; os.urandom(24).hex()
+    SERVER_NAME = config('FLASK_SERVER_NAME', default='localhost:5000')
     TESTING = config('FLASK_TESTING', default=False, cast=bool)
 
     # Flask extensions
@@ -27,20 +26,5 @@ class Default:
     FLATPAGES_ROOT = config('FLATPAGES_ROOT', default='pages/flat')
 
     # Other
-    APP_NAME = config('APP_NAME', default=project_name)
+    APP_NAME = config('APP_NAME', default='Ninhursag')
     DATA_DIR = config('DATA_DIR', default='static/data')
-
-
-class Dev(Default):
-    APP_NAME = config('APP_NAME', default=project_name + ' (dev)')
-    DEBUG = config('FLASK_DEBUG', default=True, cast=bool)
-    SERVER_NAME = config('SERVER_NAME', default='localhost:5000')
-
-
-class Testing(Default):
-    APP_NAME = config('APP_NAME', default=project_name + ' (test)')
-    TESTING = config('FLASK_TESTING', default=True, cast=bool)
-
-
-class Production(Default):
-    pass

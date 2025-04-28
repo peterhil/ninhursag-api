@@ -34,18 +34,9 @@ from flask import Flask
 from flask_cors import CORS
 from os import environ
 
-from app.helpers.settings import project_name
-from app.helpers.slugify import slugify
-
 from app.api.views import bp as api
 from app.frontend.views import bp as frontend
 from app.pages.views import bp as pages
-
-
-def environment():
-    default_env = 'dev'
-    env_variable = '_'.join([slugify(project_name, '_').upper(), 'ENV'])
-    return environ.get(env_variable, default_env).lower()
 
 
 def create_app(package_name, package_path, settings_override=None):
@@ -61,10 +52,7 @@ def create_app(package_name, package_path, settings_override=None):
     # TODO Stricter origins
     cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-    def env_settings(module):
-        return '.'.join([module, environment().capitalize()])
-
-    app.config.from_object(env_settings('app.settings'))
+    app.config.from_object('app.settings.Config')
     app.config.from_object(settings_override)
 
     app.register_blueprint(api)
