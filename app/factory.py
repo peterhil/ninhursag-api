@@ -44,7 +44,6 @@ def create_app(package_name, settings_override=None):
     functionality for the application platform.
 
     :param package_name: application package name
-    :param package_path: application package path
     :param settings_override: a dictionary of settings to override
     """
     app = Flask(package_name, instance_relative_config=True)
