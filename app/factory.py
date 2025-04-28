@@ -35,8 +35,11 @@ from flask_cors import CORS
 from os import environ
 
 from app.helpers.settings import project_name
-from app.helpers.blueprints import register_blueprints
 from app.helpers.slugify import slugify
+
+from app.api.views import bp as api
+from app.frontend.views import bp as frontend
+from app.pages.views import bp as pages
 
 
 def environment():
@@ -66,6 +69,8 @@ def create_app(package_name, package_path, settings_override=None):
     except ImportError: pass
     app.config.from_object(settings_override)
 
-    register_blueprints(app, package_name, package_path)
+    app.register_blueprint(api)
+    app.register_blueprint(frontend)
+    app.register_blueprint(pages)
 
     return app
