@@ -39,7 +39,7 @@ from app.frontend.views import bp as frontend
 from app.pages.views import bp as pages
 
 
-def create_app(package_name, package_path, settings_override=None):
+def create_app(package_name, settings_override=None):
     """Returns a :class:`Flask` application instance configured with common
     functionality for the application platform.
 
