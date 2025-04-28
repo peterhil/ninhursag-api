@@ -32,38 +32,29 @@
 
 from flask import Flask
 from flask_cors import CORS
-from os import environ
 
-from .helpers import project_name, register_blueprints, slugify
-
-
-def environment():
-    default_env = 'dev'
-    env_variable = '_'.join([slugify(project_name, '_').upper(), 'ENV'])
-    return environ.get(env_variable, default_env).lower()
+from app.api.views import bp as api
+from app.frontend.views import bp as frontend
+from app.pages.views import bp as pages
 
 
-def create_app(package_name, package_path, settings_override=None):
+def create_app(package_name, settings_override=None):
     """Returns a :class:`Flask` application instance configured with common
     functionality for the application platform.
 
     :param package_name: application package name
-    :param package_path: application package path
     :param settings_override: a dictionary of settings to override
     """
     app = Flask(package_name, instance_relative_config=True)
 
-    # TODO Stricter origins
-    cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-
-    def env_settings(module):
-        return '.'.join([module, environment().capitalize()])
-
-    app.config.from_object(env_settings('app.settings'))
-    try: app.config.from_object(env_settings('instance.settings'))
-    except ImportError: pass
+    app.config.from_object('app.settings.Config')
     app.config.from_object(settings_override)
 
-    register_blueprints(app, package_name, package_path)
+    # TODO Stricter origins
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+    app.register_blueprint(api)
+    app.register_blueprint(frontend)
+    app.register_blueprint(pages)
 
     return app

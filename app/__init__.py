@@ -11,7 +11,7 @@ from .extensions import flatpages
 
 def create_app(settings_override=None):
     """Returns the application instance"""
-    app = factory.create_app(__name__, __path__, settings_override)
+    app = factory.create_app(__name__, settings_override)
 
     # Init assets
     assets.init_app(app)

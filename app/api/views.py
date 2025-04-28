@@ -3,7 +3,6 @@
 # See http://flask-restful.readthedocs.org/en/latest/
 # on how to properly implement an REST API with Flask
 
-import flask_restful
 import json
 import numpy as np
 import os

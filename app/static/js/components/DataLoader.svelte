@@ -7,15 +7,15 @@
 </script>
 
 {#await $data}
-<LoadingSpinner title="Loading data..." />
+    <LoadingSpinner title="Loading data..." />
 {:then $data}
-<slot data={$data}>
-    <pre>
-        {JSON.stringify($data, null, 4)}
-    </pre>
-</slot>
+    <slot data={$data}>
+        <pre>
+            {JSON.stringify($data, null, 4)}
+        </pre>
+    </slot>
 {:catch error}
-<p class="text-error">
-    Failed loading data: {error}
-</p>
+    <p class="text-error">
+        Failed loading data: {error}
+    </p>
 {/await}

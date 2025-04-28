@@ -5,16 +5,21 @@
     export let type = ''
 </script>
 
-<div class="alert-box {type}"
-     tabindex="-1"
-     aria-live="assertive"
-     role="alertdialog"
-     in:fade|global="{{ duration: 100 }}"
-     out:fade|global="{{ duration: 500 }}">
+<div
+    class="alert-box {type}"
+    aria-live="assertive"
+    role="alertdialog"
+    tabindex="-1"
+    in:fade|global="{{ duration: 100 }}"
+    out:fade|global="{{ duration: 500 }}"
+    >
     <slot>{message}</slot>
-    <button class="close"
-            on:click
-            tabindex="0"
-            aria-label="Close Alert"
-            >&times;</button>
+    <button
+        class="close"
+        aria-label="Close Alert"
+        tabindex="0"
+        on:click
+        >
+        &times;
+    </button>
 </div>

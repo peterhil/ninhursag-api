@@ -31,13 +31,14 @@
 
 <g on:click={onClick}>
     <rect class="hover-area" {width} {height}/>
-    <line x1="{point.x}"
-          x2="{point.x}"
-          y1="0"
-          y2="{height}"
-          stroke="#2226"
-          stroke-width="1px"
-          >
+    <line
+        stroke-width="1px"
+        stroke="#2226"
+        x1={point.x}
+        x2={point.x}
+        y1="0"
+        y2={height}
+        >
     </line>
 </g>
 

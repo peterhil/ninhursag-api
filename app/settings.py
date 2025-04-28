@@ -4,42 +4,27 @@
 # http://flask.pocoo.org/docs/config/#configuring-from-files
 # https://github.com/mbr/flask-appconfig
 
+from decouple import Csv, config
 
-project_name = 'Ninhursag'
-
-
-class Default:
-    APP_NAME = project_name
-
-    DEBUG = False
-    TESTING = False
-
-    # Authentication etc
-    # To generate: import os; os.urandom(24)
-    SECRET_KEY = 'some-secret-key'
-    CSRF_ENABLED = True
-
-    # API
-    API_TOKEN = 'some-api-token'
-
-    # Flat pages
-    FLATPAGES_ROOT = 'pages/flat'
-    FLATPAGES_EXTENSION = '.md'
-    FLATPAGES_MARKDOWN_EXTENSIONS = []
-
-    DATA_DIR = 'static/data'
+config.encoding = 'utf-8'
 
 
-class Dev(Default):
-    APP_NAME = project_name + ' (dev)'
-    SERVER_NAME = 'localhost:5000'
-    DEBUG = True
+class Config:
+    # Flask env variables
+    DEBUG = config('FLASK_DEBUG', default=False, cast=bool)
+    SECRET_KEY = config('FLASK_SECRET_KEY')  # To generate: import os; os.urandom(24).hex()
+    SERVER_NAME = config('FLASK_SERVER_NAME', default='localhost:5000')
+    TESTING = config('FLASK_TESTING', default=False, cast=bool)
 
+    # Flask extensions
+    FLATPAGES_EXTENSION = config('FLATPAGES_EXTENSION', default='.md')
+    FLATPAGES_MARKDOWN_EXTENSIONS = config(
+        'FLATPAGES_MARKDOWN_EXTENSIONS',
+        default='codehilite',
+        cast=Csv(post_process=list)
+    )
+    FLATPAGES_ROOT = config('FLATPAGES_ROOT', default='pages/flat')
 
-class Testing(Default):
-    TESTING = True
-    CSRF_ENABLED = False
-
-
-class Production(Default):
-    pass
+    # Other
+    APP_NAME = config('APP_NAME', default='Ninhursag')
+    DATA_DIR = config('DATA_DIR', default='static/data')
