@@ -3,7 +3,8 @@
 
 import os
 from app import create_app
-from app.helpers import project_name, slugify
+from app.helpers import project_name
+from app.helpers.slugify import slugify
 
 
 application = create_app()

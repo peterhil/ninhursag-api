@@ -2,7 +2,7 @@
 
 import pytest
 
-from app.helpers import slugify
+from app.helpers.slugify import slugify
 
 
 class TestSlugify:

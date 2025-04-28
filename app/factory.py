@@ -34,7 +34,9 @@ from flask import Flask
 from flask_cors import CORS
 from os import environ
 
-from .helpers import project_name, register_blueprints, slugify
+from .helpers import project_name
+from .helpers.blueprints import register_blueprints
+from .helpers.slugify import slugify
 
 
 def environment():
