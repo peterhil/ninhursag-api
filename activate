@@ -1,9 +1,0 @@
-#!/bin/bash
-# Adds some node components into the path and activates the virtualenv
-
-export NODE_MODULES_PATH='./node_modules'
-export NODE_MODULES_BIN="$NODE_MODULES_PATH/.bin"
-
-export PATH="$NODE_MODULES_BIN:$PATH"
-
-. ./venv/py310/bin/activate
