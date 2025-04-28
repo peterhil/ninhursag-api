@@ -1,3 +1,5 @@
+/* global process */
+
 import commonjs from '@rollup/plugin-commonjs'
 import css from 'rollup-plugin-import-css'
 import eslint from '@rollup/plugin-eslint'

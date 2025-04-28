@@ -10,7 +10,7 @@
 <g class="grid">
     <g class="x-axis">
         <g class="labels">
-            {#each x.ticks(13) as v}
+            {#each x.ticks(13) as v (x(v))}
             <text x="{x(v)}"
                   y="{height}"
                   dy="1.25em"
@@ -23,7 +23,7 @@
     </g>
     <g class="y-axis">
         <g class="labels">
-            {#each y.ticks(20) as v}
+            {#each y.ticks(20) as v (y(v))}
             <text y="{y(v)}"
                   x="0"
                   dx="6.75em"

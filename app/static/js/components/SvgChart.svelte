@@ -49,7 +49,7 @@
         .range([height, 0])
         .domain([yMin, yMax])
 
-    $: line = (data, column) => {
+    $: line = (data) => {
         const path = svgLine()
             .x(d => x(parseInt(d[0])))
             .y(d => y(parseFloat(d[1])))

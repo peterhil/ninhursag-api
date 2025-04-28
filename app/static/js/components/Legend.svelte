@@ -5,7 +5,7 @@
 </script>
 
 <g class="legend" transform="translate(160, 30)">
-    {#each series as serie, index}
+    {#each series as serie, index (index)}
     <g>
         <line class="line series-{index}"
               x1="0" x2="30"

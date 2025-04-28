@@ -5,7 +5,7 @@
 <g class="grid">
     <g class="x-axis">
         <g class="lines">
-            {#each x.ticks(25) as v}
+            {#each x.ticks(25) as v (x(v))}
             <line x1="{x(v)}"
                   x2="{x(v)}"
                   y1="0"
@@ -17,7 +17,7 @@
     </g>
     <g class="y-axis">
         <g class="lines">
-            {#each y.ticks(40) as v}
+            {#each y.ticks(40) as v (y(v))}
             <line y1="{y(v)}"
                   y2="{y(v)}"
                   x1="0"
