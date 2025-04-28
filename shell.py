@@ -1,12 +1,10 @@
 #!/usr/bin/env python
-import os
-import readline
-from pprint import pprint
 
 from flask import *
+from os import environ
 
-import app
-from app.frontend import create_app
-application = create_app()
+from app import create_app
 
-os.environ['PYTHONINSPECT'] = 'True'
+if __name__ == '__main__':
+    environ['PYTHONINSPECT'] = 'True'
+    application = create_app()
