@@ -32,7 +32,6 @@
 
 from flask import Flask
 from flask_cors import CORS
-from os import environ
 
 from app.api.views import bp as api
 from app.frontend.views import bp as frontend
@@ -48,11 +47,11 @@ def create_app(package_name, settings_override=None):
     """
     app = Flask(package_name, instance_relative_config=True)
 
-    # TODO Stricter origins
-    cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-
     app.config.from_object('app.settings.Config')
     app.config.from_object(settings_override)
+
+    # TODO Stricter origins
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     app.register_blueprint(api)
     app.register_blueprint(frontend)

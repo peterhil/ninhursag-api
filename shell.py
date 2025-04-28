@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-from flask import *
 from os import environ
 
 from app import create_app
