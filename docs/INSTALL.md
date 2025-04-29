@@ -45,12 +45,14 @@ Pip should be install automatically with a virtualenv.
 
 ### 6. Start the app
 
-    source activate
+    source ./venv/py310/bin/activate
     pnpm start
 
-For setting Flask options use:
+Set Flask options using the `.env` file or set environment variables:
 
-    source activate
+    source ./venv/py310/bin/activate
+    cp docs/dot.env.example .env
+    emacs .env  # Set the secret key at least
     FLASK_ENV=development DEBUG=true ASSETS_DEBUG=true flask run
 
 Open the visualisation in a web browser:
@@ -69,9 +71,13 @@ At minimum you should set `SECRET_KEY` to some unguessable and
 randomish value. You might also want to set `SERVER_NAME` to match
 your development server address (possibly with a port number).
 
+To generate the secret key:
+
+    python -c 'import secrets; print(secrets.token_hex())'
+
 For a more fine detailed configuration, see the [list of built-in
-settings](http://flask.pocoo.org/docs/config/#builtin-configuration-values)
-on [Flask documentation](http://flask.pocoo.org/docs/).
+settings](https://flask.palletsprojects.com/en/stable/config/#builtin-configuration-values)
+on [Flask documentation](https://flask.palletsprojects.com/en/stable/).
 
 Some of these settings are exported to front end from the route
 `/config.json` at `app/frontend/views.py` and are available from
@@ -81,6 +87,6 @@ Javascript at `app.config` with the keys lower cased.
 
 On production and maybe even on development, you should set up Nginx
 as a reverse proxy to your application or use some other
-[Flask production deployment option](http://flask.pocoo.org/docs/deploying/).
+[Flask production deployment option](https://flask.palletsprojects.com/en/stable/tutorial/deploy/).
 
 See [docs/nginx.md](docs/nginx.md) on how to do that.

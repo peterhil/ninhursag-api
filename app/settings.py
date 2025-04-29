@@ -11,8 +11,11 @@ config.encoding = 'utf-8'
 
 class Config:
     # Flask env variables
+    ASSETS_DEBUG = config('FLASK_ASSETS_DEBUG', default=False, cast=bool)
     DEBUG = config('FLASK_DEBUG', default=False, cast=bool)
-    SECRET_KEY = config('FLASK_SECRET_KEY')  # To generate: import os; os.urandom(24).hex()
+    ENV = config('FLASK_ENV', default='development')
+    # To generate the secret key: python -c 'import secrets; print(secrets.token_hex())'
+    SECRET_KEY = config('FLASK_SECRET_KEY')
     SERVER_NAME = config('FLASK_SERVER_NAME', default='localhost:5000')
     TESTING = config('FLASK_TESTING', default=False, cast=bool)
 
