@@ -25,13 +25,13 @@ figure {
 
 		.grid .labels text,
 		.legend text {
-			stroke: #fff;
-			stroke: rgba(255, 255, 255, 0.8);
+			fill: var(--color-chart-fill);
+			stroke: var(--color-chart-stroke);
 			stroke-width: 4px;
 			paint-order: stroke;
 		}
 		.grid line {
-			stroke: #eee;
+			stroke: var(--color-grid-stroke);
 		}
 		.chart .line,
 		.legend .line {
