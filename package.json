@@ -14,9 +14,6 @@
     "pnpm": "10.7.0"
   },
   "pnpm": {
-    "overrides": {
-      "@rollup/plugin-eslint>eslint": "$eslint"
-    },
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "svelte-preprocess"
@@ -47,12 +44,10 @@
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.8",
-    "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.25.1",
     "@iconify/icons-carbon": "^1.2.20",
     "@iconify/svelte": "^3.1.6",
     "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-eslint": "^9.0.5",
     "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
@@ -60,9 +55,6 @@
     "carbon-icons-svelte": "^11.4.0",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-svelte": "^3.5.1",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
