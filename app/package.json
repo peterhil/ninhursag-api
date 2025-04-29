@@ -13,15 +13,6 @@
     "node": "v22.14.0",
     "pnpm": "10.7.0"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "svelte-preprocess"
-    ],
-    "overrides": {
-      "@rollup/plugin-eslint>eslint": "$eslint"
-    }
-  },
   "private": true,
   "scripts": {
     "dev": "rollup -cw",

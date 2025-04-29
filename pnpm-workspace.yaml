@@ -1,0 +1,12 @@
+packages:
+    - app
+    - site
+
+onlyBuiltDependencies:
+    - "@parcel/watcher"
+    - "@sveltejs/kit"
+    - esbuild
+    - svelte-preprocess
+
+overrides:
+    "@rollup/plugin-eslint>eslint": "$eslint"
