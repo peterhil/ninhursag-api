@@ -17,7 +17,8 @@
   "scripts": {
     "dev": "rollup -cw",
     "build": "rollup -c",
-    "lint": "eslint .",
+    "lint": "prettier --plugin=prettier-plugin-svelte --check . && eslint .",
+    "format": "prettier --plugin=prettier-plugin-svelte --write .",
     "start": ". ./venv/py310/bin/activate && python run.py"
   },
   "type": "module",
@@ -54,6 +55,7 @@
     "eslint-plugin-svelte": "^3.5.1",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
+    "prettier-plugin-svelte": "^3.3.3",
     "rollup": "^4.40.0",
     "rollup-plugin-import-css": "^3.5.8",
     "rollup-plugin-sass": "^1.15.2",
