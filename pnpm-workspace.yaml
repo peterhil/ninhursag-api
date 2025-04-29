@@ -7,3 +7,6 @@ onlyBuiltDependencies:
     - "@sveltejs/kit"
     - esbuild
     - svelte-preprocess
+
+overrides:
+    '@rollup/plugin-eslint>eslint': ^9.25.1
