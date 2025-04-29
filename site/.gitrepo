@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:peterhil/ninhursag-site.git
+	branch = develop
+	commit = f4d77bae5fd37191c13f103300b2d7184f2d4d49
+	parent = 128bc9ef0efcc75d52c0d8ae34acc1ee1a216c48
+	method = merge
+	cmdver = 0.4.9

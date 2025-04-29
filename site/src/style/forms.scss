@@ -1,0 +1,35 @@
+@media (max-width: $size-sm) {
+	input[type="checkbox"],
+	input[type="radio"] {
+		margin: 0;
+	}
+}
+
+label {
+	width: 100%;
+}
+
+@media (min-width: $size-sm) {
+	label {
+		width: auto;
+	}
+}
+
+select {
+	padding-block: 0.5rem;
+	padding-inline: 1rem 3rem;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	&.button {
+		margin: 0;
+		padding-block: 1rem;
+		padding-inline: 1rem 4rem;
+		text-align: left;
+
+		&:focus {
+			border: 1px solid var(--color-action);
+		}
+	}
+}

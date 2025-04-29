@@ -1,0 +1,57 @@
+#alerts {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 2px;
+
+	position: fixed;
+	z-index: 10000;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	margin: 2rem;
+	padding: 1.5rem;
+	background: var(--color-alert-bg);
+	color: var(--color-alert);
+	border: 12px solid;
+
+	font-family: 'IBM Plex Mono', $font-set-figures;
+	font-weight: 700;
+
+	&:empty {
+		display: none;
+	}
+}
+
+#alerts,
+#alerts .alert {
+	&.info { color: var(--color-alert-info) }
+	&.tip { color: var(--color-alert-tip) }
+	&.success { color: var(--color-alert-success) }
+	&.failure { color: var(--color-alert-failure) }
+	&.warning { color: var(--color-alert-warning) }
+	&.error { color: var(--color-alert-error) }
+}
+
+#alerts .alert {
+	cursor: pointer;
+
+	&:hover {
+		color: var(--color-alert-bg);
+		background-color: var(--color-alert);
+
+		&.info { background-color: var(--color-alert-info) }
+		&.tip { background-color: var(--color-alert-tip) }
+		&.success { background-color: var(--color-alert-success) }
+		&.failure { background-color: var(--color-alert-failure) }
+		&.warning { background-color: var(--color-alert-warning) }
+		&.error { background-color: var(--color-alert-error) }
+	}
+
+	.close {
+		margin: 0;
+		padding: 0;
+		font-size: 1.2em;
+		color: currentColor;
+	}
+}

@@ -1,0 +1,117 @@
+//
+// Override milligram styles
+
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	display: inline-flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 0.5rem;
+	width: 100%;
+	height: auto;
+	line-height: 1.5;
+	margin: 0.25rem;
+	padding: 0.5rem;
+	// Colours
+	background-color: var(--color-action);
+	color: var(--color-text-inverse);
+	border-radius: 3px;
+	border: 0.1rem solid var(--color-action);
+	cursor: pointer;
+	// Text
+	font-size: 1.1rem;
+	font-weight: 700;
+	hyphens: manual;
+	letter-spacing: 0.1rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: normal;
+	word-break: break-word;
+
+	&:focus {
+		outline: 0;
+	}
+
+	&:hover {
+		background-color: var(--hover-bg);
+		border-color: var(--hover-bg);
+		color: var(--hover-text);
+		outline: 0;
+	}
+
+	&[disabled] {
+		cursor: default;
+		opacity: .5;
+
+		&:focus,
+		&:hover {
+			background-color: var(--color-action);
+			border-color: var(--color-action);
+			color: var(--color-text-inverse);
+		}
+	}
+
+	&.button-outline {
+		background-color: transparent;
+		color: var(--color-action);
+		border: 0.1rem solid currentColor;
+
+		&:hover {
+			background-color: transparent;
+			border-color: var(--hover-bg);
+			color: var(--hover-bg);
+		}
+
+		&[disabled] {
+			&:focus,
+			&:hover {
+				border-color: inherit;
+				color: var(--color-action);
+			}
+		}
+	}
+
+	&.button-clear {
+		background-color: transparent;
+		border-color: transparent;
+		color: var(--color-action);
+
+		&:hover {
+			background-color: transparent;
+			border-color: transparent;
+			color: var(--hover-bg);
+		}
+
+		&[disabled] {
+			&:focus,
+			&:hover {
+				color: var(--color-action);
+			}
+		}
+	}
+
+	svg {
+		flex: 0 0 fit-content;
+		line-height: 1;
+	}
+}
+
+@media (min-width: $size-sm) {
+	button,
+	.button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		flex-direction: row;
+		width: auto;
+		word-break: inherit;
+	}
+}
+
+fieldset, input, select, textarea {
+	margin-bottom: 0.5rem;
+}

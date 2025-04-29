@@ -1,0 +1,102 @@
+//
+// Variables
+// --------------------------------------------------
+// Variables and mixins declared here will be available
+// in all other SCSS files
+
+// Colours
+
+:root {
+	color-scheme: light dark;
+
+	--color-alert-info: #3df;
+	--color-alert-tip: #fb3;
+	--color-alert-warning: #f70;
+	--color-alert-error: #f00;
+	--color-alert-success: #0d0;
+	--color-alert-failure: #90d;
+
+	--hover-bg: #606c76;
+	--hover-text: #f4f5f6;
+	--nav-text: var(--color-text-inverse);
+
+	@media (prefers-color-scheme: light) {
+		--color-action: #008cca;
+		--color-accent: #3df;
+		--color-alert-bg: var(--color-text-inverse);
+		--color-alert: var(--color-accent);
+		--color-bg: #f9f9f9;
+		--color-text: #606c76;
+		--color-focus: #8193;
+		--color-text-inverse: #070707;
+		--color-fx-inverse: #9723;
+		--nav-bg: #008cca;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		--color-action: #ffcd11;
+		--color-accent: #ffe170;
+		--color-alert-bg: var(--color-text-inverse);
+		--color-alert: var(--color-accent);
+		--color-bg: #070707;
+		--color-text: #b7b4ab;
+		--color-focus: #9727;
+		--color-text-inverse: #070707;
+		--color-fx-inverse: #8193;
+		--nav-bg: #ffcd11;
+	}
+}
+
+// Breakpoints
+
+$size-xxs: 320px !default;
+$size-xs: 480px !default;
+$size-sm: 600px !default;
+$size-md: 840px !default;
+$size-lg: 960px !default;
+$size-xl: 1280px !default;
+
+// Font families
+
+$font-set-body: Quattrocento, Lora, serif;
+$font-set-headings: Vesper Libre, Quattrocento, Lora, serif;
+$font-set-figures: IBM Plex Sans, sans-serif;
+$font-set-italic: Lora, serif;
+
+// Other
+
+$loading-ratio: 62%;
+$padding-inline: clamp(20px, 5vw, 50px);
+
+// Mixins
+
+@mixin button-color($color: $color, $color-text: var(--color-text-inverse)) {
+	color: $color-text;
+	background-color: $color;
+	border: 0.1rem solid $color;
+
+	&.button-clear,
+	&.button-outline {
+		background-color: transparent;
+		color: $color;
+	}
+
+	&.button-clear {
+		border-color: transparent;
+	}
+
+	&:focus,
+	&:focus-visible {
+		outline: 3px solid rgb($color, 0.5);
+		border-radius: 2px;
+		box-shadow: 0 0 6px 0 $color;
+
+		&:hover {
+			box-shadow: 0 0 6px 0 var(--hover-bg);
+		}
+	}
+
+	&:focus {
+		outline: 0;
+	}
+}
