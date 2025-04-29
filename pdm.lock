@@ -5,7 +5,7 @@
 groups = ["default", "dev", "test"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:59b66e44512c1a68caefd4094fa396f7308de6cd5b08f8add7c898db93197c0c"
+content_hash = "sha256:56db68e3d1e76fc78c57a39e1dfd4ad48b62f89a9a6187e8e849c8e6d73fdf53"
 
 [[metadata.targets]]
 requires_python = "==3.10.*"
@@ -247,7 +247,7 @@ files = [
 
 [[package]]
 name = "ipython"
-version = "8.35.0"
+version = "8.36.0"
 requires_python = ">=3.10"
 summary = "IPython: Productive Interactive Computing"
 groups = ["dev"]
@@ -265,8 +265,8 @@ dependencies = [
     "typing-extensions>=4.6; python_version < \"3.12\"",
 ]
 files = [
-    {file = "ipython-8.35.0-py3-none-any.whl", hash = "sha256:e6b7470468ba6f1f0a7b116bb688a3ece2f13e2f94138e508201fad677a788ba"},
-    {file = "ipython-8.35.0.tar.gz", hash = "sha256:d200b7d93c3f5883fc36ab9ce28a18249c7706e51347681f80a0aef9895f2520"},
+    {file = "ipython-8.36.0-py3-none-any.whl", hash = "sha256:12b913914d010dcffa2711505ec8be4bf0180742d97f1e5175e51f22086428c1"},
+    {file = "ipython-8.36.0.tar.gz", hash = "sha256:24658e9fe5c5c819455043235ba59cfffded4a35936eefceceab6b192f7092ff"},
 ]
 
 [[package]]
@@ -354,15 +354,6 @@ dependencies = [
 files = [
     {file = "matplotlib_inline-0.1.7-py3-none-any.whl", hash = "sha256:df192d39a4ff8f21b1895d72e6a13f5fcc5099f00fa84384e0ea28c2cc0653ca"},
     {file = "matplotlib_inline-0.1.7.tar.gz", hash = "sha256:8423b23ec666be3d16e16b60bdd8ac4e86e840ebd1dd11a30b9f117f2fa0ab90"},
-]
-
-[[package]]
-name = "nodeenv"
-version = "0.7.0"
-summary = "Node.js virtual environment builder"
-groups = ["default"]
-files = [
-    {file = "nodeenv-0.7.0.tar.gz", hash = "sha256:5e619bced19bee9e475090775bdb44f3588dbd71c93ec9f31e58f5b689235d42"},
 ]
 
 [[package]]

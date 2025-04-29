@@ -1,5 +1,6 @@
 <script>
-    import { debounce } from 'debounce'
+    import debounce from 'debounce'
+
     import { minerals } from '../stores/minerals'
 
     export let selected

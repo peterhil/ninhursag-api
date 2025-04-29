@@ -1,22 +1,23 @@
 {
   "name": "ninhursag",
+  "version": "0.10.0",
   "description": "Ninhursag is a visualisation of US Geologic Survey statistics from year 1900 onwards of world production of various minerals, and fitting functions for estimating how long our reserves will last.",
+  "author": "Peter Hillerström <peter.hillerstrom@gmail.com>",
+  "homepage": "https://github.com/peterhil/ninhursag",
   "keywords": [
     "data visualisation",
     "minerals",
     "reserves"
   ],
-  "version": "0.10.0",
   "engines": {
     "node": "v22.14.0",
     "pnpm": "10.7.0"
   },
-  "author": "Peter Hillerström <peter.hillerstrom@gmail.com>",
-  "homepage": "https://github.com/peterhil/ninhursag",
   "pnpm": {
-    "overrides": {
-      "@rollup/plugin-eslint>eslint": "$eslint"
-    }
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "svelte-preprocess"
+    ]
   },
   "private": true,
   "scripts": {
@@ -25,44 +26,39 @@
     "lint": "eslint .",
     "start": ". ./venv/py310/bin/activate && python run.py"
   },
+  "type": "module",
   "dependencies": {
-    "@eslint/compat": "^1.2.8",
     "d3-array": "^3.2.4",
     "d3-scale": "^4.0.2",
     "d3-shape": "^3.2.0",
-    "debounce": "^1.2.1",
-    "eslint-plugin-svelte": "^3.5.1",
+    "debounce": "^2.2.0",
     "events": "^3.3.0",
-    "humanize-plus": "1.5.0",
-    "js-cookie": "^2.2.1",
+    "humanize-plus": "1.8.2",
+    "js-cookie": "^3.0.5",
     "milligram": "^1.4.1",
     "papaparse": "^5.5.2",
     "ramda": "0.27.1",
     "soundex-code": "0.1.2",
-    "spin.js": "2.3.2",
-    "tinycolor2": "1.1.2"
+    "spin.js": "4.1.2",
+    "tinycolor2": "1.6.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.25.0",
+    "@eslint/compat": "^1.2.8",
+    "@eslint/js": "^9.25.1",
     "@iconify/icons-carbon": "^1.2.20",
     "@iconify/svelte": "^3.1.6",
-    "@rollup/plugin-commonjs": "^18.1.0",
-    "@rollup/plugin-eslint": "^9.0.5",
-    "@rollup/plugin-image": "^2.1.1",
-    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@tsconfig/svelte": "^5.0.4",
     "carbon-icons-svelte": "^11.4.0",
-    "chokidar": "^3.6.0",
-    "eslint": "^9.25.0",
-    "eslint-config-prettier": "^8.10.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^7.2.1",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-svelte": "^3.5.1",
     "globals": "^16.0.0",
-    "prettier": "^2.8.8",
-    "rollup": "^2.79.2",
+    "prettier": "^3.5.3",
+    "rollup": "^4.40.0",
     "rollup-plugin-import-css": "^3.5.8",
     "rollup-plugin-sass": "^1.15.2",
     "rollup-plugin-svelte": "^7.2.2",
@@ -73,6 +69,6 @@
     "svelte-asyncable": "^2.2.1",
     "svelte-check": "^4.1.6",
     "svelte-preprocess": "^6.0.3",
-    "typescript": "^5.0.0"
+    "typescript": "^5.8.3"
   }
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { debounce } from 'debounce'
+    import debounce from 'debounce'
 
     import { functions } from '../stores/functions'
     import { controller } from '../stores/estimate'
