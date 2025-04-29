@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@rollup/plugin-eslint>eslint': ^9.25.1
+
 importers:
 
   .:
@@ -63,6 +66,9 @@ importers:
       '@rollup/plugin-commonjs':
         specifier: ^28.0.3
         version: 28.0.3(rollup@4.40.0)
+      '@rollup/plugin-eslint':
+        specifier: ^9.0.5
+        version: 9.0.5(rollup@4.40.0)
       '@rollup/plugin-image':
         specifier: ^3.0.3
         version: 3.0.3(rollup@4.40.0)
@@ -84,6 +90,9 @@ importers:
       eslint-config-prettier:
         specifier: ^10.1.2
         version: 10.1.2(eslint@9.25.1)
+      eslint-plugin-promise:
+        specifier: ^7.2.1
+        version: 7.2.1(eslint@9.25.1)
       eslint-plugin-svelte:
         specifier: ^3.5.1
         version: 3.5.1(eslint@9.25.1)(svelte@4.2.19)
@@ -322,6 +331,15 @@ packages:
     engines: {node: '>=16.0.0 || 14 >= 14.17'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+
+  '@rollup/plugin-eslint@9.0.5':
+    resolution: {integrity: sha512-C4nh0sSeJuxVW5u5tDX+dCMjKcNfHm4hS+zeUVh1si7gttnhgGbrmPkUxIX7iZgYABwdEh/ewyMbZB+WXjSJdA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
     peerDependenciesMeta:
       rollup:
         optional: true
@@ -655,6 +673,12 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
+
+  eslint-plugin-promise@7.2.1:
+    resolution: {integrity: sha512-SWKjd+EuvWkYaS+uN2csvj0KoP43YTu7+phKQ5v+xw6+A0gutVX2yqCeCkC3uLCJFiPfR2dD8Es5L7yUsmvEaA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
 
   eslint-plugin-svelte@3.5.1:
     resolution: {integrity: sha512-Qn1slddZHfqYiDO6IN8/iN3YL+VuHlgYjm30FT+hh0Jf/TX0jeZMTJXQMajFm5f6f6hURi+XO8P+NPYD+T4jkg==}
@@ -1467,6 +1491,16 @@ snapshots:
     optionalDependencies:
       rollup: 4.40.0
 
+  '@rollup/plugin-eslint@9.0.5(rollup@4.40.0)':
+    dependencies:
+      '@rollup/pluginutils': 5.1.4(rollup@4.40.0)
+      eslint: 9.25.1
+    optionalDependencies:
+      rollup: 4.40.0
+    transitivePeerDependencies:
+      - jiti
+      - supports-color
+
   '@rollup/plugin-image@3.0.3(rollup@4.40.0)':
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.40.0)
@@ -1721,6 +1755,11 @@ snapshots:
 
   eslint-config-prettier@10.1.2(eslint@9.25.1):
     dependencies:
+      eslint: 9.25.1
+
+  eslint-plugin-promise@7.2.1(eslint@9.25.1):
+    dependencies:
+      '@eslint-community/eslint-utils': 4.6.1(eslint@9.25.1)
       eslint: 9.25.1
 
   eslint-plugin-svelte@3.5.1(eslint@9.25.1)(svelte@4.2.19):
