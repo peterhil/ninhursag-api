@@ -4,8 +4,10 @@ import os
 
 from flask import current_app, Blueprint, render_template
 from flask import jsonify, redirect, send_from_directory
+from pathlib import Path
 
 from app.log import logger
+from app.settings import Config
 
 
 bp = Blueprint('front', __name__)
@@ -38,13 +40,25 @@ def config():
 
 @bp.route('/data/<filename>')
 def data(filename):
-    data_dir = os.path.join(current_app.root_path, 'static/data')
+    data_dir = Path(current_app.root_path).joinpath(Config.DATA_DIR).resolve(strict=True)
     logger.debug("Data asked for {} from directory {}".format(filename, data_dir))
-    if os.path.splitext(filename)[1][1:].strip().lower() != 'csv':
-        return False  # TODO return 404 error
+
     return send_from_directory(
         data_dir,
-        filename, mimetype='text/csv'
+        filename,
+        mimetype='text/yaml'
+        )
+
+
+@bp.route('/data/tsv/<filename>')
+def data_tsv(filename):
+    data_dir = Path(current_app.root_path).joinpath(Config.DATA_DIR).joinpath('tsv').resolve(strict=True)
+    logger.debug("Data asked for {} from directory {}".format(filename, data_dir))
+
+    return send_from_directory(
+        data_dir,
+        filename,
+        mimetype='text/tsv'
         )
 
 
