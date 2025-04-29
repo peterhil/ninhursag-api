@@ -1,0 +1,7 @@
+.button-action {
+	@include button-color(var(--color-action), var(--color-text-inverse));
+}
+
+.button-pink {
+	@include button-color(#f69, var(--color-text-inverse));
+}

@@ -1,2 +1,9 @@
+packages:
+    - app
+    - site
+
 onlyBuiltDependencies:
-  - svelte-preprocess
+    - "@parcel/watcher"
+    - "@sveltejs/kit"
+    - esbuild
+    - svelte-preprocess

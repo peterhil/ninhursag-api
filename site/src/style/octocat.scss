@@ -1,0 +1,38 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2016 Tim Holman - https://tholman.com/github-corners/
+// Copyright (c) 2020 CJ Patoilo - https://milligram.io/
+
+.octocat {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	width: 56px;
+	height: 56px;
+	border: 0;
+	color: var(--color-action);
+
+	.octocat-triangle {
+		fill: var(--color-bg);
+	}
+
+	.octocat-arm,
+	.octocat-body {
+		fill: var(--color-action);
+	}
+}
+
+.octocat:hover .octocat-arm {
+	animation: b .56s infinite;
+	transform-origin: 58.4% 47.7%;
+}
+
+@keyframes b {
+	0%, 50% {
+		transform: rotate(0);
+	}
+	25%, 75% {
+		transform: rotate(-25deg);
+	}
+}

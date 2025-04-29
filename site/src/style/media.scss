@@ -1,0 +1,14 @@
+img.mineral {
+	width: 100%;
+	height: auto;
+	max-width: 300px;
+	max-height: 100%;
+}
+
+img.electron-conf,
+img.chemical-compound,
+img.crystal-structure {
+	position: absolute;
+	top: 2em;
+	right: 2em;
+}

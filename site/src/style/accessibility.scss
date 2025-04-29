@@ -1,0 +1,10 @@
+:focus,
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  border-radius: 2px;
+  box-shadow: 0 0 6px 0 var(--color-action);
+
+  &:hover {
+	  box-shadow: 0 0 6px 0 var(--hover-bg);
+  }
+}

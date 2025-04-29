@@ -30,4 +30,4 @@ class Config:
 
     # Other
     APP_NAME = config('APP_NAME', default='Ninhursag')
-    DATA_DIR = config('DATA_DIR', default='static/data')
+    DATA_DIR = config('DATA_DIR', default='../../data')
