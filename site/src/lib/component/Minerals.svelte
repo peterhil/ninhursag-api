@@ -22,36 +22,38 @@
 
 {#snippet controls()}
 <div class="selections">
-	<SelectMineral minerals={data.minerals} bind:selected="{$mineral}" />
-	<SelectFunction functions={data.functions} bind:selected="{$fn}" />
+	<SelectMineral minerals={data.minerals} bind:selected={$mineral} />
+	<SelectFunction functions={data.functions} bind:selected={$fn} />
 </div>
 <div class="scale">
 	<span class="hide-sm">Scale</span>
-	<LogScaleCheckbox bind:scale="{$scale}" />
+	<LogScaleCheckbox bind:scale={$scale} />
 	{#if $scale === 'linear'}
-		<CheckboxShowAll bind:showAll="{$showAll}" />
+		<CheckboxShowAll bind:showAll={$showAll} />
 	{/if}
 </div>
 {/snippet}
 
 <Navbar {controls} />
 
-<div class="minerals row">
-	<div class="small-12 large-9 columns">
-		<h2 class="hide-xs">{$mineral}</h2>
+<div class="minerals">
+	<h2 class="hide-xs">{$mineral}</h2>
 
-		<figure>
+	<div class="flex">
+		<div>
+			<figure>
+				<DataLoader data={chart}>
+					{#snippet children({ data })}
+					<SvgChart {data}></SvgChart>
+					{/snippet}
+				</DataLoader>
+			</figure>
 			<figcaption>{caption}</figcaption>
-			<DataLoader  data={chart}>
-				{#snippet children({ data })}
-								<SvgChart {data}></SvgChart>
-											{/snippet}
-						</DataLoader>
-		</figure>
-	</div>
+		</div>
 
-	<aside class="small-12 large-3 columns">
-		<Images mineral={$mineral} />
-		<References />
-	</aside>
+		<aside>
+			<Images mineral={$mineral} />
+			<References />
+		</aside>
+	</div>
 </div>

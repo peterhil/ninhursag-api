@@ -20,9 +20,12 @@ body {
 
 .minerals {
 	padding: 0 $padding-inline;
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
+
+	.flex {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
 }
 
 nav.navigation {
@@ -83,7 +86,9 @@ img {
 
 @media (min-width: $size-md) {
 	.minerals {
-		flex-direction: row;
+		.flex {
+			flex-direction: row;
+		}
 	}
 
 	nav.navigation {
