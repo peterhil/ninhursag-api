@@ -4,7 +4,6 @@
 	import Images from '$component/Images.svelte'
 	import LogScaleCheckbox from '$component/LogScaleCheckbox.svelte'
 	import Navbar from '$component/Navbar.svelte'
-	import References from '$component/References.svelte'
 	import SelectFunction from '$component/SelectFunction.svelte'
 	import SelectMineral from '$component/SelectMineral.svelte'
 	import SvgChart from '$component/SvgChart.svelte'
@@ -15,7 +14,8 @@
 	import { showAll } from '$store/showAll'
 	import { mineral } from '$store/mineral'
 
-	const caption = 'U.S. Geological Survey statistics (Metric tons gross weight)'
+	const caption = 'U.S. Geological Survey Data Series 140'
+	const sourceUrl = 'https://www.usgs.gov/centers/national-minerals-information-center/historical-statistics-mineral-and-material-commodities#abrasives'
 
 	let { data } = $props();
 </script>
@@ -36,7 +36,7 @@
 
 <Navbar {controls} />
 
-<div class="minerals">
+<div class="content">
 	<h2 class="hide-xs">{$mineral}</h2>
 
 	<div class="flex">
@@ -48,12 +48,18 @@
 					{/snippet}
 				</DataLoader>
 			</figure>
-			<figcaption>{caption}</figcaption>
+			<figcaption>
+				Metric tons gross weight.
+				<small>Source:</small>
+				<a href={sourceUrl} target="_blank" rel="noreferrer">
+					{caption}
+				</a>
+				<small>Historical Statistics for Mineral and Material Commodities</small>
+			</figcaption>
 		</div>
 
 		<aside>
 			<Images mineral={$mineral} />
-			<References />
 		</aside>
 	</div>
 </div>

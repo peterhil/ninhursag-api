@@ -18,7 +18,7 @@ body {
 	background-color: var(--color-accent);
 }
 
-.minerals {
+.content {
 	padding: 0 $padding-inline;
 
 	.flex {
@@ -85,7 +85,7 @@ img {
 }
 
 @media (min-width: $size-md) {
-	.minerals {
+	.content {
 		.flex {
 			flex-direction: row;
 		}
