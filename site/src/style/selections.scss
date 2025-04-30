@@ -1,14 +1,21 @@
 .scale,
 .selections {
-	display: flex;
-	flex: 1 1 50%;
+	display: inline-flex;
 	flex-direction: column;
+	flex: 1 1 100%;
 	gap: 1rem;
+	width: 100%;
 }
 
 @media (min-width: $size-xxs) {
 	.scale,
 	.selections {
 		flex-direction: row;
+	}
+}
+
+@media (min-width: $size-sm) {
+	.scale {
+		width: auto;
 	}
 }

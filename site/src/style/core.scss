@@ -37,7 +37,7 @@ nav.navigation {
 	flex-direction: column;
 	gap: 1rem;
 
-	padding-block: 1rem;
+	padding: 1rem;
 	border: clamp(20px, 4vw, 70px) solid var(--nav-bg);
 	border-block-color: transparent;
 	border-top-width: 2.4vh;
@@ -64,6 +64,13 @@ nav.navigation {
 
 	section.name {
 		display: block ruby;
+	}
+
+	section.controls {
+		flex-basis: 60%;
+		width: 100%;
+		margin: auto;
+		align-self: self-end;
 	}
 
 	a {

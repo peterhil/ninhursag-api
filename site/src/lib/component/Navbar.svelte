@@ -11,7 +11,7 @@
 		</h1>
 		<a href="/about/">About</a>
 	</section>
-	<section>
+	<section class="controls">
 		{@render controls()}
 	</section>
 	<Octocat />

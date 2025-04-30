@@ -7,6 +7,8 @@
 
 label {
 	width: 100%;
+	flex-grow: 1;
+	align-items: stretch;
 }
 
 @media (min-width: $size-sm) {
@@ -23,6 +25,7 @@ select {
 	text-overflow: ellipsis;
 
 	&.button {
+		width: 100%;
 		margin: 0;
 		padding-block: 1rem;
 		padding-inline: 1rem 4rem;
