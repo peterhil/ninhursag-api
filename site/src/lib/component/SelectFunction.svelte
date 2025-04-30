@@ -24,8 +24,8 @@
 
 <label for="function">
 	<div>
+		<FunctionMath size={24} />
 		{title}
-		<FunctionMath size={32} />
 	</div>
 	<select
 		id="function"

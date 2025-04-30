@@ -2,6 +2,8 @@
 	import debounce from 'debounce'
 	import { HeavyMetal } from '@icon-park/svg'
 
+	import { pushState } from '$app/navigation'
+
 	import IconPark from '$component/IconPark.svelte'
 
 	const title = "Resource"
@@ -11,7 +13,13 @@
 	const onSelected = (event) => {
 	    selected = event.target.value
 	    console.info('Mineral:', selected)
-	    return false
+
+		pushState('/mineral/' + selected, {
+			mineral : selected,
+		})
+		document.title = `${selected} statistics | Ninhursag`
+
+		return false
 	}
 
 	const onSelectedDebounced = debounce(onSelected, 500)
@@ -19,8 +27,8 @@
 
 <label for="mineral">
 	<div>
+		<IconPark icon={HeavyMetal} size={24} />
 		{title}
-		<IconPark icon={HeavyMetal} size={32} />
 	</div>
 	<select
 		id="mineral"

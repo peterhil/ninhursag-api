@@ -28,6 +28,10 @@ h1 {
 
 a {
 	color: var(--color-action);
+
+	&:has(img) {
+		display: inline-flex;
+	}
 }
 
 hr {

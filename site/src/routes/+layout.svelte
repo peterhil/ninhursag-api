@@ -1,6 +1,6 @@
 <script lang="ts">
-	import '../app.scss';
-	import '../app.postcss';
+	import '../app.scss'
+	import '../app.postcss'
 
 	import Navbar from '$component/Navbar.svelte'
 	import Alerts from '$component/Alerts.svelte'
@@ -16,5 +16,4 @@
 </svelte:head>
 
 <Alerts />
-<Navbar />
 {@render children?.()}

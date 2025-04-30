@@ -20,8 +20,6 @@
 	import { showAll } from '$store/showAll'
 	import { fixNaNs } from '$lib/charting'
 
-
-	
 	interface Props {
 		data: any;
 		// SVG attributes
