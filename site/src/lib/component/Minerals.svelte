@@ -1,12 +1,14 @@
 <script lang="ts">
-	import DataLoader from '$component/DataLoader.svelte'
-	import References from '$component/References.svelte'
-	import SvgChart from '$component/SvgChart.svelte'
-	import Images from '$component/Images.svelte'
 	import CheckboxShowAll from '$component/CheckboxShowAll.svelte'
+	import DataLoader from '$component/DataLoader.svelte'
+	import Images from '$component/Images.svelte'
 	import LogScaleCheckbox from '$component/LogScaleCheckbox.svelte'
+	import Navbar from '$component/Navbar.svelte'
+	import References from '$component/References.svelte'
 	import SelectFunction from '$component/SelectFunction.svelte'
 	import SelectMineral from '$component/SelectMineral.svelte'
+	import SvgChart from '$component/SvgChart.svelte'
+
 	import { chart } from '$store/chart'
 	import { fn } from '$store/function'
 	import { scale } from '$store/scale'
@@ -18,6 +20,7 @@
 	let { data } = $props();
 </script>
 
+{#snippet controls()}
 <div class="selections">
 	<SelectMineral minerals={data.minerals} bind:selected="{$mineral}" />
 	<SelectFunction functions={data.functions} bind:selected="{$fn}" />
@@ -29,8 +32,11 @@
 		<CheckboxShowAll bind:showAll="{$showAll}" />
 	{/if}
 </div>
+{/snippet}
 
-<div class="row">
+<Navbar {controls} />
+
+<div class="minerals row">
 	<div class="small-12 large-9 columns">
 		<h2 class="hide-xs">{$mineral}</h2>
 

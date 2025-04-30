@@ -19,8 +19,8 @@
 
 <label for="mineral">
 	<div>
+		<IconPark icon={HeavyMetal} size={24} />
 		{title}
-		<IconPark icon={HeavyMetal} size={32} />
 	</div>
 	<select
 		id="mineral"
