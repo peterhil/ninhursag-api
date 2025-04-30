@@ -27,8 +27,12 @@
 
 <label for="mineral">
 	<div>
-		<IconPark icon={HeavyMetal} size={24} />
-		{title}
+		<span class="hide-xxs">
+			<IconPark icon={HeavyMetal} size={24} />
+		</span>
+		<span class="hide-sm">
+			{title}
+		</span>
 	</div>
 	<select
 		id="mineral"

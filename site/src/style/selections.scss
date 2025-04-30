@@ -7,6 +7,14 @@
 	width: 100%;
 }
 
+.scale label {
+	font-size: 0.8em;
+}
+
+.selections label {
+	display: flex;
+}
+
 @media (min-width: $size-xxs) {
 	.scale,
 	.selections {
@@ -17,5 +25,13 @@
 @media (min-width: $size-sm) {
 	.scale {
 		width: auto;
+
+		label {
+			font-size: 1em;
+		}
+	}
+
+	.selections label {
+		display: block;
 	}
 }
