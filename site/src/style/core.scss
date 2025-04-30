@@ -25,6 +25,10 @@ body {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+
+		.images {
+			flex-basis: 38vw;
+		}
 	}
 }
 
@@ -96,6 +100,19 @@ img {
 
 		h1 {
 			padding-top: 1rem;
+		}
+	}
+}
+
+@media (min-width: $size-xl) {
+	.content {
+		.flex {
+			.images {
+				display: grid;
+				gap: 2rem;
+				grid-template-columns: 1fr 1fr 1fr;
+				flex-basis: 62vw;
+			}
 		}
 	}
 }

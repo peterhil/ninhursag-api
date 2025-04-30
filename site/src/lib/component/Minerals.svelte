@@ -58,7 +58,7 @@
 			</figcaption>
 		</div>
 
-		<aside>
+		<aside class="images">
 			<Images mineral={$mineral} />
 		</aside>
 	</div>
